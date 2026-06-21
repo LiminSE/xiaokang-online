@@ -10,6 +10,8 @@ const DISTRICT_WIDTH = 28;
 const DISTRICT_HEIGHT = 20;
 const WORLD_WIDTH = DISTRICT_WIDTH;
 const WORLD_HEIGHT = DISTRICT_HEIGHT;
+const DEFAULT_CANVAS_WIDTH = 896;
+const DEFAULT_CANVAS_HEIGHT = 640;
 const WORLD_BACKGROUND = "assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png";
 const LEGACY_CONDITION_FEEDBACK_KEYWORD = "没有重连";
 const DEFAULT_VOLUME = 82;
@@ -121,6 +123,7 @@ for (const story of DATA.story_database?.pairStories || []) {
 const canvas = $("#gameCanvas");
 const ctx = canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
+let lastCanvasLayoutKey = "";
 const imageCache = new Map();
 const maskDataCache = new Map();
 const musicState = {
@@ -523,6 +526,7 @@ function showScreen(name) {
   window.scrollTo?.(0, 0);
   state.screen = name;
   if (document.body?.dataset) document.body.dataset.screen = name;
+  if (name !== "game") setDialogueLayoutActive(false);
   if (name === "select") renderCharacterSelect();
   if (name === "game") requestLandscapePlayback();
   $$(".screen").forEach((screen) => screen.classList.remove("is-active"));
@@ -537,6 +541,7 @@ function setViewportMetrics() {
   if (!root?.style?.setProperty || !height || !width) return;
   root.style.setProperty("--app-height", `${height}px`);
   root.style.setProperty("--app-width", `${width}px`);
+  window.requestAnimationFrame?.(resizeCanvasToDisplay);
 }
 
 function setupViewportTracking() {
@@ -550,8 +555,35 @@ function setupViewportTracking() {
   });
 }
 
+function resizeCanvasToDisplay() {
+  if (typeof canvas.getBoundingClientRect !== "function") return;
+  const rect = canvas.getBoundingClientRect();
+  if (!rect.width || !rect.height) return;
+  const isTouchLandscape = prefersTouchLayout() && window.innerWidth > window.innerHeight;
+  const defaultAspect = DEFAULT_CANVAS_WIDTH / DEFAULT_CANVAS_HEIGHT;
+  const displayAspect = rect.width / rect.height;
+  let nextWidth = DEFAULT_CANVAS_WIDTH;
+  let nextHeight = DEFAULT_CANVAS_HEIGHT;
+
+  if (isTouchLandscape && displayAspect > defaultAspect) {
+    nextWidth = Math.min(WORLD_WIDTH * TILE, Math.max(DEFAULT_CANVAS_WIDTH, Math.round(DEFAULT_CANVAS_HEIGHT * displayAspect)));
+    nextHeight = Math.max(420, Math.round(nextWidth / displayAspect));
+  }
+
+  const layoutKey = `${nextWidth}x${nextHeight}`;
+  if (layoutKey === lastCanvasLayoutKey && canvas.width === nextWidth && canvas.height === nextHeight) return;
+  canvas.width = nextWidth;
+  canvas.height = nextHeight;
+  lastCanvasLayoutKey = layoutKey;
+  ctx.imageSmoothingEnabled = !state.settings.pixelatedMap;
+}
+
 function prefersTouchLayout() {
   return Boolean(window.matchMedia?.("(hover: none) and (pointer: coarse)").matches);
+}
+
+function setDialogueLayoutActive(active) {
+  document.body?.classList?.toggle("is-dialogue-open", Boolean(active));
 }
 
 function requestLandscapePlayback() {
@@ -979,17 +1011,18 @@ function updateNearby() {
   const nearNpc = npcsForWorld().find((npc) => distance(player, npc) <= 2);
   const nearPoint = interactionsForWorld().find((point) => distance(player, point) <= 1);
   const nearExit = transitionsForWorld().find((point) => distance(player, point) <= 1);
+  const touchMode = prefersTouchLayout();
   state.nearby = nearNpc || nearPoint || nearExit || null;
   const hint = $("#nearbyHint");
   if (!state.nearby) {
-    hint.textContent = state.path.length ? "自动赶路中，感觉很有主角感" : "点击地面移动，靠近居民或物件";
+    hint.textContent = state.path.length ? "自动赶路中，感觉很有主角感" : touchMode ? "点地面移动，点居民或物件自动靠近" : "点击地面移动，靠近居民或物件";
   } else if (state.nearby.type === "npc") {
-    hint.textContent = `按确认键与 ${state.nearby.char.displayName} 对话`;
+    hint.textContent = `${touchMode ? "点一下" : "按确认键"}与 ${state.nearby.char.displayName} 对话`;
   } else if (state.nearby.type === "interact") {
-    hint.textContent = `按确认键捡起 ${itemIcon(state.nearby.item)} ${state.nearby.label}`;
+    hint.textContent = `${touchMode ? "点一下" : "按确认键"}捡起 ${itemIcon(state.nearby.item)} ${state.nearby.label}`;
   } else {
     hint.textContent = canEnterTransition(state.nearby)
-      ? `按确认键前往 ${areaName(state.nearby.to)}`
+      ? `${touchMode ? "点一下" : "按确认键"}前往 ${areaName(state.nearby.to)}`
       : `剧情推进后可进入 ${areaName(state.nearby.to)}`;
   }
 }
@@ -1455,6 +1488,7 @@ function renderDialogue() {
   const nextButton = $("#dialogueBox [data-action='nextDialogue']");
   if (nextButton) nextButton.hidden = isLastLine && choices.length > 0;
   box.hidden = false;
+  setDialogueLayoutActive(true);
   startDialogueTypewriter(formattedText);
 }
 
@@ -1544,6 +1578,7 @@ function nextDialogue() {
   if (state.dialogue.index >= state.dialogue.lines.length) {
     $("#dialogueBox").hidden = true;
     $("#dialogueStandee").hidden = true;
+    setDialogueLayoutActive(false);
     clearDialogueTypewriter();
     state.dialogue = null;
     return;
@@ -1555,6 +1590,7 @@ function closeDialogue() {
   clearDialogueTypewriter();
   $("#dialogueBox").hidden = true;
   $("#dialogueStandee").hidden = true;
+  setDialogueLayoutActive(false);
   state.dialogue = null;
 }
 
@@ -1793,6 +1829,7 @@ function completeQuest(quest) {
 }
 
 function drawMap() {
+  resizeCanvasToDisplay();
   tickAutoMove();
   updateCamera();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -2953,23 +2990,25 @@ function tickAutoMove() {
   }
 }
 
-function canvasPoint(event) {
+function canvasPointFromClient(clientX, clientY) {
   const rect = canvas.getBoundingClientRect();
   return {
-    x: (event.clientX - rect.left) / rect.width * canvas.width / TILE + camera.x / TILE,
-    y: (event.clientY - rect.top) / rect.height * canvas.height / TILE + camera.y / TILE,
+    x: (clientX - rect.left) / rect.width * canvas.width / TILE + camera.x / TILE,
+    y: (clientY - rect.top) / rect.height * canvas.height / TILE + camera.y / TILE,
   };
+}
+
+function canvasPoint(event) {
+  return canvasPointFromClient(event.clientX, event.clientY);
 }
 
 function clickDistance(point, target) {
   return Math.hypot(point.x - (target.x + 0.5), point.y - (target.y + 0.5));
 }
 
-function handleCanvasClick(event) {
-  if (nowMs() - lastTouchActionAt < 450) return;
+function handleCanvasPoint(point) {
   if (state.screen !== "game") return;
   if ($("#dialogueBox").hidden === false || $("#modalLayer").hidden === false) return;
-  const point = canvasPoint(event);
   const exit = transitionsForWorld().find((target) => clickDistance(point, target) <= 0.82);
   if (exit) {
     walkToEntity(exit);
@@ -2988,6 +3027,11 @@ function handleCanvasClick(event) {
   startAutoPath({ x: Math.floor(point.x), y: Math.floor(point.y) });
 }
 
+function handleCanvasClick(event) {
+  if (nowMs() - lastTouchActionAt < 450) return;
+  handleCanvasPoint(canvasPoint(event));
+}
+
 canvas.addEventListener("click", handleCanvasClick);
 
 document.addEventListener("click", (event) => {
@@ -2999,7 +3043,6 @@ document.addEventListener("click", (event) => {
   const select = event.target.closest("[data-select]")?.dataset.select;
   const preview = event.target.closest("[data-preview]")?.dataset.preview;
   const trackQuest = event.target.closest("[data-track-quest]")?.dataset.trackQuest;
-  const move = event.target.closest("[data-move]")?.dataset.move;
   if (preview) {
     selectCandidate(preview);
     return;
@@ -3019,10 +3062,6 @@ document.addEventListener("click", (event) => {
   if (select) {
     startGame(select);
     return;
-  }
-  if (move) {
-    const dirs = { up: [0, -1], down: [0, 1], left: [-1, 0], right: [1, 0] };
-    tryMove(...dirs[move]);
   }
   if (!action) return;
   const actions = {
@@ -3124,7 +3163,7 @@ function preloadAssets() {
   }
 }
 
-// 移动端触摸滑动支持
+// 移动端纯触摸支持：点地图移动，点居民/物件自动靠近并互动。
 let touchStartX = 0, touchStartY = 0, lastTouchActionAt = 0;
 canvas.addEventListener("touchstart", (e) => {
   if (e.touches.length === 1) {
@@ -3136,19 +3175,13 @@ canvas.addEventListener("touchend", (e) => {
   if (e.changedTouches.length === 1) {
     lastTouchActionAt = nowMs();
     ensureMusic();
+    if (e.cancelable) e.preventDefault();
     const dx = e.changedTouches[0].clientX - touchStartX;
     const dy = e.changedTouches[0].clientY - touchStartY;
     const absDx = Math.abs(dx), absDy = Math.abs(dy);
-    if (Math.max(absDx, absDy) < 20) {
-      // 轻触 = 互动
-      interact();
-    } else if (absDx > absDy) {
-      tryMove(dx > 0 ? 1 : -1, 0);
-    } else {
-      tryMove(0, dy > 0 ? 1 : -1);
-    }
+    if (Math.max(absDx, absDy) < 24) handleCanvasPoint(canvasPointFromClient(e.changedTouches[0].clientX, e.changedTouches[0].clientY));
   }
-});
+}, { passive: false });
 
 function boot() {
   setupViewportTracking();

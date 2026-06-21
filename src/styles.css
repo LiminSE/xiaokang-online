@@ -1659,55 +1659,6 @@ h3 {
     padding: 6px 8px;
   }
 
-  .mobile-dpad {
-    display: grid;
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    grid-template-areas: ". up ." "left center right" ". down .";
-    grid-template-columns: 56px 64px 56px;
-    grid-template-rows: 56px 64px 56px;
-    gap: 4px;
-    opacity: 0.85;
-    touch-action: manipulation;
-  }
-  .dpad-btn {
-    min-height: 0;
-    border: 2px solid var(--line);
-    border-radius: 12px;
-    background: rgba(255, 253, 248, 0.92);
-    box-shadow: 0 3px 0 rgba(76, 56, 57, 0.3);
-    font-size: 18px;
-    color: var(--ink);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-  .dpad-btn:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 0 rgba(76, 56, 57, 0.3);
-    background: #fff1cf;
-  }
-  .dpad-up { grid-area: up; }
-  .dpad-down { grid-area: down; }
-  .dpad-left { grid-area: left; }
-  .dpad-right { grid-area: right; }
-  .dpad-center {
-    grid-area: center;
-    font-size: 22px;
-    border-radius: 50%;
-    background: rgba(255, 241, 207, 0.95);
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
   .dialogue-box {
     max-width: calc(100vw - 16px);
     max-height: 60vh;
@@ -1800,10 +1751,11 @@ h3 {
   }
 
   body[data-screen="game"] .play-layout {
+    position: relative;
     width: 100%;
     flex: 1;
-    grid-template-columns: minmax(0, 1fr) clamp(170px, 27vw, 230px);
-    gap: 6px;
+    grid-template-columns: 1fr;
+    gap: 0;
     max-height: none;
     min-height: 0;
   }
@@ -1824,16 +1776,30 @@ h3 {
   }
 
   body[data-screen="game"] .side-panel {
-    height: 100%;
-    max-height: 100%;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 16;
+    width: clamp(132px, 18vw, 168px);
+    height: auto;
+    max-height: calc(100% - 12px);
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 6px;
+    gap: 5px;
     overflow-y: auto;
     padding: 6px;
     border-width: 2px;
-    font-size: 11px;
+    background: rgba(255, 253, 248, 0.88);
+    box-shadow: 0 4px 0 rgba(76, 56, 57, 0.16), 0 12px 22px rgba(43, 30, 31, 0.16);
+    font-size: 10px;
+    transition: opacity 0.18s ease, transform 0.18s ease;
     -webkit-overflow-scrolling: touch;
+  }
+
+  body[data-screen="game"].is-dialogue-open .side-panel {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(calc(100% + 12px));
   }
 
   body[data-screen="game"] .side-panel > * {
@@ -1842,18 +1808,18 @@ h3 {
   }
 
   body[data-screen="game"] .player-card {
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 6px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 5px;
   }
 
   body[data-screen="game"] .player-card .avatar-frame {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
     border-width: 2px;
   }
 
   body[data-screen="game"] .side-panel h3 {
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1.15;
   }
 
@@ -1925,7 +1891,7 @@ h3 {
   }
 
   body[data-screen="game"] .quest-cg-card img {
-    max-height: 66px;
+    max-height: 46px;
     aspect-ratio: 16 / 7;
   }
 
@@ -1947,30 +1913,9 @@ h3 {
     line-height: 1.2;
   }
 
-  body[data-screen="game"] .mobile-dpad {
-    right: 8px;
-    bottom: 8px;
-    left: auto;
-    grid-template-columns: 42px 48px 42px;
-    grid-template-rows: 42px 48px 42px;
-    gap: 3px;
-    transform: none;
-    opacity: 0.92;
-  }
-
-  body[data-screen="game"] .dpad-btn {
-    border-radius: 9px;
-    font-size: 15px;
-    box-shadow: 0 2px 0 rgba(76, 56, 57, 0.3);
-  }
-
-  body[data-screen="game"] .dpad-center {
-    font-size: 18px;
-  }
-
   body[data-screen="game"] .dialogue-box {
     left: 8px;
-    right: 156px;
+    right: 126px;
     bottom: 8px;
     width: auto;
     min-width: 0;
@@ -2015,7 +1960,7 @@ h3 {
 
   body[data-screen="game"] .dialogue-standee {
     right: 8px;
-    bottom: 156px;
+    bottom: 118px;
     width: clamp(86px, 22%, 118px);
     height: min(54%, 190px);
   }
@@ -2053,6 +1998,7 @@ h3 {
   body[data-screen="game"] .side-panel {
     gap: 4px;
     padding: 5px;
+    width: clamp(118px, 17vw, 146px);
     font-size: 10px;
   }
 
@@ -2060,13 +2006,8 @@ h3 {
     max-height: 46px;
   }
 
-  body[data-screen="game"] .mobile-dpad {
-    grid-template-columns: 38px 44px 38px;
-    grid-template-rows: 38px 44px 38px;
-  }
-
   body[data-screen="game"] .dialogue-box {
-    right: 142px;
+    right: 112px;
     grid-template-columns: 56px minmax(0, 1fr);
     min-height: 70px;
   }
@@ -2077,16 +2018,9 @@ h3 {
   }
 
   body[data-screen="game"] .dialogue-standee {
-    bottom: 132px;
+    bottom: 94px;
     width: clamp(78px, 20%, 106px);
     height: min(46%, 142px);
-  }
-}
-
-/* 桌面端隐藏虚拟方向键 */
-@media (min-width: 901px) {
-  .mobile-dpad {
-    display: none;
   }
 }
 
