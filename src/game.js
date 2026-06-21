@@ -1387,8 +1387,12 @@ function renderDialogue() {
     const expressionSrc = char.expressions?.[expression] || char.portrait;
     portrait.style.setProperty("--asset-a", colors[0]);
     portrait.style.setProperty("--asset-b", colors[1]);
-    portrait.innerHTML = `<img src="${expressionSrc}" alt="${char.displayName} 对话立绘" onerror="this.remove(); this.parentElement.textContent='立绘待导入';" />`;
-    standee.innerHTML = `<img src="${char.portrait}" alt="${char.displayName} 半身立绘" onerror="this.remove();" />`;
+    // 表情切换时加入短暂CSS动画
+    const prevSrc = portrait.querySelector("img")?.src || "";
+    portrait.innerHTML = `<img src="${expressionSrc}" alt="${char.displayName} 对话立绘" class="${prevSrc !== expressionSrc ? 'expr-switch' : ''}" onerror="this.remove(); this.parentElement.textContent='立绘待导入';" />`;
+    // 半身立绘也同步切换表情
+    const standeeExpr = char.expressions?.[expression] || char.expressions?.neutral || char.portrait;
+    standee.innerHTML = `<img src="${standeeExpr}" alt="${char.displayName} 半身立绘" onerror="this.remove();" />`;
     standee.hidden = false;
   }
   const choices = isLastLine ? state.dialogue.choices || [] : [];
@@ -1464,9 +1468,17 @@ function finishDialogueTypewriter() {
 }
 
 function inferExpression(text = "") {
-  if (/哈哈|笑|超展开|拱火|节目效果|下次一定|确实|对味|懂了|好耶|饭|夜宵|名场面|弹幕/.test(text)) return "happy";
-  if (/先别急|装死|锅|弹幕|不背锅|摆出路人表情|你来抓我|拆台|心虚|开场音效/.test(text)) return "tease";
-  if (/主线|异常|核心|服务器|最终|危险|重启|真相|任务/.test(text)) return "serious";
+  // 开心 — 笑、温暖、感谢、夸赞、好消息
+  if (/笑|😭|嚯嚯嚯|好耶|名场面|有内味|舒服了|睡醒了|下班了|羡慕|感谢|真好|太棒|赢了|成功|可以啊|不赖|开心|温暖|治愈|感动|笑了|哈哈|嘿嘿|呵呵|真不错|绝了|无敌了.*[^？]/i.test(text)) return "happy";
+  if (/[/太好笑]|[/耶]|[[]呵呵[]]|香草泥|忍不住了/.test(text)) return "happy";
+  // 调侃/吐槽 — 反讽、自嘲、轻松吐槽
+  if (/压抑了|好压抑|没绷住|别闹了|你猜|装死|摆路人脸|心虚|拆台|甩锅|离谱|不是.*是|先别急|你怎么|你说呢|谁.*的|什么鬼|太.*了|确实.*但|还真是.*但|靴子呢/.test(text)) return "tease";
+  if (/^[？?]$|^何意味$|^图呢$|^我的呢$/.test(text)) return "tease";
+  // 认真/深沉 — 深度思考、坦诚、担忧、重要信息
+  if (/认真|重要|核心|服务器|异常|危险|重启|真相|最终|结局|存档|主线|任务|规则|判定|数据|研究|实验|发现|规律|原理|分析|逻辑/.test(text)) return "serious";
+  if (/你知道吗|说实话|其实|我觉得|我相信|我希望|我想.*的是|有时候|我在想|以前|后来|有一天|如果.*的话/.test(text)) return "serious";
+  if (/不是.*是|因为|所以|但是|可是|不过|虽然|然而|因此/.test(text) && text.length > 40) return "serious";
+  // 默认
   return "neutral";
 }
 
@@ -2211,7 +2223,7 @@ function drawCharacter(x, y, char, isPlayer) {
     const rawSx = sourceColumn * sw;
     const rawSy = sourceRow * sh;
     const trim = spriteTrim(sprite, char.id, rawSx, rawSy, sw, sh);
-    const targetHeight = isPlayer ? TILE * 2.55 : TILE * 2.28;
+    const targetHeight = isPlayer ? TILE * 1.7 : TILE * 1.55;
     const scale = targetHeight / Math.max(1, trim.opaqueHeight);
     const dw = trim.sw * scale;
     const dh = trim.sh * scale;
