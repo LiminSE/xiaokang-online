@@ -36,11 +36,15 @@ body {
 @media (min-width: 901px) {
   body[data-screen="game"] {
     overflow: hidden;
+    height: 100dvh;
   }
 
   .game-screen.is-active {
-    height: 100vh;
+    height: 100dvh;
+    height: 100vh; /* fallback */
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -271,12 +275,12 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   width: min(1280px, 100%);
-  margin: 0 auto 14px;
+  margin: 0 auto 6px;
   border: 2px solid rgba(76, 56, 57, 0.22);
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 6px 10px;
   background: rgba(255, 253, 248, 0.78);
   box-shadow: 0 4px 0 rgba(76, 56, 57, 0.08);
 }
@@ -450,8 +454,10 @@ h3 {
   grid-template-columns: minmax(0, 1fr) 300px;
   align-items: stretch;
   gap: 14px;
-  max-height: calc(100vh - 80px);
+  max-height: calc(100dvh - 72px);
+  max-height: calc(100vh - 72px); /* fallback */
   min-height: 0;
+  flex: 1;
 }
 
 .map-shell,
