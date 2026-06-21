@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
     <title>小康Online</title>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
@@ -154,6 +154,13 @@
         <span>回到小镇中心，入口已经不装死了。</span>
       </div>
       <div id="screenFade" class="screen-fade" aria-hidden="true"></div>
+      <div id="orientationHint" class="orientation-hint" aria-live="polite">
+        <div class="orientation-card">
+          <span aria-hidden="true">↻</span>
+          <strong>横过手机继续小康镇</strong>
+          <p>横屏后地图、任务和背包会完整排开。</p>
+        </div>
+      </div>
     </div>
 
     <script src="src/data/game-data.js"></script>

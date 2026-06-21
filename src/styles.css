@@ -12,11 +12,21 @@
   --lake: #386fa8;
   --soft-blue: #dceff0;
   --shadow: rgba(43, 30, 31, 0.16);
+  --app-height: 100vh;
+  --app-width: 100vw;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
   font-family: "Trebuchet MS", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
 }
 
 [hidden] {
@@ -26,25 +36,42 @@
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: var(--app-height, 100vh);
   color: var(--ink);
   background:
     radial-gradient(circle at 12% 8%, rgba(227, 172, 66, 0.24), transparent 30%),
     linear-gradient(180deg, rgba(255, 250, 240, 0.96), rgba(236, 247, 241, 0.94)),
     repeating-linear-gradient(45deg, #e3ac42 0 10px, #c96561 10px 20px, #2c8b8a 20px 30px, #386fa8 30px 40px);
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 @media (min-width: 901px) {
   body[data-screen="game"] {
     overflow: hidden;
-    height: 100dvh;
+    height: 100vh;
+    height: var(--app-height, 100vh);
   }
 
-  .game-screen.is-active {
-    height: 100dvh;
-    height: 100vh; /* fallback */
+  body[data-screen="game"] .game-screen.is-active {
+    height: 100vh;
+    height: var(--app-height, 100vh);
     overflow: hidden;
     display: flex;
     flex-direction: column;
+  }
+
+  body[data-screen="game"] .play-layout {
+    flex: 1 1 0;
+    height: 0;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  body[data-screen="game"] .map-shell,
+  body[data-screen="game"] .side-panel {
+    height: 100%;
+    max-height: 100%;
   }
 }
 
@@ -86,12 +113,14 @@ button.primary {
 
 .app {
   min-height: 100vh;
+  min-height: var(--app-height, 100vh);
   position: relative;
 }
 
 .screen {
   display: none;
   min-height: 100vh;
+  min-height: var(--app-height, 100vh);
   padding: 18px;
 }
 
@@ -454,8 +483,8 @@ h3 {
   grid-template-columns: minmax(0, 1fr) 300px;
   align-items: stretch;
   gap: 14px;
-  max-height: calc(100dvh - 72px);
-  max-height: calc(100vh - 72px); /* fallback */
+  max-height: calc(100vh - 72px);
+  max-height: calc(var(--app-height, 100vh) - 72px);
   min-height: 0;
   flex: 1;
 }
@@ -476,6 +505,9 @@ h3 {
   min-height: 0;
   display: flex;
   flex-direction: column;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #gameCanvas {
@@ -486,6 +518,7 @@ h3 {
   background: #6d9a74;
   cursor: crosshair;
   max-height: 100%;
+  touch-action: none;
 }
 
 .map-shell.is-pixelated #gameCanvas {
@@ -863,7 +896,7 @@ h3 {
 
 .modal {
   width: min(1000px, 100%);
-  max-height: min(780px, calc(100vh - 32px));
+  max-height: min(780px, calc(var(--app-height, 100vh) - 32px));
   padding: 14px;
   overflow: hidden;
   display: flex;
@@ -873,6 +906,52 @@ h3 {
 .modal-body {
   overflow: auto;
   padding-right: 4px;
+}
+
+.orientation-hint {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding:
+    calc(20px + var(--safe-top))
+    calc(20px + var(--safe-right))
+    calc(20px + var(--safe-bottom))
+    calc(20px + var(--safe-left));
+  color: #fff9e8;
+  background:
+    linear-gradient(180deg, rgba(16, 18, 24, 0.88), rgba(16, 18, 24, 0.96)),
+    repeating-linear-gradient(45deg, #e3ac42 0 10px, #c96561 10px 20px, #2c8b8a 20px 30px, #386fa8 30px 40px);
+}
+
+.orientation-card {
+  width: min(360px, 100%);
+  border: 3px solid rgba(255, 249, 232, 0.72);
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+  background: rgba(21, 24, 32, 0.72);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.24);
+}
+
+.orientation-card span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.orientation-card strong {
+  display: block;
+  font-size: 20px;
+}
+
+.orientation-card p {
+  margin: 10px 0 0;
+  color: rgba(255, 249, 232, 0.86);
+  line-height: 1.55;
 }
 
 .codex-grid,
@@ -1352,7 +1431,7 @@ h3 {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
   .boot-screen.is-active {
     align-items: flex-end;
     justify-content: center;
@@ -1390,6 +1469,13 @@ h3 {
 
   .boot-map-strip {
     height: 100vh;
+    height: var(--app-height, 100vh);
+  }
+
+  .game-screen.is-active {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
   }
 
   .play-layout {
@@ -1400,7 +1486,7 @@ h3 {
 
   .map-shell {
     min-height: 0;
-    max-height: calc(100vh - 220px);
+    max-height: calc(var(--app-height, 100vh) - 220px);
     aspect-ratio: 1.4;
     width: 100%;
   }
@@ -1436,7 +1522,10 @@ h3 {
     width: 48px;
     height: 48px;
   }
+
+  .character-choice-detail {
     grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .choice-art {
@@ -1469,7 +1558,6 @@ h3 {
     padding: 6px 8px;
   }
 
-  /* 移动端虚拟方向键 */
   .mobile-dpad {
     display: grid;
     position: absolute;
@@ -1519,7 +1607,6 @@ h3 {
     color: var(--accent);
   }
 
-  /* 移动端对话优化 */
   .dialogue-box {
     max-width: calc(100vw - 16px);
     max-height: 60vh;
@@ -1530,6 +1617,347 @@ h3 {
   }
   .dialogue-standee img {
     max-height: 35vh;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape), (hover: none) and (pointer: coarse) and (orientation: landscape) {
+  body[data-screen="game"] {
+    height: 100vh;
+    height: var(--app-height, 100vh);
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  body[data-screen="game"] .game-screen.is-active {
+    height: 100vh;
+    height: var(--app-height, 100vh);
+    min-height: 0;
+    overflow: hidden;
+    padding:
+      calc(6px + var(--safe-top))
+      calc(6px + var(--safe-right))
+      calc(6px + var(--safe-bottom))
+      calc(6px + var(--safe-left));
+  }
+
+  body[data-screen="game"] .hud {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    border-width: 2px;
+    padding: 4px 6px;
+    box-shadow: 0 2px 0 rgba(76, 56, 57, 0.08);
+  }
+
+  body[data-screen="game"] .compact-brand {
+    min-width: 112px;
+    max-width: 170px;
+    flex: 0 1 170px;
+    gap: 6px;
+  }
+
+  body[data-screen="game"] .compact-brand h2 {
+    max-width: 100%;
+    overflow: hidden;
+    font-size: clamp(14px, 2.3vw, 18px);
+    line-height: 1.05;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  body[data-screen="game"] .server-name {
+    margin-bottom: 2px;
+    font-size: 10px;
+    line-height: 1.1;
+  }
+
+  body[data-screen="game"] .hud-actions {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body[data-screen="game"] .hud-actions::-webkit-scrollbar {
+    display: none;
+  }
+
+  body[data-screen="game"] .hud-actions button {
+    flex: 0 0 auto;
+    min-height: 30px;
+    padding: 0 7px;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: 0 2px 0 var(--line);
+  }
+
+  body[data-screen="game"] .play-layout {
+    width: 100%;
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr) clamp(170px, 27vw, 230px);
+    gap: 6px;
+    max-height: none;
+    min-height: 0;
+  }
+
+  body[data-screen="game"] .map-shell {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    border-width: 2px;
+    aspect-ratio: auto;
+  }
+
+  body[data-screen="game"] #gameCanvas {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+  }
+
+  body[data-screen="game"] .side-panel {
+    height: 100%;
+    max-height: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow-y: auto;
+    padding: 6px;
+    border-width: 2px;
+    font-size: 11px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body[data-screen="game"] .side-panel > * {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  body[data-screen="game"] .player-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  body[data-screen="game"] .player-card .avatar-frame {
+    width: 42px;
+    height: 42px;
+    border-width: 2px;
+  }
+
+  body[data-screen="game"] .side-panel h3 {
+    font-size: 13px;
+    line-height: 1.15;
+  }
+
+  body[data-screen="game"] .muted {
+    line-height: 1.28;
+  }
+
+  body[data-screen="game"] .quest-mini,
+  body[data-screen="game"] .backpack-preview,
+  body[data-screen="game"] .asset-status {
+    padding-top: 6px;
+    border-top-width: 1px;
+  }
+
+  body[data-screen="game"] .quest-mini ol {
+    gap: 4px;
+    margin-top: 5px;
+    line-height: 1.25;
+  }
+
+  body[data-screen="game"] .quest-mini li {
+    border-width: 1px;
+    padding: 4px 6px 4px 22px;
+    font-size: 11px;
+    line-height: 1.25;
+  }
+
+  body[data-screen="game"] .quest-mini li::before {
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    border-width: 1px;
+  }
+
+  body[data-screen="game"] .quest-guide-hint {
+    margin-top: 6px;
+    border-width: 1px;
+    padding: 5px 6px;
+    font-size: 11px;
+    line-height: 1.28;
+  }
+
+  body[data-screen="game"] .backpack-preview {
+    gap: 4px;
+  }
+
+  body[data-screen="game"] .backpack-preview strong {
+    font-size: 12px;
+  }
+
+  body[data-screen="game"] .backpack-items {
+    min-height: 0;
+    gap: 4px;
+  }
+
+  body[data-screen="game"] .bag-chip {
+    gap: 4px;
+    border-width: 1px;
+    padding: 3px 6px;
+    font-size: 11px;
+  }
+
+  body[data-screen="game"] .bag-chip .bag-icon {
+    font-size: 14px;
+  }
+
+  body[data-screen="game"] .bag-chip .bag-name {
+    max-width: 92px;
+  }
+
+  body[data-screen="game"] .quest-cg-card img {
+    max-height: 66px;
+    aspect-ratio: 16 / 7;
+  }
+
+  body[data-screen="game"] .quest-cg-card span {
+    padding: 4px 6px;
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  body[data-screen="game"] .nearby-hint {
+    left: 8px;
+    right: auto;
+    top: 8px;
+    bottom: auto;
+    max-width: calc(100% - 112px);
+    border-width: 1px;
+    padding: 5px 7px;
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  body[data-screen="game"] .mobile-dpad {
+    right: 8px;
+    bottom: 8px;
+    left: auto;
+    grid-template-columns: 42px 48px 42px;
+    grid-template-rows: 42px 48px 42px;
+    gap: 3px;
+    transform: none;
+    opacity: 0.92;
+  }
+
+  body[data-screen="game"] .dpad-btn {
+    border-radius: 9px;
+    font-size: 15px;
+    box-shadow: 0 2px 0 rgba(76, 56, 57, 0.3);
+  }
+
+  body[data-screen="game"] .dpad-center {
+    font-size: 18px;
+  }
+
+  body[data-screen="game"] .dialogue-box {
+    left: 8px;
+    bottom: 8px;
+    width: min(480px, calc(100% - 126px));
+    max-width: none;
+    max-height: calc(100% - 16px);
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 6px;
+    padding: 6px;
+    border-width: 2px;
+  }
+
+  body[data-screen="game"] .dialogue-portrait {
+    width: 64px;
+    height: 64px;
+  }
+
+  body[data-screen="game"] #dialogueText {
+    min-height: 36px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  body[data-screen="game"] .dialogue-content {
+    gap: 4px;
+  }
+
+  body[data-screen="game"] .dialogue-box button {
+    min-height: 28px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  body[data-screen="game"] .dialogue-standee {
+    right: 112px;
+    width: min(20%, 140px);
+    height: min(58%, 260px);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) and (orientation: portrait) {
+  body[data-screen="game"] {
+    overflow: hidden;
+  }
+
+  body[data-screen="game"] .game-screen.is-active {
+    height: 100vh;
+    height: var(--app-height, 100vh);
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  body[data-screen="game"] .orientation-hint {
+    display: flex;
+  }
+}
+
+@media (max-height: 360px) and (orientation: landscape) {
+  body[data-screen="game"] .hud {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  body[data-screen="game"] .hud-actions button {
+    min-height: 26px;
+    padding: 0 6px;
+    font-size: 11px;
+  }
+
+  body[data-screen="game"] .side-panel {
+    gap: 4px;
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  body[data-screen="game"] .quest-cg-card img {
+    max-height: 46px;
+  }
+
+  body[data-screen="game"] .mobile-dpad {
+    grid-template-columns: 38px 44px 38px;
+    grid-template-rows: 38px 44px 38px;
+  }
+
+  body[data-screen="game"] .dialogue-box {
+    grid-template-columns: 54px minmax(0, 1fr);
+  }
+
+  body[data-screen="game"] .dialogue-portrait {
+    width: 54px;
+    height: 54px;
   }
 }
 

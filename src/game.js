@@ -12,6 +12,8 @@ const WORLD_WIDTH = DISTRICT_WIDTH;
 const WORLD_HEIGHT = DISTRICT_HEIGHT;
 const WORLD_BACKGROUND = "assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png";
 const LEGACY_CONDITION_FEEDBACK_KEYWORD = "没有重连";
+const DEFAULT_VOLUME = 82;
+const MUSIC_GAIN_SCALE = 520;
 const INDOOR_AREAS = new Set(["restaurant", "dragon_card_house", "livehouse", "care_home", "atelier", "server_room"]);
 const SCENE_AREAS = new Set(["restaurant", "dragon_card_house", "livehouse", "echo_lake", "care_home", "atelier", "northern_wilds", "server_room"]);
 const DISTRICT_LAYOUT = new Map();
@@ -63,7 +65,7 @@ const state = {
   bonds: {},
   settings: {
     textSpeed: 1,
-    volume: 60,
+    volume: DEFAULT_VOLUME,
     showGrid: false,
     pixelatedMap: true,
   },
@@ -251,8 +253,12 @@ function getImage(src) {
   return imageCache.get(src);
 }
 
+function isImageAssetPath(src) {
+  return typeof src === "string" && /^(assets\/|data:image\/|https?:\/\/|\/)/.test(src);
+}
+
 function ensureMusic() {
-  if (window.__XIAOKANG_SCREENSHOT_MODE || state.settings.volume <= 0) return;
+  if (window.__XIAOKANG_SCREENSHOT_MODE || normalizedVolume() <= 0) return;
   if (musicState.ctx) {
     if (musicState.ctx.state === "suspended") musicState.ctx.resume();
     updateMusicVolume();
@@ -301,7 +307,12 @@ function ensureMusic() {
 
 function updateMusicVolume() {
   if (!musicState.master || !musicState.ctx) return;
-  musicState.master.gain.setTargetAtTime(state.settings.volume / 850, musicState.ctx.currentTime, 0.35);
+  musicState.master.gain.setTargetAtTime(normalizedVolume() / MUSIC_GAIN_SCALE, musicState.ctx.currentTime, 0.35);
+}
+
+function normalizedVolume() {
+  const value = Number(state.settings.volume);
+  return Number.isFinite(value) ? clamp(value, 0, 100) : DEFAULT_VOLUME;
 }
 
 function noteFrequency(note) {
@@ -508,11 +519,46 @@ function updateCamera() {
 }
 
 function showScreen(name) {
+  setViewportMetrics();
+  window.scrollTo?.(0, 0);
   state.screen = name;
   if (document.body?.dataset) document.body.dataset.screen = name;
   if (name === "select") renderCharacterSelect();
+  if (name === "game") requestLandscapePlayback();
   $$(".screen").forEach((screen) => screen.classList.remove("is-active"));
   $(`#${name}Screen`)?.classList.add("is-active");
+}
+
+function setViewportMetrics() {
+  const root = document.documentElement;
+  const viewport = window.visualViewport;
+  const height = Math.round(viewport?.height || window.innerHeight || root?.clientHeight || 0);
+  const width = Math.round(viewport?.width || window.innerWidth || root?.clientWidth || 0);
+  if (!root?.style?.setProperty || !height || !width) return;
+  root.style.setProperty("--app-height", `${height}px`);
+  root.style.setProperty("--app-width", `${width}px`);
+}
+
+function setupViewportTracking() {
+  setViewportMetrics();
+  window.addEventListener?.("resize", setViewportMetrics);
+  window.visualViewport?.addEventListener?.("resize", setViewportMetrics);
+  window.visualViewport?.addEventListener?.("scroll", setViewportMetrics);
+  window.addEventListener?.("orientationchange", () => {
+    window.setTimeout(setViewportMetrics, 120);
+    window.setTimeout(setViewportMetrics, 360);
+  });
+}
+
+function prefersTouchLayout() {
+  return Boolean(window.matchMedia?.("(hover: none) and (pointer: coarse)").matches);
+}
+
+function requestLandscapePlayback() {
+  if (!prefersTouchLayout()) return;
+  const orientation = window.screen?.orientation;
+  if (!orientation?.lock) return;
+  orientation.lock("landscape").catch(() => {});
 }
 
 function toast(text, duration = 2300) {
@@ -605,6 +651,7 @@ function loadGame() {
     state.pickedInteractions = new Set(payload.pickedInteractions || []);
     state.bonds = payload.bonds || {};
     state.settings = { ...state.settings, ...(payload.settings || {}) };
+    state.settings.volume = normalizedVolume();
     updateAreaFromPosition(false);
     showScreen("game");
     updateHud();
@@ -2915,6 +2962,7 @@ function clickDistance(point, target) {
 }
 
 function handleCanvasClick(event) {
+  if (nowMs() - lastTouchActionAt < 450) return;
   if (state.screen !== "game") return;
   if ($("#dialogueBox").hidden === false || $("#modalLayer").hidden === false) return;
   const point = canvasPoint(event);
@@ -3047,7 +3095,7 @@ function preloadAssets() {
   }
   // 所有交互物品图标
   for (const item of DATA.items || []) {
-    if (item.icon) toPreload.add(item.icon);
+    if (isImageAssetPath(item.icon)) toPreload.add(item.icon);
   }
   // CG插画
   for (const cg of ALL_CGS) {
@@ -3073,7 +3121,7 @@ function preloadAssets() {
 }
 
 // 移动端触摸滑动支持
-let touchStartX = 0, touchStartY = 0;
+let touchStartX = 0, touchStartY = 0, lastTouchActionAt = 0;
 canvas.addEventListener("touchstart", (e) => {
   if (e.touches.length === 1) {
     touchStartX = e.touches[0].clientX;
@@ -3082,12 +3130,13 @@ canvas.addEventListener("touchstart", (e) => {
 }, { passive: true });
 canvas.addEventListener("touchend", (e) => {
   if (e.changedTouches.length === 1) {
+    lastTouchActionAt = nowMs();
+    ensureMusic();
     const dx = e.changedTouches[0].clientX - touchStartX;
     const dy = e.changedTouches[0].clientY - touchStartY;
     const absDx = Math.abs(dx), absDy = Math.abs(dy);
     if (Math.max(absDx, absDy) < 20) {
       // 轻触 = 互动
-      ensureMusic();
       interact();
     } else if (absDx > absDy) {
       tryMove(dx > 0 ? 1 : -1, 0);
@@ -3098,6 +3147,7 @@ canvas.addEventListener("touchend", (e) => {
 });
 
 function boot() {
+  setupViewportTracking();
   renderBootCast();
   renderCharacterSelect();
   updateHud();
