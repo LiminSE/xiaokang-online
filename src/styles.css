@@ -757,32 +757,51 @@ h3 {
 
 .dialogue-box {
   position: absolute;
-  left: 12px;
-  right: auto;
+  left: clamp(10px, 1.8vw, 18px);
+  right: clamp(240px, 32%, 370px);
   top: auto;
-  bottom: 12px;
-  width: min(560px, calc(100% - 160px));
-  min-height: 96px;
-  max-height: calc(100% - 96px);
+  bottom: clamp(10px, 1.8vw, 18px);
+  width: auto;
+  min-width: min(520px, calc(100% - 236px));
+  min-height: 126px;
+  max-height: calc(100% - 118px);
   display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 10px;
-  padding: 8px 12px 8px 8px;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 14px 10px 10px;
   z-index: 18;
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(255, 245, 223, 0.98)),
+    linear-gradient(180deg, rgba(255, 253, 248, 0.99), rgba(255, 244, 218, 0.98)),
+    radial-gradient(circle at 0 0, rgba(227, 172, 66, 0.18), transparent 36%),
     var(--panel-strong);
-  box-shadow: 0 6px 0 rgba(76, 56, 57, 0.16);
+  box-shadow:
+    inset 0 0 0 2px rgba(255, 255, 255, 0.42),
+    0 7px 0 rgba(76, 56, 57, 0.18),
+    0 18px 28px rgba(43, 30, 31, 0.16);
   overflow: hidden;
 }
 
+.dialogue-box[data-expression="happy"] {
+  border-color: #9c7a28;
+}
+
+.dialogue-box[data-expression="tease"] {
+  border-color: #8d5d9c;
+}
+
+.dialogue-box[data-expression="serious"] {
+  border-color: #315f76;
+}
+
 .dialogue-portrait {
-  width: 96px;
-  height: 96px;
+  position: relative;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
-  border: 2px solid rgba(76, 56, 57, 0.15);
+  border: 3px solid rgba(76, 56, 57, 0.32);
   background:
+    radial-gradient(circle at 50% 34%, rgba(255, 255, 255, 0.84), transparent 30%),
     radial-gradient(circle at 50% 70%, var(--asset-a, #d65f5b) 0%, var(--asset-b, #5da1a0) 100%);
   display: flex;
   align-items: center;
@@ -794,17 +813,52 @@ h3 {
   font-weight: 900;
   text-align: center;
   font-size: 11px;
+  box-shadow:
+    inset 0 -10px 18px rgba(43, 30, 31, 0.16),
+    0 5px 0 rgba(76, 56, 57, 0.18);
+}
+
+.dialogue-portrait::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 8px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 253, 248, 0.92);
+  border-radius: 50%;
+  background: #fff1cf;
+  box-shadow: 0 2px 0 rgba(76, 56, 57, 0.16);
+}
+
+.dialogue-portrait[data-expression="happy"]::after {
+  background: var(--gold);
+}
+
+.dialogue-portrait[data-expression="tease"]::after {
+  background: #b56cc0;
+}
+
+.dialogue-portrait[data-expression="serious"]::after {
+  background: var(--lake);
+}
+
+.dialogue-portrait[data-expression="narrator"]::after {
+  display: none;
 }
 
 .dialogue-portrait img {
-  width: 92%;
-  height: 92%;
+  width: 112%;
+  height: 112%;
   object-fit: contain;
-  object-position: center 60%;
+  object-position: center 54%;
   image-rendering: pixelated;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
-  transition: opacity 0.15s ease;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.72))
+    drop-shadow(0 3px 5px rgba(43, 30, 31, 0.22));
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
+
 .dialogue-portrait img.expr-switch {
   animation: expr-pop 0.25s ease-out;
 }
@@ -818,24 +872,37 @@ h3 {
   display: flex;
   flex-direction: column;
   align-content: start;
-  gap: 6px;
+  gap: 7px;
 }
 
 .dialogue-standee {
   position: absolute;
-  right: clamp(6px, 2vw, 30px);
+  right: clamp(14px, 2.4vw, 34px);
   bottom: 0;
   z-index: 15;
-  width: min(28%, 260px);
-  height: min(70%, 460px);
+  width: clamp(190px, 27%, 320px);
+  height: min(78%, 540px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
 }
 
+.dialogue-standee::before {
+  content: "";
+  position: absolute;
+  right: 6%;
+  bottom: 10px;
+  width: 82%;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(43, 30, 31, 0.2);
+  filter: blur(3px);
+}
+
 .dialogue-standee img {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -843,7 +910,21 @@ h3 {
   image-rendering: auto;
   filter:
     drop-shadow(0 0 2px rgba(255, 255, 255, 0.98))
-    drop-shadow(0 14px 0 rgba(76, 56, 57, 0.13));
+    drop-shadow(0 18px 0 rgba(76, 56, 57, 0.13))
+    drop-shadow(0 18px 18px rgba(43, 30, 31, 0.18));
+  animation: standee-breathe 3.8s ease-in-out infinite;
+}
+
+.dialogue-standee[data-expression="happy"] img {
+  transform-origin: center bottom;
+  animation-name: standee-happy;
+}
+
+.dialogue-standee[data-expression="serious"] img {
+  filter:
+    drop-shadow(0 0 2px rgba(255, 255, 255, 0.98))
+    drop-shadow(0 18px 0 rgba(76, 56, 57, 0.13))
+    drop-shadow(0 18px 18px rgba(43, 30, 31, 0.22));
 }
 
 .narrator-sigil {
@@ -868,10 +949,10 @@ h3 {
 }
 
 #dialogueText {
-  min-height: 56px;
+  min-height: 62px;
   margin: 0;
   font-size: 17px;
-  line-height: 1.48;
+  line-height: 1.5;
   white-space: pre-line;
   word-break: break-word;
 }
@@ -882,6 +963,26 @@ h3 {
 
 .dialogue-box .dialogue-choices {
   gap: 6px;
+}
+
+@keyframes standee-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes standee-happy {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.5deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0.5deg);
+  }
 }
 
 .modal-layer {
@@ -1869,19 +1970,31 @@ h3 {
 
   body[data-screen="game"] .dialogue-box {
     left: 8px;
+    right: 156px;
     bottom: 8px;
-    width: min(480px, calc(100% - 126px));
+    width: auto;
+    min-width: 0;
+    min-height: 82px;
     max-width: none;
     max-height: calc(100% - 16px);
-    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-columns: 68px minmax(0, 1fr);
     gap: 6px;
     padding: 6px;
     border-width: 2px;
   }
 
   body[data-screen="game"] .dialogue-portrait {
-    width: 64px;
-    height: 64px;
+    width: 68px;
+    height: 68px;
+    border-width: 2px;
+  }
+
+  body[data-screen="game"] .dialogue-portrait::after {
+    right: 5px;
+    bottom: 5px;
+    width: 11px;
+    height: 11px;
+    border-width: 1px;
   }
 
   body[data-screen="game"] #dialogueText {
@@ -1901,9 +2014,10 @@ h3 {
   }
 
   body[data-screen="game"] .dialogue-standee {
-    right: 112px;
-    width: min(20%, 140px);
-    height: min(58%, 260px);
+    right: 8px;
+    bottom: 156px;
+    width: clamp(86px, 22%, 118px);
+    height: min(54%, 190px);
   }
 }
 
@@ -1952,12 +2066,20 @@ h3 {
   }
 
   body[data-screen="game"] .dialogue-box {
-    grid-template-columns: 54px minmax(0, 1fr);
+    right: 142px;
+    grid-template-columns: 56px minmax(0, 1fr);
+    min-height: 70px;
   }
 
   body[data-screen="game"] .dialogue-portrait {
-    width: 54px;
-    height: 54px;
+    width: 56px;
+    height: 56px;
+  }
+
+  body[data-screen="game"] .dialogue-standee {
+    bottom: 132px;
+    width: clamp(78px, 20%, 106px);
+    height: min(46%, 142px);
   }
 }
 

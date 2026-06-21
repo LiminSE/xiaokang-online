@@ -1423,6 +1423,9 @@ function renderDialogue() {
   const portrait = $("#dialoguePortrait");
   const standee = $("#dialogueStandee");
   if (isNarrator) {
+    box.dataset.expression = "narrator";
+    portrait.dataset.expression = "narrator";
+    delete standee.dataset.expression;
     portrait.style.setProperty("--asset-a", "#2c5761");
     portrait.style.setProperty("--asset-b", "#332b4b");
     portrait.innerHTML = `<div class="narrator-sigil">小康Online</div>`;
@@ -1432,14 +1435,15 @@ function renderDialogue() {
     const colors = char.avatarVisualDNA.primaryColors;
     const expression = inferExpression(line.text);
     const expressionSrc = char.expressions?.[expression] || char.portrait;
+    box.dataset.expression = expression;
+    portrait.dataset.expression = expression;
+    standee.dataset.expression = expression;
     portrait.style.setProperty("--asset-a", colors[0]);
     portrait.style.setProperty("--asset-b", colors[1]);
-    // 表情切换时加入短暂CSS动画
     const prevSrc = portrait.querySelector("img")?.src || "";
-    portrait.innerHTML = `<img src="${expressionSrc}" alt="${char.displayName} 对话立绘" class="${prevSrc !== expressionSrc ? 'expr-switch' : ''}" onerror="this.remove(); this.parentElement.textContent='立绘待导入';" />`;
-    // 半身立绘也同步切换表情
-    const standeeExpr = char.expressions?.[expression] || char.expressions?.neutral || char.portrait;
-    standee.innerHTML = `<img src="${standeeExpr}" alt="${char.displayName} 半身立绘" onerror="this.remove();" />`;
+    portrait.innerHTML = `<img src="${expressionSrc}" alt="${char.displayName} 表情" class="${prevSrc !== expressionSrc ? 'expr-switch' : ''}" onerror="this.remove(); this.parentElement.textContent='表情待导入';" />`;
+    const standeeSrc = char.portrait || char.expressions?.neutral || expressionSrc;
+    standee.innerHTML = `<img src="${standeeSrc}" alt="${char.displayName} 立绘" onerror="this.remove();" />`;
     standee.hidden = false;
   }
   const choices = isLastLine ? state.dialogue.choices || [] : [];
