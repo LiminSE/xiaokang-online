@@ -1,0 +1,127 @@
+[
+  {
+    "id": "cg_task_online_abnormal",
+    "name": "上线异常",
+    "path": "assets/imagegen/cg/tasks/cg_task_online_abnormal.png",
+    "questIds": [
+      "main_quest_01",
+      "area_town_center_1"
+    ],
+    "areaIds": [
+      "town_center"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_dragon_card_gate",
+    "name": "龙牌门禁",
+    "path": "assets/imagegen/cg/tasks/cg_task_dragon_card_gate.png",
+    "questIds": [
+      "main_quest_02",
+      "area_dragon_card_house_1",
+      "area_dragon_card_house_2"
+    ],
+    "areaIds": [
+      "dragon_card_house"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_livehouse_stage",
+    "name": "夜雀灯火",
+    "path": "assets/imagegen/cg/tasks/cg_task_livehouse_stage.png",
+    "questIds": [
+      "main_quest_03",
+      "area_livehouse_1",
+      "area_livehouse_2"
+    ],
+    "areaIds": [
+      "livehouse"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_echo_lake_poem",
+    "name": "湖边诗页",
+    "path": "assets/imagegen/cg/tasks/cg_task_echo_lake_poem.png",
+    "questIds": [
+      "main_quest_03",
+      "area_echo_lake_1",
+      "area_echo_lake_2"
+    ],
+    "areaIds": [
+      "echo_lake"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_restaurant_dinner",
+    "name": "晚饭召集",
+    "path": "assets/imagegen/cg/tasks/cg_task_restaurant_dinner.png",
+    "questIds": [
+      "main_quest_02",
+      "area_restaurant_1",
+      "area_restaurant_2"
+    ],
+    "areaIds": [
+      "restaurant"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_care_home_clock",
+    "name": "养老院钟声",
+    "path": "assets/imagegen/cg/tasks/cg_task_care_home_clock.png",
+    "questIds": [
+      "main_quest_04",
+      "area_care_home_1",
+      "area_care_home_2"
+    ],
+    "areaIds": [
+      "care_home"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_atelier_palette",
+    "name": "色板偏移",
+    "path": "assets/imagegen/cg/tasks/cg_task_atelier_palette.png",
+    "questIds": [
+      "main_quest_04",
+      "area_atelier_1",
+      "area_atelier_2"
+    ],
+    "areaIds": [
+      "atelier"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_northern_signal",
+    "name": "信号塔重启",
+    "path": "assets/imagegen/cg/tasks/cg_task_northern_signal.png",
+    "questIds": [
+      "main_quest_04",
+      "area_northern_wilds_1",
+      "area_northern_wilds_2"
+    ],
+    "areaIds": [
+      "northern_wilds"
+    ],
+    "source": "imagegen"
+  },
+  {
+    "id": "cg_task_server_core",
+    "name": "常驻在线核心",
+    "path": "assets/imagegen/cg/tasks/cg_task_server_core.png",
+    "questIds": [
+      "main_quest_05",
+      "area_server_room_1",
+      "area_server_room_2"
+    ],
+    "areaIds": [
+      "server_room"
+    ],
+    "source": "imagegen"
+  }
+]

@@ -1,0 +1,226 @@
+{
+  "source": "assets/imagegen/environment/environment_tileset_all_areas.png",
+  "renderMode": "full_generated_maps",
+  "areaBackgrounds": {
+    "town_center": "assets/imagegen/environment/full_maps/town_center_full.png",
+    "restaurant": "assets/imagegen/environment/full_maps/restaurant_interior_imagegen.png",
+    "dragon_card_house": "assets/imagegen/environment/full_maps/dragon_card_house_interior_imagegen.png",
+    "livehouse": "assets/imagegen/environment/full_maps/livehouse_interior_imagegen.png",
+    "echo_lake": "assets/imagegen/environment/full_maps/echo_lake_full.png",
+    "care_home": "assets/imagegen/environment/full_maps/care_home_interior_imagegen.png",
+    "atelier": "assets/imagegen/environment/full_maps/atelier_interior_imagegen.png",
+    "northern_wilds": "assets/imagegen/environment/full_maps/northern_wilds_full.png",
+    "server_room": "assets/imagegen/environment/full_maps/server_room_interior_imagegen.png"
+  },
+  "baseTiles": [
+    {
+      "id": "plaza_stone",
+      "label": "浅色广场石砖",
+      "path": "assets/imagegen/environment/tiles/plaza_stone.png",
+      "areaTags": [
+        "town_center",
+        "care_home"
+      ]
+    },
+    {
+      "id": "grass_path",
+      "label": "草径地砖",
+      "path": "assets/imagegen/environment/tiles/grass_path.png",
+      "areaTags": [
+        "northern_wilds",
+        "care_home"
+      ]
+    },
+    {
+      "id": "warm_brick",
+      "label": "暖色砖地",
+      "path": "assets/imagegen/environment/tiles/warm_brick.png",
+      "areaTags": [
+        "town_center",
+        "restaurant"
+      ]
+    },
+    {
+      "id": "gray_stone",
+      "label": "灰石地砖",
+      "path": "assets/imagegen/environment/tiles/gray_stone.png",
+      "areaTags": [
+        "care_home",
+        "atelier"
+      ]
+    },
+    {
+      "id": "dark_stone",
+      "label": "深色石砖",
+      "path": "assets/imagegen/environment/tiles/dark_stone.png",
+      "areaTags": [
+        "dragon_card_house",
+        "server_room"
+      ]
+    },
+    {
+      "id": "blue_water",
+      "label": "水面砖",
+      "path": "assets/imagegen/environment/tiles/blue_water.png",
+      "areaTags": [
+        "echo_lake"
+      ]
+    },
+    {
+      "id": "red_carpet",
+      "label": "牌馆红毯",
+      "path": "assets/imagegen/environment/tiles/red_carpet.png",
+      "areaTags": [
+        "dragon_card_house"
+      ]
+    },
+    {
+      "id": "purple_stage",
+      "label": "舞台紫砖",
+      "path": "assets/imagegen/environment/tiles/purple_stage.png",
+      "areaTags": [
+        "livehouse"
+      ]
+    },
+    {
+      "id": "server_floor",
+      "label": "服务器地板",
+      "path": "assets/imagegen/environment/tiles/server_floor.png",
+      "areaTags": [
+        "server_room"
+      ]
+    },
+    {
+      "id": "atelier_wood",
+      "label": "工坊木地板",
+      "path": "assets/imagegen/environment/tiles/atelier_wood.png",
+      "areaTags": [
+        "atelier",
+        "restaurant"
+      ]
+    }
+  ],
+  "decorGroups": [
+    {
+      "id": "town_objects",
+      "label": "小镇喷泉与路灯",
+      "path": "assets/imagegen/environment/decor/town_objects.png",
+      "areaTags": [
+        "town_center"
+      ]
+    },
+    {
+      "id": "restaurant_tables",
+      "label": "餐厅桌椅与料理台",
+      "path": "assets/imagegen/environment/decor/restaurant_tables.png",
+      "areaTags": [
+        "restaurant"
+      ]
+    },
+    {
+      "id": "card_tables",
+      "label": "牌桌与龙牌装饰",
+      "path": "assets/imagegen/environment/decor/card_tables.png",
+      "areaTags": [
+        "dragon_card_house"
+      ]
+    },
+    {
+      "id": "stage_props",
+      "label": "舞台灯光和音箱",
+      "path": "assets/imagegen/environment/decor/stage_props.png",
+      "areaTags": [
+        "livehouse"
+      ]
+    },
+    {
+      "id": "lake_bridge",
+      "label": "水面与木桥",
+      "path": "assets/imagegen/environment/decor/lake_bridge.png",
+      "areaTags": [
+        "echo_lake"
+      ]
+    },
+    {
+      "id": "garden_trees",
+      "label": "庭院树木与花丛",
+      "path": "assets/imagegen/environment/decor/garden_trees.png",
+      "areaTags": [
+        "care_home",
+        "northern_wilds"
+      ]
+    },
+    {
+      "id": "atelier_tools",
+      "label": "画架屏幕与调色工具",
+      "path": "assets/imagegen/environment/decor/atelier_tools.png",
+      "areaTags": [
+        "atelier"
+      ]
+    },
+    {
+      "id": "server_devices",
+      "label": "机柜和蓝色设备",
+      "path": "assets/imagegen/environment/decor/server_devices.png",
+      "areaTags": [
+        "server_room"
+      ]
+    }
+  ],
+  "mapTileProfiles": {
+    "town_center": {
+      "floor": "plaza_stone",
+      "wall": "warm_brick",
+      "decor": "town_objects"
+    },
+    "restaurant": {
+      "floor": "atelier_wood",
+      "wall": "warm_brick",
+      "decor": "restaurant_tables"
+    },
+    "dragon_card_house": {
+      "floor": "red_carpet",
+      "wall": "dark_stone",
+      "decor": "card_tables"
+    },
+    "livehouse": {
+      "floor": "purple_stage",
+      "wall": "dark_stone",
+      "decor": "stage_props"
+    },
+    "echo_lake": {
+      "floor": "blue_water",
+      "wall": "gray_stone",
+      "decor": "lake_bridge"
+    },
+    "care_home": {
+      "floor": "grass_path",
+      "wall": "plaza_stone",
+      "decor": "garden_trees"
+    },
+    "atelier": {
+      "floor": "atelier_wood",
+      "wall": "gray_stone",
+      "decor": "atelier_tools"
+    },
+    "northern_wilds": {
+      "floor": "grass_path",
+      "wall": "gray_stone",
+      "decor": "garden_trees"
+    },
+    "server_room": {
+      "floor": "server_floor",
+      "wall": "dark_stone",
+      "decor": "server_devices"
+    }
+  },
+  "overworldBackground": "assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png",
+  "imagegenIndoorBackgrounds": {
+    "restaurant": "assets/imagegen/environment/full_maps/restaurant_interior_imagegen.png",
+    "dragon_card_house": "assets/imagegen/environment/full_maps/dragon_card_house_interior_imagegen.png",
+    "livehouse": "assets/imagegen/environment/full_maps/livehouse_interior_imagegen.png",
+    "atelier": "assets/imagegen/environment/full_maps/atelier_interior_imagegen.png",
+    "care_home": "assets/imagegen/environment/full_maps/care_home_interior_imagegen.png",
+    "server_room": "assets/imagegen/environment/full_maps/server_room_interior_imagegen.png"
+  }
+}

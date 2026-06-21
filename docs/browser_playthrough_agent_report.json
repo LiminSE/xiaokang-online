@@ -1,0 +1,1223 @@
+{
+  "generatedAt": "2026-06-21T12:19:56.213Z",
+  "agent": "browser_playthrough_agent",
+  "baseUrl": "http://127.0.0.1:51925/index.html",
+  "passed": true,
+  "clicks": 107,
+  "rerolls": [
+    {
+      "before": "白给人",
+      "after": "弧形反叛超量🐉"
+    },
+    {
+      "before": "弧形反叛超量🐉",
+      "after": "沉机"
+    },
+    {
+      "before": "沉机",
+      "after": "我早已麻痹"
+    }
+  ],
+  "questSteps": [
+    {
+      "questId": "main_quest_01",
+      "questName": "喷泉刷屏第一案",
+      "progress": 0,
+      "step": {
+        "type": "talk",
+        "target": "role_001",
+        "hint": "和弧形反叛超量🐉确认喷泉为什么突然开始水群。"
+      },
+      "areaBefore": "town_center"
+    },
+    {
+      "questId": "main_quest_01",
+      "questName": "喷泉刷屏第一案",
+      "progress": 1,
+      "step": {
+        "type": "interact",
+        "target": "town_center_interact_1",
+        "hint": "调查喷泉弹幕井，看看第一条异常留言从哪冒出来。"
+      },
+      "areaBefore": "dragon_card_house"
+    },
+    {
+      "questId": "main_quest_01",
+      "questName": "喷泉刷屏第一案",
+      "progress": 2,
+      "step": {
+        "type": "interact",
+        "target": "town_center_interact_2",
+        "hint": "敲一下小康钟，让广场从“装死模式”切回来。"
+      },
+      "areaBefore": "town_center"
+    },
+    {
+      "questId": "main_quest_01",
+      "questName": "喷泉刷屏第一案",
+      "progress": 3,
+      "step": {
+        "type": "return",
+        "target": "role_001",
+        "hint": "回去汇报，顺便假装自己一点都不想吐槽。"
+      },
+      "areaBefore": "town_center"
+    },
+    {
+      "questId": "main_quest_02",
+      "questName": "饭点和牌桌禁止互相甩锅",
+      "progress": 0,
+      "step": {
+        "type": "visit",
+        "target": "restaurant",
+        "hint": "从广场入口进入小康餐厅，处理饭点召集锅。"
+      },
+      "areaBefore": "dragon_card_house"
+    },
+    {
+      "questId": "main_quest_02",
+      "questName": "饭点和牌桌禁止互相甩锅",
+      "progress": 1,
+      "step": {
+        "type": "interact",
+        "target": "restaurant_interact_1",
+        "hint": "调查晚饭召集锅，确认它为什么一直喊集合。"
+      },
+      "areaBefore": "restaurant"
+    },
+    {
+      "questId": "main_quest_02",
+      "questName": "饭点和牌桌禁止互相甩锅",
+      "progress": 2,
+      "step": {
+        "type": "visit",
+        "target": "dragon_card_house",
+        "hint": "进入龙牌馆，把牌桌那边的判定也听一下。"
+      },
+      "areaBefore": "restaurant"
+    },
+    {
+      "questId": "main_quest_02",
+      "questName": "饭点和牌桌禁止互相甩锅",
+      "progress": 3,
+      "step": {
+        "type": "interact",
+        "target": "dragon_card_house_interact_1",
+        "hint": "调查无效门禁，阻止它继续把锅推给规则。"
+      },
+      "areaBefore": "dragon_card_house"
+    },
+    {
+      "questId": "main_quest_03",
+      "questName": "夜雀舞台和湖边月亮互相已读",
+      "progress": 0,
+      "step": {
+        "type": "visit",
+        "target": "livehouse",
+        "hint": "进入夜雀舞台，检查灯光为什么突然开始营业。"
+      },
+      "areaBefore": "dragon_card_house"
+    },
+    {
+      "questId": "main_quest_03",
+      "questName": "夜雀舞台和湖边月亮互相已读",
+      "progress": 1,
+      "step": {
+        "type": "interact",
+        "target": "livehouse_interact_1",
+        "hint": "调整深夜灯控台，让舞台先别自我感动。"
+      },
+      "areaBefore": "livehouse"
+    },
+    {
+      "questId": "main_quest_03",
+      "questName": "夜雀舞台和湖边月亮互相已读",
+      "progress": 2,
+      "step": {
+        "type": "visit",
+        "target": "echo_lake",
+        "hint": "去湖边回声栈道，听听月亮是不是又已读不回。"
+      },
+      "areaBefore": "livehouse"
+    },
+    {
+      "questId": "main_quest_03",
+      "questName": "夜雀舞台和湖边月亮互相已读",
+      "progress": 3,
+      "step": {
+        "type": "interact",
+        "target": "echo_lake_interact_1",
+        "hint": "调查漂流诗页，把深夜发言从水里捞上来。"
+      },
+      "areaBefore": "echo_lake"
+    },
+    {
+      "questId": "main_quest_04",
+      "questName": "头像工坊把野外信号画歪了",
+      "progress": 0,
+      "step": {
+        "type": "visit",
+        "target": "atelier",
+        "hint": "进入头像工坊，看看色板是不是又开始自作主张。"
+      },
+      "areaBefore": "echo_lake"
+    },
+    {
+      "questId": "main_quest_04",
+      "questName": "头像工坊把野外信号画歪了",
+      "progress": 1,
+      "step": {
+        "type": "interact",
+        "target": "atelier_interact_1",
+        "hint": "同步色板，别让头像修补台继续发散。"
+      },
+      "areaBefore": "atelier"
+    },
+    {
+      "questId": "main_quest_04",
+      "questName": "头像工坊把野外信号画歪了",
+      "progress": 2,
+      "step": {
+        "type": "visit",
+        "target": "northern_wilds",
+        "hint": "去北境野地，确认信号塔有没有被蘑菇带偏。"
+      },
+      "areaBefore": "atelier"
+    },
+    {
+      "questId": "main_quest_04",
+      "questName": "头像工坊把野外信号画歪了",
+      "progress": 3,
+      "step": {
+        "type": "interact",
+        "target": "northern_wilds_interact_1",
+        "hint": "调查野外信号塔，把沉默重新拉成满格。"
+      },
+      "areaBefore": "northern_wilds"
+    },
+    {
+      "questId": "main_quest_04",
+      "questName": "头像工坊把野外信号画歪了",
+      "progress": 4,
+      "step": {
+        "type": "visit",
+        "target": "care_home",
+        "hint": "去小康养老院存个档，认真剧情要来了。"
+      },
+      "areaBefore": "northern_wilds"
+    },
+    {
+      "questId": "main_quest_05",
+      "questName": "服务器别装死，大家还没聊完",
+      "progress": 0,
+      "step": {
+        "type": "visit",
+        "target": "server_room",
+        "hint": "进入服务器机房，面对最终装死核心。"
+      },
+      "areaBefore": "care_home"
+    },
+    {
+      "questId": "main_quest_05",
+      "questName": "服务器别装死，大家还没聊完",
+      "progress": 1,
+      "step": {
+        "type": "interact",
+        "target": "server_room_interact_1",
+        "hint": "清理缓存清理台，把重复梗先折叠掉。"
+      },
+      "areaBefore": "server_room"
+    },
+    {
+      "questId": "main_quest_05",
+      "questName": "服务器别装死，大家还没聊完",
+      "progress": 2,
+      "step": {
+        "type": "interact",
+        "target": "server_room_interact_2",
+        "hint": "按下核心重启杆，让小镇重新上线。"
+      },
+      "areaBefore": "server_room"
+    },
+    {
+      "questId": "main_quest_05",
+      "questName": "服务器别装死，大家还没聊完",
+      "progress": 3,
+      "step": {
+        "type": "visit",
+        "target": "town_center",
+        "hint": "回小镇中心，让小康钟把全员在线的收束镜头补上。"
+      },
+      "areaBefore": "server_room"
+    }
+  ],
+  "dialogueReads": [
+    {
+      "context": "player_intro",
+      "speaker": "旁白",
+      "text": "旁白：抽卡停在我早已麻痹。\n茶室值班表闪了一下，像在确认本人上线。"
+    },
+    {
+      "context": "player_intro",
+      "speaker": "你",
+      "text": "多发点"
+    },
+    {
+      "context": "player_intro",
+      "speaker": "你",
+      "text": "先逛，正事自己会露头。"
+    },
+    {
+      "context": "player_intro",
+      "speaker": "旁白",
+      "text": "旁白：没有宏大宣言，只有一条很像群聊的开场。"
+    },
+    {
+      "context": "player_intro",
+      "speaker": "你",
+      "text": "？"
+    },
+    {
+      "context": "player_intro",
+      "speaker": "旁白",
+      "text": "旁白：你决定先听听小镇怎么接话。"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "旁白",
+      "text": "旁白：弧形反叛超量🐉刚上线，\n龙牌馆的龙角裁判席先亮了一下。"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "别让它掉地上"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "你",
+      "text": "那我认真问一句：现在从哪条线开始比较不会绕晕？"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "你",
+      "text": "那正事怎么走？"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "额外牌堆那边，先过去别急。"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "这是你"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "你",
+      "text": "行，比任务提示像人话。"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "现在最该盯的是「小镇中心物件会自己找镜头」。\n进入小镇中心，确认这里今天哪件物件最想出道。\n别把它当跑腿，这是小镇在给你塞分镜。"
+    },
+    {
+      "context": "main_quest_01:talk:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "我先看颜色和构图，谁把气氛调歪了，\n我一眼就能抓到。\n我一接话，旁边的人就会自动入场，\n像片尾彩蛋突然续了三分钟。"
+    },
+    {
+      "context": "main_quest_01:interact:town_center_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近喷泉弹幕井，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_01:interact:town_center_interact_1",
+      "speaker": "你",
+      "text": "在线回声到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_01:interact:town_center_interact_1",
+      "speaker": "青山照",
+      "text": "喷泉里不是水，是未读消息。\n它每喷一下，旁边路灯就替大家补一句“确实”。"
+    },
+    {
+      "context": "main_quest_01:interact:town_center_interact_2",
+      "speaker": "旁白",
+      "text": "旁白：你靠近小康钟，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_01:interact:town_center_interact_2",
+      "speaker": "你",
+      "text": "星砂到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_01:interact:town_center_interact_2",
+      "speaker": "青山照",
+      "text": "钟声听起来很庄重，直到它把尾音拐成了群聊提示音。"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "你这也太会挑时间"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "你",
+      "text": "收到。\n先把频道调到闲聊档，正事让它在旁边排队。"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "你",
+      "text": "那我认真问一句：现在从哪条线开始比较不会绕晕？"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "你",
+      "text": "那正事怎么走？"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "额外牌堆那边，先过去别急。"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "这是你"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "你",
+      "text": "行，比任务提示像人话。"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "现在最该盯的是「小镇中心支线别装路过」。\n进入小镇中心，确认这里今天哪件物件最想出道。\n别把它当跑腿，这是小镇在给你塞分镜。"
+    },
+    {
+      "context": "main_quest_01:return:role_001",
+      "speaker": "弧形反叛超量🐉",
+      "text": "我先看颜色和构图，谁把气氛调歪了，\n我一眼就能抓到。\n我一接话，旁边的人就会自动入场，\n像片尾彩蛋突然续了三分钟。"
+    },
+    {
+      "context": "main_quest_02:interact:restaurant_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近晚饭召集锅，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_02:interact:restaurant_interact_1",
+      "speaker": "你",
+      "text": "晚饭票根到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_02:interact:restaurant_interact_1",
+      "speaker": "Hxr",
+      "text": "锅盖一掀，蒸汽先喊了一句集合。\n很怪，但饭点就是有这种统治力。"
+    },
+    {
+      "context": "main_quest_02:interact:dragon_card_house_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近无效门禁，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_02:interact:dragon_card_house_interact_1",
+      "speaker": "你",
+      "text": "牌面碎片到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_02:interact:dragon_card_house_interact_1",
+      "speaker": "弧形反叛超量🐉",
+      "text": "门禁努力讲规则，门框努力装听懂，\n牌桌努力假装这不是日常。"
+    },
+    {
+      "context": "main_quest_03:interact:livehouse_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近深夜灯控台，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_03:interact:livehouse_interact_1",
+      "speaker": "你",
+      "text": "灯控便签到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_03:interact:livehouse_interact_1",
+      "speaker": "赛博鳏夫",
+      "text": "灯控台一滑，舞台立刻出现“明明没人点歌却已经高潮\n”的效果。"
+    },
+    {
+      "context": "main_quest_03:interact:echo_lake_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近漂流诗页，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_03:interact:echo_lake_interact_1",
+      "speaker": "你",
+      "text": "漂流诗页到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_03:interact:echo_lake_interact_1",
+      "speaker": "Hxr",
+      "text": "诗页漂着漂着开始押韵，湖面选择已读不回。"
+    },
+    {
+      "context": "main_quest_04:interact:atelier_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近同步色板，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_04:interact:atelier_interact_1",
+      "speaker": "你",
+      "text": "色板芯片到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_04:interact:atelier_interact_1",
+      "speaker": "NNZ",
+      "text": "色板转了一圈，最后选了一个“看不懂但很对味”的颜\n色。"
+    },
+    {
+      "context": "main_quest_04:interact:northern_wilds_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近野外信号塔，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_04:interact:northern_wilds_interact_1",
+      "speaker": "你",
+      "text": "信号叶片到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_04:interact:northern_wilds_interact_1",
+      "speaker": "很复杂",
+      "text": "塔顶亮了一下，像有人终于把消息发出去了。"
+    },
+    {
+      "context": "main_quest_05:interact:server_room_interact_1",
+      "speaker": "旁白",
+      "text": "旁白：你靠近缓存清理台，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_05:interact:server_room_interact_1",
+      "speaker": "你",
+      "text": "缓存扫帚到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_05:interact:server_room_interact_1",
+      "speaker": "夜处理炼金师",
+      "text": "清理台亮起蓝光，把重复三遍的弹幕礼貌地折叠了。"
+    },
+    {
+      "context": "main_quest_05:interact:server_room_interact_2",
+      "speaker": "旁白",
+      "text": "旁白：你靠近核心重启杆，它立刻亮了一下，\n像终于等到有人点它。"
+    },
+    {
+      "context": "main_quest_05:interact:server_room_interact_2",
+      "speaker": "你",
+      "text": "核心钥匙到手。\n这个物件明显比说明书会说话。"
+    },
+    {
+      "context": "main_quest_05:interact:server_room_interact_2",
+      "speaker": "夜处理炼金师",
+      "text": "重启杆不说话，但它的沉默很像“你最好准备好台词”\n。"
+    }
+  ],
+  "actions": [
+    {
+      "type": "selectedCharacter",
+      "name": "我早已麻痹"
+    },
+    {
+      "type": "dialogueChoice",
+      "context": "player_intro",
+      "label": "先水两句"
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "dragon_card_house"
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:dragon_card_house",
+      "target": {
+        "x": 5,
+        "y": 12
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "npc:role_001",
+      "target": {
+        "x": 9,
+        "y": 9
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "dialogueChoice",
+      "context": "main_quest_01:talk:role_001",
+      "label": "关于任务"
+    },
+    {
+      "type": "navigate",
+      "from": "dragon_card_house",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "dragon_card_house",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 13,
+        "y": 13
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:town_center_interact_1",
+      "target": {
+        "x": 14,
+        "y": 10
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:town_center_interact_2",
+      "target": {
+        "x": 13,
+        "y": 8
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "dragon_card_house"
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:dragon_card_house",
+      "target": {
+        "x": 5,
+        "y": 12
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "npc:role_001",
+      "target": {
+        "x": 9,
+        "y": 9
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "dialogueChoice",
+      "context": "main_quest_01:return:role_001",
+      "label": "关于任务"
+    },
+    {
+      "type": "navigate",
+      "from": "dragon_card_house",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "dragon_card_house",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 13,
+        "y": 13
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "restaurant"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "restaurant",
+        "to": "restaurant",
+        "label": "restaurant",
+        "type": "exit",
+        "areaId": "town_center",
+        "x": 8,
+        "y": 5
+      },
+      "waypoint": {
+        "x": 7,
+        "y": 6
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:restaurant",
+      "target": {
+        "x": 8,
+        "y": 5
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:restaurant_interact_1",
+      "target": {
+        "x": 9,
+        "y": 7
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "restaurant",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "restaurant",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 14,
+        "y": 12
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "dragon_card_house"
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:dragon_card_house",
+      "target": {
+        "x": 5,
+        "y": 12
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:dragon_card_house_interact_1",
+      "target": {
+        "x": 8,
+        "y": 8
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "dragon_card_house",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "dragon_card_house",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 13,
+        "y": 13
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "livehouse"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "livehouse",
+        "to": "livehouse",
+        "label": "livehouse",
+        "type": "exit",
+        "areaId": "town_center",
+        "x": 20,
+        "y": 5
+      },
+      "waypoint": {
+        "x": 16,
+        "y": 6
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:livehouse",
+      "target": {
+        "x": 20,
+        "y": 5
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:livehouse_interact_1",
+      "target": {
+        "x": 14,
+        "y": 7
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "livehouse",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "livehouse",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 14,
+        "y": 13
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "echo_lake"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "echo_lake",
+        "to": "echo_lake",
+        "label": "echo_lake",
+        "type": "exit",
+        "areaId": "town_center",
+        "x": 3,
+        "y": 16
+      },
+      "waypoint": {
+        "x": 10,
+        "y": 11
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:echo_lake",
+      "target": {
+        "x": 3,
+        "y": 16
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:echo_lake_interact_1",
+      "target": {
+        "x": 10,
+        "y": 12
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "echo_lake",
+      "to": "town_center"
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "atelier"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "atelier",
+        "to": "atelier",
+        "label": "atelier",
+        "type": "exit",
+        "areaId": "town_center",
+        "x": 19,
+        "y": 12
+      },
+      "waypoint": {
+        "x": 15,
+        "y": 12
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:atelier",
+      "target": {
+        "x": 19,
+        "y": 12
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:atelier_interact_1",
+      "target": {
+        "x": 9,
+        "y": 8
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "atelier",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "atelier",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 13,
+        "y": 13
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "northern_wilds"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "northern_wilds",
+        "to": "northern_wilds",
+        "label": "northern_wilds",
+        "type": "exit",
+        "areaId": "town_center",
+        "x": 6,
+        "y": 2
+      },
+      "waypoint": {
+        "x": 10,
+        "y": 6
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:northern_wilds",
+      "target": {
+        "x": 6,
+        "y": 2
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:northern_wilds_interact_1",
+      "target": {
+        "x": 9,
+        "y": 7
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "northern_wilds",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "northern_wilds",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 13,
+        "y": 12
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "care_home"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "care_home",
+        "to": "care_home",
+        "label": "care_home",
+        "type": "exit",
+        "areaId": "town_center",
+        "x": 22,
+        "y": 16
+      },
+      "waypoint": {
+        "x": 15,
+        "y": 11
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:care_home",
+      "target": {
+        "x": 22,
+        "y": 16
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "care_home",
+      "to": "town_center"
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "town_center",
+      "to": "server_room"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "server_room",
+        "to": "server_room",
+        "label": "server_room",
+        "type": "exit",
+        "areaId": "town_center",
+        "x": 23,
+        "y": 3
+      },
+      "waypoint": {
+        "x": 22,
+        "y": 7
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:server_room",
+      "target": {
+        "x": 23,
+        "y": 3
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:server_room_interact_1",
+      "target": {
+        "x": 9,
+        "y": 8
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "canvasClick",
+      "label": "interact:server_room_interact_2",
+      "target": {
+        "x": 14,
+        "y": 10
+      },
+      "insideCanvas": true
+    },
+    {
+      "type": "navigate",
+      "from": "server_room",
+      "to": "town_center"
+    },
+    {
+      "type": "waypointClick",
+      "target": {
+        "id": "town_center",
+        "to": "town_center",
+        "label": "town_center",
+        "type": "exit",
+        "areaId": "server_room",
+        "x": 14,
+        "y": 17
+      },
+      "waypoint": {
+        "x": 14,
+        "y": 15
+      }
+    },
+    {
+      "type": "canvasClick",
+      "label": "exit:town_center",
+      "target": {
+        "x": 14,
+        "y": 17
+      },
+      "insideCanvas": true
+    }
+  ],
+  "consoleMessages": [],
+  "finalState": {
+    "screen": "game",
+    "areaId": "town_center",
+    "areaName": "小镇中心",
+    "playerId": "role_016",
+    "playerName": "我早已麻痹",
+    "x": 23,
+    "y": 3,
+    "activeQuest": null,
+    "completedMainQuests": [
+      "main_quest_01",
+      "main_quest_02",
+      "main_quest_03",
+      "main_quest_04",
+      "main_quest_05"
+    ],
+    "activeQuests": [
+      "area_town_center_2"
+    ],
+    "unlockedAreas": [
+      "town_center",
+      "restaurant",
+      "dragon_card_house",
+      "livehouse",
+      "echo_lake",
+      "care_home",
+      "atelier",
+      "northern_wilds",
+      "server_room"
+    ],
+    "pickedInteractions": [
+      "town_center_interact_1",
+      "town_center_interact_2",
+      "restaurant_interact_1",
+      "dragon_card_house_interact_1",
+      "livehouse_interact_1",
+      "echo_lake_interact_1",
+      "atelier_interact_1",
+      "northern_wilds_interact_1",
+      "server_room_interact_1",
+      "server_room_interact_2"
+    ],
+    "dialogueOpen": false,
+    "modalOpen": true,
+    "modalTitle": "普通结局"
+  },
+  "endingScreenshot": "docs/browser_playthrough_agent_ending.png"
+}

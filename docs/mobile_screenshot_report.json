@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-06-21T02:37:31.435Z",
+  "screenshots": [
+    {
+      "name": "mobile_00_boot",
+      "path": "docs/screenshots_mobile/mobile_00_boot.png",
+      "bytes": 1084307
+    },
+    {
+      "name": "mobile_01_select",
+      "path": "docs/screenshots_mobile/mobile_01_select.png",
+      "bytes": 2385475
+    },
+    {
+      "name": "mobile_02_game_dialogue",
+      "path": "docs/screenshots_mobile/mobile_02_game_dialogue.png",
+      "bytes": 1651493
+    },
+    {
+      "name": "mobile_03_cg_gallery",
+      "path": "docs/screenshots_mobile/mobile_03_cg_gallery.png",
+      "bytes": 2021503
+    }
+  ],
+  "consoleErrors": [],
+  "missingImages": []
+}

@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+*.pyc
+__pycache__/
+docs/single_character_imports/
+docs/screenshots/
+docs/screenshots_mobile/
+docs/*.png
+*.jpg
+*.jpeg
+assets/imagegen/backups/
+assets/imagegen/sheets/
+assets/imagegen/tmp/
+assets/imagegen/candidates/

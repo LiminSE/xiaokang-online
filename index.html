@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小康Online</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <section id="bootScreen" class="screen boot-screen is-active">
+        <div class="boot-panorama" aria-hidden="true">
+          <div class="boot-map-strip">
+            <img src="assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png" alt="" />
+            <img src="assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png" alt="" />
+          </div>
+          <div id="bootCast" class="boot-cast"></div>
+          <div class="boot-shade"></div>
+        </div>
+        <div class="boot-copy">
+          <p class="server-name">小康在线镇</p>
+          <h1>小康Online</h1>
+          <p class="boot-line">群聊小镇炸服了。现在，所有人的梗都在街上乱跑。</p>
+          <p class="boot-disclaimer">基于群聊记录分析与AI虚构展开</p>
+          <div class="boot-actions">
+            <button class="primary" data-action="start">开始游玩</button>
+            <button data-action="load">继续游戏</button>
+            <button data-action="openSettings">设置</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="selectScreen" class="screen select-screen">
+        <header class="screen-bar">
+          <button class="icon-button" data-action="backBoot" title="返回">←</button>
+          <div class="compact-brand">
+            <div>
+            <p class="server-name">选择上线化身</p>
+            <h2>今晚谁来拯救小镇</h2>
+            </div>
+          </div>
+        </header>
+        <div id="characterGrid" class="character-grid"></div>
+      </section>
+
+      <section id="gameScreen" class="screen game-screen">
+        <header class="hud">
+          <div class="compact-brand">
+            <div>
+            <p id="areaTheme" class="server-name">小镇中心</p>
+            <h2 id="areaName">小康Online</h2>
+            </div>
+          </div>
+          <div class="hud-actions">
+            <button data-action="cycleTime" id="timeButton">白天</button>
+            <button data-action="openQuestLog">任务</button>
+            <button data-action="openGuide">攻略</button>
+            <button data-action="openBackpack">背包</button>
+            <button data-action="openCgGallery">隐藏插画</button>
+            <button data-action="openCodex">图鉴</button>
+            <button data-action="manualSave">存档</button>
+            <button data-action="openSettings">设置</button>
+          </div>
+        </header>
+
+        <main class="play-layout">
+          <section class="map-shell">
+            <canvas id="gameCanvas" width="896" height="640" aria-label="小康在线镇地图"></canvas>
+            <div id="nearbyHint" class="nearby-hint">靠近居民或物件</div>
+            <div hidden aria-hidden="true">
+              <button data-move="up">↑</button>
+              <button data-move="left">←</button>
+              <button data-move="right">→</button>
+              <button data-move="down">↓</button>
+            </div>
+            <div id="dialogueStandee" class="dialogue-standee" hidden></div>
+            <div id="dialogueBox" class="dialogue-box" hidden>
+              <div id="dialoguePortrait" class="dialogue-portrait"></div>
+              <div class="dialogue-content">
+                <div class="dialogue-top">
+                  <strong id="dialogueSpeaker">角色</strong>
+                  <button class="icon-button" data-action="closeDialogue" title="关闭">×</button>
+                </div>
+                <p id="dialogueText"></p>
+                <div id="dialogueChoices" class="dialogue-choices"></div>
+                <button class="primary" data-action="nextDialogue">继续</button>
+              </div>
+            </div>
+          </section>
+
+          <aside class="side-panel">
+            <div class="player-card">
+              <div id="playerAvatar" class="avatar-frame"></div>
+              <div>
+                <p class="server-name">当前化身</p>
+                <h3 id="playerName">未上线</h3>
+                <p id="playerTrait" class="muted">等待选择</p>
+              </div>
+            </div>
+            <div class="quest-mini">
+              <p class="server-name">当前任务</p>
+              <h3 id="activeQuestName">无</h3>
+              <ol id="activeQuestSteps"></ol>
+              <div id="activeQuestGuide" class="quest-guide-hint">下一步：先上线。</div>
+            </div>
+            <button id="backpackPreview" class="backpack-preview" data-action="openBackpack">
+              <span class="server-name">背包</span>
+              <strong id="backpackCount">0 件物件</strong>
+              <span id="backpackItems" class="backpack-items">空空如也</span>
+            </button>
+            <button id="questCgCard" class="quest-cg-card" data-action="openCgGallery">
+              <img id="questCgImage" src="assets/imagegen/cg/tasks/cg_task_online_abnormal.png" alt="当前任务插画" />
+              <span id="questCgName">上线异常</span>
+            </button>
+            <div class="asset-status">
+              <p class="server-name">小镇装载</p>
+              <div id="assetStatusText" class="muted">检查中</div>
+            </div>
+          </aside>
+        </main>
+      </section>
+
+      <div id="modalLayer" class="modal-layer" hidden>
+        <section class="modal">
+          <header>
+            <h2 id="modalTitle">面板</h2>
+            <button class="icon-button" data-action="closeModal" title="关闭">×</button>
+          </header>
+          <div id="modalBody" class="modal-body"></div>
+        </section>
+      </div>
+
+      <div id="toast" class="toast" hidden></div>
+      <div id="questNotify" class="quest-notify" hidden aria-live="assertive">
+        <div class="quest-notify-card">
+          <button class="quest-notify-close" onclick="closeQuestNotify()" title="关闭">×</button>
+          <p class="quest-notify-badge">任务进度</p>
+          <strong id="questNotifyTitle">步骤完成</strong>
+          <p id="questNotifyBody">任务正在推进中</p>
+        </div>
+      </div>
+      <div id="questCompleteBanner" class="quest-complete-banner" hidden aria-live="polite">
+        <span class="quest-complete-spark">✦</span>
+        <div>
+          <p>任务完成</p>
+          <strong id="questCompleteName">小镇已更新</strong>
+        </div>
+        <span class="quest-complete-spark">✦</span>
+      </div>
+      <div id="areaUnlockPopup" class="area-unlock-popup" hidden aria-live="polite">
+        <p>新区域开放</p>
+        <strong id="areaUnlockName">新的入口亮了</strong>
+        <span>回到小镇中心，入口已经不装死了。</span>
+      </div>
+      <div id="screenFade" class="screen-fade" aria-hidden="true"></div>
+    </div>
+
+    <script src="src/data/game-data.js"></script>
+    <script src="src/game.js"></script>
+  </body>
+</html>

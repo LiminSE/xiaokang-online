@@ -1,0 +1,24 @@
+{
+  "name": "xiaokang-online",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "python3 scripts/build_game_data.py",
+    "content:agents": "node scripts/generate_agent_research_and_dialogues.js && npm run build",
+    "qa:agents": "node scripts/dialogue_player_agent_qa.js && node scripts/browser_playthrough_agent.js",
+    "screenshots": "node scripts/capture_full_scene_screenshots.js",
+    "validate": "python3 scripts/validate_game.py",
+    "acceptance": "python3 scripts/run_acceptance.py",
+    "test": "npm run acceptance"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "playwright": "^1.61.0"
+  }
+}

@@ -1,0 +1,2161 @@
+{
+  "rules": [
+    "CG 解锁前在图鉴中显示暗色剪影和获取提示。",
+    "任务 CG 随主线和区域任务解锁。",
+    "双人羁绊 CG 由两人长对话解锁。",
+    "角色最终 CG 由个人羁绊最终章解锁。",
+    "主线最终大 CG 在 main_quest_05 完成后解锁。"
+  ],
+  "main": [
+    {
+      "id": "cg_main_all_online",
+      "name": "全员上线",
+      "path": "assets/imagegen/cg/ending_all_online.png",
+      "unlock": "main_quest_05",
+      "hint": "完成服务器机房主线并敲响小康钟。",
+      "type": "main",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "main_cg",
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online主线最终大插画\nPrimary request: 全员在小镇广场上线，小康钟重新亮起，群聊梗以温暖轻喜剧方式收束。\nScene/backdrop: 小镇中心夜晚后转亮，喷泉、钟楼、路灯、入口牌自然入镜。\nSubject: 多名二次元像素 RPG 居民围在广场，不要真实人物，不要聊天框。\nStyle/medium: 星露谷式温暖像素动漫画风，治愈，热闹，群像番剧片尾感。\nConstraints: 无可读文字，无 UI，无水印，不要程序化拼贴。"
+    }
+  ],
+  "task": [
+    {
+      "id": "cg_task_online_abnormal",
+      "name": "上线异常",
+      "path": "assets/imagegen/cg/tasks/cg_task_online_abnormal.png",
+      "questIds": [
+        "main_quest_01",
+        "area_town_center_1"
+      ],
+      "areaIds": [
+        "town_center"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_01",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_dragon_card_gate",
+      "name": "龙牌门禁",
+      "path": "assets/imagegen/cg/tasks/cg_task_dragon_card_gate.png",
+      "questIds": [
+        "main_quest_02",
+        "area_dragon_card_house_1",
+        "area_dragon_card_house_2"
+      ],
+      "areaIds": [
+        "dragon_card_house"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_02",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_livehouse_stage",
+      "name": "夜雀灯火",
+      "path": "assets/imagegen/cg/tasks/cg_task_livehouse_stage.png",
+      "questIds": [
+        "main_quest_03",
+        "area_livehouse_1",
+        "area_livehouse_2"
+      ],
+      "areaIds": [
+        "livehouse"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_03",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_echo_lake_poem",
+      "name": "湖边诗页",
+      "path": "assets/imagegen/cg/tasks/cg_task_echo_lake_poem.png",
+      "questIds": [
+        "main_quest_03",
+        "area_echo_lake_1",
+        "area_echo_lake_2"
+      ],
+      "areaIds": [
+        "echo_lake"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_03",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_restaurant_dinner",
+      "name": "晚饭召集",
+      "path": "assets/imagegen/cg/tasks/cg_task_restaurant_dinner.png",
+      "questIds": [
+        "main_quest_02",
+        "area_restaurant_1",
+        "area_restaurant_2"
+      ],
+      "areaIds": [
+        "restaurant"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_02",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_care_home_clock",
+      "name": "养老院钟声",
+      "path": "assets/imagegen/cg/tasks/cg_task_care_home_clock.png",
+      "questIds": [
+        "main_quest_04",
+        "area_care_home_1",
+        "area_care_home_2"
+      ],
+      "areaIds": [
+        "care_home"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_04",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_atelier_palette",
+      "name": "色板偏移",
+      "path": "assets/imagegen/cg/tasks/cg_task_atelier_palette.png",
+      "questIds": [
+        "main_quest_04",
+        "area_atelier_1",
+        "area_atelier_2"
+      ],
+      "areaIds": [
+        "atelier"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_04",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_northern_signal",
+      "name": "信号塔重启",
+      "path": "assets/imagegen/cg/tasks/cg_task_northern_signal.png",
+      "questIds": [
+        "main_quest_04",
+        "area_northern_wilds_1",
+        "area_northern_wilds_2"
+      ],
+      "areaIds": [
+        "northern_wilds"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_04",
+      "hint": "推进对应主线或区域任务。"
+    },
+    {
+      "id": "cg_task_server_core",
+      "name": "常驻在线核心",
+      "path": "assets/imagegen/cg/tasks/cg_task_server_core.png",
+      "questIds": [
+        "main_quest_05",
+        "area_server_room_1",
+        "area_server_room_2"
+      ],
+      "areaIds": [
+        "server_room"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_05",
+      "hint": "推进对应主线或区域任务。"
+    }
+  ],
+  "pair": [
+    {
+      "id": "cg_pair_role_003_role_001",
+      "name": "NNZ × 弧形反叛超量🐉：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_001.png",
+      "unlock": "memory_pair_role_003_role_001",
+      "hint": "触发NNZ和弧形反叛超量🐉的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_003",
+        "role_001"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_003_role_001\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是无效门禁，画面要能看出两人围着这个物件互相接话。\nSubject: NNZ（星砂资料馆长）与弧形反叛超量🐉（龙牌超量判官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: NNZ：“笑死”；弧形反叛超量🐉：“可以”；NNZ：“所以先看无效门禁，别急着判。”；弧形反叛超量🐉：“接了，别让它掉地上。”；NNZ：“结论先放这”；弧形反叛超量🐉：“哪来的”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_001_role_006",
+      "name": "弧形反叛超量🐉 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_001_role_006.png",
+      "unlock": "memory_pair_role_001_role_006",
+      "hint": "触发弧形反叛超量🐉和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_001",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_001_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是翻车记录板，画面要能看出两人围着这个物件互相接话。\nSubject: 弧形反叛超量🐉（龙牌超量判官）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 弧形反叛超量🐉：“这句能接”；力竭了：“我喜欢正面”；弧形反叛超量🐉：“你看翻车记录板”；力竭了：“接了，别让它掉地上。”；弧形反叛超量🐉：“可以”；力竭了：“这个要分情况”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_004_role_001",
+      "name": "赛博鳏夫 × 弧形反叛超量🐉：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_004_role_001.png",
+      "unlock": "memory_pair_role_004_role_001",
+      "hint": "触发赛博鳏夫和弧形反叛超量🐉的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_004",
+        "role_001"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_004_role_001\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 赛博鳏夫（赛博夜航人）与弧形反叛超量🐉（龙牌超量判官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 赛博鳏夫：“哪来的”；弧形反叛超量🐉：“别让它掉地上”；赛博鳏夫：“你看下次一定摊”；弧形反叛超量🐉：“？”；赛博鳏夫：“有游戏没有”；弧形反叛超量🐉：“保存了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_002_role_006",
+      "name": "Hxr × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_002_role_006.png",
+      "unlock": "memory_pair_role_002_role_006",
+      "hint": "触发Hxr和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_002",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_002_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是无效门禁，画面要能看出两人围着这个物件互相接话。\nSubject: Hxr（零点连招手）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Hxr：“先别睡”；力竭了：“保存了”；Hxr：“笑死”；力竭了：“这不是无效门禁的问题，是你们都看见了。”；Hxr：“别让它掉地上”；力竭了：“图呢”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_004_role_002",
+      "name": "赛博鳏夫 × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_004_role_002.png",
+      "unlock": "memory_pair_role_004_role_002",
+      "hint": "触发赛博鳏夫和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_004",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_004_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是栈道留言瓶，画面要能看出两人围着这个物件互相接话。\nSubject: 赛博鳏夫（赛博夜航人）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 赛博鳏夫：“这句能接”；Hxr：“还真是”；赛博鳏夫：“这句你接”；Hxr：“那我问一句，谁先心虚？”；赛博鳏夫：“何意味”；Hxr：“别让它掉地上”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_002_role_009",
+      "name": "Hxr × 多点关心：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_002_role_009.png",
+      "unlock": "memory_pair_role_002_role_009",
+      "hint": "触发Hxr和多点关心的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_002",
+        "role_009"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_002_role_009\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是月相开关，画面要能看出两人围着这个物件互相接话。\nSubject: Hxr（零点连招手）与多点关心（关心信标使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Hxr：“？”；多点关心：“有没有懂的”；Hxr：“别装没看见”；多点关心：“那我问一句，谁先心虚？”；Hxr：“那一卷给我看哭了快”；多点关心：“笑死”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_003_role_004",
+      "name": "NNZ × 赛博鳏夫：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_004.png",
+      "unlock": "memory_pair_role_003_role_004",
+      "hint": "触发NNZ和赛博鳏夫的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_003",
+        "role_004"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_003_role_004\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 夜雀舞台，具体物件是深夜灯控台，画面要能看出两人围着这个物件互相接话。\nSubject: NNZ（星砂资料馆长）与赛博鳏夫（赛博夜航人）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: NNZ：“这个要分情况”；赛博鳏夫：“我就知道”；NNZ：“所以先看深夜灯控台，别急着判。”；赛博鳏夫：“那我问一句，谁先心虚？”；NNZ：“这是你”；赛博鳏夫：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_003_role_007",
+      "name": "NNZ × V²：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_007.png",
+      "unlock": "memory_pair_role_003_role_007",
+      "hint": "触发NNZ和V²的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_003",
+        "role_007"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_003_role_007\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是图鉴抽屉，画面要能看出两人围着这个物件互相接话。\nSubject: NNZ（星砂资料馆长）与V²（V平方调律师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: NNZ：“先别急着判”；V²：“这什么”；NNZ：“所以先看图鉴抽屉，别急着判。”；V²：“那我问一句，谁先心虚？”；NNZ：“？”；V²：“可以”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_016_role_005",
+      "name": "我早已麻痹 × 青山照：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_016_role_005.png",
+      "unlock": "memory_pair_role_016_role_005",
+      "hint": "触发我早已麻痹和青山照的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_016",
+        "role_005"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_016_role_005\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康养老院，具体物件是安眠躺椅，画面要能看出两人围着这个物件互相接话。\nSubject: 我早已麻痹（回声收束者）与青山照（青山回声调停者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 我早已麻痹：“先别急”；青山照：“多发点”；我早已麻痹：“这句你接”；青山照：“那我问一句，谁先心虚？”；我早已麻痹：“保存了”；青山照：“你先说”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_005_role_009",
+      "name": "青山照 × 多点关心：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_005_role_009.png",
+      "unlock": "memory_pair_role_005_role_009",
+      "hint": "触发青山照和多点关心的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_005",
+        "role_009"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_005_role_009\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: 青山照（青山回声调停者）与多点关心（关心信标使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 青山照：“？”；多点关心：“你这也太会挑时间”；青山照：“这句你接”；多点关心：“那我问一句，谁先心虚？”；青山照：“贝木个人独白和战场原聊天能做一集”；多点关心：“何意味”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_005_role_002",
+      "name": "青山照 × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_005_role_002.png",
+      "unlock": "memory_pair_role_005_role_002",
+      "hint": "触发青山照和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_005",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_005_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是湖面倒影，画面要能看出两人围着这个物件互相接话。\nSubject: 青山照（青山回声调停者）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 青山照：“这句能接”；Hxr：“图呢”；青山照：“你看湖面倒影”；Hxr：“那我问一句，谁先心虚？”；青山照：“何意味”；Hxr：“有没有懂的”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_012_role_006",
+      "name": "早上了喵～ × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_012_role_006.png",
+      "unlock": "memory_pair_role_012_role_006",
+      "hint": "触发早上了喵～和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_012",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_012_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 早上了喵～（晨报铃使）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 早上了喵～：“可以”；力竭了：“还真是”；早上了喵～：“你看下次一定摊”；力竭了：“可以”；早上了喵～：“他纯血邦p”；力竭了：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_007_role_008",
+      "name": "V² × 沉机：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_007_role_008.png",
+      "unlock": "memory_pair_role_007_role_008",
+      "hint": "触发V²和沉机的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_007",
+        "role_008"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_007_role_008\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是湖面倒影，画面要能看出两人围着这个物件互相接话。\nSubject: V²（V平方调律师）与沉机（回声转译师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: V²：“多发点”；沉机：“何意味”；V²：“所以先看湖面倒影，别急着判。”；沉机：“那我问一句，谁先心虚？”；V²：“逻辑是有的”；沉机：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_007_role_002",
+      "name": "V² × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_007_role_002.png",
+      "unlock": "memory_pair_role_007_role_002",
+      "hint": "触发V²和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_007",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_007_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是喷泉弹幕井，画面要能看出两人围着这个物件互相接话。\nSubject: V²（V平方调律师）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: V²：“打游戏红温了？”；Hxr：“何意味”；V²：“所以先看喷泉弹幕井，别急着判。”；Hxr：“那我问一句，谁先心虚？”；V²：“这什么”；Hxr：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_001_role_008",
+      "name": "弧形反叛超量🐉 × 沉机：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_001_role_008.png",
+      "unlock": "memory_pair_role_001_role_008",
+      "hint": "触发弧形反叛超量🐉和沉机的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_001",
+        "role_008"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_001_role_008\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是额外牌堆，画面要能看出两人围着这个物件互相接话。\nSubject: 弧形反叛超量🐉（龙牌超量判官）与沉机（回声转译师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 弧形反叛超量🐉：“你这也太会挑时间”；沉机：“这图有说法”；弧形反叛超量🐉：“别装没看见”；沉机：“那我问一句，谁先心虚？”；弧形反叛超量🐉：“有内味了”；沉机：“逻辑是有的”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_008_role_002",
+      "name": "沉机 × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_008_role_002.png",
+      "unlock": "memory_pair_role_008_role_002",
+      "hint": "触发沉机和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_008",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_008_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是栈道留言瓶，画面要能看出两人围着这个物件互相接话。\nSubject: 沉机（回声转译师）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 沉机：“这句能接”；Hxr：“有游戏没有”；沉机：“所以先看栈道留言瓶，别急着判。”；Hxr：“那我问一句，谁先心虚？”；沉机：“何意味”；Hxr：“先别睡”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_006_role_009",
+      "name": "力竭了 × 多点关心：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_006_role_009.png",
+      "unlock": "memory_pair_role_006_role_009",
+      "hint": "触发力竭了和多点关心的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_006",
+        "role_009"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_006_role_009\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康餐厅，具体物件是半糖裁判杯，画面要能看出两人围着这个物件互相接话。\nSubject: 力竭了（疲劳判定官）与多点关心（关心信标使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 力竭了：“？”；多点关心：“这是你”；力竭了：“所以先看半糖裁判杯，别急着判。”；多点关心：“那我问一句，谁先心虚？”；力竭了：“结论先放这”；多点关心：“有内味了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_012_role_009",
+      "name": "早上了喵～ × 多点关心：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_012_role_009.png",
+      "unlock": "memory_pair_role_012_role_009",
+      "hint": "触发早上了喵～和多点关心的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_012",
+        "role_009"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_012_role_009\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: 早上了喵～（晨报铃使）与多点关心（关心信标使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 早上了喵～：“？”；多点关心：“可以”；早上了喵～：“这句你接”；多点关心：“那我问一句，谁先心虚？”；早上了喵～：“先别急”；多点关心：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_010_role_013",
+      "name": "普罗米亚写真集 × 已电子ed：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_010_role_013.png",
+      "unlock": "memory_pair_role_010_role_013",
+      "hint": "触发普罗米亚写真集和已电子ed的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_010",
+        "role_013"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_010_role_013\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是像素屏幕，画面要能看出两人围着这个物件互相接话。\nSubject: 普罗米亚写真集（星火影集师）与已电子ed（电子梦游者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 普罗米亚写真集：“可以”；已电子ed：“多发点”；普罗米亚写真集：“所以先看像素屏幕，别急着判。”；已电子ed：“那我问一句，谁先心虚？”；普罗米亚写真集：“你这也太会挑时间”；已电子ed：“有内味了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_010_role_004",
+      "name": "普罗米亚写真集 × 赛博鳏夫：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_010_role_004.png",
+      "unlock": "memory_pair_role_010_role_004",
+      "hint": "触发普罗米亚写真集和赛博鳏夫的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_010",
+        "role_004"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_010_role_004\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 普罗米亚写真集（星火影集师）与赛博鳏夫（赛博夜航人）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 普罗米亚写真集：“这个要分情况”；赛博鳏夫：“先别睡”；普罗米亚写真集：“所以先看下次一定摊，别急着判。”；赛博鳏夫：“那我问一句，谁先心虚？”；普罗米亚写真集：“这是你”；赛博鳏夫：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_010_role_006",
+      "name": "普罗米亚写真集 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_010_role_006.png",
+      "unlock": "memory_pair_role_010_role_006",
+      "hint": "触发普罗米亚写真集和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_010",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_010_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是同步色板，画面要能看出两人围着这个物件互相接话。\nSubject: 普罗米亚写真集（星火影集师）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 普罗米亚写真集：“可以”；力竭了：“？”；普罗米亚写真集：“所以先看同步色板，别急着判。”；力竭了：“这不是同步色板的问题，是你们都看见了。”；普罗米亚写真集：“妈妈”；力竭了：“这图有说法”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_020_role_011",
+      "name": "高手 × 没办法：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_020_role_011.png",
+      "unlock": "memory_pair_role_020_role_011",
+      "hint": "触发高手和没办法的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_020",
+        "role_011"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_020_role_011\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是无效门禁，画面要能看出两人围着这个物件互相接话。\nSubject: 高手（牌桌高手）与没办法（无解牌桌顾问）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 高手：“这图有说法”；没办法：“有感觉吗”；高手：“有感觉吗”；没办法：“那我问一句，谁先心虚？”；高手：“这是你”；没办法：“可以”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_011_role_013",
+      "name": "没办法 × 已电子ed：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_011_role_013.png",
+      "unlock": "memory_pair_role_011_role_013",
+      "hint": "触发没办法和已电子ed的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_011",
+        "role_013"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_011_role_013\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是龙角裁判席，画面要能看出两人围着这个物件互相接话。\nSubject: 没办法（无解牌桌顾问）与已电子ed（电子梦游者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 没办法：“可以”；已电子ed：“笑死”；没办法：“这句你接”；已电子ed：“那我问一句，谁先心虚？”；没办法：“你这也太会挑时间”；已电子ed：“我接一下”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_011_role_010",
+      "name": "没办法 × 普罗米亚写真集：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_011_role_010.png",
+      "unlock": "memory_pair_role_011_role_010",
+      "hint": "触发没办法和普罗米亚写真集的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_011",
+        "role_010"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_011_role_010\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 没办法（无解牌桌顾问）与普罗米亚写真集（星火影集师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 没办法：“有没有懂的”；普罗米亚写真集：“？”；没办法：“你看下次一定摊”；普罗米亚写真集：“这不是下次一定摊的问题，是你们都看见了。”；没办法：“这句能接”；普罗米亚写真集：“这是你”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_012_role_002",
+      "name": "早上了喵～ × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_012_role_002.png",
+      "unlock": "memory_pair_role_012_role_002",
+      "hint": "触发早上了喵～和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_012",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_012_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 早上了喵～（晨报铃使）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 早上了喵～：“可以”；Hxr：“这什么”；早上了喵～：“你看下次一定摊”；Hxr：“那我问一句，谁先心虚？”；早上了喵～：“你先说”；Hxr：“何意味”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_003_role_013",
+      "name": "NNZ × 已电子ed：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_013.png",
+      "unlock": "memory_pair_role_003_role_013",
+      "hint": "触发NNZ和已电子ed的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_003",
+        "role_013"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_003_role_013\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是像素屏幕，画面要能看出两人围着这个物件互相接话。\nSubject: NNZ（星砂资料馆长）与已电子ed（电子梦游者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: NNZ：“可以”；已电子ed：“呆傻的孩子一般都长这样”；NNZ：“所以先看像素屏幕，别急着判。”；已电子ed：“那我问一句，谁先心虚？”；NNZ：“你这也太会挑时间”；已电子ed：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_013_role_004",
+      "name": "已电子ed × 赛博鳏夫：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_013_role_004.png",
+      "unlock": "memory_pair_role_013_role_004",
+      "hint": "触发已电子ed和赛博鳏夫的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_013",
+        "role_004"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_013_role_004\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是立绘修补台，画面要能看出两人围着这个物件互相接话。\nSubject: 已电子ed（电子梦游者）与赛博鳏夫（赛博夜航人）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 已电子ed：“这什么”；赛博鳏夫：“？”；已电子ed：“哪来的”；赛博鳏夫：“那我问一句，谁先心虚？”；已电子ed：“何意味”；赛博鳏夫：“有没有懂的”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_014_role_013",
+      "name": "健康哥哥 × 已电子ed：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_014_role_013.png",
+      "unlock": "memory_pair_role_014_role_013",
+      "hint": "触发健康哥哥和已电子ed的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_014",
+        "role_013"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_014_role_013\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 健康哥哥（体力补给官）与已电子ed（电子梦游者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 健康哥哥：“这个要分情况”；已电子ed：“一个人没得意思”；健康哥哥：“所以先看下次一定摊，别急着判。”；已电子ed：“那我问一句，谁先心虚？”；健康哥哥：“图呢”；已电子ed：“这图有说法”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_014_role_003",
+      "name": "健康哥哥 × NNZ：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_014_role_003.png",
+      "unlock": "memory_pair_role_014_role_003",
+      "hint": "触发健康哥哥和NNZ的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_014",
+        "role_003"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_014_role_003\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: 健康哥哥（体力补给官）与NNZ（星砂资料馆长）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 健康哥哥：“这什么”；NNZ：“这个要分情况”；健康哥哥：“所以先看路灯复读串，别急着判。”；NNZ：“这句能接”；健康哥哥：“逻辑是有的”；NNZ：“这图有说法”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_014_role_017",
+      "name": "健康哥哥 × 很复杂：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_014_role_017.png",
+      "unlock": "memory_pair_role_014_role_017",
+      "hint": "触发健康哥哥和很复杂的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_014",
+        "role_017"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_014_role_017\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 北境野地，具体物件是野外信号塔，画面要能看出两人围着这个物件互相接话。\nSubject: 健康哥哥（体力补给官）与很复杂（分岔解码员）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 健康哥哥：“这句能接”；很复杂：“图呢”；健康哥哥：“所以先看野外信号塔，别急着判。”；很复杂：“那我问一句，谁先心虚？”；健康哥哥：“何意味”；很复杂：“这什么”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_015_role_002",
+      "name": "重新减肥 × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_015_role_002.png",
+      "unlock": "memory_pair_role_015_role_002",
+      "hint": "触发重新减肥和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_015",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_015_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康养老院，具体物件是零点钟楼，画面要能看出两人围着这个物件互相接话。\nSubject: 重新减肥（作息重启师）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 重新减肥：“就是一家人了”；Hxr：“夜间频道启动”；重新减肥：“我接一下”；Hxr：“那我问一句，谁先心虚？”；重新减肥：“这什么”；Hxr：“有内味了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_022_role_015",
+      "name": "N2过了不恨了 × 重新减肥：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_022_role_015.png",
+      "unlock": "memory_pair_role_022_role_015",
+      "hint": "触发N2过了不恨了和重新减肥的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_022",
+        "role_015"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_022_role_015\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是图鉴抽屉，画面要能看出两人围着这个物件互相接话。\nSubject: N2过了不恨了（炼画调色师）与重新减肥（作息重启师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: N2过了不恨了：“这是数据口”；重新减肥：“先别急”；N2过了不恨了：“这句你接”；重新减肥：“那我问一句，谁先心虚？”；N2过了不恨了：“这句能接”；重新减肥：“？”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_015_role_006",
+      "name": "重新减肥 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_015_role_006.png",
+      "unlock": "memory_pair_role_015_role_006",
+      "hint": "触发重新减肥和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_015",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_015_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康养老院，具体物件是零点钟楼，画面要能看出两人围着这个物件互相接话。\nSubject: 重新减肥（作息重启师）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 重新减肥：“这图有说法”；力竭了：“保存了”；重新减肥：“夜间频道启动”；力竭了：“这不是零点钟楼的问题，是你们都看见了。”；重新减肥：“图呢”；力竭了：“还真是”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_016_role_012",
+      "name": "我早已麻痹 × 早上了喵～：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_016_role_012.png",
+      "unlock": "memory_pair_role_016_role_012",
+      "hint": "触发我早已麻痹和早上了喵～的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_016",
+        "role_012"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_016_role_012\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: 我早已麻痹（回声收束者）与早上了喵～（晨报铃使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 我早已麻痹：“还真是”；早上了喵～：“这图有说法”；我早已麻痹：“这句你接”；早上了喵～：“接了，别让它掉地上。”；我早已麻痹：“我接一下”；早上了喵～：“可以”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_016_role_010",
+      "name": "我早已麻痹 × 普罗米亚写真集：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_016_role_010.png",
+      "unlock": "memory_pair_role_016_role_010",
+      "hint": "触发我早已麻痹和普罗米亚写真集的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_016",
+        "role_010"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_016_role_010\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是小康钟，画面要能看出两人围着这个物件互相接话。\nSubject: 我早已麻痹（回声收束者）与普罗米亚写真集（星火影集师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 我早已麻痹：“保存了”；普罗米亚写真集：“这图有说法”；我早已麻痹：“可以”；普罗米亚写真集：“这是你”；我早已麻痹：“哪来的”；普罗米亚写真集：“还真是”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_017_role_009",
+      "name": "很复杂 × 多点关心：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_017_role_009.png",
+      "unlock": "memory_pair_role_017_role_009",
+      "hint": "触发很复杂和多点关心的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_017",
+        "role_009"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_017_role_009\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 很复杂（分岔解码员）与多点关心（关心信标使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 很复杂：“？”；多点关心：“有感觉吗”；很复杂：“你看下次一定摊”；多点关心：“那我问一句，谁先心虚？”；很复杂：“哪来的”；多点关心：“还真是”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_019_role_017",
+      "name": "不好办 × 很复杂：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_019_role_017.png",
+      "unlock": "memory_pair_role_019_role_017",
+      "hint": "触发不好办和很复杂的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_019",
+        "role_017"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_019_role_017\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: 不好办（未解事务官）与很复杂（分岔解码员）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 不好办：“保存了”；很复杂：“有感觉吗”；不好办：“这句你接”；很复杂：“那我问一句，谁先心虚？”；不好办：“先别睡”；很复杂：“还真是”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_017_role_006",
+      "name": "很复杂 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_017_role_006.png",
+      "unlock": "memory_pair_role_017_role_006",
+      "hint": "触发很复杂和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_017",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_017_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: 很复杂（分岔解码员）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 很复杂：“可以”；力竭了：“哪来的”；很复杂：“这句你接”；力竭了：“保存了”；很复杂：“英雄登场”；力竭了：“还真是”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_018_role_006",
+      "name": "Mini Oreo × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_018_role_006.png",
+      "unlock": "memory_pair_role_018_role_006",
+      "hint": "触发Mini Oreo和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_018",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_018_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康餐厅，具体物件是半糖裁判杯，画面要能看出两人围着这个物件互相接话。\nSubject: Mini Oreo（夹心观察员）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Mini Oreo：“哪来的”；力竭了：“你这也太会挑时间”；Mini Oreo：“别装没看见”；力竭了：“接了，别让它掉地上。”；Mini Oreo：“图呢”；力竭了：“这图有说法”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_018_role_008",
+      "name": "Mini Oreo × 沉机：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_018_role_008.png",
+      "unlock": "memory_pair_role_018_role_008",
+      "hint": "触发Mini Oreo和沉机的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_018",
+        "role_008"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_018_role_008\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康餐厅，具体物件是蒸汽表情云，画面要能看出两人围着这个物件互相接话。\nSubject: Mini Oreo（夹心观察员）与沉机（回声转译师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Mini Oreo：“这句能接”；沉机：“可以”；Mini Oreo：“你看蒸汽表情云”；沉机：“那我问一句，谁先心虚？”；Mini Oreo：“你这也太会挑时间”；沉机：“图呢”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_018_role_005",
+      "name": "Mini Oreo × 青山照：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_018_role_005.png",
+      "unlock": "memory_pair_role_018_role_005",
+      "hint": "触发Mini Oreo和青山照的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_018",
+        "role_005"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_018_role_005\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是小康钟，画面要能看出两人围着这个物件互相接话。\nSubject: Mini Oreo（夹心观察员）与青山照（青山回声调停者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Mini Oreo：“我接一下”；青山照：“可以”；Mini Oreo：“这什么”；青山照：“那我问一句，谁先心虚？”；Mini Oreo：“保存了”；青山照：“图呢”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_019_role_002",
+      "name": "不好办 × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_019_role_002.png",
+      "unlock": "memory_pair_role_019_role_002",
+      "hint": "触发不好办和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_019",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_019_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是漂流诗页，画面要能看出两人围着这个物件互相接话。\nSubject: 不好办（未解事务官）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 不好办：“这句能接”；Hxr：“有感觉吗”；不好办：“哪来的”；Hxr：“那我问一句，谁先心虚？”；不好办：“何意味”；Hxr：“这什么”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_019_role_006",
+      "name": "不好办 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_019_role_006.png",
+      "unlock": "memory_pair_role_019_role_006",
+      "hint": "触发不好办和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_019",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_019_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是小康钟，画面要能看出两人围着这个物件互相接话。\nSubject: 不好办（未解事务官）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 不好办：“先别睡”；力竭了：“哪来的”；不好办：“笑死”；力竭了：“结论先放这”；不好办：“图呢”；力竭了：“还真是”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_020_role_012",
+      "name": "高手 × 早上了喵～：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_020_role_012.png",
+      "unlock": "memory_pair_role_020_role_012",
+      "hint": "触发高手和早上了喵～的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_020",
+        "role_012"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_020_role_012\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是喷泉弹幕井，画面要能看出两人围着这个物件互相接话。\nSubject: 高手（牌桌高手）与早上了喵～（晨报铃使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 高手：“还真是”；早上了喵～：“哪来的”；高手：“别装没看见”；早上了喵～：“这不是喷泉弹幕井的问题，是你们都看见了。”；高手：“保存了”；早上了喵～：“可以”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_020_role_003",
+      "name": "高手 × NNZ：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_020_role_003.png",
+      "unlock": "memory_pair_role_020_role_003",
+      "hint": "触发高手和NNZ的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_020",
+        "role_003"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_020_role_003\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是像素屏幕，画面要能看出两人围着这个物件互相接话。\nSubject: 高手（牌桌高手）与NNZ（星砂资料馆长）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 高手：“？”；NNZ：“哪来的”；高手：“你看像素屏幕”；NNZ：“？”；高手：“有内味了”；NNZ：“先别急着判”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_021_role_012",
+      "name": "❗您无法在已退出的群聊发送消息 × 早上了喵～：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_021_role_012.png",
+      "unlock": "memory_pair_role_021_role_012",
+      "hint": "触发❗您无法在已退出的群聊发送消息和早上了喵～的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_021",
+        "role_012"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_021_role_012\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是立绘修补台，画面要能看出两人围着这个物件互相接话。\nSubject: ❗您无法在已退出的群聊发送消息（星砂调色师）与早上了喵～（晨报铃使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: ❗您无法在已退出的群聊发送消息：“还真是”；早上了喵～：“你先说”；❗您无法在已退出的群聊发送消息：“可以”；早上了喵～：“接了，别让它掉地上。”；❗您无法在已退出的群聊发送消息：“保存了”；早上了喵～：“多发点”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_021_role_008",
+      "name": "❗您无法在已退出的群聊发送消息 × 沉机：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_021_role_008.png",
+      "unlock": "memory_pair_role_021_role_008",
+      "hint": "触发❗您无法在已退出的群聊发送消息和沉机的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_021",
+        "role_008"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_021_role_008\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: ❗您无法在已退出的群聊发送消息（星砂调色师）与沉机（回声转译师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: ❗您无法在已退出的群聊发送消息：“这句能接”；沉机：“你这也太会挑时间”；❗您无法在已退出的群聊发送消息：“你看下次一定摊”；沉机：“那我问一句，谁先心虚？”；❗您无法在已退出的群聊发送消息：“可以”；沉机：“何意味”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_021_role_013",
+      "name": "❗您无法在已退出的群聊发送消息 × 已电子ed：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_021_role_013.png",
+      "unlock": "memory_pair_role_021_role_013",
+      "hint": "触发❗您无法在已退出的群聊发送消息和已电子ed的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_021",
+        "role_013"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_021_role_013\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是像素屏幕，画面要能看出两人围着这个物件互相接话。\nSubject: ❗您无法在已退出的群聊发送消息（星砂调色师）与已电子ed（电子梦游者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: ❗您无法在已退出的群聊发送消息：“可以”；已电子ed：“你这也太会挑时间”；❗您无法在已退出的群聊发送消息：“你看像素屏幕”；已电子ed：“那我问一句，谁先心虚？”；❗您无法在已退出的群聊发送消息：“别让它掉地上”；已电子ed：“何意味”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_022_role_006",
+      "name": "N2过了不恨了 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_022_role_006.png",
+      "unlock": "memory_pair_role_022_role_006",
+      "hint": "触发N2过了不恨了和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_022",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_022_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是龙角裁判席，画面要能看出两人围着这个物件互相接话。\nSubject: N2过了不恨了（炼画调色师）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: N2过了不恨了：“可以”；力竭了：“先别急着判”；N2过了不恨了：“这句你接”；力竭了：“接了，别让它掉地上。”；N2过了不恨了：“睡醒了”；力竭了：“保存了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_022_role_021",
+      "name": "N2过了不恨了 × ❗您无法在已退出的群聊发送消息：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_022_role_021.png",
+      "unlock": "memory_pair_role_022_role_021",
+      "hint": "触发N2过了不恨了和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_022",
+        "role_021"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_022_role_021\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是同步色板，画面要能看出两人围着这个物件互相接话。\nSubject: N2过了不恨了（炼画调色师）与❗您无法在已退出的群聊发送消息（星砂调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: N2过了不恨了：“保存了”；❗您无法在已退出的群聊发送消息：“这图有说法”；N2过了不恨了：“别装没看见”；❗您无法在已退出的群聊发送消息：“那我问一句，谁先心虚？”；N2过了不恨了：“有内味了”；❗您无法在已退出的群聊发送消息：“有没有懂的”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_023_role_009",
+      "name": "Du. × 多点关心：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_023_role_009.png",
+      "unlock": "memory_pair_role_023_role_009",
+      "hint": "触发Du.和多点关心的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_023",
+        "role_009"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_023_role_009\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是栈道留言瓶，画面要能看出两人围着这个物件互相接话。\nSubject: Du.（回声诗页客）与多点关心（关心信标使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Du.：“？”；多点关心：“这什么”；Du.：“这句你接”；多点关心：“那我问一句，谁先心虚？”；Du.：“先别急”；多点关心：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_023_role_006",
+      "name": "Du. × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_023_role_006.png",
+      "unlock": "memory_pair_role_023_role_006",
+      "hint": "触发Du.和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_023",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_023_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是翻车记录板，画面要能看出两人围着这个物件互相接话。\nSubject: Du.（回声诗页客）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Du.：“可以”；力竭了：“这图有说法”；Du.：“你看翻车记录板”；力竭了：“接了，别让它掉地上。”；Du.：“昨天🛫过了”；力竭了：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_023_role_019",
+      "name": "Du. × 不好办：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_023_role_019.png",
+      "unlock": "memory_pair_role_023_role_019",
+      "hint": "触发Du.和不好办的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_023",
+        "role_019"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_023_role_019\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是湖面倒影，画面要能看出两人围着这个物件互相接话。\nSubject: Du.（回声诗页客）与不好办（未解事务官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Du.：“可以”；不好办：“笑死”；Du.：“你看湖面倒影”；不好办：“那我问一句，谁先心虚？”；Du.：“这图有说法”；不好办：“我醒了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_025_role_020",
+      "name": "敏龟的感头 × 高手：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_025_role_020.png",
+      "unlock": "memory_pair_role_025_role_020",
+      "hint": "触发敏龟的感头和高手的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_025",
+        "role_020"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_025_role_020\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是额外牌堆，画面要能看出两人围着这个物件互相接话。\nSubject: 敏龟的感头（星砂调色师）与高手（牌桌高手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 敏龟的感头：“何意味”；高手：“这什么”；敏龟的感头：“别装没看见”；高手：“那我问一句，谁先心虚？”；敏龟的感头：“你这也太会挑时间”；高手：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_026_role_025",
+      "name": "LQS群里指定丈夫 × 敏龟的感头：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_026_role_025.png",
+      "unlock": "memory_pair_role_026_role_025",
+      "hint": "触发LQS群里指定丈夫和敏龟的感头的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_026",
+        "role_025"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_026_role_025\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是喷泉弹幕井，画面要能看出两人围着这个物件互相接话。\nSubject: LQS群里指定丈夫（回声诗页客）与敏龟的感头（星砂调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: LQS群里指定丈夫：“我接一下”；敏龟的感头：“有内味了”；LQS群里指定丈夫：“别装没看见”；敏龟的感头：“那我问一句，谁先心虚？”；LQS群里指定丈夫：“保存了”；敏龟的感头：“哦哦哦夜兰”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_025_role_015",
+      "name": "敏龟的感头 × 重新减肥：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_025_role_015.png",
+      "unlock": "memory_pair_role_025_role_015",
+      "hint": "触发敏龟的感头和重新减肥的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_025",
+        "role_015"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_025_role_015\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是同步色板，画面要能看出两人围着这个物件互相接话。\nSubject: 敏龟的感头（星砂调色师）与重新减肥（作息重启师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 敏龟的感头：“对不起，老龚”；重新减肥：“先别睡”；敏龟的感头：“别装没看见”；重新减肥：“那我问一句，谁先心虚？”；敏龟的感头：“这句能接”；重新减肥：“这什么”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_032_role_026",
+      "name": "猫耳半圆 × LQS群里指定丈夫：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_032_role_026.png",
+      "unlock": "memory_pair_role_032_role_026",
+      "hint": "触发猫耳半圆和LQS群里指定丈夫的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_032",
+        "role_026"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_032_role_026\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是湖面倒影，画面要能看出两人围着这个物件互相接话。\nSubject: 猫耳半圆（回声诗页客）与LQS群里指定丈夫（回声诗页客）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 猫耳半圆：“你先说”；LQS群里指定丈夫：“这句能接”；猫耳半圆：“你看湖面倒影”；LQS群里指定丈夫：“那我问一句，谁先心虚？”；猫耳半圆：“这图有说法”；LQS群里指定丈夫：“这什么”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_026_role_022",
+      "name": "LQS群里指定丈夫 × N2过了不恨了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_026_role_022.png",
+      "unlock": "memory_pair_role_026_role_022",
+      "hint": "触发LQS群里指定丈夫和N2过了不恨了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_026",
+        "role_022"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_026_role_022\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是立绘修补台，画面要能看出两人围着这个物件互相接话。\nSubject: LQS群里指定丈夫（回声诗页客）与N2过了不恨了（炼画调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: LQS群里指定丈夫：“主群还是主群”；N2过了不恨了：“有内味了”；LQS群里指定丈夫：“笑死”；N2过了不恨了：“那我问一句，谁先心虚？”；LQS群里指定丈夫：“何意味”；N2过了不恨了：“睡醒了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_027_role_023",
+      "name": "Dark Kami Slayer × Du.：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_027_role_023.png",
+      "unlock": "memory_pair_role_027_role_023",
+      "hint": "触发Dark Kami Slayer和Du.的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_027",
+        "role_023"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_027_role_023\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: Dark Kami Slayer（炼画调色师）与Du.（回声诗页客）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Dark Kami Slayer：“夜间频道启动”；Du.：“图呢”；Dark Kami Slayer：“这句你接”；Du.：“这不是路灯复读串的问题，是你们都看见了。”；Dark Kami Slayer：“还真是”；Du.：“这图有说法”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_027_role_016",
+      "name": "Dark Kami Slayer × 我早已麻痹：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_027_role_016.png",
+      "unlock": "memory_pair_role_027_role_016",
+      "hint": "触发Dark Kami Slayer和我早已麻痹的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_027",
+        "role_016"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_027_role_016\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康养老院，具体物件是安眠躺椅，画面要能看出两人围着这个物件互相接话。\nSubject: Dark Kami Slayer（炼画调色师）与我早已麻痹（回声收束者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Dark Kami Slayer：“保存了”；我早已麻痹：“图呢”；Dark Kami Slayer：“这句你接”；我早已麻痹：“你这也太会挑时间”；Dark Kami Slayer：“夜间频道启动”；我早已麻痹：“这图有说法”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_027_role_005",
+      "name": "Dark Kami Slayer × 青山照：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_027_role_005.png",
+      "unlock": "memory_pair_role_027_role_005",
+      "hint": "触发Dark Kami Slayer和青山照的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_027",
+        "role_005"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_027_role_005\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: Dark Kami Slayer（炼画调色师）与青山照（青山回声调停者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Dark Kami Slayer：“有游戏没有”；青山照：“你先说”；Dark Kami Slayer：“这句你接”；青山照：“那我问一句，谁先心虚？”；Dark Kami Slayer：“别让它掉地上”；青山照：“我接一下”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_033_role_028",
+      "name": "Celestial × ナナリ：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_033_role_028.png",
+      "unlock": "memory_pair_role_033_role_028",
+      "hint": "触发Celestial和ナナリ的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_033",
+        "role_028"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_033_role_028\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是小康钟，画面要能看出两人围着这个物件互相接话。\nSubject: Celestial（回声诗页客）与ナナリ（判定判官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Celestial：“这句能接”；ナナリ：“先别急着判”；Celestial：“还真是”；ナナリ：“那我问一句，谁先心虚？”；Celestial：“[[续标识]]”；ナナリ：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_028_role_017",
+      "name": "ナナリ × 很复杂：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_028_role_017.png",
+      "unlock": "memory_pair_role_028_role_017",
+      "hint": "触发ナナリ和很复杂的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_028",
+        "role_017"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_028_role_017\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: ナナリ（判定判官）与很复杂（分岔解码员）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: ナナリ：“这句能接”；很复杂：“笑死”；ナナリ：“所以先看路灯复读串，别急着判。”；很复杂：“那我问一句，谁先心虚？”；ナナリ：“何意味”；很复杂：“有感觉吗”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_028_role_031",
+      "name": "ナナリ × 六界三鲜：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_028_role_031.png",
+      "unlock": "memory_pair_role_028_role_031",
+      "hint": "触发ナナリ和六界三鲜的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_028",
+        "role_031"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_028_role_031\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是图鉴抽屉，画面要能看出两人围着这个物件互相接话。\nSubject: ナナリ（判定判官）与六界三鲜（星砂调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: ナナリ：“有感觉吗”；六界三鲜：“有内味了”；ナナリ：“所以先看图鉴抽屉，别急着判。”；六界三鲜：“接了，别让它掉地上。”；ナナリ：“这图有说法”；六界三鲜：“笑死”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_029_role_019",
+      "name": "kuro × 不好办：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_029_role_019.png",
+      "unlock": "memory_pair_role_029_role_019",
+      "hint": "触发kuro和不好办的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_029",
+        "role_019"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_029_role_019\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是喷泉弹幕井，画面要能看出两人围着这个物件互相接话。\nSubject: kuro（判定判官）与不好办（未解事务官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: kuro：“可以”；不好办：“先别睡”；kuro：“所以先看喷泉弹幕井，别急着判。”；不好办：“那我问一句，谁先心虚？”；kuro：“这图有说法”；不好办：“哪来的”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_029_role_003",
+      "name": "kuro × NNZ：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_029_role_003.png",
+      "unlock": "memory_pair_role_029_role_003",
+      "hint": "触发kuro和NNZ的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_029",
+        "role_003"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_029_role_003\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是龙角裁判席，画面要能看出两人围着这个物件互相接话。\nSubject: kuro（判定判官）与NNZ（星砂资料馆长）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: kuro：“？”；NNZ：“图呢”；kuro：“所以先看龙角裁判席，别急着判。”；NNZ：“这不是龙角裁判席的问题，是你们都看见了。”；kuro：“有内味了”；NNZ：“笑死”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_029_role_021",
+      "name": "kuro × ❗您无法在已退出的群聊发送消息：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_029_role_021.png",
+      "unlock": "memory_pair_role_029_role_021",
+      "hint": "触发kuro和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_029",
+        "role_021"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_029_role_021\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是图鉴抽屉，画面要能看出两人围着这个物件互相接话。\nSubject: kuro（判定判官）与❗您无法在已退出的群聊发送消息（星砂调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: kuro：“先别急着判”；❗您无法在已退出的群聊发送消息：“何意味”；kuro：“所以先看图鉴抽屉，别急着判。”；❗您无法在已退出的群聊发送消息：“那我问一句，谁先心虚？”；kuro：“有内味了”；❗您无法在已退出的群聊发送消息：“笑死”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_030_role_019",
+      "name": "白给人 × 不好办：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_030_role_019.png",
+      "unlock": "memory_pair_role_030_role_019",
+      "hint": "触发白给人和不好办的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_030",
+        "role_019"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_030_role_019\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是湖面倒影，画面要能看出两人围着这个物件互相接话。\nSubject: 白给人（回声诗页客）与不好办（未解事务官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 白给人：“图呢”；不好办：“专注吗”；白给人：“你看湖面倒影”；不好办：“那我问一句，谁先心虚？”；白给人：“可以”；不好办：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_030_role_004",
+      "name": "白给人 × 赛博鳏夫：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_030_role_004.png",
+      "unlock": "memory_pair_role_030_role_004",
+      "hint": "触发白给人和赛博鳏夫的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_030",
+        "role_004"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_030_role_004\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 夜雀舞台，具体物件是海报滤镜墙，画面要能看出两人围着这个物件互相接话。\nSubject: 白给人（回声诗页客）与赛博鳏夫（赛博夜航人）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 白给人：“这什么”；赛博鳏夫：“我的手机好热”；白给人：“别装没看见”；赛博鳏夫：“那我问一句，谁先心虚？”；白给人：“何意味”；赛博鳏夫：“你这也太会挑时间”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_030_role_033",
+      "name": "白给人 × Celestial：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_030_role_033.png",
+      "unlock": "memory_pair_role_030_role_033",
+      "hint": "触发白给人和Celestial的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_030",
+        "role_033"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_030_role_033\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是湖面倒影，画面要能看出两人围着这个物件互相接话。\nSubject: 白给人（回声诗页客）与Celestial（回声诗页客）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 白给人：“你这也太会挑时间”；Celestial：“羡慕”；白给人：“你看湖面倒影”；Celestial：“那我问一句，谁先心虚？”；白给人：“这图有说法”；Celestial：“有内味了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_031_role_016",
+      "name": "六界三鲜 × 我早已麻痹：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_031_role_016.png",
+      "unlock": "memory_pair_role_031_role_016",
+      "hint": "触发六界三鲜和我早已麻痹的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_031",
+        "role_016"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_031_role_016\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康养老院，具体物件是结局门垫，画面要能看出两人围着这个物件互相接话。\nSubject: 六界三鲜（星砂调色师）与我早已麻痹（回声收束者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 六界三鲜：“有内味了”；我早已麻痹：“别让它掉地上”；六界三鲜：“你看结局门垫”；我早已麻痹：“哪来的”；六界三鲜：“图呢”；我早已麻痹：“你先说”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_031_role_012",
+      "name": "六界三鲜 × 早上了喵～：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_031_role_012.png",
+      "unlock": "memory_pair_role_031_role_012",
+      "hint": "触发六界三鲜和早上了喵～的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_031",
+        "role_012"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_031_role_012\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 六界三鲜（星砂调色师）与早上了喵～（晨报铃使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 六界三鲜：“保存了”；早上了喵～：“笑死”；六界三鲜：“你看下次一定摊”；早上了喵～：“哪来的”；六界三鲜：“可以”；早上了喵～：“你先说”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_031_role_021",
+      "name": "六界三鲜 × ❗您无法在已退出的群聊发送消息：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_031_role_021.png",
+      "unlock": "memory_pair_role_031_role_021",
+      "hint": "触发六界三鲜和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_031",
+        "role_021"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_031_role_021\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是同步色板，画面要能看出两人围着这个物件互相接话。\nSubject: 六界三鲜（星砂调色师）与❗您无法在已退出的群聊发送消息（星砂调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 六界三鲜：“别让它掉地上”；❗您无法在已退出的群聊发送消息：“你这也太会挑时间”；六界三鲜：“别装没看见”；❗您无法在已退出的群聊发送消息：“那我问一句，谁先心虚？”；六界三鲜：“笑死”；❗您无法在已退出的群聊发送消息：“有感觉吗”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_032_role_019",
+      "name": "猫耳半圆 × 不好办：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_032_role_019.png",
+      "unlock": "memory_pair_role_032_role_019",
+      "hint": "触发猫耳半圆和不好办的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_032",
+        "role_019"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_032_role_019\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是月相开关，画面要能看出两人围着这个物件互相接话。\nSubject: 猫耳半圆（回声诗页客）与不好办（未解事务官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 猫耳半圆：“图呢”；不好办：“这句能接”；猫耳半圆：“别装没看见”；不好办：“那我问一句，谁先心虚？”；猫耳半圆：“可以”；不好办：“这什么”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_032_role_005",
+      "name": "猫耳半圆 × 青山照：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_032_role_005.png",
+      "unlock": "memory_pair_role_032_role_005",
+      "hint": "触发猫耳半圆和青山照的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_032",
+        "role_005"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_032_role_005\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是小康钟，画面要能看出两人围着这个物件互相接话。\nSubject: 猫耳半圆（回声诗页客）与青山照（青山回声调停者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 猫耳半圆：“？”；青山照：“这句能接”；猫耳半圆：“听说滋崩改回去了”；青山照：“那我问一句，谁先心虚？”；猫耳半圆：“我接一下”；青山照：“这什么”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_033_role_023",
+      "name": "Celestial × Du.：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_033_role_023.png",
+      "unlock": "memory_pair_role_033_role_023",
+      "hint": "触发Celestial和Du.的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_033",
+        "role_023"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_033_role_023\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是月相开关，画面要能看出两人围着这个物件互相接话。\nSubject: Celestial（回声诗页客）与Du.（回声诗页客）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Celestial：“有内味了”；Du.：“保存了”；Celestial：“别装没看见”；Du.：“还真是”；Celestial：“有感觉吗”；Du.：“？”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_033_role_022",
+      "name": "Celestial × N2过了不恨了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_033_role_022.png",
+      "unlock": "memory_pair_role_033_role_022",
+      "hint": "触发Celestial和N2过了不恨了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_033",
+        "role_022"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_033_role_022\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是图鉴抽屉，画面要能看出两人围着这个物件互相接话。\nSubject: Celestial（回声诗页客）与N2过了不恨了（炼画调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Celestial：“火锅，，是什么味道”；N2过了不恨了：“有没有懂的”；Celestial：“这句你接”；N2过了不恨了：“那我问一句，谁先心虚？”；Celestial：“何意味”；N2过了不恨了：“？”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_034_role_006",
+      "name": "只能往标志方向发展了 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_034_role_006.png",
+      "unlock": "memory_pair_role_034_role_006",
+      "hint": "触发只能往标志方向发展了和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_034",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_034_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是像素屏幕，画面要能看出两人围着这个物件互相接话。\nSubject: 只能往标志方向发展了（星砂调色师）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 只能往标志方向发展了：“先别睡”；力竭了：“先别急着判”；只能往标志方向发展了：“你看像素屏幕”；力竭了：“这不是像素屏幕的问题，是你们都看见了。”；只能往标志方向发展了：“图呢”；力竭了：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_034_role_021",
+      "name": "只能往标志方向发展了 × ❗您无法在已退出的群聊发送消息：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_034_role_021.png",
+      "unlock": "memory_pair_role_034_role_021",
+      "hint": "触发只能往标志方向发展了和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_034",
+        "role_021"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_034_role_021\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是立绘修补台，画面要能看出两人围着这个物件互相接话。\nSubject: 只能往标志方向发展了（星砂调色师）与❗您无法在已退出的群聊发送消息（星砂调色师）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 只能往标志方向发展了：“哪来的”；❗您无法在已退出的群聊发送消息：“可以”；只能往标志方向发展了：“可以”；❗您无法在已退出的群聊发送消息：“那我问一句，谁先心虚？”；只能往标志方向发展了：“有感觉吗”；❗您无法在已退出的群聊发送消息：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_034_role_002",
+      "name": "只能往标志方向发展了 × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_034_role_002.png",
+      "unlock": "memory_pair_role_034_role_002",
+      "hint": "触发只能往标志方向发展了和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_034",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_034_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: 只能往标志方向发展了（星砂调色师）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 只能往标志方向发展了：“这句能接”；Hxr：“这什么”；只能往标志方向发展了：“你看下次一定摊”；Hxr：“那我问一句，谁先心虚？”；只能往标志方向发展了：“何意味”；Hxr：“可以”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_036_role_038",
+      "name": "夜处理炼金师 × 请关注一百满天原莎乐美喵：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_036_role_038.png",
+      "unlock": "memory_pair_role_036_role_038",
+      "hint": "触发夜处理炼金师和请关注一百满天原莎乐美喵的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_036",
+        "role_038"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_036_role_038\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 服务器机房，具体物件是状态灯墙，画面要能看出两人围着这个物件互相接话。\nSubject: 夜处理炼金师（夜处理炼金师）与请关注一百满天原莎乐美喵（回声诗页客）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 夜处理炼金师：“编号”；请关注一百满天原莎乐美喵：“这什么”；夜处理炼金师：“所以先看状态灯墙，别急着判。”；请关注一百满天原莎乐美喵：“那我问一句，谁先心虚？”；夜处理炼金师：“你这也太会挑时间”；请关注一百满天原莎乐美喵：“这是你”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_036_role_039",
+      "name": "夜处理炼金师 × vv：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_036_role_039.png",
+      "unlock": "memory_pair_role_036_role_039",
+      "hint": "触发夜处理炼金师和vv的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_036",
+        "role_039"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_036_role_039\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 服务器机房，具体物件是核心重启杆，画面要能看出两人围着这个物件互相接话。\nSubject: 夜处理炼金师（夜处理炼金师）与vv（回声诗页客）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 夜处理炼金师：“这句能接”；vv：“图呢”；夜处理炼金师：“所以先看核心重启杆，别急着判。”；vv：“接了，别让它掉地上。”；夜处理炼金师：“别让它掉地上”；vv：“这是你”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_036_role_001",
+      "name": "夜处理炼金师 × 弧形反叛超量🐉：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_036_role_001.png",
+      "unlock": "memory_pair_role_036_role_001",
+      "hint": "触发夜处理炼金师和弧形反叛超量🐉的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_036",
+        "role_001"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_036_role_001\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是小康钟，画面要能看出两人围着这个物件互相接话。\nSubject: 夜处理炼金师（夜处理炼金师）与弧形反叛超量🐉（龙牌超量判官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 夜处理炼金师：“别让它掉地上”；弧形反叛超量🐉：“这图有说法”；夜处理炼金师：“所以先看小康钟，别急着判。”；弧形反叛超量🐉：“接了，别让它掉地上。”；夜处理炼金师：“保存了”；弧形反叛超量🐉：“有内味了”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_038_role_005",
+      "name": "请关注一百满天原莎乐美喵 × 青山照：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_038_role_005.png",
+      "unlock": "memory_pair_role_038_role_005",
+      "hint": "触发请关注一百满天原莎乐美喵和青山照的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_038",
+        "role_005"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_038_role_005\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是路灯复读串，画面要能看出两人围着这个物件互相接话。\nSubject: 请关注一百满天原莎乐美喵（回声诗页客）与青山照（青山回声调停者）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 请关注一百满天原莎乐美喵：“？”；青山照：“多发点”；请关注一百满天原莎乐美喵：“这句你接”；青山照：“那我问一句，谁先心虚？”；请关注一百满天原莎乐美喵：“我接一下”；青山照：“这图有说法”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_038_role_009",
+      "name": "请关注一百满天原莎乐美喵 × 多点关心：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_038_role_009.png",
+      "unlock": "memory_pair_role_038_role_009",
+      "hint": "触发请关注一百满天原莎乐美喵和多点关心的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_038",
+        "role_009"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_038_role_009\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小康餐厅，具体物件是加饭按钮，画面要能看出两人围着这个物件互相接话。\nSubject: 请关注一百满天原莎乐美喵（回声诗页客）与多点关心（关心信标使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 请关注一百满天原莎乐美喵：“？”；多点关心：“图呢”；请关注一百满天原莎乐美喵：“这句你接”；多点关心：“那我问一句，谁先心虚？”；请关注一百满天原莎乐美喵：“复活了”；多点关心：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_038_role_006",
+      "name": "请关注一百满天原莎乐美喵 × 力竭了：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_038_role_006.png",
+      "unlock": "memory_pair_role_038_role_006",
+      "hint": "触发请关注一百满天原莎乐美喵和力竭了的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_038",
+        "role_006"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_038_role_006\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是翻车记录板，画面要能看出两人围着这个物件互相接话。\nSubject: 请关注一百满天原莎乐美喵（回声诗页客）与力竭了（疲劳判定官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: 请关注一百满天原莎乐美喵：“保存了”；力竭了：“这个要分情况”；请关注一百满天原莎乐美喵：“你看翻车记录板”；力竭了：“这不是翻车记录板的问题，是你们都看见了。”；请关注一百满天原莎乐美喵：“别让它掉地上”；力竭了：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_039_role_012",
+      "name": "vv × 早上了喵～：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_039_role_012.png",
+      "unlock": "memory_pair_role_039_role_012",
+      "hint": "触发vv和早上了喵～的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_039",
+        "role_012"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_039_role_012\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 小镇中心，具体物件是下次一定摊，画面要能看出两人围着这个物件互相接话。\nSubject: vv（回声诗页客）与早上了喵～（晨报铃使）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: vv：“还真是”；早上了喵～：“笑死”；vv：“你看下次一定摊”；早上了喵～：“？”；vv：“我接一下”；早上了喵～：“这是你”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_039_role_002",
+      "name": "vv × Hxr：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_039_role_002.png",
+      "unlock": "memory_pair_role_039_role_002",
+      "hint": "触发vv和Hxr的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_039",
+        "role_002"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_039_role_002\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 湖边回声栈道，具体物件是栈道留言瓶，画面要能看出两人围着这个物件互相接话。\nSubject: vv（回声诗页客）与Hxr（零点连招手）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: vv：“可以”；Hxr：“？”；vv：“这句你接”；Hxr：“那我问一句，谁先心虚？”；vv：“你先说”；Hxr：“刚刚水群的时候”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_039_role_003",
+      "name": "vv × NNZ：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_039_role_003.png",
+      "unlock": "memory_pair_role_039_role_003",
+      "hint": "触发vv和NNZ的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_039",
+        "role_003"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_039_role_003\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 头像工坊，具体物件是同步色板，画面要能看出两人围着这个物件互相接话。\nSubject: vv（回声诗页客）与NNZ（星砂资料馆长）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: vv：“？”；NNZ：“笑死”；vv：“别装没看见”；NNZ：“接了，别让它掉地上。”；vv：“有内味了”；NNZ：“这句能接”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    },
+    {
+      "id": "cg_pair_role_002_role_001",
+      "name": "Hxr × 弧形反叛超量🐉：接住这句",
+      "path": "assets/imagegen/cg/bonds/cg_pair_role_002_role_001.png",
+      "unlock": "memory_pair_role_002_role_001",
+      "hint": "触发Hxr和弧形反叛超量🐉的双人长聊后解锁。",
+      "type": "pair",
+      "characters": [
+        "role_002",
+        "role_001"
+      ],
+      "prompt": "Use case: illustration-story\nAsset type: 小康Online双人羁绊插画，路径 pair_role_002_role_001\nPrimary request: 根据双 agent 情景聊天生成一张温暖搞笑的双人羁绊插画。\nScene/backdrop: 龙牌馆，具体物件是额外牌堆，画面要能看出两人围着这个物件互相接话。\nSubject: Hxr（零点连招手）与弧形反叛超量🐉（龙牌超量判官）同框，使用已有人物立绘气质的二次元像素 RPG 角色。\nDialogue basis: Hxr：“哪来的”；弧形反叛超量🐉：“有内味了”；Hxr：“别装没看见”；弧形反叛超量🐉：“这不是额外牌堆的问题，是你们都看见了。”；Hxr：“有游戏没有”；弧形反叛超量🐉：“可以”\nStyle/medium: 星露谷式温暖像素动漫画风，柔和治愈，小镇生活感，二次元轻喜剧，角色表情夸张但不崩。\nComposition/framing: 横向 4:3，双人中景，物件在两人之间形成递球感；不要聊天框，不要 UI。\nLighting/mood: 温馨、治愈、像群聊梗突然变成番剧名场面。\nConstraints: 无可读文字，无水印，不要真实照片，不要程序化拼贴，不要把角色画成现实人物。",
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "bond_cg"
+    }
+  ],
+  "final": [
+    {
+      "id": "cg_final_role_001",
+      "unlock": "bond_role_001",
+      "hint": "完成弧形反叛超量🐉的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 弧形反叛超量🐉 as 龙牌超量判官, in 龙牌馆, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, 色值, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_001.png",
+      "name": "弧形反叛超量🐉最终CG",
+      "type": "final",
+      "characters": [
+        "role_001"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_002",
+      "unlock": "bond_role_002",
+      "hint": "完成Hxr的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: Hxr as 零点连招手, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 感觉, 妈妈, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_002.png",
+      "name": "Hxr最终CG",
+      "type": "final",
+      "characters": [
+        "role_002"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_003",
+      "unlock": "bond_role_003",
+      "hint": "完成NNZ的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: NNZ as 星砂资料馆长, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, 色值, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_003.png",
+      "name": "NNZ最终CG",
+      "type": "final",
+      "characters": [
+        "role_003"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_004",
+      "unlock": "bond_role_004",
+      "hint": "完成赛博鳏夫的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 赛博鳏夫 as 赛博夜航人, in 夜雀舞台, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, Hxr, 出处, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_004.png",
+      "name": "赛博鳏夫最终CG",
+      "type": "final",
+      "characters": [
+        "role_004"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_005",
+      "unlock": "bond_role_005",
+      "hint": "完成青山照的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 青山照 as 青山回声调停者, in 小镇中心, Stardew-Valley-like cozy anime pixel art, representative props: Hxr, 回复, 多点, 图包, 关心, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_005.png",
+      "name": "青山照最终CG",
+      "type": "final",
+      "characters": [
+        "role_005"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_006",
+      "unlock": "bond_role_006",
+      "hint": "完成力竭了的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 力竭了 as 疲劳判定官, in 龙牌馆, Stardew-Valley-like cozy anime pixel art, representative props: 图片, 图包, 截图, 标题党, NNZ, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_006.png",
+      "name": "力竭了最终CG",
+      "type": "final",
+      "characters": [
+        "role_006"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_007",
+      "unlock": "bond_role_007",
+      "hint": "完成V²的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: V² as V平方调律师, in 小镇中心, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, 色值, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_007.png",
+      "name": "V²最终CG",
+      "type": "final",
+      "characters": [
+        "role_007"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_008",
+      "unlock": "bond_role_008",
+      "hint": "完成沉机的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 沉机 as 回声转译师, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图片, 图包, 截图, 标题党, 色值, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_008.png",
+      "name": "沉机最终CG",
+      "type": "final",
+      "characters": [
+        "role_008"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_009",
+      "unlock": "bond_role_009",
+      "hint": "完成多点关心的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 多点关心 as 关心信标使, in 小康餐厅, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 回复, Hxr, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_009.png",
+      "name": "多点关心最终CG",
+      "type": "final",
+      "characters": [
+        "role_009"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_010",
+      "unlock": "bond_role_010",
+      "hint": "完成普罗米亚写真集的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 普罗米亚写真集 as 星火影集师, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, 色值, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_010.png",
+      "name": "普罗米亚写真集最终CG",
+      "type": "final",
+      "characters": [
+        "role_010"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_011",
+      "unlock": "bond_role_011",
+      "hint": "完成没办法的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 没办法 as 无解牌桌顾问, in 龙牌馆, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, 色值, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_011.png",
+      "name": "没办法最终CG",
+      "type": "final",
+      "characters": [
+        "role_011"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_012",
+      "unlock": "bond_role_012",
+      "hint": "完成早上了喵～的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 早上了喵～ as 晨报铃使, in 小镇中心, Stardew-Valley-like cozy anime pixel art, representative props: 超量, 反叛, 图包, 弧形, 图片, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_012.png",
+      "name": "早上了喵～最终CG",
+      "type": "final",
+      "characters": [
+        "role_012"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_013",
+      "unlock": "bond_role_013",
+      "hint": "完成已电子ed的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 已电子ed as 电子梦游者, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图片, 图包, 截图, 标题党, 超量, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_013.png",
+      "name": "已电子ed最终CG",
+      "type": "final",
+      "characters": [
+        "role_013"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_014",
+      "unlock": "bond_role_014",
+      "hint": "完成健康哥哥的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 健康哥哥 as 体力补给官, in 小康餐厅, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, 回复, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_014.png",
+      "name": "健康哥哥最终CG",
+      "type": "final",
+      "characters": [
+        "role_014"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_015",
+      "unlock": "bond_role_015",
+      "hint": "完成重新减肥的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 重新减肥 as 作息重启师, in 小康养老院, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 小目标, 感觉, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_015.png",
+      "name": "重新减肥最终CG",
+      "type": "final",
+      "characters": [
+        "role_015"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_016",
+      "unlock": "bond_role_016",
+      "hint": "完成我早已麻痹的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 我早已麻痹 as 回声收束者, in 小康养老院, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 毛鸽, 哥哥, 健康, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_016.png",
+      "name": "我早已麻痹最终CG",
+      "type": "final",
+      "characters": [
+        "role_016"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_017",
+      "unlock": "bond_role_017",
+      "hint": "完成很复杂的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 很复杂 as 分岔解码员, in 北境野地, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 感觉, NNZ, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_017.png",
+      "name": "很复杂最终CG",
+      "type": "final",
+      "characters": [
+        "role_017"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_018",
+      "unlock": "bond_role_018",
+      "hint": "完成Mini Oreo的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: Mini Oreo as 夹心观察员, in 小康餐厅, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 回复, 确实, Oreo, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_018.png",
+      "name": "Mini Oreo最终CG",
+      "type": "final",
+      "characters": [
+        "role_018"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_019",
+      "unlock": "bond_role_019",
+      "hint": "完成不好办的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 不好办 as 未解事务官, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, NNZ, 哔哩, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_019.png",
+      "name": "不好办最终CG",
+      "type": "final",
+      "characters": [
+        "role_019"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_020",
+      "unlock": "bond_role_020",
+      "hint": "完成高手的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 高手 as 牌桌高手, in 龙牌馆, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, ..., 沉机, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_020.png",
+      "name": "高手最终CG",
+      "type": "final",
+      "characters": [
+        "role_020"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_021",
+      "unlock": "bond_role_021",
+      "hint": "完成❗您无法在已退出的群聊发送消息的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: ❗您无法在已退出的群聊发送消息 as 星砂调色师, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 多点, 截图, 关心, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_021.png",
+      "name": "❗您无法在已退出的群聊发送消息最终CG",
+      "type": "final",
+      "characters": [
+        "role_021"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_022",
+      "unlock": "bond_role_022",
+      "hint": "完成N2过了不恨了的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: N2过了不恨了 as 炼画调色师, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 回复, 毛鸽, 截图, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_022.png",
+      "name": "N2过了不恨了最终CG",
+      "type": "final",
+      "characters": [
+        "role_022"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_023",
+      "unlock": "bond_role_023",
+      "hint": "完成Du.的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: Du. as 回声诗页客, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 写真集, 普罗米, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_023.png",
+      "name": "Du.最终CG",
+      "type": "final",
+      "characters": [
+        "role_023"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_025",
+      "unlock": "bond_role_025",
+      "hint": "完成敏龟的感头的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 敏龟的感头 as 星砂调色师, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 赛博, 鳏夫, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_025.png",
+      "name": "敏龟的感头最终CG",
+      "type": "final",
+      "characters": [
+        "role_025"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_026",
+      "unlock": "bond_role_026",
+      "hint": "完成LQS群里指定丈夫的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: LQS群里指定丈夫 as 回声诗页客, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 沉机, NNZ, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_026.png",
+      "name": "LQS群里指定丈夫最终CG",
+      "type": "final",
+      "characters": [
+        "role_026"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_027",
+      "unlock": "bond_role_027",
+      "hint": "完成Dark Kami Slayer的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: Dark Kami Slayer as 炼画调色师, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, NNZ, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_027.png",
+      "name": "Dark Kami Slayer最终CG",
+      "type": "final",
+      "characters": [
+        "role_027"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_028",
+      "unlock": "bond_role_028",
+      "hint": "完成ナナリ的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: ナナリ as 判定判官, in 龙牌馆, Stardew-Valley-like cozy anime pixel art, representative props: 柯林斯, 家族, 老大, 布丁, 尾巴, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_028.png",
+      "name": "ナナリ最终CG",
+      "type": "final",
+      "characters": [
+        "role_028"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_029",
+      "unlock": "bond_role_029",
+      "hint": "完成kuro的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: kuro as 判定判官, in 龙牌馆, Stardew-Valley-like cozy anime pixel art, representative props: 截图, 图片, 图包, 标题党, 表情, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_029.png",
+      "name": "kuro最终CG",
+      "type": "final",
+      "characters": [
+        "role_029"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_030",
+      "unlock": "bond_role_030",
+      "hint": "完成白给人的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 白给人 as 回声诗页客, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, NNZ, 标题党, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_030.png",
+      "name": "白给人最终CG",
+      "type": "final",
+      "characters": [
+        "role_030"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_031",
+      "unlock": "bond_role_031",
+      "hint": "完成六界三鲜的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 六界三鲜 as 星砂调色师, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 表情, NNZ, 羡慕, 回复, 沉机, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_031.png",
+      "name": "六界三鲜最终CG",
+      "type": "final",
+      "characters": [
+        "role_031"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_032",
+      "unlock": "bond_role_032",
+      "hint": "完成猫耳半圆的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 猫耳半圆 as 回声诗页客, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 回复, 截图, 哥哥, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_032.png",
+      "name": "猫耳半圆最终CG",
+      "type": "final",
+      "characters": [
+        "role_032"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_033",
+      "unlock": "bond_role_033",
+      "hint": "完成Celestial的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: Celestial as 回声诗页客, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 截图, 羡慕, 图片, 图包, 哥哥, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_033.png",
+      "name": "Celestial最终CG",
+      "type": "final",
+      "characters": [
+        "role_033"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_034",
+      "unlock": "bond_role_034",
+      "hint": "完成只能往标志方向发展了的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 只能往标志方向发展了 as 星砂调色师, in 头像工坊, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 标题党, 岁己, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_034.png",
+      "name": "只能往标志方向发展了最终CG",
+      "type": "final",
+      "characters": [
+        "role_034"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_036",
+      "unlock": "bond_role_036",
+      "hint": "完成夜处理炼金师的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 夜处理炼金师 as 夜处理炼金师, in 服务器机房, Stardew-Valley-like cozy anime pixel art, representative props: ..., 下载, 搜索, 编号, 序号, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_036.png",
+      "name": "夜处理炼金师最终CG",
+      "type": "final",
+      "characters": [
+        "role_036"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_038",
+      "unlock": "bond_role_038",
+      "hint": "完成请关注一百满天原莎乐美喵的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: 请关注一百满天原莎乐美喵 as 回声诗页客, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 标题党, 截图, 色值, 图片, 大小, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_038.png",
+      "name": "请关注一百满天原莎乐美喵最终CG",
+      "type": "final",
+      "characters": [
+        "role_038"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    },
+    {
+      "id": "cg_final_role_039",
+      "unlock": "bond_role_039",
+      "hint": "完成vv的羁绊长对话与最终章。",
+      "prompt": "Character final CG for 小康Online: vv as 回声诗页客, in 湖边回声栈道, Stardew-Valley-like cozy anime pixel art, representative props: 图包, 图片, 截图, 哈基, 阿西, warm humorous Chinese group-chat mood, no readable text, no UI.",
+      "path": "assets/imagegen/cg/finals/cg_final_role_039.png",
+      "name": "vv最终CG",
+      "type": "final",
+      "characters": [
+        "role_039"
+      ],
+      "source": "imagegen",
+      "sourceTool": "imagegen",
+      "assetKind": "final_cg"
+    }
+  ]
+}

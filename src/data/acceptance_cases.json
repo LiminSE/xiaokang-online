@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "node": "确认项目定位",
+    "acceptance": "50 字内说清《XiaokangOnline》是什么",
+    "status": "covered",
+    "evidence": "index.html 与 docs/验收记录.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 2,
+    "node": "确认目标体验",
+    "acceptance": "明确是群聊像素 RPG，不是静态档案页",
+    "status": "covered",
+    "evidence": "index.html 与 docs/验收记录.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 3,
+    "node": "确认隐私边界",
+    "acceptance": "现实敏感信息禁止进入游戏",
+    "status": "covered",
+    "evidence": "index.html 与 docs/验收记录.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 4,
+    "node": "确认美术方向",
+    "acceptance": "明确温暖卡通像素、立绘对话框、自由移动",
+    "status": "covered",
+    "evidence": "index.html 与 docs/验收记录.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 5,
+    "node": "确认技术形态",
+    "acceptance": "HTML 端可运行",
+    "status": "covered",
+    "evidence": "index.html 与 docs/验收记录.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 6,
+    "node": "建立项目命名规范",
+    "acceptance": "文件、角色、区域、任务 ID 统一",
+    "status": "covered",
+    "evidence": "src/data/*.json 与 docs/*母版表.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 7,
+    "node": "建立角色母版模板",
+    "acceptance": "字段覆盖群昵称、QQ 原昵称、原始头像引用、人设、美术、文案、任务",
+    "status": "covered",
+    "evidence": "src/data/*.json 与 docs/*母版表.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 8,
+    "node": "建立区域母版模板",
+    "acceptance": "字段覆盖地图、视觉、事件、NPC",
+    "status": "covered",
+    "evidence": "src/data/*.json 与 docs/*母版表.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 9,
+    "node": "建立任务母版模板",
+    "acceptance": "字段覆盖触发、步骤、奖励、状态",
+    "status": "covered",
+    "evidence": "src/data/*.json 与 docs/*母版表.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 10,
+    "node": "建立美术资产表",
+    "acceptance": "每个资源状态可追踪",
+    "status": "covered",
+    "evidence": "src/data/*.json 与 docs/*母版表.md",
+    "checkType": "auto"
+  },
+  {
+    "id": 11,
+    "node": "冻结角色名单",
+    "acceptance": "可玩角色和 NPC 范围明确，且每人绑定群昵称、QQ 原昵称、原始头像",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 12,
+    "node": "提取角色语言风格",
+    "acceptance": "每人至少 5 个语言标签",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 13,
+    "node": "提取角色社交功能",
+    "acceptance": "每人有群聊功能定位",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 14,
+    "node": "提取角色关系对象",
+    "acceptance": "每人至少 3 个关键关系",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 15,
+    "node": "提取角色梗库",
+    "acceptance": "每人至少 5 个可转译梗",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 16,
+    "node": "完成幻想职业设计",
+    "acceptance": "每人有职业或称号",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 17,
+    "node": "完成主动特质设计",
+    "acceptance": "每人有玩家可用特质",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 18,
+    "node": "完成被动特质设计",
+    "acceptance": "每人有 NPC 状态效果",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 19,
+    "node": "完成常驻区域分配",
+    "acceptance": "每人有默认活动区域",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 20,
+    "node": "完成角色母版 v1",
+    "acceptance": "群昵称、QQ 原昵称、头像视觉拆解等关键字段不空",
+    "status": "covered",
+    "evidence": "src/data/characters.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 21,
+    "node": "设计头像参考规则",
+    "acceptance": "先拆解原始头像，再提取颜色、符号、轮廓、情绪与角色化方向",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "auto"
+  },
+  {
+    "id": 22,
+    "node": "设计 Q 版生成模板",
+    "acceptance": "prompt 可批量复用",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 23,
+    "node": "生成角色 Q 版候选",
+    "acceptance": "每人至少 3 张基于原始头像视觉锚点的候选",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 24,
+    "node": "确认角色主视觉",
+    "acceptance": "每人确定 1 张主设定，并通过头像匹配验收",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 25,
+    "node": "生成角色表情差分",
+    "acceptance": "每人至少 4 个表情",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 26,
+    "node": "生成像素头像",
+    "acceptance": "尺寸统一，缩小可辨认",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 27,
+    "node": "生成对话立绘",
+    "acceptance": "风格统一，有透明背景",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 28,
+    "node": "生成行走 sprite",
+    "acceptance": "上下左右方向完整",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 29,
+    "node": "检查 sprite 动画",
+    "acceptance": "帧间不跳动",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 30,
+    "node": "完成角色资产导入测试",
+    "acceptance": "至少 3 名角色能进游戏",
+    "status": "covered",
+    "evidence": "assets/source_avatars、assets/avatars、assets/portraits、assets/sprites、assets/candidates",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 31,
+    "node": "确认世界观核心",
+    "acceptance": "小镇、服务器、星砂、回声设定成立",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 32,
+    "node": "确认主线目标",
+    "acceptance": "修复群聊核心或小康钟",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 33,
+    "node": "设计开局剧情",
+    "acceptance": "玩家上线理由明确",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 34,
+    "node": "设计章节结构",
+    "acceptance": "至少 5 个主线阶段",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 35,
+    "node": "设计结局条件",
+    "acceptance": "普通、羁绊、真结局、彩蛋结局",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 36,
+    "node": "设计小镇总地图",
+    "acceptance": "中心加六大区域成立",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 37,
+    "node": "设计小镇中心",
+    "acceptance": "有出生点、公告、小康钟",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 38,
+    "node": "设计龙牌馆",
+    "acceptance": "有牌桌、判定、规则事件",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 39,
+    "node": "设计 Livehouse",
+    "acceptance": "有舞台、后台、演出事件",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 40,
+    "node": "设计养老院",
+    "acceptance": "有存档、回忆、结局功能",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 41,
+    "node": "设计餐厅",
+    "acceptance": "有料理、约饭、恢复事件",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 42,
+    "node": "设计湖边",
+    "acceptance": "有深夜、诗页、长对话事件",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 43,
+    "node": "设计自然区",
+    "acceptance": "有探索、采集、隐藏任务",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 44,
+    "node": "设计工坊",
+    "acceptance": "有头像、色板、美术图鉴功能",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 45,
+    "node": "设计室内地图",
+    "acceptance": "核心建筑至少 1 个室内",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 46,
+    "node": "设计区域开放节奏",
+    "acceptance": "初始、阶段开放、隐藏开放清晰",
+    "status": "covered",
+    "evidence": "src/data/areas.json 与 src/data/maps.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 47,
+    "node": "生成基础 tile",
+    "acceptance": "地面、墙、水、路、屋顶齐全",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 48,
+    "node": "生成建筑素材",
+    "acceptance": "每个建筑外观可识别",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 49,
+    "node": "生成室内家具",
+    "acceptance": "各区域功能物件齐全",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 50,
+    "node": "完成地图白盒",
+    "acceptance": "可走、可进出、可测试",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "auto"
+  },
+  {
+    "id": 51,
+    "node": "完成碰撞层",
+    "acceptance": "不穿墙、不穿水、不穿家具",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "auto"
+  },
+  {
+    "id": 52,
+    "node": "完成交互点标注",
+    "acceptance": "门、公告、道具可交互",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "auto"
+  },
+  {
+    "id": 53,
+    "node": "完成 NPC 出生点",
+    "acceptance": "固定点和随机点都有",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "auto"
+  },
+  {
+    "id": 54,
+    "node": "完成时间段规则",
+    "acceptance": "白天、黄昏、夜晚影响内容",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "auto"
+  },
+  {
+    "id": 55,
+    "node": "完成区域效果规则",
+    "acceptance": "不同区域影响对话或任务",
+    "status": "covered",
+    "evidence": "Canvas tile renderer、src/data/maps.json、assets/maps",
+    "checkType": "auto"
+  },
+  {
+    "id": 56,
+    "node": "设计对话 UI",
+    "acceptance": "头像、立绘、名字、正文、选项",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 57,
+    "node": "编写系统文案",
+    "acceptance": "按钮、提示、任务日志清晰",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 58,
+    "node": "编写初见对话",
+    "acceptance": "每人有专属开场",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 59,
+    "node": "编写日常对话",
+    "acceptance": "每人至少 5 条",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 60,
+    "node": "编写区域反应",
+    "acceptance": "每人至少 3 个区域有特殊台词",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 61,
+    "node": "编写主线对话",
+    "acceptance": "每章有明确推进文本",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 62,
+    "node": "编写任务对话",
+    "acceptance": "接取、推进、完成都有文本",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 63,
+    "node": "编写双人长对话",
+    "acceptance": "重点关系每组 4-5 段",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 64,
+    "node": "编写多人群像对话",
+    "acceptance": "牌局、演出、聚餐至少各 1 场",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 65,
+    "node": "编写失败和条件不足文本",
+    "acceptance": "玩家不会遇到空反馈",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 66,
+    "node": "建立梗库索引",
+    "acceptance": "梗有角色、区域、适用条件",
+    "status": "covered",
+    "evidence": "src/game.js 对话 UI 与 src/data/dialogues.json",
+    "checkType": "auto"
+  },
+  {
+    "id": 67,
+    "node": "完成主线任务链",
+    "acceptance": "从开局到结局能闭环",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 68,
+    "node": "完成个人羁绊任务",
+    "acceptance": "每人至少 1 条",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 69,
+    "node": "完成双人彩蛋任务",
+    "acceptance": "每个重点关系至少 1 条",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 70,
+    "node": "完成区域事件",
+    "acceptance": "每个区域至少 2 个",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 71,
+    "node": "完成收集系统设计",
+    "acceptance": "星砂、诗页、牌、票根等可收集",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 72,
+    "node": "完成奖励设计",
+    "acceptance": "奖励以内容解锁为主",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 73,
+    "node": "完成任务状态机",
+    "acceptance": "hidden 到 completed 全流程清楚",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 74,
+    "node": "完成任务提示系统",
+    "acceptance": "玩家知道下一步方向",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 75,
+    "node": "完成任务闭环检查",
+    "acceptance": "无互相卡死条件",
+    "status": "covered",
+    "evidence": "src/data/quests.json 与任务状态机",
+    "checkType": "auto"
+  },
+  {
+    "id": 76,
+    "node": "实现开始界面",
+    "acceptance": "开始、读档、设置可点",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 77,
+    "node": "实现角色选择",
+    "acceptance": "选择后正确进入游戏",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 78,
+    "node": "实现玩家移动",
+    "acceptance": "键盘或点击移动顺畅",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 79,
+    "node": "实现地图渲染",
+    "acceptance": "场景正常显示",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 80,
+    "node": "实现碰撞检测",
+    "acceptance": "不穿越障碍",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 81,
+    "node": "实现区域切换",
+    "acceptance": "室内外切换稳定",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 82,
+    "node": "实现 NPC 系统",
+    "acceptance": "NPC 显示、站位、互动正常",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 83,
+    "node": "实现对话系统",
+    "acceptance": "多段文本和选项可用",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 84,
+    "node": "实现任务系统",
+    "acceptance": "接取、推进、完成、奖励正常",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 85,
+    "node": "实现存档系统",
+    "acceptance": "刷新后进度保留",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 86,
+    "node": "实现图鉴系统",
+    "acceptance": "角色资料卡、区域、回忆可查看，资料卡显示群昵称与 QQ 原昵称",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 87,
+    "node": "实现时间系统",
+    "acceptance": "时间段影响 NPC 和事件",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 88,
+    "node": "实现随机刷新",
+    "acceptance": "NPC 在候选点出现",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 89,
+    "node": "实现区域效果",
+    "acceptance": "区域变量影响对话",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 90,
+    "node": "实现设置面板",
+    "acceptance": "音量、文字速度、重置可用",
+    "status": "covered",
+    "evidence": "src/game.js 功能实现",
+    "checkType": "auto"
+  },
+  {
+    "id": 91,
+    "node": "导入全角色资源",
+    "acceptance": "无缺图、错图、尺寸异常，角色资源与原始头像锚点一一对应",
+    "status": "covered",
+    "evidence": "资源与全文案数据导入",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 92,
+    "node": "导入全地图资源",
+    "acceptance": "地图无明显拼接错误",
+    "status": "covered",
+    "evidence": "资源与全文案数据导入",
+    "checkType": "manual-visual"
+  },
+  {
+    "id": 93,
+    "node": "导入全任务数据",
+    "acceptance": "任务可被系统读取",
+    "status": "covered",
+    "evidence": "资源与全文案数据导入",
+    "checkType": "auto"
+  },
+  {
+    "id": 94,
+    "node": "导入全文案数据",
+    "acceptance": "文案不乱码、不溢出",
+    "status": "covered",
+    "evidence": "资源与全文案数据导入",
+    "checkType": "auto"
+  },
+  {
+    "id": 95,
+    "node": "完成主线全流程测试",
+    "acceptance": "从开始到普通结局可通",
+    "status": "covered",
+    "evidence": "scripts/validate_game.py 与浏览器验收",
+    "checkType": "auto"
+  },
+  {
+    "id": 96,
+    "node": "完成羁绊流程测试",
+    "acceptance": "至少多数角色羁绊可完成",
+    "status": "covered",
+    "evidence": "scripts/validate_game.py 与浏览器验收",
+    "checkType": "auto"
+  },
+  {
+    "id": 97,
+    "node": "完成彩蛋测试",
+    "acceptance": "隐藏任务能按条件触发",
+    "status": "covered",
+    "evidence": "scripts/validate_game.py 与浏览器验收",
+    "checkType": "auto"
+  },
+  {
+    "id": 98,
+    "node": "完成隐私 QA",
+    "acceptance": "资料卡显示 QQ 原昵称，但不出现 QQ 号、真实姓名等现实敏感信息",
+    "status": "covered",
+    "evidence": "scripts/validate_game.py 与浏览器验收",
+    "checkType": "auto"
+  },
+  {
+    "id": 99,
+    "node": "完成性能 QA",
+    "acceptance": "浏览器运行流畅，无控制台报错",
+    "status": "covered",
+    "evidence": "scripts/validate_game.py 与浏览器验收",
+    "checkType": "auto"
+  },
+  {
+    "id": 100,
+    "node": "完成交付包",
+    "acceptance": "HTML、资源、数据、策划、说明齐全",
+    "status": "covered",
+    "evidence": "scripts/validate_game.py 与浏览器验收",
+    "checkType": "auto"
+  }
+]

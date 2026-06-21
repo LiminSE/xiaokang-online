@@ -1,0 +1,1036 @@
+{
+  "summary": {
+    "total": 100,
+    "passed": 100,
+    "failed": 0
+  },
+  "commandResults": {
+    "build_data": {
+      "passed": true,
+      "output": "Wrote /Users/lmse/Desktop/analyse/xiaokang-online/src/data/game-data.js"
+    },
+    "node_check": {
+      "passed": true,
+      "output": ""
+    },
+    "smoke_entry": {
+      "passed": true,
+      "output": "smoke entry passed: boot -> select -> game -> intro dialogue"
+    },
+    "full_scene_screenshots": {
+      "passed": true,
+      "output": "{\n  \"screenshots\": 16,\n  \"consoleErrors\": 0,\n  \"missingImages\": 0,\n  \"report\": \"docs/full_scene_screenshot_report.json\"\n}"
+    },
+    "strict_validate": {
+      "passed": true,
+      "output": "{\n  \"errors\": [],\n  \"warnings\": [],\n  \"counts\": {\n    \"characters\": 36,\n    \"areas\": 9,\n    \"maps\": 9,\n    \"quests\": 77,\n    \"dialogues\": 276,\n    \"acceptanceCases\": 100,\n    \"sourceAvatars\": 36,\n    \"imagegenMissingFiles\": 0,\n    \"semanticAreaBackgrounds\": 9,\n    \"semanticBaseTiles\": 10,\n    \"semanticDecorGroups\": 8,\n    \"taskCgs\": 9,\n    \"taskCgMissingFiles\": 0,\n    \"logoFiles\": 2,\n    \"fullSceneScreenshots\": 16\n  }\n}"
+    }
+  },
+  "cases": [
+    {
+      "id": 1,
+      "node": "确认项目定位",
+      "acceptance": "50 字内说清《XiaokangOnline》是什么",
+      "status": "passed",
+      "evidence": "XiaokangOnline_开发总策划.md",
+      "details": [
+        "策划案含项目一句话与类型"
+      ]
+    },
+    {
+      "id": 2,
+      "node": "确认目标体验",
+      "acceptance": "明确是群聊像素 RPG，不是静态档案页",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/maps.json, src/data/quests.json",
+      "details": [
+        "存在地图移动、任务和多区域数据"
+      ]
+    },
+    {
+      "id": 3,
+      "node": "确认隐私边界",
+      "acceptance": "现实敏感信息禁止进入游戏",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "可见资料字段不含敏感现实身份信息",
+        "退群角色未进入角色表"
+      ]
+    },
+    {
+      "id": 4,
+      "node": "确认美术方向",
+      "acceptance": "明确温暖卡通像素、立绘对话框、自由移动",
+      "status": "passed",
+      "evidence": "XiaokangOnline_开发总策划.md, index.html, src/game.js",
+      "details": [
+        "美术方向、立绘对话框和移动角色渲染存在"
+      ]
+    },
+    {
+      "id": 5,
+      "node": "确认技术形态",
+      "acceptance": "HTML 端可运行",
+      "status": "passed",
+      "evidence": "index.html, src/game.js, src/data/game-data.js",
+      "details": [
+        "HTML、前端脚本和打包数据存在"
+      ]
+    },
+    {
+      "id": 6,
+      "node": "建立项目命名规范",
+      "acceptance": "文件、角色、区域、任务 ID 统一",
+      "status": "passed",
+      "evidence": "src/data/*.json",
+      "details": [
+        "角色、任务、区域 ID 唯一且引用有效"
+      ]
+    },
+    {
+      "id": 7,
+      "node": "建立角色母版模板",
+      "acceptance": "字段覆盖群昵称、QQ 原昵称、原始头像引用、人设、美术、文案、任务",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "角色母版关键字段均非空"
+      ]
+    },
+    {
+      "id": 8,
+      "node": "建立区域母版模板",
+      "acceptance": "字段覆盖地图、视觉、事件、NPC",
+      "status": "passed",
+      "evidence": "src/data/areas.json, src/data/maps.json",
+      "details": [
+        "区域母版含视觉、事件、效果与地图交互"
+      ]
+    },
+    {
+      "id": 9,
+      "node": "建立任务母版模板",
+      "acceptance": "字段覆盖触发、步骤、奖励、状态",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "任务母版含触发、步骤、奖励和状态依据"
+      ]
+    },
+    {
+      "id": 10,
+      "node": "建立美术资产表",
+      "acceptance": "每个资源状态可追踪",
+      "status": "passed",
+      "evidence": "src/data/art_assets.json, src/data/task_cgs.json, assets/imagegen/brand",
+      "details": [
+        "角色、任务 CG、Logo 的状态和来源可追踪"
+      ]
+    },
+    {
+      "id": 11,
+      "node": "冻结角色名单",
+      "acceptance": "可玩角色和 NPC 范围明确，且每人绑定群昵称、QQ 原昵称、原始头像",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "36 名保留角色均绑定昵称和原始头像引用"
+      ]
+    },
+    {
+      "id": 12,
+      "node": "提取角色语言风格",
+      "acceptance": "每人至少 5 个语言标签",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人至少 5 个语言标签"
+      ]
+    },
+    {
+      "id": 13,
+      "node": "提取角色社交功能",
+      "acceptance": "每人有群聊功能定位",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人有社交功能定位"
+      ]
+    },
+    {
+      "id": 14,
+      "node": "提取角色关系对象",
+      "acceptance": "每人至少 3 个关键关系",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人至少 3 个关键关系"
+      ]
+    },
+    {
+      "id": 15,
+      "node": "提取角色梗库",
+      "acceptance": "每人至少 5 个可转译梗",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人至少 5 个可转译梗"
+      ]
+    },
+    {
+      "id": 16,
+      "node": "完成幻想职业设计",
+      "acceptance": "每人有职业或称号",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人有幻想称号"
+      ]
+    },
+    {
+      "id": 17,
+      "node": "完成主动特质设计",
+      "acceptance": "每人有玩家可用特质",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人有主动特质"
+      ]
+    },
+    {
+      "id": 18,
+      "node": "完成被动特质设计",
+      "acceptance": "每人有 NPC 状态效果",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人有被动特质"
+      ]
+    },
+    {
+      "id": 19,
+      "node": "完成常驻区域分配",
+      "acceptance": "每人有默认活动区域",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人常驻区域有效"
+      ]
+    },
+    {
+      "id": 20,
+      "node": "完成角色母版 v1",
+      "acceptance": "群昵称、QQ 原昵称、头像视觉拆解等关键字段不空",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "群昵称、QQ 原昵称、头像视觉拆解等字段完整"
+      ]
+    },
+    {
+      "id": 21,
+      "node": "设计头像参考规则",
+      "acceptance": "先拆解原始头像，再提取颜色、符号、轮廓、情绪与角色化方向",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "每人头像视觉 DNA 字段完整"
+      ]
+    },
+    {
+      "id": 22,
+      "node": "设计 Q 版生成模板",
+      "acceptance": "prompt 可批量复用",
+      "status": "passed",
+      "evidence": "src/data/characters.json, src/data/imagegen_jobs.json",
+      "details": [
+        "imagegen prompt 批量模板强制基于头像娘化"
+      ]
+    },
+    {
+      "id": 23,
+      "node": "生成角色 Q 版候选",
+      "acceptance": "每人至少 3 张基于原始头像视觉锚点的候选",
+      "status": "passed",
+      "evidence": "assets/imagegen/candidates",
+      "details": [
+        "每人至少 3 张 image2 Q 版候选文件"
+      ]
+    },
+    {
+      "id": 24,
+      "node": "确认角色主视觉",
+      "acceptance": "每人确定 1 张主设定，并通过头像匹配验收",
+      "status": "passed",
+      "evidence": "src/data/art_assets.json, src/data/characters.json",
+      "details": [
+        "每人主视觉通过头像匹配清单"
+      ]
+    },
+    {
+      "id": 25,
+      "node": "生成角色表情差分",
+      "acceptance": "每人至少 4 个表情",
+      "status": "passed",
+      "evidence": "assets/imagegen/expressions",
+      "details": [
+        "每人至少 4 个表情差分"
+      ]
+    },
+    {
+      "id": 26,
+      "node": "生成像素头像",
+      "acceptance": "尺寸统一，缩小可辨认",
+      "status": "passed",
+      "evidence": "assets/imagegen/avatars",
+      "details": [
+        "像素头像统一为 64x64"
+      ]
+    },
+    {
+      "id": 27,
+      "node": "生成对话立绘",
+      "acceptance": "风格统一，有透明背景",
+      "status": "passed",
+      "evidence": "assets/imagegen/portraits",
+      "details": [
+        "对话立绘统一为 512x768"
+      ]
+    },
+    {
+      "id": 28,
+      "node": "生成行走 sprite",
+      "acceptance": "上下左右方向完整",
+      "status": "passed",
+      "evidence": "assets/imagegen/sprites, src/data/sprite_meta.json",
+      "details": [
+        "sprite 至少含下/上/侧向行，侧向由前端镜像补右向"
+      ]
+    },
+    {
+      "id": 29,
+      "node": "检查 sprite 动画",
+      "acceptance": "帧间不跳动",
+      "status": "passed",
+      "evidence": "src/data/sprite_meta.json, docs/imagegen_crop_report.json",
+      "details": [
+        "sprite 尺寸与 frame metadata 一致"
+      ]
+    },
+    {
+      "id": 30,
+      "node": "完成角色资产导入测试",
+      "acceptance": "至少 3 名角色能进游戏",
+      "status": "passed",
+      "evidence": "scripts/smoke_game_entry.js",
+      "details": [
+        "入口烟测可选择角色并进入游戏",
+        "至少 3 名角色资源已导入"
+      ]
+    },
+    {
+      "id": 31,
+      "node": "确认世界观核心",
+      "acceptance": "小镇、服务器、星砂、回声设定成立",
+      "status": "passed",
+      "evidence": "XiaokangOnline_开发总策划.md",
+      "details": [
+        "世界观核心关键词完整"
+      ]
+    },
+    {
+      "id": 32,
+      "node": "确认主线目标",
+      "acceptance": "修复群聊核心或小康钟",
+      "status": "passed",
+      "evidence": "src/data/quests.json, src/game.js",
+      "details": [
+        "主线围绕小康钟/核心修复闭环"
+      ]
+    },
+    {
+      "id": 33,
+      "node": "设计开局剧情",
+      "acceptance": "玩家上线理由明确",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json, src/game.js",
+      "details": [
+        "开局上线剧情和选择后进入流程存在"
+      ]
+    },
+    {
+      "id": 34,
+      "node": "设计章节结构",
+      "acceptance": "至少 5 个主线阶段",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "至少 5 个主线阶段"
+      ]
+    },
+    {
+      "id": 35,
+      "node": "设计结局条件",
+      "acceptance": "普通、羁绊、真结局、彩蛋结局",
+      "status": "passed",
+      "evidence": "src/game.js, XiaokangOnline_开发总策划.md",
+      "details": [
+        "结局条件和文本存在"
+      ]
+    },
+    {
+      "id": 36,
+      "node": "设计小镇总地图",
+      "acceptance": "中心加六大区域成立",
+      "status": "passed",
+      "evidence": "src/data/areas.json, src/data/maps.json",
+      "details": [
+        "中心加主区域存在且转场连通"
+      ]
+    },
+    {
+      "id": 37,
+      "node": "设计小镇中心",
+      "acceptance": "有出生点、公告、小康钟",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "小镇中心包含策划语义：公告、小康钟"
+      ]
+    },
+    {
+      "id": 38,
+      "node": "设计龙牌馆",
+      "acceptance": "有牌桌、判定、规则事件",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "龙牌馆包含策划语义：牌、判定"
+      ]
+    },
+    {
+      "id": 39,
+      "node": "设计 Livehouse",
+      "acceptance": "有舞台、后台、演出事件",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "夜雀舞台包含策划语义：舞台、演出"
+      ]
+    },
+    {
+      "id": 40,
+      "node": "设计养老院",
+      "acceptance": "有存档、回忆、结局功能",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "小康养老院包含策划语义：存档、结局、钟"
+      ]
+    },
+    {
+      "id": 41,
+      "node": "设计餐厅",
+      "acceptance": "有料理、约饭、恢复事件",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "小康餐厅包含策划语义：料理、恢复"
+      ]
+    },
+    {
+      "id": 42,
+      "node": "设计湖边",
+      "acceptance": "有深夜、诗页、长对话事件",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "湖边回声栈道包含策划语义：夜、诗"
+      ]
+    },
+    {
+      "id": 43,
+      "node": "设计自然区",
+      "acceptance": "有探索、采集、隐藏任务",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "北境野地包含策划语义：探索、采集"
+      ]
+    },
+    {
+      "id": 44,
+      "node": "设计工坊",
+      "acceptance": "有头像、色板、美术图鉴功能",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "头像工坊包含策划语义：头像、色板、图鉴"
+      ]
+    },
+    {
+      "id": 45,
+      "node": "设计室内地图",
+      "acceptance": "核心建筑至少 1 个室内",
+      "status": "passed",
+      "evidence": "src/data/maps.json",
+      "details": [
+        "核心建筑/室内区域有独立地图"
+      ]
+    },
+    {
+      "id": 46,
+      "node": "设计区域开放节奏",
+      "acceptance": "初始、阶段开放、隐藏开放清晰",
+      "status": "passed",
+      "evidence": "src/data/areas.json",
+      "details": [
+        "初始、阶段、隐藏开放配置存在"
+      ]
+    },
+    {
+      "id": 47,
+      "node": "生成基础 tile",
+      "acceptance": "地面、墙、水、路、屋顶齐全",
+      "status": "passed",
+      "evidence": "src/data/tiles.json, assets/imagegen/environment/tiles",
+      "details": [
+        "基础 tile 语义拆分完整"
+      ]
+    },
+    {
+      "id": 48,
+      "node": "生成建筑素材",
+      "acceptance": "每个建筑外观可识别",
+      "status": "passed",
+      "evidence": "assets/imagegen/environment/areas",
+      "details": [
+        "每个区域都有独立背景素材"
+      ]
+    },
+    {
+      "id": 49,
+      "node": "生成室内家具",
+      "acceptance": "各区域功能物件齐全",
+      "status": "passed",
+      "evidence": "assets/imagegen/environment/decor",
+      "details": [
+        "区域功能装饰组已拆分"
+      ]
+    },
+    {
+      "id": 50,
+      "node": "完成地图白盒",
+      "acceptance": "可走、可进出、可测试",
+      "status": "passed",
+      "evidence": "src/data/maps.json",
+      "details": [
+        "地图可走、可转场、可测试"
+      ]
+    },
+    {
+      "id": 51,
+      "node": "完成碰撞层",
+      "acceptance": "不穿墙、不穿水、不穿家具",
+      "status": "passed",
+      "evidence": "src/data/maps.json, src/game.js",
+      "details": [
+        "碰撞层尺寸有效且前端读取"
+      ]
+    },
+    {
+      "id": 52,
+      "node": "完成交互点标注",
+      "acceptance": "门、公告、道具可交互",
+      "status": "passed",
+      "evidence": "src/data/maps.json",
+      "details": [
+        "每张地图至少 4 个交互点"
+      ]
+    },
+    {
+      "id": 53,
+      "node": "完成 NPC 出生点",
+      "acceptance": "固定点和随机点都有",
+      "status": "passed",
+      "evidence": "src/data/maps.json",
+      "details": [
+        "每张地图同时有固定 NPC 点和刷新候选点"
+      ]
+    },
+    {
+      "id": 54,
+      "node": "完成时间段规则",
+      "acceptance": "白天、黄昏、夜晚影响内容",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json, src/game.js",
+      "details": [
+        "白天/黄昏/夜晚规则存在"
+      ]
+    },
+    {
+      "id": 55,
+      "node": "完成区域效果规则",
+      "acceptance": "不同区域影响对话或任务",
+      "status": "passed",
+      "evidence": "src/data/areas.json, src/data/dialogues.json",
+      "details": [
+        "区域效果和区域反应台词存在"
+      ]
+    },
+    {
+      "id": 56,
+      "node": "设计对话 UI",
+      "acceptance": "头像、立绘、名字、正文、选项",
+      "status": "passed",
+      "evidence": "index.html",
+      "details": [
+        "对话 UI 头像、立绘、名字、正文、选项齐全"
+      ]
+    },
+    {
+      "id": 57,
+      "node": "编写系统文案",
+      "acceptance": "按钮、提示、任务日志清晰",
+      "status": "passed",
+      "evidence": "index.html",
+      "details": [
+        "新版系统按钮和提示文案存在"
+      ]
+    },
+    {
+      "id": 58,
+      "node": "编写初见对话",
+      "acceptance": "每人有专属开场",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json",
+      "details": [
+        "每人有专属开场对话"
+      ]
+    },
+    {
+      "id": 59,
+      "node": "编写日常对话",
+      "acceptance": "每人至少 5 条",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json",
+      "details": [
+        "每人至少 5 条日常台词"
+      ]
+    },
+    {
+      "id": 60,
+      "node": "编写区域反应",
+      "acceptance": "每人至少 3 个区域有特殊台词",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json",
+      "details": [
+        "每人至少 3 个区域反应"
+      ]
+    },
+    {
+      "id": 61,
+      "node": "编写主线对话",
+      "acceptance": "每章有明确推进文本",
+      "status": "passed",
+      "evidence": "src/data/quests.json, src/data/dialogues.json",
+      "details": [
+        "每章主线有任务推进文本与开局对话"
+      ]
+    },
+    {
+      "id": 62,
+      "node": "编写任务对话",
+      "acceptance": "接取、推进、完成都有文本",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "所有任务步骤都有提示文本"
+      ]
+    },
+    {
+      "id": 63,
+      "node": "编写双人长对话",
+      "acceptance": "重点关系每组 4-5 段",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json",
+      "details": [
+        "至少 12 组双人长对话，每组 5 段"
+      ]
+    },
+    {
+      "id": 64,
+      "node": "编写多人群像对话",
+      "acceptance": "牌局、演出、聚餐至少各 1 场",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json",
+      "details": [
+        "牌局、演出、聚餐三场多人群像对话存在"
+      ]
+    },
+    {
+      "id": 65,
+      "node": "编写失败和条件不足文本",
+      "acceptance": "玩家不会遇到空反馈",
+      "status": "passed",
+      "evidence": "src/game.js",
+      "details": [
+        "失败和条件不足有反馈"
+      ]
+    },
+    {
+      "id": 66,
+      "node": "建立梗库索引",
+      "acceptance": "梗有角色、区域、适用条件",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "梗库含角色和区域索引"
+      ]
+    },
+    {
+      "id": 67,
+      "node": "完成主线任务链",
+      "acceptance": "从开局到结局能闭环",
+      "status": "passed",
+      "evidence": "src/data/quests.json, src/game.js",
+      "details": [
+        "5 条主线按完成事件串联"
+      ]
+    },
+    {
+      "id": 68,
+      "node": "完成个人羁绊任务",
+      "acceptance": "每人至少 1 条",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "每名角色至少 1 条个人羁绊任务"
+      ]
+    },
+    {
+      "id": 69,
+      "node": "完成双人彩蛋任务",
+      "acceptance": "每个重点关系至少 1 条",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "重点关系有双人彩蛋任务"
+      ]
+    },
+    {
+      "id": 70,
+      "node": "完成区域事件",
+      "acceptance": "每个区域至少 2 个",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "每个区域至少 2 个区域事件"
+      ]
+    },
+    {
+      "id": 71,
+      "node": "完成收集系统设计",
+      "acceptance": "星砂、诗页、牌、票根等可收集",
+      "status": "passed",
+      "evidence": "src/data/items.json, src/game.js",
+      "details": [
+        "收集物系统和收集逻辑存在"
+      ]
+    },
+    {
+      "id": 72,
+      "node": "完成奖励设计",
+      "acceptance": "奖励以内容解锁为主",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "奖励以内容解锁为主"
+      ]
+    },
+    {
+      "id": 73,
+      "node": "完成任务状态机",
+      "acceptance": "hidden 到 completed 全流程清楚",
+      "status": "passed",
+      "evidence": "src/game.js",
+      "details": [
+        "任务状态机完整"
+      ]
+    },
+    {
+      "id": 74,
+      "node": "完成任务提示系统",
+      "acceptance": "玩家知道下一步方向",
+      "status": "passed",
+      "evidence": "src/data/quests.json, index.html",
+      "details": [
+        "任务提示可显示"
+      ]
+    },
+    {
+      "id": 75,
+      "node": "完成任务闭环检查",
+      "acceptance": "无互相卡死条件",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "任务步骤引用均能解析，不存在明显死引用"
+      ]
+    },
+    {
+      "id": 76,
+      "node": "实现开始界面",
+      "acceptance": "开始、读档、设置可点",
+      "status": "passed",
+      "evidence": "index.html",
+      "details": [
+        "开始、读档、CG、设置按钮存在"
+      ]
+    },
+    {
+      "id": 77,
+      "node": "实现角色选择",
+      "acceptance": "选择后正确进入游戏",
+      "status": "passed",
+      "evidence": "scripts/smoke_game_entry.js",
+      "details": [
+        "角色选择后进入游戏烟测通过"
+      ]
+    },
+    {
+      "id": 78,
+      "node": "实现玩家移动",
+      "acceptance": "键盘或点击移动顺畅",
+      "status": "passed",
+      "evidence": "src/game.js, index.html",
+      "details": [
+        "键盘和按钮移动逻辑存在"
+      ]
+    },
+    {
+      "id": 79,
+      "node": "实现地图渲染",
+      "acceptance": "场景正常显示",
+      "status": "passed",
+      "evidence": "src/game.js",
+      "details": [
+        "地图渲染使用语义素材"
+      ]
+    },
+    {
+      "id": 80,
+      "node": "实现碰撞检测",
+      "acceptance": "不穿越障碍",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/maps.json",
+      "details": [
+        "碰撞检测函数和碰撞层有效"
+      ]
+    },
+    {
+      "id": 81,
+      "node": "实现区域切换",
+      "acceptance": "室内外切换稳定",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/maps.json",
+      "details": [
+        "区域切换逻辑和转场点存在"
+      ]
+    },
+    {
+      "id": 82,
+      "node": "实现 NPC 系统",
+      "acceptance": "NPC 显示、站位、互动正常",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/maps.json",
+      "details": [
+        "NPC 显示、站位和互动数据存在"
+      ]
+    },
+    {
+      "id": 83,
+      "node": "实现对话系统",
+      "acceptance": "多段文本和选项可用",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/dialogues.json",
+      "details": [
+        "多段对话和继续按钮可用"
+      ]
+    },
+    {
+      "id": 84,
+      "node": "实现任务系统",
+      "acceptance": "接取、推进、完成、奖励正常",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/quests.json",
+      "details": [
+        "任务接取、推进、完成函数存在"
+      ]
+    },
+    {
+      "id": 85,
+      "node": "实现存档系统",
+      "acceptance": "刷新后进度保留",
+      "status": "passed",
+      "evidence": "src/game.js",
+      "details": [
+        "存档写入和读取逻辑存在"
+      ]
+    },
+    {
+      "id": 86,
+      "node": "实现图鉴系统",
+      "acceptance": "角色资料卡、区域、回忆可查看，资料卡显示群昵称与 QQ 原昵称",
+      "status": "passed",
+      "evidence": "src/game.js",
+      "details": [
+        "图鉴资料卡隐藏 QQ 原昵称并显示沉浸式线索"
+      ]
+    },
+    {
+      "id": 87,
+      "node": "实现时间系统",
+      "acceptance": "时间段影响 NPC 和事件",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/dialogues.json",
+      "details": [
+        "时间系统影响对话"
+      ]
+    },
+    {
+      "id": 88,
+      "node": "实现随机刷新",
+      "acceptance": "NPC 在候选点出现",
+      "status": "passed",
+      "evidence": "src/game.js, src/data/maps.json",
+      "details": [
+        "NPC 候选点随时间刷新"
+      ]
+    },
+    {
+      "id": 89,
+      "node": "实现区域效果",
+      "acceptance": "区域变量影响对话",
+      "status": "passed",
+      "evidence": "src/data/areas.json, src/game.js",
+      "details": [
+        "区域效果变量和区域对话存在"
+      ]
+    },
+    {
+      "id": 90,
+      "node": "实现设置面板",
+      "acceptance": "音量、文字速度、重置可用",
+      "status": "passed",
+      "evidence": "src/game.js",
+      "details": [
+        "设置面板控件齐全"
+      ]
+    },
+    {
+      "id": 91,
+      "node": "导入全角色资源",
+      "acceptance": "无缺图、错图、尺寸异常，角色资源与原始头像锚点一一对应",
+      "status": "passed",
+      "evidence": "src/data/art_assets.json, src/data/task_cgs.json, assets/imagegen",
+      "details": [
+        "全角色、任务 CG、Logo image2/imagegen 资源无缺图、尺寸异常"
+      ]
+    },
+    {
+      "id": 92,
+      "node": "导入全地图资源",
+      "acceptance": "地图无明显拼接错误",
+      "status": "passed",
+      "evidence": "src/data/tiles.json, src/data/maps.json, docs/full_scene_screenshot_report.json",
+      "details": [
+        "全地图语义素材已导入、被地图引用，并完成全场景截图验收"
+      ]
+    },
+    {
+      "id": 93,
+      "node": "导入全任务数据",
+      "acceptance": "任务可被系统读取",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "任务数据可读取且引用有效"
+      ]
+    },
+    {
+      "id": 94,
+      "node": "导入全文案数据",
+      "acceptance": "文案不乱码、不溢出",
+      "status": "passed",
+      "evidence": "src/data/dialogues.json, src/data/quests.json",
+      "details": [
+        "全文案无乱码且对话文本长度受控"
+      ]
+    },
+    {
+      "id": 95,
+      "node": "完成主线全流程测试",
+      "acceptance": "从开始到普通结局可通",
+      "status": "passed",
+      "evidence": "src/data/quests.json, src/game.js",
+      "details": [
+        "主线任务链可由状态机推进到结局准备"
+      ]
+    },
+    {
+      "id": 96,
+      "node": "完成羁绊流程测试",
+      "acceptance": "至少多数角色羁绊可完成",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "羁绊任务覆盖全部角色"
+      ]
+    },
+    {
+      "id": 97,
+      "node": "完成彩蛋测试",
+      "acceptance": "隐藏任务能按条件触发",
+      "status": "passed",
+      "evidence": "src/data/quests.json",
+      "details": [
+        "隐藏/彩蛋任务能提供真结局点"
+      ]
+    },
+    {
+      "id": 98,
+      "node": "完成隐私 QA",
+      "acceptance": "资料卡显示 QQ 原昵称，但不出现 QQ 号、真实姓名等现实敏感信息",
+      "status": "passed",
+      "evidence": "src/data/characters.json",
+      "details": [
+        "资料卡可显示双昵称但无现实敏感信息"
+      ]
+    },
+    {
+      "id": 99,
+      "node": "完成性能 QA",
+      "acceptance": "浏览器运行流畅，无控制台报错",
+      "status": "passed",
+      "evidence": "node --check, smoke_game_entry.js, capture_full_scene_screenshots.js, validate_game.py",
+      "details": [
+        "脚本语法通过",
+        "入口与绘制烟测通过",
+        "全场景截图验收通过",
+        "严格数据验收通过"
+      ]
+    },
+    {
+      "id": 100,
+      "node": "完成交付包",
+      "acceptance": "HTML、资源、数据、策划、说明齐全",
+      "status": "passed",
+      "evidence": "project files",
+      "details": [
+        "交付文件和 100 case 清单齐全"
+      ]
+    }
+  ]
+}

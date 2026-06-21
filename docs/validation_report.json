@@ -1,0 +1,21 @@
+{
+  "errors": [],
+  "warnings": [],
+  "counts": {
+    "characters": 36,
+    "areas": 9,
+    "maps": 9,
+    "quests": 77,
+    "dialogues": 276,
+    "acceptanceCases": 100,
+    "sourceAvatars": 36,
+    "imagegenMissingFiles": 0,
+    "semanticAreaBackgrounds": 9,
+    "semanticBaseTiles": 10,
+    "semanticDecorGroups": 8,
+    "taskCgs": 9,
+    "taskCgMissingFiles": 0,
+    "logoFiles": 2,
+    "fullSceneScreenshots": 16
+  }
+}

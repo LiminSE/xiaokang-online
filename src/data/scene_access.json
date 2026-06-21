@@ -1,0 +1,152 @@
+{
+  "town": {
+    "id": "town_center",
+    "mode": "hub",
+    "background": "assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png",
+    "mask": "assets/imagegen/environment/walk_masks/town_center_mask.png",
+    "freeMove": true
+  },
+  "scenes": [
+    {
+      "id": "town_center",
+      "name": "小镇中心",
+      "kind": "hub",
+      "background": "assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png",
+      "mask": "assets/imagegen/environment/walk_masks/town_center_mask.png",
+      "entryRequirement": null,
+      "exitMode": "none",
+      "avatarHint": [
+        "role_005",
+        "role_007",
+        "role_012"
+      ]
+    },
+    {
+      "id": "restaurant",
+      "name": "小康餐厅",
+      "kind": "indoor",
+      "background": "assets/imagegen/environment/full_maps/restaurant_interior_imagegen.png",
+      "mask": "assets/imagegen/environment/walk_masks/restaurant_mask.png",
+      "entryRequirement": "主线推进后可进入小康餐厅",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_002",
+        "role_009",
+        "role_014",
+        "role_018",
+        "role_005"
+      ]
+    },
+    {
+      "id": "dragon_card_house",
+      "name": "龙牌馆",
+      "kind": "indoor",
+      "background": "assets/imagegen/environment/full_maps/dragon_card_house_interior_imagegen.png",
+      "mask": "assets/imagegen/environment/walk_masks/dragon_card_house_mask.png",
+      "entryRequirement": "主线推进后可进入龙牌馆",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_001",
+        "role_006",
+        "role_011",
+        "role_020",
+        "role_028",
+        "role_029"
+      ]
+    },
+    {
+      "id": "livehouse",
+      "name": "夜雀舞台",
+      "kind": "indoor",
+      "background": "assets/imagegen/environment/full_maps/livehouse_interior_imagegen.png",
+      "mask": "assets/imagegen/environment/walk_masks/livehouse_mask.png",
+      "entryRequirement": "main_quest_02",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_004",
+        "role_013",
+        "role_022",
+        "role_010"
+      ]
+    },
+    {
+      "id": "echo_lake",
+      "name": "湖边回声栈道",
+      "kind": "outdoor",
+      "background": "assets/imagegen/environment/full_maps/echo_lake_full.png",
+      "mask": "assets/imagegen/environment/walk_masks/echo_lake_mask.png",
+      "entryRequirement": "main_quest_02",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_002",
+        "role_008",
+        "role_019",
+        "role_023",
+        "role_026",
+        "role_030"
+      ]
+    },
+    {
+      "id": "care_home",
+      "name": "小康养老院",
+      "kind": "indoor",
+      "background": "assets/imagegen/environment/full_maps/care_home_interior_imagegen.png",
+      "mask": "assets/imagegen/environment/walk_masks/care_home_mask.png",
+      "entryRequirement": "main_quest_03",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_015",
+        "role_016",
+        "role_006",
+        "role_005"
+      ]
+    },
+    {
+      "id": "atelier",
+      "name": "头像工坊",
+      "kind": "indoor",
+      "background": "assets/imagegen/environment/full_maps/atelier_interior_imagegen.png",
+      "mask": "assets/imagegen/environment/walk_masks/atelier_mask.png",
+      "entryRequirement": "main_quest_03",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_003",
+        "role_010",
+        "role_013",
+        "role_021",
+        "role_022",
+        "role_025"
+      ]
+    },
+    {
+      "id": "northern_wilds",
+      "name": "北境野地",
+      "kind": "outdoor",
+      "background": "assets/imagegen/environment/full_maps/northern_wilds_full.png",
+      "mask": "assets/imagegen/environment/walk_masks/northern_wilds_mask.png",
+      "entryRequirement": "main_quest_03",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_017",
+        "role_019",
+        "role_028",
+        "role_034"
+      ]
+    },
+    {
+      "id": "server_room",
+      "name": "服务器机房",
+      "kind": "indoor",
+      "background": "assets/imagegen/environment/full_maps/server_room_interior_imagegen.png",
+      "mask": "assets/imagegen/environment/walk_masks/server_room_mask.png",
+      "entryRequirement": "main_quest_04",
+      "exitMode": "fade_to_town",
+      "avatarHint": [
+        "role_036",
+        "role_038",
+        "role_039",
+        "role_001"
+      ]
+    }
+  ]
+}

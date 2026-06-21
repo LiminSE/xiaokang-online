@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-06-21T12:19:56.034Z",
+  "agent": "player_reader_agent",
+  "policy": [
+    "像普通玩家一样连续读对话，优先检查是否自然、是否接得上、是否像群聊而不是说明书。",
+    "允许群聊短句和问号，但不允许连续随机短语、缺少地图落点、敏感现实信息或英文代码腔。",
+    "羁绊插画 prompt 必须来自双人聊天结果。"
+  ],
+  "totalUnits": 727,
+  "failedUnits": [],
+  "cgIssues": [],
+  "passed": true
+}
