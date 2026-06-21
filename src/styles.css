@@ -1389,9 +1389,47 @@ h3 {
   .play-layout {
     grid-template-columns: 1fr;
     max-height: none;
+    gap: 8px;
   }
 
-  .character-choice-detail {
+  .map-shell {
+    min-height: 0;
+    max-height: calc(100vh - 220px);
+    aspect-ratio: 1.4;
+    width: 100%;
+  }
+
+  #gameCanvas {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    max-height: 100%;
+  }
+
+  .side-panel {
+    max-height: none;
+    overflow-y: visible;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .side-panel > * {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+
+  .player-card {
+    grid-template-columns: 48px 1fr;
+    gap: 6px;
+  }
+
+  .player-card .avatar-frame {
+    width: 48px;
+    height: 48px;
+  }
     grid-template-columns: 1fr;
   }
 
@@ -1496,19 +1534,30 @@ h3 {
   }
 }
 
-  #dialogueText {
-    min-height: 42px;
-    font-size: 15px;
-    line-height: 1.42;
-  }
-
-  .dialogue-box button {
-    padding: 6px 8px;
-  }
-}
-
+/* 超小屏 */
 @media (max-width: 420px) {
   .wordmark-art {
     max-height: 78px;
+  }
+  .map-shell {
+    max-height: calc(100vh - 260px);
+  }
+  .side-panel {
+    font-size: 0.8em;
+    gap: 4px;
+    padding: 4px;
+  }
+  .dialogue-box {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 6px;
+    padding: 6px;
+  }
+  .dialogue-portrait {
+    width: 64px;
+    height: 64px;
+  }
+  .dialogue-portrait img {
+    width: 88%;
+    height: 88%;
   }
 }
