@@ -3012,12 +3012,86 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// 预加载所有地图和关键图片
+function preloadAssets() {
+  const toPreload = new Set();
+  // 所有区域背景图
+  for (const map of DATA.maps) {
+    if (map.walkMask) toPreload.add(map.walkMask);
+    if (map.areaBackground) toPreload.add(map.areaBackground);
+  }
+  // 世界地图
+  toPreload.add("assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png");
+  // 所有角色立绘和头像
+  for (const char of DATA.characters) {
+    if (char.portrait) toPreload.add(char.portrait);
+    if (char.avatar) toPreload.add(char.avatar);
+    if (char.sprite) toPreload.add(char.sprite);
+    if (char.expressions) {
+      for (const expr of Object.values(char.expressions)) {
+        if (expr) toPreload.add(expr);
+      }
+    }
+  }
+  // 所有交互物品图标
+  for (const item of DATA.items || []) {
+    if (item.icon) toPreload.add(item.icon);
+  }
+  // CG插画
+  for (const cg of ALL_CGS) {
+    if (cg.path) toPreload.add(cg.path);
+  }
+
+  let loaded = 0;
+  const total = toPreload.size;
+  for (const src of toPreload) {
+    if (!src || imageCache.has(src)) continue;
+    const img = new Image();
+    img.onload = img.onerror = () => {
+      loaded++;
+      if (loaded % 20 === 0 || loaded === total) {
+        const pct = Math.round((loaded / total) * 100);
+        const el = $("#assetStatusText");
+        if (el) el.textContent = `预加载 ${pct}% (${loaded}/${total})`;
+      }
+    };
+    img.src = src;
+    imageCache.set(src, img);
+  }
+}
+
+// 移动端触摸滑动支持
+let touchStartX = 0, touchStartY = 0;
+canvas.addEventListener("touchstart", (e) => {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }
+}, { passive: true });
+canvas.addEventListener("touchend", (e) => {
+  if (e.changedTouches.length === 1) {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    const absDx = Math.abs(dx), absDy = Math.abs(dy);
+    if (Math.max(absDx, absDy) < 20) {
+      // 轻触 = 互动
+      ensureMusic();
+      interact();
+    } else if (absDx > absDy) {
+      tryMove(dx > 0 ? 1 : -1, 0);
+    } else {
+      tryMove(0, dy > 0 ? 1 : -1);
+    }
+  }
+});
+
 function boot() {
   renderBootCast();
   renderCharacterSelect();
   updateHud();
   showScreen("boot");
   requestAnimationFrame(drawMap);
+  preloadAssets();
 }
 
 boot();

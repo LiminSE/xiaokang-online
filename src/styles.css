@@ -1412,6 +1412,76 @@ h3 {
     padding: 6px 8px;
   }
 
+  /* 移动端虚拟方向键 */
+  .mobile-dpad {
+    display: grid;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    grid-template-areas: ". up ." "left center right" ". down .";
+    grid-template-columns: 56px 64px 56px;
+    grid-template-rows: 56px 64px 56px;
+    gap: 4px;
+    opacity: 0.85;
+    touch-action: manipulation;
+  }
+  .dpad-btn {
+    min-height: 0;
+    border: 2px solid var(--line);
+    border-radius: 12px;
+    background: rgba(255, 253, 248, 0.92);
+    box-shadow: 0 3px 0 rgba(76, 56, 57, 0.3);
+    font-size: 18px;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .dpad-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 rgba(76, 56, 57, 0.3);
+    background: #fff1cf;
+  }
+  .dpad-up { grid-area: up; }
+  .dpad-down { grid-area: down; }
+  .dpad-left { grid-area: left; }
+  .dpad-right { grid-area: right; }
+  .dpad-center {
+    grid-area: center;
+    font-size: 22px;
+    border-radius: 50%;
+    background: rgba(255, 241, 207, 0.95);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* 移动端对话优化 */
+  .dialogue-box {
+    max-width: calc(100vw - 16px);
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  .dialogue-standee {
+    max-height: 35vh;
+  }
+  .dialogue-standee img {
+    max-height: 35vh;
+  }
+}
+
+/* 桌面端隐藏虚拟方向键 */
+@media (min-width: 901px) {
+  .mobile-dpad {
+    display: none;
+  }
+}
   .dialogue-box {
     left: 8px;
     right: 8px;

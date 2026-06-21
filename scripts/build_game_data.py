@@ -24,8 +24,6 @@ def main() -> None:
         "task_cgs",
         "game_outline",
         "story_database",
-        "dialogue_agent_sessions",
-        "language_style_research",
         "cg_unlocks",
         "scene_access",
         "acceptance_cases",

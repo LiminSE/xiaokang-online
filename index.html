@@ -67,11 +67,12 @@
           <section class="map-shell">
             <canvas id="gameCanvas" width="896" height="640" aria-label="小康在线镇地图"></canvas>
             <div id="nearbyHint" class="nearby-hint">靠近居民或物件</div>
-            <div hidden aria-hidden="true">
-              <button data-move="up">↑</button>
-              <button data-move="left">←</button>
-              <button data-move="right">→</button>
-              <button data-move="down">↓</button>
+            <div class="mobile-dpad" id="mobileDpad">
+              <button class="dpad-btn dpad-up" data-move="up" title="上">▲</button>
+              <button class="dpad-btn dpad-left" data-move="left" title="左">◀</button>
+              <button class="dpad-btn dpad-center" data-action="interact" title="对话/互动">●</button>
+              <button class="dpad-btn dpad-right" data-move="right" title="右">▶</button>
+              <button class="dpad-btn dpad-down" data-move="down" title="下">▼</button>
             </div>
             <div id="dialogueStandee" class="dialogue-standee" hidden></div>
             <div id="dialogueBox" class="dialogue-box" hidden>
