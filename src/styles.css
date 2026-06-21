@@ -722,13 +722,13 @@ h3 {
   right: auto;
   top: auto;
   bottom: 12px;
-  width: min(620px, calc(100% - 180px));
-  min-height: 100px;
+  width: min(560px, calc(100% - 160px));
+  min-height: 96px;
   max-height: calc(100% - 96px);
   display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
-  gap: 8px;
-  padding: 8px 10px;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 10px;
+  padding: 8px 12px 8px 8px;
   z-index: 18;
   border-radius: 8px;
   background:
@@ -739,14 +739,18 @@ h3 {
 }
 
 .dialogue-portrait {
-  min-height: 80px;
-  border: 2px solid var(--line);
-  border-radius: 6px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid rgba(76, 56, 57, 0.15);
   background:
-    linear-gradient(135deg, var(--asset-a, #d65f5b), var(--asset-b, #5da1a0));
-  display: grid;
-  place-items: center;
+    radial-gradient(circle at 50% 70%, var(--asset-a, #d65f5b) 0%, var(--asset-b, #5da1a0) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  flex-shrink: 0;
+  align-self: center;
   color: #fff;
   font-weight: 900;
   text-align: center;
@@ -754,19 +758,19 @@ h3 {
 }
 
 .dialogue-portrait img {
-  width: 100%;
-  height: 100%;
+  width: 92%;
+  height: 92%;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center 60%;
   image-rendering: pixelated;
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.96));
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
   transition: opacity 0.15s ease;
 }
 .dialogue-portrait img.expr-switch {
   animation: expr-pop 0.25s ease-out;
 }
 @keyframes expr-pop {
-  0% { transform: scale(1.05); opacity: 0.6; }
+  0% { transform: scale(1.08); opacity: 0.5; }
   100% { transform: scale(1); opacity: 1; }
 }
 
@@ -1491,33 +1495,6 @@ h3 {
     display: none;
   }
 }
-  .dialogue-box {
-    left: 8px;
-    right: 8px;
-    top: 10px;
-    bottom: auto;
-    width: auto;
-    grid-template-columns: 76px minmax(0, 1fr);
-    min-height: 0;
-    max-height: calc(100% - 20px);
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .dialogue-portrait {
-    min-height: 96px;
-  }
-
-  .dialogue-standee {
-    right: -24px;
-    width: min(44%, 190px);
-    height: 62%;
-    opacity: 0.88;
-  }
-
-  .dialogue-standee img {
-    max-height: none;
-  }
 
   #dialogueText {
     min-height: 42px;
