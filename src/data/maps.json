@@ -675,6 +675,28 @@
         "memory": "memory_center_lamp",
         "toast": "捡到引用消息 ×1：路灯复读得太真诚，差点把自己说服",
         "comment": "路灯的光一闪一闪，像有人在输入框里反复删改。"
+      },
+      {
+        "id": "town_center_interact_5",
+        "label": "石板缝里的猴",
+        "x": 6,
+        "y": 12,
+        "event": "event_monkey_spawn",
+        "item": "monkey",
+        "memory": "memory_monkey_town",
+        "toast": "捡到猴 ×1：石板缝里蹦出来的——好孩子不贴但可以收着",
+        "comment": "猴从石板缝里探出头，像在说你终于发现我了。"
+      },
+      {
+        "id": "town_center_interact_6",
+        "label": "公告栏下的文案",
+        "x": 20,
+        "y": 14,
+        "event": "event_copy_found",
+        "item": "its_your_copy",
+        "memory": "memory_copy_town",
+        "toast": "捡到这是你的文案 ×1：公告栏上贴着一张图——发的人没署名",
+        "comment": "图还在，发图的人已经走了。但群聊物权法规定：发了就是你的。"
       }
     ],
     "transitions": [
@@ -1534,6 +1556,17 @@
         "memory": "memory_steam_face",
         "toast": "捡到这是你 ×1：它摆了个很欠的表情",
         "comment": "蒸汽在空中扭成一个表情，大家沉默两秒后默认这是餐厅吉祥物。"
+      },
+      {
+        "id": "restaurant_interact_5",
+        "label": "桌上的猴贴纸",
+        "x": 10,
+        "y": 8,
+        "event": "event_monkey_table",
+        "item": "monkey",
+        "memory": "memory_monkey_restaurant",
+        "toast": "捡到猴 ×1：有人把猴贴纸贴在了桌底",
+        "comment": "好孩子不贴猴——但可以贴在桌底。反正在桌底没人看到。"
       }
     ],
     "transitions": [
@@ -4183,6 +4216,17 @@
         "memory": "memory_lake_reflection",
         "toast": "捡到精华消息 ×1：倒影比本人还会吐槽",
         "comment": "你看向湖面，倒影先看向你，双方都觉得对方今天有点离谱。"
+      },
+      {
+        "id": "echo_lake_interact_5",
+        "label": "漂来的文案",
+        "x": 16,
+        "y": 6,
+        "event": "event_copy_lake",
+        "item": "its_your_copy",
+        "memory": "memory_copy_lake",
+        "toast": "捡到这是你的文案 ×1：湖面漂来一张截图——水还没干，图先到了",
+        "comment": "湖把图送到了岸边。发图的人可能在湖对面，也可能在三年前。"
       }
     ],
     "transitions": [
