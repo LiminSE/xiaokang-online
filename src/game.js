@@ -634,7 +634,7 @@ function showItemPopup(itemId) {
   window.clearTimeout(showItemPopup._timer);
   showItemPopup._timer = window.setTimeout(function() {
     popup.hidden = true;
-  }, 5000);
+  }, 3500);
 }
 
 // 3-second exciting pickup BGM
@@ -642,10 +642,11 @@ function playPickupFanfare() {
   var audioCtx = musicState.ctx;
   if (!audioCtx || state.settings.volume <= 0) return;
   ensureMusic();
-  // Randomly pick one of 3 fanfare variations
+  // Cycle through 3 variants in order
+  if (!playPickupFanfare._idx) playPickupFanfare._idx = 0;
   var variants = [fanfareCmaj, fanfareFmaj, fanfareAm];
-  var pick = variants[Math.floor(Math.random() * variants.length)];
-  pick(audioCtx, state.settings.volume / 100);
+  variants[playPickupFanfare._idx % 3](audioCtx, state.settings.volume / 100);
+  playPickupFanfare._idx++;
 }
 
 // ── Shared synth helpers ──
@@ -694,51 +695,48 @@ function _timpani(audioCtx, freq, time, vel, vol) {
   o.start(time); o.stop(time + 0.7);
 }
 
-// ── Variant 1: Cmaj triumphant ──
+// ── Variant 1: Cmaj triumphant (~1.8s) ──
 function fanfareCmaj(audioCtx, vol) {
   var t = audioCtx.currentTime;
   _timpani(audioCtx, 65.41, t, 0.85, vol);
-  _timpani(audioCtx, 55.00, t + 0.5, 0.6, vol);
-  [130.81,164.81,196.00,261.63,329.63,392.00,523.25,659.25,783.99,1046.5,1318.5].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.5 + i*0.28, 1.8, 0.65 + i*0.03, vol);
+  [130.81,196.00,261.63,329.63,392.00,523.25,659.25,783.99,1046.5].forEach(function(f,i){
+    _brass(audioCtx, f, t + 0.15 + i*0.14, 0.9, 0.7 + i*0.03, vol);
   });
-  [523.25,659.25,783.99,1046.5,1318.5,1568.0,2093.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.8 + i*0.4, 1.1, 0.5 + i*0.05, vol);
+  [523.25,783.99,1046.5,1568.0].forEach(function(f,i){
+    _sparkle(audioCtx, f, t + 0.3 + i*0.25, 0.5, 0.55 + i*0.06, vol);
   });
-  [261.63,329.63,392.00,523.25,659.25,783.99,1046.5].forEach(function(f){
-    _brass(audioCtx, f, t + 3.3, 2.0, 0.9, vol);
+  [261.63,392.00,523.25,783.99,1046.5].forEach(function(f){
+    _brass(audioCtx, f, t + 1.3, 0.6, 0.85, vol);
   });
 }
 
-// ── Variant 2: Fmaj warm heroic ──
+// ── Variant 2: Fmaj warm heroic (~1.8s) ──
 function fanfareFmaj(audioCtx, vol) {
   var t = audioCtx.currentTime;
   _timpani(audioCtx, 87.31, t, 0.85, vol);
-  _timpani(audioCtx, 73.42, t + 0.5, 0.6, vol);
-  [174.61,220.00,261.63,349.23,440.00,523.25,698.46,880.00,1046.5,1318.5,1396.9].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.5 + i*0.28, 1.8, 0.65 + i*0.03, vol);
+  [174.61,261.63,349.23,440.00,523.25,698.46,880.00,1046.5,1396.9].forEach(function(f,i){
+    _brass(audioCtx, f, t + 0.15 + i*0.14, 0.9, 0.7 + i*0.03, vol);
   });
-  [698.46,880.00,1046.5,1318.5,1396.9,1760.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.8 + i*0.4, 1.1, 0.5 + i*0.05, vol);
+  [698.46,1046.5,1396.9,1760.0].forEach(function(f,i){
+    _sparkle(audioCtx, f, t + 0.3 + i*0.25, 0.5, 0.55 + i*0.06, vol);
   });
-  [349.23,440.00,523.25,698.46,880.00,1046.5,1396.9].forEach(function(f){
-    _brass(audioCtx, f, t + 3.3, 2.0, 0.9, vol);
+  [349.23,523.25,880.00,1046.5,1396.9].forEach(function(f){
+    _brass(audioCtx, f, t + 1.3, 0.6, 0.85, vol);
   });
 }
 
-// ── Variant 3: Am mysterious epic ──
+// ── Variant 3: Am mysterious epic (~1.8s) ──
 function fanfareAm(audioCtx, vol) {
   var t = audioCtx.currentTime;
   _timpani(audioCtx, 55.00, t, 0.85, vol);
-  _timpani(audioCtx, 73.42, t + 0.5, 0.6, vol);
-  [220.00,261.63,329.63,440.00,523.25,659.25,880.00,1046.5,1318.5,1568.0,1760.0].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.5 + i*0.28, 1.8, 0.65 + i*0.03, vol);
+  [220.00,329.63,440.00,523.25,659.25,880.00,1046.5,1318.5,1760.0].forEach(function(f,i){
+    _brass(audioCtx, f, t + 0.15 + i*0.14, 0.9, 0.7 + i*0.03, vol);
   });
-  [659.25,880.00,1046.5,1318.5,1568.0,1760.0,2093.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.8 + i*0.4, 1.1, 0.5 + i*0.05, vol);
+  [659.25,1046.5,1318.5,1760.0].forEach(function(f,i){
+    _sparkle(audioCtx, f, t + 0.3 + i*0.25, 0.5, 0.55 + i*0.06, vol);
   });
-  [440.00,523.25,659.25,880.00,1046.5,1318.5,1760.0].forEach(function(f){
-    _brass(audioCtx, f, t + 3.3, 2.0, 0.9, vol);
+  [440.00,659.25,1046.5,1318.5,1760.0].forEach(function(f){
+    _brass(audioCtx, f, t + 1.3, 0.6, 0.85, vol);
   });
 }
 
