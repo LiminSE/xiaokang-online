@@ -2684,11 +2684,11 @@ function grantRewards(rewards = []) {
   updateHud();
 }
 
-function announceCgUnlockForReward(reward) {
+function announceCgUnlockForReward(reward, alwaysDefer) {
   const cg = ALL_CGS.find((item) => item.unlock === reward || reversePairMemory(item.unlock) === reward);
   if (!cg) return;
-  // If dialogue is active, defer CG popup until dialogue closes
-  if (state.dialogue) {
+  // Defer if dialogue is active OR explicitly requested (e.g. main/bond quest conclusion coming)
+  if (state.dialogue || alwaysDefer) {
     if (!state._pendingCgs) state._pendingCgs = [];
     if (state._pendingCgs.indexOf(cg) < 0) state._pendingCgs.push(cg);
     toast('解锁隐藏插画：' + displayCgName(cg.name) + '（对话结束后查看）');
@@ -3116,10 +3116,11 @@ function updateAreaQuests(areaId) {
 function completeQuest(quest) {
   state.completedQuests.add(quest.id);
   state.activeQuests.delete(quest.id);
+  const hasConclusion = (quest.type === "main" || quest.type === "bond") && quest.conclusion;
   for (const reward of quest.rewards || []) {
     if (reward.startsWith("memory_")) {
       state.memories.add(reward);
-      announceCgUnlockForReward(reward);
+      announceCgUnlockForReward(reward, hasConclusion);
     }
     if (reward.startsWith("bond_")) {
       state.bonds[reward] = true;
