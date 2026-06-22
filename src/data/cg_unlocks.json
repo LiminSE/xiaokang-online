@@ -182,6 +182,45 @@
       "unlock": "main_quest_05",
       "hint": "推进对应主线或区域任务。",
       "caption": "服务器核心被重新点亮，状态灯一起装作什么都没坏过。"
+    },
+    {
+      "id": "cg_story_echo_lake_night",
+      "name": "湖边夜色",
+      "path": "assets/imagegen/cg/story_echo_lake_night.png",
+      "areaIds": [
+        "echo_lake"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_03",
+      "hint": "完成第三章主线后解锁。",
+      "caption": "湖面倒映着夜空的月光，回声在栈道上轻轻荡漾。"
+    },
+    {
+      "id": "cg_task_area_extra",
+      "name": "区域散落拾遗",
+      "path": "assets/imagegen/cg/task_area_extra_cg_sheet.png",
+      "areaIds": [
+        "town_center",
+        "restaurant",
+        "dragon_card_house"
+      ],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_02",
+      "hint": "完成第二章主线后解锁。",
+      "caption": "小镇的日常物件散落在各个角落，每一个都在等人发现。"
+    },
+    {
+      "id": "cg_task_special",
+      "name": "特别收录",
+      "path": "assets/imagegen/cg/task_special_cg_sheet.png",
+      "areaIds": [],
+      "source": "imagegen",
+      "type": "task",
+      "unlock": "main_quest_05",
+      "hint": "完成终章后解锁。",
+      "caption": "特别收录的小镇瞬间——每一帧都是聊天记录里的名场面。"
     }
   ],
   "pair": [
