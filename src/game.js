@@ -642,82 +642,103 @@ function playPickupFanfare() {
   var audioCtx = musicState.ctx;
   if (!audioCtx || state.settings.volume <= 0) return;
   ensureMusic();
-  var start = audioCtx.currentTime;
-  var vol = state.settings.volume / 100;
+  // Randomly pick one of 3 fanfare variations
+  var variants = [fanfareCmaj, fanfareFmaj, fanfareAm];
+  var pick = variants[Math.floor(Math.random() * variants.length)];
+  pick(audioCtx, state.settings.volume / 100);
+}
 
-  // Orchestral brass hit with low-pass sweep
-  function brass(freq, time, dur, vel) {
-    var g = audioCtx.createGain();
-    var o1 = audioCtx.createOscillator();
-    var o2 = audioCtx.createOscillator();
-    var o3 = audioCtx.createOscillator();
-    var f = audioCtx.createBiquadFilter();
-    o1.type = 'sawtooth'; o2.type = 'triangle'; o3.type = 'square';
-    o1.frequency.setValueAtTime(freq, time);
-    o2.frequency.setValueAtTime(freq * 1.003, time);
-    o3.frequency.setValueAtTime(freq * 0.5, time); // sub-octave for weight
-    f.type = 'lowpass';
-    f.frequency.setValueAtTime(300, time);
-    f.frequency.exponentialRampToValueAtTime(1500 + vel * 4000, time + 0.1);
-    f.frequency.exponentialRampToValueAtTime(180, time + dur);
-    var peak = vel * vol * 0.3;
-    g.gain.setValueAtTime(0.0001, time);
-    g.gain.exponentialRampToValueAtTime(peak, time + 0.07);
-    g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
-    o1.connect(f); o2.connect(f); o3.connect(f); f.connect(g);
-    g.connect(musicState.dry);
-    o1.start(time); o2.start(time); o3.start(time);
-    o1.stop(time + dur + 0.05); o2.stop(time + dur + 0.05); o3.stop(time + dur + 0.05);
-  }
+// ── Shared synth helpers ──
+function _brass(audioCtx, freq, time, dur, vel, vol) {
+  var g = audioCtx.createGain();
+  var o1 = audioCtx.createOscillator();
+  var o2 = audioCtx.createOscillator();
+  var o3 = audioCtx.createOscillator();
+  var f = audioCtx.createBiquadFilter();
+  o1.type = 'sawtooth'; o2.type = 'triangle'; o3.type = 'square';
+  o1.frequency.setValueAtTime(freq, time);
+  o2.frequency.setValueAtTime(freq * 1.003, time);
+  o3.frequency.setValueAtTime(freq * 0.5, time);
+  f.type = 'lowpass';
+  f.frequency.setValueAtTime(300, time);
+  f.frequency.exponentialRampToValueAtTime(1500 + vel * 4000, time + 0.1);
+  f.frequency.exponentialRampToValueAtTime(180, time + dur);
+  g.gain.setValueAtTime(0.0001, time);
+  g.gain.exponentialRampToValueAtTime(vel * vol * 0.3, time + 0.07);
+  g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+  o1.connect(f); o2.connect(f); o3.connect(f); f.connect(g);
+  g.connect(musicState.dry);
+  o1.start(time); o2.start(time); o3.start(time);
+  o1.stop(time + dur + 0.05); o2.stop(time + dur + 0.05); o3.stop(time + dur + 0.05);
+}
+function _sparkle(audioCtx, freq, time, dur, vel, vol) {
+  var g = audioCtx.createGain();
+  var o = audioCtx.createOscillator();
+  o.type = 'sine';
+  o.frequency.setValueAtTime(freq, time);
+  g.gain.setValueAtTime(0.0001, time);
+  g.gain.exponentialRampToValueAtTime(vel * vol * 0.12, time + 0.03);
+  g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+  o.connect(g); g.connect(musicState.dry);
+  o.start(time); o.stop(time + dur);
+}
+function _timpani(audioCtx, freq, time, vel, vol) {
+  var g = audioCtx.createGain();
+  var o = audioCtx.createOscillator();
+  o.type = 'sine';
+  o.frequency.setValueAtTime(freq * 1.5, time);
+  o.frequency.exponentialRampToValueAtTime(freq, time + 0.12);
+  g.gain.setValueAtTime(vel * vol * 0.35, time);
+  g.gain.exponentialRampToValueAtTime(0.0001, time + 0.6);
+  o.connect(g); g.connect(musicState.dry);
+  o.start(time); o.stop(time + 0.7);
+}
 
-  // Bell sparkle for magic feel
-  function sparkle(freq, time, dur, vel) {
-    var g = audioCtx.createGain();
-    var o = audioCtx.createOscillator();
-    o.type = 'sine';
-    o.frequency.setValueAtTime(freq, time);
-    g.gain.setValueAtTime(0.0001, time);
-    g.gain.exponentialRampToValueAtTime(vel * vol * 0.12, time + 0.03);
-    g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
-    o.connect(g); g.connect(musicState.dry);
-    o.start(time); o.stop(time + dur);
-  }
-
-  // Timpani bass boom
-  function timpani(freq, time, vel) {
-    var g = audioCtx.createGain();
-    var o = audioCtx.createOscillator();
-    o.type = 'sine';
-    o.frequency.setValueAtTime(freq * 1.5, time);
-    o.frequency.exponentialRampToValueAtTime(freq, time + 0.12);
-    g.gain.setValueAtTime(vel * vol * 0.35, time);
-    g.gain.exponentialRampToValueAtTime(0.0001, time + 0.6);
-    o.connect(g); g.connect(musicState.dry);
-    o.start(time); o.stop(time + 0.7);
-  }
-
-  var t = start;
-  // ── Timpani intro ──
-  timpani(65.41, t, 0.85);
-  timpani(55.00, t + 0.3, 0.6);
-
-  // ── Brass fanfare: Cmaj ascending (0.5x speed) ──
-  var fanfare = [
-    130.81, 164.81, 196.00, 261.63, 329.63, 392.00,
-    523.25, 659.25, 783.99, 1046.5, 1318.5
-  ];
-  fanfare.forEach(function(f, i) {
-    brass(f, t + 0.3 + i * 0.18, 1.1, 0.65 + i * 0.03);
+// ── Variant 1: Cmaj triumphant ──
+function fanfareCmaj(audioCtx, vol) {
+  var t = audioCtx.currentTime;
+  _timpani(audioCtx, 65.41, t, 0.85, vol);
+  _timpani(audioCtx, 55.00, t + 0.3, 0.6, vol);
+  [130.81,164.81,196.00,261.63,329.63,392.00,523.25,659.25,783.99,1046.5,1318.5].forEach(function(f,i){
+    _brass(audioCtx, f, t + 0.3 + i*0.18, 1.1, 0.65 + i*0.03, vol);
   });
-
-  // ── Sparkle bells ──
-  [523.25, 659.25, 783.99, 1046.5, 1318.5, 1568.0, 2093.0].forEach(function(f, i) {
-    sparkle(f, t + 0.5 + i * 0.26, 0.7, 0.5 + i * 0.05);
+  [523.25,659.25,783.99,1046.5,1318.5,1568.0,2093.0].forEach(function(f,i){
+    _sparkle(audioCtx, f, t + 0.5 + i*0.26, 0.7, 0.5 + i*0.05, vol);
   });
+  [261.63,329.63,392.00,523.25,659.25,783.99,1046.5].forEach(function(f){
+    _brass(audioCtx, f, t + 2.2, 1.4, 0.9, vol);
+  });
+}
 
-  // ── Peak climax chord ──
-  [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.5].forEach(function(f) {
-    brass(f, t + 2.2, 1.4, 0.9);
+// ── Variant 2: Fmaj warm heroic ──
+function fanfareFmaj(audioCtx, vol) {
+  var t = audioCtx.currentTime;
+  _timpani(audioCtx, 87.31, t, 0.85, vol);
+  _timpani(audioCtx, 73.42, t + 0.3, 0.6, vol);
+  [174.61,220.00,261.63,349.23,440.00,523.25,698.46,880.00,1046.5,1318.5,1396.9].forEach(function(f,i){
+    _brass(audioCtx, f, t + 0.3 + i*0.18, 1.1, 0.65 + i*0.03, vol);
+  });
+  [698.46,880.00,1046.5,1318.5,1396.9,1760.0].forEach(function(f,i){
+    _sparkle(audioCtx, f, t + 0.5 + i*0.26, 0.7, 0.5 + i*0.05, vol);
+  });
+  [349.23,440.00,523.25,698.46,880.00,1046.5,1396.9].forEach(function(f){
+    _brass(audioCtx, f, t + 2.2, 1.4, 0.9, vol);
+  });
+}
+
+// ── Variant 3: Am mysterious epic ──
+function fanfareAm(audioCtx, vol) {
+  var t = audioCtx.currentTime;
+  _timpani(audioCtx, 55.00, t, 0.85, vol);
+  _timpani(audioCtx, 73.42, t + 0.3, 0.6, vol);
+  [220.00,261.63,329.63,440.00,523.25,659.25,880.00,1046.5,1318.5,1568.0,1760.0].forEach(function(f,i){
+    _brass(audioCtx, f, t + 0.3 + i*0.18, 1.1, 0.65 + i*0.03, vol);
+  });
+  [659.25,880.00,1046.5,1318.5,1568.0,1760.0,2093.0].forEach(function(f,i){
+    _sparkle(audioCtx, f, t + 0.5 + i*0.26, 0.7, 0.5 + i*0.05, vol);
+  });
+  [440.00,523.25,659.25,880.00,1046.5,1318.5,1760.0].forEach(function(f){
+    _brass(audioCtx, f, t + 2.2, 1.4, 0.9, vol);
   });
 }
 
