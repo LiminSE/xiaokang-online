@@ -3884,12 +3884,23 @@ function renderBackpackPreview() {
   var itemsNode = $("#backpackInlineItems");
   if (!itemsNode) return;
   if (!count) {
-    itemsNode.innerHTML = '<span class="bag-icon-btn" data-action="openBackpack" title="背包空空">🎒</span>';
+    itemsNode.innerHTML = '<span class="bag-empty">🎒</span>';
     return;
   }
   var entries = inventoryEntries();
-  var firstIcon = entries[0] ? entries[0].icon || '🎒' : '🎒';
-  itemsNode.innerHTML = '<span class="bag-icon-btn" data-action="openBackpack" title="' + count + ' 件物件，点击查看">' + firstIcon + '<span class="bag-count-badge">' + count + '</span></span>';
+  itemsNode.innerHTML = entries.map(function(item) {
+    return '<span class="bag-icon-btn" data-item-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(item.name) + '">' +
+      escapeHtml(item.icon || '🎒') +
+      (item.count > 1 ? '<span class="bag-count-badge">' + item.count + '</span>' : '') +
+    '</span>';
+  }).join('');
+  // Click handler for each item
+  itemsNode.querySelectorAll('.bag-icon-btn[data-item-id]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showItemDetail(btn.dataset.itemId);
+    });
+  });
 }
 
 function showItemDetail(itemId) {
@@ -4025,18 +4036,27 @@ function openBackpack() {
     );
     return;
   }
-  const html = `<div class="backpack-grid">${entries
-    .map((item) => `<article class="info-card backpack-item-card">
-      <div class="backpack-item-icon">${escapeHtml(item.icon || "🎒")}</div>
-      <div>
-        <p class="server-name">数量 ×${item.count}</p>
-        <h3>${escapeHtml(item.name)}</h3>
-        <p>${escapeHtml(item.flavor || item.description)}</p>
-        <p class="muted">${escapeHtml(item.description || item.flavor || "这件东西正在等待自己的名场面。")}</p>
-      </div>
-    </article>`)
-    .join("")}</div>`;
-  openModal("背包", html);
+  const html = '<div class="backpack-grid">' + entries
+    .map(function(item) {
+      return '<article class="info-card backpack-item-card" data-backpack-item="' + escapeHtml(item.id) + '" style="cursor:pointer">' +
+        '<div class="backpack-item-icon">' + escapeHtml(item.icon || '🎒') + '</div>' +
+        '<div>' +
+          '<p class="server-name">数量 ×' + item.count + '</p>' +
+          '<h3>' + escapeHtml(item.name) + '</h3>' +
+          '<p>' + escapeHtml(item.flavor || item.description) + '</p>' +
+        '</div>' +
+      '</article>';
+    })
+    .join('') + '</div>';
+  openModal('背包', html);
+  // Attach click handlers for each item
+  requestAnimationFrame(function() {
+    document.querySelectorAll('.backpack-item-card[data-backpack-item]').forEach(function(card) {
+      card.addEventListener('click', function() {
+        showItemDetail(card.dataset.backpackItem);
+      });
+    });
+  });
 }
 
 function openQuestLog() {

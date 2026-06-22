@@ -797,6 +797,12 @@ h3 {
 
 .backpack-item-card {
   display: grid;
+  transition: transform 0.12s, border-color 0.12s;
+}
+.backpack-item-card:hover {
+  transform: scale(1.02);
+  border-color: #c47dbf;
+}
   grid-template-columns: 48px minmax(0, 1fr);
   gap: 10px;
   align-items: start;
