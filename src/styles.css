@@ -1341,21 +1341,37 @@ h3 {
   margin: 2px 0 4px;
   font-size: 15px;
 }
-.codex-archive-link {
+.codex-entry-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   flex-shrink: 0;
-  font-size: 12px;
+  align-items: flex-end;
+}
+.codex-archive-link,
+.codex-art-link {
+  flex-shrink: 0;
+  font-size: 11px;
   font-weight: 700;
-  color: #8b5e3c;
   cursor: pointer;
   background: none;
   border: none;
-  padding: 4px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
   transition: background 0.15s;
   white-space: nowrap;
 }
+.codex-archive-link {
+  color: #8b5e3c;
+}
+.codex-art-link {
+  color: #5b7a9e;
+}
 .codex-archive-link:hover {
   background: #f0e8d5;
+}
+.codex-art-link:hover {
+  background: #e0ecf5;
 }
 .archive-full {
   line-height: 1.8;

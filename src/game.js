@@ -1329,8 +1329,29 @@ function normalizeLines(lines, fallbackSpeaker = "narrator") {
 }
 
 function polishText(text = "", speakerId = "") {
-  // 轻小说作家Agent已统一重写所有文案
   return String(text).trim();
+}
+
+function renderMarkdown(text) {
+  // Simple markdown → HTML for archive display
+  var html = String(text || '');
+  // Escape HTML first
+  html = html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  // Headers
+  html = html.replace(/^### (.+)$/gm, '<h4>$1</h4>');
+  html = html.replace(/^## (.+)$/gm, '<h3>$1</h3>');
+  // Bold
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // Italic
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  // Newlines to paragraphs
+  html = html.replace(/\n\n+/g, '</p><p>');
+  html = html.replace(/\n/g, '<br>');
+  html = '<p>' + html + '</p>';
+  // Clean empty paragraphs
+  html = html.replace(/<p><\/p>/g, '');
+  html = html.replace(/<p><br><\/p>/g, '');
+  return html;
 }
 
 function triggerInteraction(point) {
@@ -2987,14 +3008,40 @@ function openCodex() {
           '<h3>' + char.displayName + '</h3>' +
           '<p class="muted">' + escapeHtml(char.codexBlurb || char.storyChapters?.[0] || '档案还在加载中。') + '</p>' +
         '</div>' +
-        (hasArchive
-          ? '<button class="codex-archive-link" data-codex-char="' + char.id + '">完整档案 →</button>'
-          : '<span class="muted" style="font-size:11px">档案待解锁</span>') +
+        '<div class="codex-entry-actions">' +
+          '<button class="codex-art-link" data-codex-art="' + char.id + '">美术资料</button>' +
+          (hasArchive
+            ? '<button class="codex-archive-link" data-codex-char="' + char.id + '">完整档案</button>'
+            : '<span class="muted" style="font-size:11px">档案待解锁</span>') +
+        '</div>' +
       '</article>';
     }).join('') + '</div>';
   openModal("角色图鉴", html);
-  // Attach click handlers for archive links
+  // Attach click handlers for archive + art links
   requestAnimationFrame(function() {
+    // Art buttons
+    var artLinks = document.querySelectorAll('.codex-art-link');
+    for (var j = 0; j < artLinks.length; j++) {
+      artLinks[j].addEventListener('click', function(e) {
+        e.stopPropagation();
+        var charId = this.dataset.codexArt;
+        var char = indexes.characters.get(charId);
+        if (!char) return;
+        var hasPortrait = char.portrait && char.portrait.indexOf('assets/') === 0;
+        var hasSprite = char.sprite && char.sprite.indexOf('assets/') === 0;
+        var exps = char.expressions || {};
+        var expKeys = Object.keys(exps).filter(function(k) { return exps[k] && exps[k].indexOf('assets/') === 0; });
+        var artHtml = '<div style="text-align:center">' +
+          '<h3>' + char.displayName + '</h3>' +
+          (hasPortrait ? '<div style="margin:10px 0"><p class="server-name">立绘</p><img src="' + char.portrait + '" alt="立绘" style="max-width:100%;max-height:240px;border-radius:6px;border:2px solid var(--line)" onerror="this.remove()"/></div>' : '') +
+          (expKeys.length ? '<div style="margin:10px 0"><p class="server-name">表情差分</p><div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">' + expKeys.map(function(k) { return '<div><img src="' + exps[k] + '" alt="' + k + '" style="width:72px;height:72px;object-fit:contain;border:2px solid var(--line);border-radius:6px;image-rendering:pixelated" onerror="this.remove()"/><p style="font-size:10px;margin:2px 0">' + k + '</p></div>'; }).join('') + '</div></div>' : '') +
+          (hasSprite ? '<div style="margin:10px 0"><p class="server-name">Sprite 精灵图</p><img src="' + char.sprite + '" alt="sprite" style="max-width:100%;max-height:200px;image-rendering:pixelated;border:2px solid var(--line);border-radius:6px" onerror="this.remove()"/></div>' : '') +
+          (!hasPortrait && !expKeys.length && !hasSprite ? '<p class="muted">美术资料还在生成中</p>' : '') +
+        '</div>';
+        openModal(char.displayName + ' · 美术资料', artHtml);
+      });
+    }
+    // Archive buttons
     var links = document.querySelectorAll('.codex-archive-link');
     for (var i = 0; i < links.length; i++) {
       links[i].addEventListener('click', function() {
@@ -3008,7 +3055,7 @@ function openCodex() {
               '<h2>' + char.displayName + '</h2>' +
               '<p class="muted">群昵称：' + char.groupNickname + ' · QQ：' + char.qqNickname + '</p>' +
             '</div>' +
-            '<div class="archive-body">' + polishText(story.archiveText, charId) + '</div>' +
+            '<div class="archive-body">' + renderMarkdown(story.archiveText) + '</div>' +
           '</div>';
           openModal(char.displayName + ' · 完整档案', archiveHtml);
         }
