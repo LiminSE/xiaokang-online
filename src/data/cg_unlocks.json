@@ -226,7 +226,7 @@
   "pair": [
     {
       "id": "cg_pair_role_003_role_001",
-      "name": "NNZ × 弧形反叛超量🐉：接住这句",
+      "name": "「エコーズ・オブ・ドラゴン」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_001.png",
       "unlock": "memory_pair_role_003_role_001",
       "hint": "触发NNZ和弧形反叛超量🐉的双人长聊后解锁。",
@@ -307,7 +307,7 @@
     },
     {
       "id": "cg_pair_role_001_role_006",
-      "name": "弧形反叛超量🐉 × 力竭了：接住这句",
+      "name": "「深夜三時のTS集会」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_001_role_006.png",
       "unlock": "memory_pair_role_001_role_006",
       "hint": "触发弧形反叛超量🐉和力竭了的双人长聊后解锁。",
@@ -388,7 +388,7 @@
     },
     {
       "id": "cg_pair_role_004_role_001",
-      "name": "赛博鳏夫 × 弧形反叛超量🐉：接住这句",
+      "name": "「色収差の狭間」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_004_role_001.png",
       "unlock": "memory_pair_role_004_role_001",
       "hint": "触发赛博鳏夫和弧形反叛超量🐉的双人长聊后解锁。",
@@ -469,7 +469,7 @@
     },
     {
       "id": "cg_pair_role_002_role_006",
-      "name": "Hxr × 力竭了：接住这句",
+      "name": "「月光のサーキット」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_002_role_006.png",
       "unlock": "memory_pair_role_002_role_006",
       "hint": "触发Hxr和力竭了的双人长聊后解锁。",
@@ -550,7 +550,7 @@
     },
     {
       "id": "cg_pair_role_004_role_002",
-      "name": "赛博鳏夫 × Hxr：接住这句",
+      "name": "「精髄のワンショット」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_004_role_002.png",
       "unlock": "memory_pair_role_004_role_002",
       "hint": "触发赛博鳏夫和Hxr的双人长聊后解锁。",
@@ -631,7 +631,7 @@
     },
     {
       "id": "cg_pair_role_002_role_009",
-      "name": "Hxr × 多点关心：接住这句",
+      "name": "「シグナル・リブート」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_002_role_009.png",
       "unlock": "memory_pair_role_002_role_009",
       "hint": "触发Hxr和多点关心的双人长聊后解锁。",
@@ -712,7 +712,7 @@
     },
     {
       "id": "cg_pair_role_003_role_004",
-      "name": "NNZ × 赛博鳏夫：接住这句",
+      "name": "「エースの座」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_004.png",
       "unlock": "memory_pair_role_003_role_004",
       "hint": "触发NNZ和赛博鳏夫的双人长聊后解锁。",
@@ -793,7 +793,7 @@
     },
     {
       "id": "cg_pair_role_003_role_007",
-      "name": "NNZ × V²：接住这句",
+      "name": "「全一の証明」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_007.png",
       "unlock": "memory_pair_role_003_role_007",
       "hint": "触发NNZ和V²的双人长聊后解锁。",
@@ -874,7 +874,7 @@
     },
     {
       "id": "cg_pair_role_016_role_005",
-      "name": "我早已麻痹 × 青山照：接住这句",
+      "name": "「推しは世界を救う」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_016_role_005.png",
       "unlock": "memory_pair_role_016_role_005",
       "hint": "触发我早已麻痹和青山照的双人长聊后解锁。",
@@ -955,7 +955,7 @@
     },
     {
       "id": "cg_pair_role_005_role_009",
-      "name": "青山照 × 多点关心：接住这句",
+      "name": "「明け方のスコアボード」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_005_role_009.png",
       "unlock": "memory_pair_role_005_role_009",
       "hint": "触发青山照和多点关心的双人长聊后解锁。",
@@ -1036,7 +1036,7 @@
     },
     {
       "id": "cg_pair_role_005_role_002",
-      "name": "青山照 × Hxr：接住这句",
+      "name": "「メタ読みの果て」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_005_role_002.png",
       "unlock": "memory_pair_role_005_role_002",
       "hint": "触发青山照和Hxr的双人长聊后解锁。",
@@ -1117,7 +1117,7 @@
     },
     {
       "id": "cg_pair_role_012_role_006",
-      "name": "早上了喵～ × 力竭了：接住这句",
+      "name": "「灰の上のフェニックス」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_012_role_006.png",
       "unlock": "memory_pair_role_012_role_006",
       "hint": "触发早上了喵～和力竭了的双人长聊后解锁。",
@@ -1198,7 +1198,7 @@
     },
     {
       "id": "cg_pair_role_007_role_008",
-      "name": "V² × 沉机：接住这句",
+      "name": "「限界オタクの午後」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_007_role_008.png",
       "unlock": "memory_pair_role_007_role_008",
       "hint": "触发V²和沉机的双人长聊后解锁。",
@@ -1279,7 +1279,7 @@
     },
     {
       "id": "cg_pair_role_007_role_002",
-      "name": "V² × Hxr：接住这句",
+      "name": "「アーカイブの守護者」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_007_role_002.png",
       "unlock": "memory_pair_role_007_role_002",
       "hint": "触发V²和Hxr的双人长聊后解锁。",
@@ -1360,7 +1360,7 @@
     },
     {
       "id": "cg_pair_role_001_role_008",
-      "name": "弧形反叛超量🐉 × 沉机：接住这句",
+      "name": "「永久機関の休日」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_001_role_008.png",
       "unlock": "memory_pair_role_001_role_008",
       "hint": "触发弧形反叛超量🐉和沉机的双人长聊后解锁。",
@@ -1441,7 +1441,7 @@
     },
     {
       "id": "cg_pair_role_008_role_002",
-      "name": "沉机 × Hxr：接住这句",
+      "name": "「黄哥の帰還」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_008_role_002.png",
       "unlock": "memory_pair_role_008_role_002",
       "hint": "触发沉机和Hxr的双人长聊后解锁。",
@@ -1522,7 +1522,7 @@
     },
     {
       "id": "cg_pair_role_006_role_009",
-      "name": "力竭了 × 多点关心：接住这句",
+      "name": "「全糖の誓い」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_006_role_009.png",
       "unlock": "memory_pair_role_006_role_009",
       "hint": "触发力竭了和多点关心的双人长聊后解锁。",
@@ -1603,7 +1603,7 @@
     },
     {
       "id": "cg_pair_role_012_role_009",
-      "name": "早上了喵～ × 多点关心：接住这句",
+      "name": "「星屑のメッセージ」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_012_role_009.png",
       "unlock": "memory_pair_role_012_role_009",
       "hint": "触发早上了喵～和多点关心的双人长聊后解锁。",
@@ -1684,7 +1684,7 @@
     },
     {
       "id": "cg_pair_role_010_role_013",
-      "name": "普罗米亚写真集 × 已电子ed：接住这句",
+      "name": "「紙切れ同盟」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_010_role_013.png",
       "unlock": "memory_pair_role_010_role_013",
       "hint": "触发普罗米亚写真集和已电子ed的双人长聊后解锁。",
@@ -1765,7 +1765,7 @@
     },
     {
       "id": "cg_pair_role_010_role_004",
-      "name": "普罗米亚写真集 × 赛博鳏夫：接住这句",
+      "name": "「エアプ勢の逆襲」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_010_role_004.png",
       "unlock": "memory_pair_role_010_role_004",
       "hint": "触发普罗米亚写真集和赛博鳏夫的双人长聊后解锁。",
@@ -1846,7 +1846,7 @@
     },
     {
       "id": "cg_pair_role_010_role_006",
-      "name": "普罗米亚写真集 × 力竭了：接住这句",
+      "name": "「深海のピクセル」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_010_role_006.png",
       "unlock": "memory_pair_role_010_role_006",
       "hint": "触发普罗米亚写真集和力竭了的双人长聊后解锁。",
@@ -1927,7 +1927,7 @@
     },
     {
       "id": "cg_pair_role_020_role_011",
-      "name": "高手 × 没办法：接住这句",
+      "name": "「踏み抜き注意」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_020_role_011.png",
       "unlock": "memory_pair_role_020_role_011",
       "hint": "触发高手和没办法的双人长聊后解锁。",
@@ -2008,7 +2008,7 @@
     },
     {
       "id": "cg_pair_role_011_role_013",
-      "name": "没办法 × 已电子ed：接住这句",
+      "name": "「お前はもう死んでいる」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_011_role_013.png",
       "unlock": "memory_pair_role_011_role_013",
       "hint": "触发没办法和已电子ed的双人长聊后解锁。",
@@ -2089,7 +2089,7 @@
     },
     {
       "id": "cg_pair_role_011_role_010",
-      "name": "没办法 × 普罗米亚写真集：接住这句",
+      "name": "「ラグの海を越えて」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_011_role_010.png",
       "unlock": "memory_pair_role_011_role_010",
       "hint": "触发没办法和普罗米亚写真集的双人长聊后解锁。",
@@ -2170,7 +2170,7 @@
     },
     {
       "id": "cg_pair_role_012_role_002",
-      "name": "早上了喵～ × Hxr：接住这句",
+      "name": "「四コマの真実」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_012_role_002.png",
       "unlock": "memory_pair_role_012_role_002",
       "hint": "触发早上了喵～和Hxr的双人长聊后解锁。",
@@ -2251,7 +2251,7 @@
     },
     {
       "id": "cg_pair_role_003_role_013",
-      "name": "NNZ × 已电子ed：接住这句",
+      "name": "「譜面の申し子」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_003_role_013.png",
       "unlock": "memory_pair_role_003_role_013",
       "hint": "触发NNZ和已电子ed的双人长聊后解锁。",
@@ -2332,7 +2332,7 @@
     },
     {
       "id": "cg_pair_role_013_role_004",
-      "name": "已电子ed × 赛博鳏夫：接住这句",
+      "name": "「コンボの果て」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_013_role_004.png",
       "unlock": "memory_pair_role_013_role_004",
       "hint": "触发已电子ed和赛博鳏夫的双人长聊后解锁。",
@@ -2413,7 +2413,7 @@
     },
     {
       "id": "cg_pair_role_014_role_013",
-      "name": "健康哥哥 × 已电子ed：接住这句",
+      "name": "「不可逆のワンターン」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_014_role_013.png",
       "unlock": "memory_pair_role_014_role_013",
       "hint": "触发健康哥哥和已电子ed的双人长聊后解锁。",
@@ -2494,7 +2494,7 @@
     },
     {
       "id": "cg_pair_role_014_role_003",
-      "name": "健康哥哥 × NNZ：接住这句",
+      "name": "「オクターブの外側」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_014_role_003.png",
       "unlock": "memory_pair_role_014_role_003",
       "hint": "触发健康哥哥和NNZ的双人长聊后解锁。",
@@ -2575,7 +2575,7 @@
     },
     {
       "id": "cg_pair_role_014_role_017",
-      "name": "健康哥哥 × 很复杂：接住这句",
+      "name": "「コピー用紙の裏側」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_014_role_017.png",
       "unlock": "memory_pair_role_014_role_017",
       "hint": "触发健康哥哥和很复杂的双人长聊后解锁。",
@@ -2656,7 +2656,7 @@
     },
     {
       "id": "cg_pair_role_015_role_002",
-      "name": "重新减肥 × Hxr：接住这句",
+      "name": "「この判定、無効！」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_015_role_002.png",
       "unlock": "memory_pair_role_015_role_002",
       "hint": "触发重新减肥和Hxr的双人长聊后解锁。",
@@ -2737,7 +2737,7 @@
     },
     {
       "id": "cg_pair_role_022_role_015",
-      "name": "N2过了不恨了 × 重新减肥：接住这句",
+      "name": "「未完成のシンフォニー」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_022_role_015.png",
       "unlock": "memory_pair_role_022_role_015",
       "hint": "触发N2过了不恨了和重新减肥的双人长聊后解锁。",
@@ -2818,7 +2818,7 @@
     },
     {
       "id": "cg_pair_role_015_role_006",
-      "name": "重新减肥 × 力竭了：接住这句",
+      "name": "「ハイスコアの墓場」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_015_role_006.png",
       "unlock": "memory_pair_role_015_role_006",
       "hint": "触发重新减肥和力竭了的双人长聊后解锁。",
@@ -2899,7 +2899,7 @@
     },
     {
       "id": "cg_pair_role_016_role_012",
-      "name": "我早已麻痹 × 早上了喵～：接住这句",
+      "name": "「課金の向こう側」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_016_role_012.png",
       "unlock": "memory_pair_role_016_role_012",
       "hint": "触发我早已麻痹和早上了喵～的双人长聊后解锁。",
@@ -2980,7 +2980,7 @@
     },
     {
       "id": "cg_pair_role_016_role_010",
-      "name": "我早已麻痹 × 普罗米亚写真集：接住这句",
+      "name": "「茶室のロスタイム」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_016_role_010.png",
       "unlock": "memory_pair_role_016_role_010",
       "hint": "触发我早已麻痹和普罗米亚写真集的双人长聊后解锁。",
@@ -3061,7 +3061,7 @@
     },
     {
       "id": "cg_pair_role_017_role_009",
-      "name": "很复杂 × 多点关心：接住这句",
+      "name": "「化石級の勲章」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_017_role_009.png",
       "unlock": "memory_pair_role_017_role_009",
       "hint": "触发很复杂和多点关心的双人长聊后解锁。",
@@ -3142,7 +3142,7 @@
     },
     {
       "id": "cg_pair_role_019_role_017",
-      "name": "不好办 × 很复杂：接住这句",
+      "name": "「次回予告：お楽しみに」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_019_role_017.png",
       "unlock": "memory_pair_role_019_role_017",
       "hint": "触发不好办和很复杂的双人长聊后解锁。",
@@ -3223,7 +3223,7 @@
     },
     {
       "id": "cg_pair_role_017_role_006",
-      "name": "很复杂 × 力竭了：接住这句",
+      "name": "「それはそれとして」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_017_role_006.png",
       "unlock": "memory_pair_role_017_role_006",
       "hint": "触发很复杂和力竭了的双人长聊后解锁。",
@@ -3304,7 +3304,7 @@
     },
     {
       "id": "cg_pair_role_018_role_006",
-      "name": "Mini Oreo × 力竭了：接住这句",
+      "name": "「闇のゲーマー」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_018_role_006.png",
       "unlock": "memory_pair_role_018_role_006",
       "hint": "触发Mini Oreo和力竭了的双人长聊后解锁。",
@@ -3385,7 +3385,7 @@
     },
     {
       "id": "cg_pair_role_018_role_008",
-      "name": "Mini Oreo × 沉机：接住这句",
+      "name": "「布丁三銃士」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_018_role_008.png",
       "unlock": "memory_pair_role_018_role_008",
       "hint": "触发Mini Oreo和沉机的双人长聊后解锁。",
@@ -3466,7 +3466,7 @@
     },
     {
       "id": "cg_pair_role_018_role_005",
-      "name": "Mini Oreo × 青山照：接住这句",
+      "name": "「日常の境界線」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_018_role_005.png",
       "unlock": "memory_pair_role_018_role_005",
       "hint": "触发Mini Oreo和青山照的双人长聊后解锁。",
@@ -3547,7 +3547,7 @@
     },
     {
       "id": "cg_pair_role_019_role_002",
-      "name": "不好办 × Hxr：接住这句",
+      "name": "「ノールックパス」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_019_role_002.png",
       "unlock": "memory_pair_role_019_role_002",
       "hint": "触发不好办和Hxr的双人长聊后解锁。",
@@ -3628,7 +3628,7 @@
     },
     {
       "id": "cg_pair_role_019_role_006",
-      "name": "不好办 × 力竭了：接住这句",
+      "name": "「楽園の守り人」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_019_role_006.png",
       "unlock": "memory_pair_role_019_role_006",
       "hint": "触发不好办和力竭了的双人长聊后解锁。",
@@ -3709,7 +3709,7 @@
     },
     {
       "id": "cg_pair_role_020_role_012",
-      "name": "高手 × 早上了喵～：接住这句",
+      "name": "「ギア・サード」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_020_role_012.png",
       "unlock": "memory_pair_role_020_role_012",
       "hint": "触发高手和早上了喵～的双人长聊后解锁。",
@@ -3790,7 +3790,7 @@
     },
     {
       "id": "cg_pair_role_020_role_003",
-      "name": "高手 × NNZ：接住这句",
+      "name": "「2.0倍速の現実」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_020_role_003.png",
       "unlock": "memory_pair_role_020_role_003",
       "hint": "触发高手和NNZ的双人长聊后解锁。",
@@ -3871,7 +3871,7 @@
     },
     {
       "id": "cg_pair_role_021_role_012",
-      "name": "❗您无法在已退出的群聊发送消息 × 早上了喵～：接住这句",
+      "name": "「ログアウト不可」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_021_role_012.png",
       "unlock": "memory_pair_role_021_role_012",
       "hint": "触发❗您无法在已退出的群聊发送消息和早上了喵～的双人长聊后解锁。",
@@ -3952,7 +3952,7 @@
     },
     {
       "id": "cg_pair_role_021_role_008",
-      "name": "❗您无法在已退出的群聊发送消息 × 沉机：接住这句",
+      "name": "「プリンターの反乱」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_021_role_008.png",
       "unlock": "memory_pair_role_021_role_008",
       "hint": "触发❗您无法在已退出的群聊发送消息和沉机的双人长聊后解锁。",
@@ -4033,7 +4033,7 @@
     },
     {
       "id": "cg_pair_role_021_role_013",
-      "name": "❗您无法在已退出的群聊发送消息 × 已电子ed：接住这句",
+      "name": "「三分糖の奇跡」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_021_role_013.png",
       "unlock": "memory_pair_role_021_role_013",
       "hint": "触发❗您无法在已退出的群聊发送消息和已电子ed的双人长聊后解锁。",
@@ -4114,7 +4114,7 @@
     },
     {
       "id": "cg_pair_role_022_role_006",
-      "name": "N2过了不恨了 × 力竭了：接住这句",
+      "name": "「未完のクロニクル」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_022_role_006.png",
       "unlock": "memory_pair_role_022_role_006",
       "hint": "触发N2过了不恨了和力竭了的双人长聊后解锁。",
@@ -4195,7 +4195,7 @@
     },
     {
       "id": "cg_pair_role_022_role_021",
-      "name": "N2过了不恨了 × ❗您无法在已退出的群聊发送消息：接住这句",
+      "name": "「バグった日常」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_022_role_021.png",
       "unlock": "memory_pair_role_022_role_021",
       "hint": "触发N2过了不恨了和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
@@ -4276,7 +4276,7 @@
     },
     {
       "id": "cg_pair_role_023_role_009",
-      "name": "Du. × 多点关心：接住这句",
+      "name": "「微睡むデータ」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_023_role_009.png",
       "unlock": "memory_pair_role_023_role_009",
       "hint": "触发Du.和多点关心的双人长聊后解锁。",
@@ -4357,7 +4357,7 @@
     },
     {
       "id": "cg_pair_role_023_role_006",
-      "name": "Du. × 力竭了：接住这句",
+      "name": "「未読のままの通知」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_023_role_006.png",
       "unlock": "memory_pair_role_023_role_006",
       "hint": "触发Du.和力竭了的双人长聊后解锁。",
@@ -4438,7 +4438,7 @@
     },
     {
       "id": "cg_pair_role_023_role_019",
-      "name": "Du. × 不好办：接住这句",
+      "name": "「夜のペンライト」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_023_role_019.png",
       "unlock": "memory_pair_role_023_role_019",
       "hint": "触发Du.和不好办的双人长聊后解锁。",
@@ -4519,7 +4519,7 @@
     },
     {
       "id": "cg_pair_role_025_role_020",
-      "name": "敏龟的感头 × 高手：接住这句",
+      "name": "「オフ会は中止になりました」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_025_role_020.png",
       "unlock": "memory_pair_role_025_role_020",
       "hint": "触发敏龟的感头和高手的双人长聊后解锁。",
@@ -4600,7 +4600,7 @@
     },
     {
       "id": "cg_pair_role_026_role_025",
-      "name": "LQS群里指定丈夫 × 敏龟的感头：接住这句",
+      "name": "「絵筆の残響」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_026_role_025.png",
       "unlock": "memory_pair_role_026_role_025",
       "hint": "触发LQS群里指定丈夫和敏龟的感头的双人长聊后解锁。",
@@ -4681,7 +4681,7 @@
     },
     {
       "id": "cg_pair_role_025_role_015",
-      "name": "敏龟的感头 × 重新减肥：接住这句",
+      "name": "「助言、聞いてない」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_025_role_015.png",
       "unlock": "memory_pair_role_025_role_015",
       "hint": "触发敏龟的感头和重新减肥的双人长聊后解锁。",
@@ -4762,7 +4762,7 @@
     },
     {
       "id": "cg_pair_role_032_role_026",
-      "name": "猫耳半圆 × LQS群里指定丈夫：接住这句",
+      "name": "「フルハウスの夜」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_032_role_026.png",
       "unlock": "memory_pair_role_032_role_026",
       "hint": "触发猫耳半圆和LQS群里指定丈夫的双人长聊后解锁。",
@@ -4843,7 +4843,7 @@
     },
     {
       "id": "cg_pair_role_026_role_022",
-      "name": "LQS群里指定丈夫 × N2过了不恨了：接住这句",
+      "name": "「フルコンボの余韻」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_026_role_022.png",
       "unlock": "memory_pair_role_026_role_022",
       "hint": "触发LQS群里指定丈夫和N2过了不恨了的双人长聊后解锁。",
@@ -4924,7 +4924,7 @@
     },
     {
       "id": "cg_pair_role_027_role_023",
-      "name": "Dark Kami Slayer × Du.：接住这句",
+      "name": "「未練のスクリーンショット」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_027_role_023.png",
       "unlock": "memory_pair_role_027_role_023",
       "hint": "触发Dark Kami Slayer和Du.的双人长聊后解锁。",
@@ -5005,7 +5005,7 @@
     },
     {
       "id": "cg_pair_role_027_role_016",
-      "name": "Dark Kami Slayer × 我早已麻痹：接住这句",
+      "name": "「賭けの代償」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_027_role_016.png",
       "unlock": "memory_pair_role_027_role_016",
       "hint": "触发Dark Kami Slayer和我早已麻痹的双人长聊后解锁。",
@@ -5086,7 +5086,7 @@
     },
     {
       "id": "cg_pair_role_027_role_005",
-      "name": "Dark Kami Slayer × 青山照：接住这句",
+      "name": "「無限ループの片隅」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_027_role_005.png",
       "unlock": "memory_pair_role_027_role_005",
       "hint": "触发Dark Kami Slayer和青山照的双人长聊后解锁。",
@@ -5167,7 +5167,7 @@
     },
     {
       "id": "cg_pair_role_033_role_028",
-      "name": "Celestial × ナナリ：接住这句",
+      "name": "「高速詠唱の代償」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_033_role_028.png",
       "unlock": "memory_pair_role_033_role_028",
       "hint": "触发Celestial和ナナリ的双人长聊后解锁。",
@@ -5248,7 +5248,7 @@
     },
     {
       "id": "cg_pair_role_028_role_017",
-      "name": "ナナリ × 很复杂：接住这句",
+      "name": "「いい最終回だった」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_028_role_017.png",
       "unlock": "memory_pair_role_028_role_017",
       "hint": "触发ナナリ和很复杂的双人长聊后解锁。",
@@ -5329,7 +5329,7 @@
     },
     {
       "id": "cg_pair_role_028_role_031",
-      "name": "ナナリ × 六界三鲜：接住这句",
+      "name": "「延長戦の果てに」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_028_role_031.png",
       "unlock": "memory_pair_role_028_role_031",
       "hint": "触发ナナリ和六界三鲜的双人长聊后解锁。",
@@ -5410,7 +5410,7 @@
     },
     {
       "id": "cg_pair_role_029_role_019",
-      "name": "kuro × 不好办：接住这句",
+      "name": "「カオスモード常駐」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_029_role_019.png",
       "unlock": "memory_pair_role_029_role_019",
       "hint": "触发kuro和不好办的双人长聊后解锁。",
@@ -5491,7 +5491,7 @@
     },
     {
       "id": "cg_pair_role_029_role_003",
-      "name": "kuro × NNZ：接住这句",
+      "name": "「第66話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_029_role_003.png",
       "unlock": "memory_pair_role_029_role_003",
       "hint": "触发kuro和NNZ的双人长聊后解锁。",
@@ -5572,7 +5572,7 @@
     },
     {
       "id": "cg_pair_role_029_role_021",
-      "name": "kuro × ❗您无法在已退出的群聊发送消息：接住这句",
+      "name": "「第72話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_029_role_021.png",
       "unlock": "memory_pair_role_029_role_021",
       "hint": "触发kuro和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
@@ -5653,7 +5653,7 @@
     },
     {
       "id": "cg_pair_role_030_role_019",
-      "name": "白给人 × 不好办：接住这句",
+      "name": "「第71話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_030_role_019.png",
       "unlock": "memory_pair_role_030_role_019",
       "hint": "触发白给人和不好办的双人长聊后解锁。",
@@ -5734,7 +5734,7 @@
     },
     {
       "id": "cg_pair_role_030_role_004",
-      "name": "白给人 × 赛博鳏夫：接住这句",
+      "name": "「第75話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_030_role_004.png",
       "unlock": "memory_pair_role_030_role_004",
       "hint": "触发白给人和赛博鳏夫的双人长聊后解锁。",
@@ -5815,7 +5815,7 @@
     },
     {
       "id": "cg_pair_role_030_role_033",
-      "name": "白给人 × Celestial：接住这句",
+      "name": "「第74話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_030_role_033.png",
       "unlock": "memory_pair_role_030_role_033",
       "hint": "触发白给人和Celestial的双人长聊后解锁。",
@@ -5896,7 +5896,7 @@
     },
     {
       "id": "cg_pair_role_031_role_016",
-      "name": "六界三鲜 × 我早已麻痹：接住这句",
+      "name": "「第72話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_031_role_016.png",
       "unlock": "memory_pair_role_031_role_016",
       "hint": "触发六界三鲜和我早已麻痹的双人长聊后解锁。",
@@ -5977,7 +5977,7 @@
     },
     {
       "id": "cg_pair_role_031_role_012",
-      "name": "六界三鲜 × 早上了喵～：接住这句",
+      "name": "「第75話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_031_role_012.png",
       "unlock": "memory_pair_role_031_role_012",
       "hint": "触发六界三鲜和早上了喵～的双人长聊后解锁。",
@@ -6058,7 +6058,7 @@
     },
     {
       "id": "cg_pair_role_031_role_021",
-      "name": "六界三鲜 × ❗您无法在已退出的群聊发送消息：接住这句",
+      "name": "「第75話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_031_role_021.png",
       "unlock": "memory_pair_role_031_role_021",
       "hint": "触发六界三鲜和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
@@ -6139,7 +6139,7 @@
     },
     {
       "id": "cg_pair_role_032_role_019",
-      "name": "猫耳半圆 × 不好办：接住这句",
+      "name": "「第73話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_032_role_019.png",
       "unlock": "memory_pair_role_032_role_019",
       "hint": "触发猫耳半圆和不好办的双人长聊后解锁。",
@@ -6220,7 +6220,7 @@
     },
     {
       "id": "cg_pair_role_032_role_005",
-      "name": "猫耳半圆 × 青山照：接住这句",
+      "name": "「第75話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_032_role_005.png",
       "unlock": "memory_pair_role_032_role_005",
       "hint": "触发猫耳半圆和青山照的双人长聊后解锁。",
@@ -6301,7 +6301,7 @@
     },
     {
       "id": "cg_pair_role_033_role_023",
-      "name": "Celestial × Du.：接住这句",
+      "name": "「第72話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_033_role_023.png",
       "unlock": "memory_pair_role_033_role_023",
       "hint": "触发Celestial和Du.的双人长聊后解锁。",
@@ -6382,7 +6382,7 @@
     },
     {
       "id": "cg_pair_role_033_role_022",
-      "name": "Celestial × N2过了不恨了：接住这句",
+      "name": "「第80話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_033_role_022.png",
       "unlock": "memory_pair_role_033_role_022",
       "hint": "触发Celestial和N2过了不恨了的双人长聊后解锁。",
@@ -6463,7 +6463,7 @@
     },
     {
       "id": "cg_pair_role_034_role_006",
-      "name": "只能往标志方向发展了 × 力竭了：接住这句",
+      "name": "「第74話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_034_role_006.png",
       "unlock": "memory_pair_role_034_role_006",
       "hint": "触发只能往标志方向发展了和力竭了的双人长聊后解锁。",
@@ -6544,7 +6544,7 @@
     },
     {
       "id": "cg_pair_role_034_role_021",
-      "name": "只能往标志方向发展了 × ❗您无法在已退出的群聊发送消息：接住这句",
+      "name": "「第80話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_034_role_021.png",
       "unlock": "memory_pair_role_034_role_021",
       "hint": "触发只能往标志方向发展了和❗您无法在已退出的群聊发送消息的双人长聊后解锁。",
@@ -6625,7 +6625,7 @@
     },
     {
       "id": "cg_pair_role_034_role_002",
-      "name": "只能往标志方向发展了 × Hxr：接住这句",
+      "name": "「第75話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_034_role_002.png",
       "unlock": "memory_pair_role_034_role_002",
       "hint": "触发只能往标志方向发展了和Hxr的双人长聊后解锁。",
@@ -6706,7 +6706,7 @@
     },
     {
       "id": "cg_pair_role_036_role_038",
-      "name": "夜处理炼金师 × 请关注一百满天原莎乐美喵：接住这句",
+      "name": "「第74話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_036_role_038.png",
       "unlock": "memory_pair_role_036_role_038",
       "hint": "触发夜处理炼金师和请关注一百满天原莎乐美喵的双人长聊后解锁。",
@@ -6787,7 +6787,7 @@
     },
     {
       "id": "cg_pair_role_036_role_039",
-      "name": "夜处理炼金师 × vv：接住这句",
+      "name": "「第79話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_036_role_039.png",
       "unlock": "memory_pair_role_036_role_039",
       "hint": "触发夜处理炼金师和vv的双人长聊后解锁。",
@@ -6868,7 +6868,7 @@
     },
     {
       "id": "cg_pair_role_036_role_001",
-      "name": "夜处理炼金师 × 弧形反叛超量🐉：接住这句",
+      "name": "「第79話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_036_role_001.png",
       "unlock": "memory_pair_role_036_role_001",
       "hint": "触发夜处理炼金师和弧形反叛超量🐉的双人长聊后解锁。",
@@ -6949,7 +6949,7 @@
     },
     {
       "id": "cg_pair_role_038_role_005",
-      "name": "请关注一百满天原莎乐美喵 × 青山照：接住这句",
+      "name": "「第77話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_038_role_005.png",
       "unlock": "memory_pair_role_038_role_005",
       "hint": "触发请关注一百满天原莎乐美喵和青山照的双人长聊后解锁。",
@@ -7030,7 +7030,7 @@
     },
     {
       "id": "cg_pair_role_038_role_009",
-      "name": "请关注一百满天原莎乐美喵 × 多点关心：接住这句",
+      "name": "「第82話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_038_role_009.png",
       "unlock": "memory_pair_role_038_role_009",
       "hint": "触发请关注一百满天原莎乐美喵和多点关心的双人长聊后解锁。",
@@ -7111,7 +7111,7 @@
     },
     {
       "id": "cg_pair_role_038_role_006",
-      "name": "请关注一百满天原莎乐美喵 × 力竭了：接住这句",
+      "name": "「第78話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_038_role_006.png",
       "unlock": "memory_pair_role_038_role_006",
       "hint": "触发请关注一百满天原莎乐美喵和力竭了的双人长聊后解锁。",
@@ -7192,7 +7192,7 @@
     },
     {
       "id": "cg_pair_role_039_role_012",
-      "name": "vv × 早上了喵～：接住这句",
+      "name": "「第81話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_039_role_012.png",
       "unlock": "memory_pair_role_039_role_012",
       "hint": "触发vv和早上了喵～的双人长聊后解锁。",
@@ -7273,7 +7273,7 @@
     },
     {
       "id": "cg_pair_role_039_role_002",
-      "name": "vv × Hxr：接住这句",
+      "name": "「第77話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_039_role_002.png",
       "unlock": "memory_pair_role_039_role_002",
       "hint": "触发vv和Hxr的双人长聊后解锁。",
@@ -7354,7 +7354,7 @@
     },
     {
       "id": "cg_pair_role_039_role_003",
-      "name": "vv × NNZ：接住这句",
+      "name": "「第80話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_039_role_003.png",
       "unlock": "memory_pair_role_039_role_003",
       "hint": "触发vv和NNZ的双人长聊后解锁。",
@@ -7435,7 +7435,7 @@
     },
     {
       "id": "cg_pair_role_002_role_001",
-      "name": "Hxr × 弧形反叛超量🐉：接住这句",
+      "name": "「第77話：次回予告」",
       "path": "assets/imagegen/cg/bonds/cg_pair_role_002_role_001.png",
       "unlock": "memory_pair_role_002_role_001",
       "hint": "触发Hxr和弧形反叛超量🐉的双人长聊后解锁。",
