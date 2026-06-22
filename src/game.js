@@ -1227,10 +1227,12 @@ function openNpcDialogueMenu(charId, firstMeet = false, quest = null) {
       { speaker: charId, text: quickGreeting(char, story) },
       { speaker: "player", text: "好。你是今天第一个跟我打招呼的人。" },
     ];
+  var menuChoices = characterMenuChoices(charId, quest);
   state.dialogue = {
     speaker: charId,
     lines: normalizeLines(greeting, charId),
-    choices: characterMenuChoices(charId, quest),
+    choices: menuChoices,
+    _allChoices: menuChoices,
     index: 0,
   };
   renderDialogue();
@@ -2707,22 +2709,37 @@ function openDialogue(dialogueId) {
 
 function chooseDialogue(choiceId) {
   if (!state.dialogue?.choices?.length) return;
-  const choice = state.dialogue.choices.find((item) => item.id === choiceId);
+  var choice = state.dialogue.choices.find(function(item) { return item.id === choiceId; });
   if (!choice) return;
   playTalkSound();
   grantRewards(choice.rewards || []);
   if (choice.event) progressEventQuests(choice.event);
-  if (choice.action === "openQuestLog") {
+  if (choice.action === 'openQuestLog') {
     closeDialogue();
     openQuestLog();
     return;
   }
-  state.dialogue = {
-    speaker: state.dialogue.speaker,
-    lines: choice.lines?.length ? normalizeLines(choice.lines, state.dialogue.speaker) : [{ speaker: "narrator", text: "旁白：你们互相看了一眼，小镇空气里写满了：此处需要一段名场面。" }],
-    choices: choice.nextChoices || [],
-    index: 0,
-  };
+  // Build remaining choices: original menu minus the one just picked
+  var remaining = (state.dialogue._allChoices || state.dialogue.choices).filter(function(c) {
+    return c.id !== choiceId;
+  });
+  // If no more topics and no nextChoices, close gracefully
+  if (!remaining.length && (!choice.nextChoices || !choice.nextChoices.length)) {
+    state.dialogue = {
+      speaker: state.dialogue.speaker,
+      lines: choice.lines?.length ? normalizeLines(choice.lines, state.dialogue.speaker) : [{ speaker: 'narrator', text: '旁白：你们把能聊的都聊完了。' }],
+      choices: [],
+      index: 0,
+    };
+  } else {
+    state.dialogue = {
+      speaker: state.dialogue.speaker,
+      lines: choice.lines?.length ? normalizeLines(choice.lines, state.dialogue.speaker) : [{ speaker: 'narrator', text: '旁白：你们互相看了一眼，小镇空气里写满了：此处需要一段名场面。' }],
+      choices: choice.nextChoices && choice.nextChoices.length ? choice.nextChoices : remaining,
+      _allChoices: choice.nextChoices && choice.nextChoices.length ? choice.nextChoices : remaining,
+      index: 0,
+    };
+  }
   renderDialogue();
 }
 
