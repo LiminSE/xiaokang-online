@@ -715,7 +715,7 @@
         "event": "event_center_bell",
         "item": "quote_msg",
         "memory": "memory_center_lamp",
-        "toast": "捡到顺风回复 ×1：路灯复读得太真诚，差点把自己说服",
+        "toast": "捡到引用消息 ×1：路灯复读得太真诚，差点把自己说服",
         "comment": "路灯的光一闪一闪，像有人在输入框里反复删改。",
         "lines": [
           {
@@ -724,7 +724,7 @@
           },
           {
             "speaker": "player",
-            "text": "顺风回复到手。这个物件明显比说明书会说话。"
+            "text": "引用消息到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -2544,7 +2544,7 @@
         "event": "event_card_gate",
         "item": "mhy_verdict",
         "memory": "memory_verdict_bell",
-        "toast": "捡到判定铃 ×1：裁判席说这把不背锅",
+        "toast": "捡到针对米哈游玩家在本群地位的历史决议 ×1：裁判席说这把不背锅",
         "comment": "铃铛一响，空气里出现了三种解释，每一种都很像真相。",
         "lines": [
           {
@@ -2553,7 +2553,7 @@
           },
           {
             "speaker": "player",
-            "text": "判定铃到手。这个物件明显比说明书会说话。"
+            "text": "针对米哈游玩家在本群地位的历史决议到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -3431,7 +3431,7 @@
         "event": "event_lights_midnight",
         "item": "xox",
         "memory": "memory_stage_light",
-        "toast": "捡到灯控便签 ×1：灯光把气氛调成了过度营业",
+        "toast": "捡到XOX ×1：灯光把气氛调成了过度营业",
         "comment": "灯控台一滑，舞台立刻出现“明明没人点歌却已经高潮”的效果。",
         "lines": [
           {
@@ -3440,7 +3440,7 @@
           },
           {
             "speaker": "player",
-            "text": "灯控便签到手。这个物件明显比说明书会说话。"
+            "text": "XOX到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -3481,7 +3481,7 @@
         "event": "event_lights_midnight",
         "item": "spicy_pic",
         "memory": "memory_stage_poster",
-        "toast": "捡到色板芯片 ×1：海报墙偷偷给所有人加滤镜",
+        "toast": "捡到色图 ×1：海报墙偷偷给所有人加滤镜",
         "comment": "海报里的剪影比本人还会营业，路过的人都想给它点个关注。",
         "lines": [
           {
@@ -3490,7 +3490,7 @@
           },
           {
             "speaker": "player",
-            "text": "色板芯片到手。这个物件明显比说明书会说话。"
+            "text": "色图到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -4372,16 +4372,16 @@
         "event": "event_poem_pages",
         "item": "chat_log",
         "memory": "memory_lake_poem",
-        "toast": "捡到漂流诗页 ×1：纸页湿了，但嘴很硬",
+        "toast": "捡到聊天记录 ×1：纸页湿了，但嘴很硬",
         "comment": "诗页漂着漂着开始押韵，湖面选择已读不回。",
         "lines": [
           {
             "speaker": "narrator",
-            "text": "旁白：你靠近漂流诗页，它立刻亮了一下，像终于等到有人点它。"
+            "text": "旁白：你靠近聊天记录，它立刻亮了一下，像终于等到有人点它。"
           },
           {
             "speaker": "player",
-            "text": "漂流诗页到手。这个物件明显比说明书会说话。"
+            "text": "聊天记录到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -4397,16 +4397,16 @@
         "event": "event_moon_phase",
         "item": "emo_switch",
         "memory": "memory_moon_toggle",
-        "toast": "捡到月相开关 ×1：月亮被调成未读模式",
+        "toast": "捡到emo开关 ×1：月亮被调成未读模式",
         "comment": "开关拨一下，月亮换了个表情，像在说“别催”。",
         "lines": [
           {
             "speaker": "narrator",
-            "text": "旁白：你靠近月相开关，它立刻亮了一下，像终于等到有人点它。"
+            "text": "旁白：你靠近emo开关，它立刻亮了一下，像终于等到有人点它。"
           },
           {
             "speaker": "player",
-            "text": "月相开关到手。这个物件明显比说明书会说话。"
+            "text": "emo开关到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -5334,16 +5334,16 @@
         "event": "event_tea_roster",
         "item": "ts_gather",
         "memory": "memory_tea_roster",
-        "toast": "捡到茶室值班表 ×1：摸鱼被写成轮休",
+        "toast": "捡到TS集合 ×1：摸鱼被写成轮休",
         "comment": "值班表排得很满，执行起来主打一个看缘分。",
         "lines": [
           {
             "speaker": "narrator",
-            "text": "旁白：你靠近茶室值班表，它立刻亮了一下，像终于等到有人点它。"
+            "text": "旁白：你靠近TS集合，它立刻亮了一下，像终于等到有人点它。"
           },
           {
             "speaker": "player",
-            "text": "茶室值班表到手。这个物件明显比说明书会说话。"
+            "text": "TS集合到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -5359,7 +5359,7 @@
         "event": "event_clock_0047",
         "item": "morning_meow",
         "memory": "memory_nap_chair",
-        "toast": "捡到躺平许可 ×1：躺椅劝你别精神内耗",
+        "toast": "捡到早上了喵 ×1：躺椅劝你别精神内耗",
         "comment": "躺椅看起来很普通，但它散发着“再想就不礼貌了”的气场。",
         "lines": [
           {
@@ -5368,7 +5368,7 @@
           },
           {
             "speaker": "player",
-            "text": "躺平许可到手。这个物件明显比说明书会说话。"
+            "text": "早上了喵到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -5384,16 +5384,16 @@
         "event": "event_tea_roster",
         "item": "admin_perm",
         "memory": "memory_ending_mat",
-        "toast": "捡到结局门垫 ×1：它把仪式感踩在脚下",
+        "toast": "捡到管理员权限 ×1：它把仪式感踩在脚下",
         "comment": "门垫温柔地提示：先别急着结局，大家还没吐槽完。",
         "lines": [
           {
             "speaker": "narrator",
-            "text": "旁白：你靠近结局门垫，它立刻亮了一下，像终于等到有人点它。"
+            "text": "旁白：你靠近管理员权限，它立刻亮了一下，像终于等到有人点它。"
           },
           {
             "speaker": "player",
-            "text": "结局门垫到手。这个物件明显比说明书会说话。"
+            "text": "管理员权限到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -6250,7 +6250,7 @@
         "event": "event_palette_sync",
         "item": "spicy_pic",
         "memory": "memory_palette_sync",
-        "toast": "捡到色板芯片 ×1：色板决定给今天加一点主角色",
+        "toast": "捡到色图 ×1：色板决定给今天加一点主角色",
         "comment": "色板转了一圈，最后选了一个“看不懂但很对味”的颜色。",
         "lines": [
           {
@@ -6259,7 +6259,7 @@
           },
           {
             "speaker": "player",
-            "text": "色板芯片到手。这个物件明显比说明书会说话。"
+            "text": "色图到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -6325,7 +6325,7 @@
         "event": "event_portrait_glitch",
         "item": "oldguard",
         "memory": "memory_codex_drawer",
-        "toast": "捡到图鉴标签 ×1：抽屉发出“终于轮到我”的声音",
+        "toast": "捡到老资历 ×1：抽屉发出“终于轮到我”的声音",
         "comment": "抽屉里每张标签都很正经，直到你发现背面写着小镇黑历史。",
         "lines": [
           {
@@ -6334,7 +6334,7 @@
           },
           {
             "speaker": "player",
-            "text": "图鉴标签到手。这个物件明显比说明书会说话。"
+            "text": "老资历到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -7212,16 +7212,16 @@
         "event": "event_mushroom_path",
         "item": "monkey",
         "memory": "memory_mushroom_hint",
-        "toast": "捡到蘑菇路标 ×1：它看起来很懂路，但不保证负责",
+        "toast": "捡到猴 ×1：它看起来很懂路，但不保证负责",
         "comment": "蘑菇指向三条路，每条都写着“相信我”。",
         "lines": [
           {
             "speaker": "narrator",
-            "text": "旁白：你靠近蘑菇路标，它立刻亮了一下，像终于等到有人点它。"
+            "text": "旁白：你靠近猴，它立刻亮了一下，像终于等到有人点它。"
           },
           {
             "speaker": "player",
-            "text": "蘑菇路标到手。这个物件明显比说明书会说话。"
+            "text": "猴到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -7262,7 +7262,7 @@
         "event": "event_mushroom_path",
         "item": "group_fire",
         "memory": "memory_campfire_reply",
-        "toast": "捡到篝火回复 ×1：火苗正在小声接梗",
+        "toast": "捡到群聊之火 ×1：火苗正在小声接梗",
         "comment": "篝火噼啪两声，像是在替远处的人发“在看”。",
         "lines": [
           {
@@ -7271,7 +7271,7 @@
           },
           {
             "speaker": "player",
-            "text": "篝火回复到手。这个物件明显比说明书会说话。"
+            "text": "群聊之火到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -8149,7 +8149,7 @@
         "event": "event_core_restart",
         "item": "core_key",
         "memory": "memory_core_restart",
-        "toast": "捡到核心钥匙 ×1：重启杆正在等一个很有仪式感的按下",
+        "toast": "捡到核心密钥 ×1：重启杆正在等一个很有仪式感的按下",
         "comment": "重启杆不说话，但它的沉默很像“你最好准备好台词”。",
         "lines": [
           {
@@ -8158,7 +8158,7 @@
           },
           {
             "speaker": "player",
-            "text": "核心钥匙到手。这个物件明显比说明书会说话。"
+            "text": "核心密钥到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -8199,7 +8199,7 @@
         "event": "event_core_restart",
         "item": "quote_msg",
         "memory": "memory_wire_bridge",
-        "toast": "捡到顺风回复 ×1：线路桥把断句重新接上",
+        "toast": "捡到引用消息 ×1：线路桥把断句重新接上",
         "comment": "线路像小镇神经，弯弯绕绕但总能把一句话送到该到的人那里。",
         "lines": [
           {
@@ -8208,7 +8208,7 @@
           },
           {
             "speaker": "player",
-            "text": "顺风回复到手。这个物件明显比说明书会说话。"
+            "text": "引用消息到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
