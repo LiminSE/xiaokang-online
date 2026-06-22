@@ -1433,6 +1433,8 @@ function itemForEvent(eventId = "") {
   if (eventId.includes("dinner") || eventId.includes("sugar")) return "yellow_roast";
   if (eventId.includes("palette") || eventId.includes("portrait")) return "spicy_pic";
   if (eventId.includes("cache") || eventId.includes("constant")) return "oo";
+  if (eventId.includes("monkey") || eventId.includes("mushroom")) return "monkey";
+  if (eventId.includes("copy") || eventId.includes("its_your")) return "its_your_copy";
   return "highlight_msg";
 }
 
