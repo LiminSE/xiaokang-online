@@ -717,6 +717,22 @@ h3 {
   font-size: 13px;
   font-weight: 900;
   line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.bag-chip:hover {
+  background: #fff0c0;
+  transform: scale(1.05);
+}
+.bag-chip:active {
+  transform: scale(0.97);
+}
+.bag-chip.is-empty {
+  cursor: default;
+}
+.bag-chip.is-empty:hover {
+  background: #fff7dc;
+  transform: none;
 }
 
 .bag-chip .bag-icon {

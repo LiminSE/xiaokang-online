@@ -2614,12 +2614,33 @@ function renderBackpackPreview() {
   const visible = entries.slice(0, 6);
   const rest = entries.length - visible.length;
   itemsNode.innerHTML = `${visible
-    .map((item) => `<span class="bag-chip" title="${escapeHtml(item.name)}：${escapeHtml(item.flavor || item.description)}">
+    .map((item) => `<span class="bag-chip" data-item-id="${escapeHtml(item.id)}" title="点击查看详情" style="cursor:pointer">
       <span class="bag-icon">${escapeHtml(item.icon || "🎒")}</span>
       <span class="bag-name">${escapeHtml(item.name)}</span>
       <span>×${item.count}</span>
     </span>`)
     .join("")}${rest > 0 ? `<span class="bag-chip">+${rest}</span>` : ""}`;
+  // Attach click handlers
+  itemsNode.querySelectorAll(".bag-chip[data-item-id]").forEach((chip) => {
+    chip.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const itemId = chip.dataset.itemId;
+      showItemDetail(itemId);
+    });
+  });
+}
+
+function showItemDetail(itemId) {
+  const item = itemDetails(itemId);
+  if (!item) return;
+  const html = `<div style="text-align:center;padding:16px 0">
+    <div style="font-size:48px;margin-bottom:12px">${escapeHtml(item.icon || "🎒")}</div>
+    <h2 style="margin:0 0 8px">${escapeHtml(item.name)}</h2>
+    <p style="color:#6b5a4b;line-height:1.6;margin:0 0 12px">${escapeHtml(item.description || "")}</p>
+    <p style="color:#9c7c6b;font-style:italic;line-height:1.5">${escapeHtml(item.flavor || "")}</p>
+    <p style="color:#aaa;font-size:11px;margin-top:8px">数量：${state.inventory[itemId] || 0}</p>
+  </div>`;
+  openModal(item.name, html);
 }
 
 function formatQuestStep(step) {
