@@ -1092,14 +1092,8 @@ function itemName(id) {
 
 function itemShortDescription(id) {
   var item = itemDetails(id);
-  var flav = item?.flavor || '';
-  var desc = item?.description || '';
-  // Toast: show flavor tagline first, then brief description snippet
-  if (flav && desc) {
-    var shortDesc = desc.length > 40 ? desc.slice(0, 38) + '…' : desc;
-    return flav + '——' + shortDesc;
-  }
-  return flav || desc || '它闪了一下，像在等你发弹幕';
+  // Toast shows 简介 (description), not 小文案 (flavor)
+  return item?.description || item?.flavor || '它闪了一下，像在等你发弹幕';
 }
 
 function inventoryEntries() {
