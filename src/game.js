@@ -4430,29 +4430,63 @@ function openSettings() {
 }
 
 function showEnding() {
-  const bondCount = Object.keys(state.bonds).filter((key) => key.includes("_lv3")).length;
-  const truePoints = state.bonds.endingTruePoints || 0;
-  const ending = truePoints >= 8 ? "真结局" : bondCount >= 10 ? "羁绊结局" : "普通结局";
-  openModal(
-    ending,
-    '<div class="info-card">' +
-      '<h3>全员上线</h3>' +
-      '<p class="muted">小康钟被敲响，在线回声重新归档。当前完成：任务 ' + state.completedQuests.size + '/' + DATA.quests.filter(function(q) { return q.type !== "easter"; }).length + '，回忆 ' + state.memories.size + '，深层回声 ' + truePoints + '。</p>' +
-      '<p>小镇恢复稳定，小康Online 进入常驻在线准备状态。</p>' +
-    '</div>'
-  );
-  // Show congratulatory popup after a delay
+  var bondCount = Object.keys(state.bonds).filter(function(key) { return key.includes('_lv3'); }).length;
+  var truePoints = state.bonds.endingTruePoints || 0;
+  var ending = truePoints >= 8 ? '真结局' : bondCount >= 10 ? '羁绊结局' : '普通结局';
+  // Close any open modal first
+  closeModal();
+  // Flush any pending CGs before showing ending
   window.setTimeout(function() {
     openModal(
-      '🎉 恭喜通关！',
-      '<div style="text-align:center;padding:20px">' +
-        '<div style="font-size:48px;margin-bottom:12px">🎉</div>' +
-        '<h2 style="margin:0 0 8px">恭喜通关！</h2>' +
-        '<p style="color:#6b5a4b;line-height:1.6">还有很多时间，到处转转吧。</p>' +
-        '<p class="muted">小镇会一直在这里——去看看还没聊过的人，捡捡还没发现的道具，翻翻还没解锁的CG。</p>' +
+      ending,
+      '<div class="info-card">' +
+        '<h3>全员上线</h3>' +
+        '<p class="muted">小康钟被敲响，在线回声重新归档。当前完成：任务 ' + state.completedQuests.size + '/' + DATA.quests.filter(function(q) { return q.type !== 'easter'; }).length + '，回忆 ' + state.memories.size + '，深层回声 ' + truePoints + '。</p>' +
+        '<p>小镇恢复稳定，小康Online 进入常驻在线准备状态。</p>' +
       '</div>'
     );
-  }, 3000);
+    // After ending modal closes, flush CGs then show congrats
+    state._pendingCongrats = true;
+  }, 1500);
+}
+
+// Hook into closeModal to detect when modal closes
+var _origCloseModal = closeModal;
+closeModal = function() {
+  _origCloseModal();
+  // After modal closes, flush pending CGs first
+  if (!state._pendingCgs || !state._pendingCgs.length) {
+    // No CGs pending - show congrats if waiting
+    if (state._pendingCongrats) {
+      state._pendingCongrats = false;
+      window.setTimeout(showCongratsPopup, 600);
+    }
+  } else {
+    // CGs pending - flush them, congrats after
+    flushPendingCgs();
+    if (state._pendingCongrats) {
+      state._pendingCongrats = false;
+      // Wait for CG modal to close too
+      var check = window.setInterval(function() {
+        if ($('#modalLayer').hidden) {
+          window.clearInterval(check);
+          window.setTimeout(showCongratsPopup, 600);
+        }
+      }, 200);
+    }
+  }
+};
+
+function showCongratsPopup() {
+  openModal(
+    '🎉 恭喜通关！',
+    '<div style="text-align:center;padding:20px">' +
+      '<div style="font-size:48px;margin-bottom:12px">🎉</div>' +
+      '<h2 style="margin:0 0 8px">恭喜通关！</h2>' +
+      '<p style="color:#6b5a4b;line-height:1.6">还有很多时间，到处转转吧。</p>' +
+      '<p class="muted">小镇会一直在这里——去看看还没聊过的人，捡捡还没发现的道具，翻翻还没解锁的CG。</p>' +
+    '</div>'
+  );
 }
 
 function keyForPoint(x, y) {
