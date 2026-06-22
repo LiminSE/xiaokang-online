@@ -620,6 +620,9 @@ function requestLandscapePlayback() {
 }
 
 function showItemPopup(itemId) {
+  // Don't show if a modal or dialogue is already open
+  if ($("#modalLayer") && !$("#modalLayer").hidden) return;
+  if ($("#dialogueBox") && !$("#dialogueBox").hidden) return;
   const item = itemDetails(itemId);
   if (!item) return;
   const popup = $("#itemPopup");
@@ -628,9 +631,7 @@ function showItemPopup(itemId) {
   $("#itemPopupName").textContent = item.name;
   $("#itemPopupDesc").textContent = itemShortDescription(itemId);
   popup.hidden = false;
-  // Play pickup fanfare
   playPickupFanfare();
-  // Auto-hide after 4 seconds
   window.clearTimeout(showItemPopup._timer);
   showItemPopup._timer = window.setTimeout(function() {
     popup.hidden = true;
@@ -4038,6 +4039,9 @@ function renderAssetStatus() {
 }
 
 function openModal(title, html) {
+  // Close any item popup first
+  var itemPopup = $("#itemPopup");
+  if (itemPopup) itemPopup.hidden = true;
   $("#modalTitle").textContent = title;
   $("#modalBody").innerHTML = html;
   $("#modalLayer").hidden = false;
@@ -4045,6 +4049,14 @@ function openModal(title, html) {
 
 function closeModal() {
   $("#modalLayer").hidden = true;
+  // After closing modal, flush any queued items
+  window.setTimeout(function() {
+    flushPendingCgs();
+    if (state._pendingCongrats) {
+      state._pendingCongrats = false;
+      window.setTimeout(showCongratsPopup, 600);
+    }
+  }, 300);
 }
 
 function showQuestCompleteBanner(quest) {
@@ -4449,33 +4461,6 @@ function showEnding() {
     state._pendingCongrats = true;
   }, 1500);
 }
-
-// Hook into closeModal to detect when modal closes
-var _origCloseModal = closeModal;
-closeModal = function() {
-  _origCloseModal();
-  // After modal closes, flush pending CGs first
-  if (!state._pendingCgs || !state._pendingCgs.length) {
-    // No CGs pending - show congrats if waiting
-    if (state._pendingCongrats) {
-      state._pendingCongrats = false;
-      window.setTimeout(showCongratsPopup, 600);
-    }
-  } else {
-    // CGs pending - flush them, congrats after
-    flushPendingCgs();
-    if (state._pendingCongrats) {
-      state._pendingCongrats = false;
-      // Wait for CG modal to close too
-      var check = window.setInterval(function() {
-        if ($('#modalLayer').hidden) {
-          window.clearInterval(check);
-          window.setTimeout(showCongratsPopup, 600);
-        }
-      }, 200);
-    }
-  }
-};
 
 function showCongratsPopup() {
   openModal(
