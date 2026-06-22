@@ -665,7 +665,7 @@
         "event": "event_center_bell",
         "item": "highlight_msg",
         "memory": "memory_center_clock",
-        "toast": "捡到星砂 ×1：小康钟认真响了半声，然后开始装没事",
+        "toast": "捡到精华消息 ×1：小康钟认真响了半声，然后开始装没事",
         "comment": "钟声听起来很庄重，直到它把尾音拐成了群聊提示音。",
         "lines": [
           {
@@ -674,7 +674,7 @@
           },
           {
             "speaker": "player",
-            "text": "星砂到手。这个物件明显比说明书会说话。"
+            "text": "精华消息到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -4447,7 +4447,7 @@
         "event": "event_moon_phase",
         "item": "highlight_msg",
         "memory": "memory_lake_reflection",
-        "toast": "捡到星砂 ×1：倒影比本人还会吐槽",
+        "toast": "捡到精华消息 ×1：倒影比本人还会吐槽",
         "comment": "你看向湖面，倒影先看向你，双方都觉得对方今天有点离谱。",
         "lines": [
           {
@@ -4456,7 +4456,7 @@
           },
           {
             "speaker": "player",
-            "text": "星砂到手。这个物件明显比说明书会说话。"
+            "text": "精华消息到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
