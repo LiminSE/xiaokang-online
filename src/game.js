@@ -2791,7 +2791,7 @@ function openQuestLog() {
       var dot = sDone ? '✓' : (sCur ? '●' : '○');
       return '<li class="' + cls + '"><span class="flow-dot">' + dot + '</span><span class="flow-text">' + formatQuestStep(step) + '</span></li>';
     }).join('');
-    return '<article class="quest-flow-card"><div class="quest-flow-header"><div><span class="server-name">' + questTypeLabel(quest.type) + ' · ' + label + '</span><h3>' + quest.name + '</h3><p class="muted">' + escapeHtml(story) + '…</p></div><button class="track-quest-button' + (tracked ? ' is-tracked' : '') + '" data-track-quest="' + quest.id + '">' + (tracked ? '追踪中' : '追踪任务') + '</button></div><div class="quest-flow-steps" data-quest-steps="' + quest.id + '"' + (tracked ? '' : ' hidden') + '><div class="flow-line"></div><ol>' + stepsHtml + '</ol></div></article>';
+    var typeClass = 'type-' + quest.type; return '<article class="quest-flow-card ' + typeClass + '"><div class="quest-flow-header"><div><span class="server-name">' + questTypeLabel(quest.type) + ' · ' + label + '</span><h3>' + quest.name + '</h3><p class="muted">' + escapeHtml(story) + '…</p></div><button class="track-quest-button' + (tracked ? ' is-tracked' : '') + '" data-track-quest="' + quest.id + '">' + (tracked ? '追踪中' : '追踪任务') + '</button></div><div class="quest-flow-steps" data-quest-steps="' + quest.id + '"' + (tracked ? '' : ' hidden') + '><div class="flow-line"></div><ol>' + stepsHtml + '</ol></div></article>';
   }).join('');
   openModal('任务日志', html);
   requestAnimationFrame(function() {

@@ -1209,6 +1209,23 @@ h3 {
   margin-bottom: 10px;
   overflow: hidden;
 }
+/* Quest type colors */
+.quest-flow-card.type-main {
+  border-left: 4px solid #e35d5b;
+  background: #fff5f4;
+}
+.quest-flow-card.type-bond {
+  border-left: 4px solid #c47dbf;
+  background: #fdf5fc;
+}
+.quest-flow-card.type-area {
+  border-left: 4px solid #5b9e8a;
+  background: #f4faf7;
+}
+.quest-flow-card.type-easter {
+  border-left: 4px solid #f0b84c;
+  background: #fffcf2;
+}
 .quest-flow-header {
   padding: 12px;
   display: flex;
@@ -1219,7 +1236,7 @@ h3 {
   transition: background 0.15s;
 }
 .quest-flow-header:hover {
-  background: #fff3d0;
+  background: rgba(0,0,0,0.03);
 }
 .quest-flow-header h3 {
   margin: 4px 0;
