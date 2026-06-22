@@ -1267,94 +1267,116 @@ function quickGreeting(char, story) {
 }
 
 function characterMenuChoices(charId, quest = null) {
-  const char = indexes.characters.get(charId);
-  const story = indexes.storyByCharacter.get(charId);
-  // 确保拿到的是daily对话（有choices）而不是reaction对话（无choices）
-  const dailyOptions = indexes.dialoguesBySpeaker.get(charId) || [];
-  const daily = dailyOptions.find(d => d.id === `daily_${charId}`) || pickDialogue(charId);
-  // 随机选关系剧情——优先当前区域匹配的pair，增加多样性
-  const allPairs = indexes.pairStoriesByCharacter.get(charId) || [];
-  const areaPairs = allPairs.filter(p => p.area === state.areaId);
-  const pool = areaPairs.length > 0 ? areaPairs : allPairs;
-  // 基于时间和区域做确定性随机——同一会话内保持一致，不同区域/时间不同
-  let pairIdx = 0;
-  const pairSeed = charId + state.areaId + state.time;
-  for (let i = 0; i < pairSeed.length; i++) {
+  var char = indexes.characters.get(charId);
+  var story = indexes.storyByCharacter.get(charId);
+  var dailyOptions = indexes.dialoguesBySpeaker.get(charId) || [];
+  var daily = dailyOptions.find(function(d) { return d.id === 'daily_' + charId; }) || pickDialogue(charId);
+
+  // Collect all casual and deep topics from daily choices
+  var allCasual = (daily?.choices || []).filter(function(c) { return c.label.indexOf('闲谈') >= 0; });
+  var allDeep = (daily?.choices || []).filter(function(c) { return c.label.indexOf('长聊') >= 0; });
+  var taskChoice = (daily?.choices || []).find(function(c) { return c.id.indexOf('task') >= 0; });
+
+  // Filter completed topics
+  if (!state._completedTopics) state._completedTopics = {};
+  var done = state._completedTopics[charId] || {};
+  allCasual = allCasual.filter(function(c) { return !done[c.id]; });
+  allDeep = allDeep.filter(function(c) { return !done[c.id]; });
+  if (taskChoice && done[taskChoice.id]) taskChoice = null;
+
+  // Pair story
+  var allPairs = indexes.pairStoriesByCharacter.get(charId) || [];
+  var areaPairs = allPairs.filter(function(p) { return p.area === state.areaId; });
+  var pool = areaPairs.length > 0 ? areaPairs : allPairs;
+  var pairIdx = 0;
+  var pairSeed = charId + state.areaId + state.time;
+  for (var i = 0; i < pairSeed.length; i++) {
     pairIdx = (pairIdx * 31 + pairSeed.charCodeAt(i)) & 0x7fffffff;
   }
   pairIdx = pairIdx % Math.max(1, pool.length);
-  const pair = pool.length > 0 ? pool[pairIdx] : null;
+  var pair = pool.length > 0 ? pool[pairIdx] : null;
 
-  // 随机选一个闲谈话题
-  const casualChoices = (daily?.choices || []).filter(c => c.label.includes("闲谈"));
-  let casualVariant = null;
-  if (casualChoices.length > 0) {
-    let casualIdx = 0;
-    const casualSeed = charId + state.areaId + state.time + "casual";
-    for (let i = 0; i < casualSeed.length; i++) {
-      casualIdx = (casualIdx * 31 + casualSeed.charCodeAt(i)) & 0x7fffffff;
-    }
-    casualIdx = casualIdx % casualChoices.length;
-    casualVariant = casualChoices[casualIdx];
-  }
-  const casualLines = casualVariant?.lines?.length
-    ? casualVariant.lines
-    : [
-        { speaker: "player", text: "今天有什么有意思的事吗？" },
-        ...(story?.agentLines?.casual?.length ? story.agentLines.casual : [{ speaker: charId, text: "今天频道挺安静的，适合闲聊。" }]),
-      ];
+  // Build main menu with nextChoices for sub-menus
+  var choices = [];
 
-  const taskLines = [
-    { speaker: "player", text: "正事的话——现在应该做什么？" },
-    ...(story?.agentLines?.task?.length ? story.agentLines.task : [{ speaker: charId, text: quest ? questIntroLine(char, quest) : currentQuestHint(charId) }]),
-  ];
-  const choices = [
-    {
-      id: `menu_${charId}_casual`,
-      label: casualVariant?.label || "闲谈",
-      lines: normalizeLines(casualLines, charId),
-      rewards: [`memory_daily_talk_${charId}`],
-    },
-    {
-      id: `menu_${charId}_task`,
-      label: "关于任务",
-      lines: normalizeLines(taskLines, charId),
-      rewards: [`memory_task_hint_${charId}`],
-    },
-  ];
-  if (pair) {
-    const otherChar = indexes.characters.get(pair.a === charId ? pair.b : pair.a);
-    const otherName = otherChar?.displayName || "某人";
+  // Task option
+  if (taskChoice) {
+    var taskLines = [
+      { speaker: 'player', text: '说说正事吧——现在最需要做什么？' },
+      { speaker: charId, text: quest ? questIntroLine(char, quest) : currentQuestHint(charId) },
+    ];
     choices.push({
-      id: `menu_${charId}_pair`,
-      label: `关系剧情：与${otherName}`,
+      id: 'menu_' + charId + '_task',
+      label: '关于任务',
+      lines: normalizeLines(taskChoice.lines?.length ? taskChoice.lines : taskLines, charId),
+      rewards: taskChoice.rewards || [],
+      event: taskChoice.event || '',
+      nextChoices: [], // No sub-menu, plays directly
+      _isLeaf: true
+    });
+  }
+
+  // Casual sub-menu
+  if (allCasual.length > 0) {
+    var casualSubs = allCasual.map(function(c) {
+      return {
+        id: c.id,
+        label: c.label.replace('闲谈：', ''),
+        lines: normalizeLines(c.lines, charId),
+        rewards: c.rewards || [],
+        _isLeaf: true
+      };
+    });
+    casualSubs.push({ id: 'menu_' + charId + '_back', label: '算了', lines: [], _isBack: true });
+    choices.push({
+      id: 'menu_' + charId + '_casual',
+      label: '闲谈（' + allCasual.length + '个话题）',
+      lines: [{ speaker: 'player', text: '聊点轻松的——你最近有什么有意思的事？' }, { speaker: charId, text: '行啊，你想聊哪个方向？' }],
+      nextChoices: casualSubs,
+      rewards: ['memory_daily_talk_' + charId],
+    });
+  }
+
+  // Deep sub-menu
+  if (allDeep.length > 0) {
+    var deepSubs = allDeep.map(function(c) {
+      return {
+        id: c.id,
+        label: c.label.replace('长聊：', ''),
+        lines: normalizeLines(c.lines, charId),
+        rewards: c.rewards || [],
+        _isLeaf: true
+      };
+    });
+    deepSubs.push({ id: 'menu_' + charId + '_back', label: '算了', lines: [], _isBack: true });
+    choices.push({
+      id: 'menu_' + charId + '_deep',
+      label: '长聊（' + allDeep.length + '个话题）',
+      lines: [{ speaker: 'player', text: '聊点深的——我有个问题一直想问你。' }, { speaker: charId, text: '好，你想深入聊哪个？' }],
+      nextChoices: deepSubs,
+      rewards: ['memory_daily_talk_' + charId],
+    });
+  }
+
+  // Pair story option
+  if (pair) {
+    choices.push({
+      id: 'menu_' + charId + '_pair',
+      label: '关系剧情：' + (pair.title || '群聊交集'),
       lines: pairStoryLines(pair),
       rewards: [pair.unlockMemory],
-      event: `duo_${pair.a}_${pair.b}`,
+      event: 'duo_' + pair.a + '_' + pair.b,
+      _isLeaf: true
     });
   }
-  // 随机选一个长聊话题——保留话题标签
-  const deepChoices = (daily?.choices || []).filter(c => c.label.includes("长聊"));
-  let deeper = null;
-  if (deepChoices.length > 0) {
-    // 基于时间做确定性随机——不同时间不同话题
-    let deepIdx = 0;
-    const deepSeed = charId + state.areaId + state.time + "deep";
-    for (let i = 0; i < deepSeed.length; i++) {
-      deepIdx = (deepIdx * 31 + deepSeed.charCodeAt(i)) & 0x7fffffff;
-    }
-    deepIdx = deepIdx % deepChoices.length;
-    deeper = deepChoices[deepIdx];
-  }
-  if (deeper) {
-    choices.push({ ...deeper, id: `menu_${charId}_deep`, lines: normalizeLines(deeper.lines, charId) });
-  } else if (story?.agentLines?.deep?.length) {
-    choices.push({
-      id: `menu_${charId}_deep`,
-      label: "长聊一下",
-      lines: normalizeLines(story.agentLines.deep, charId),
-      rewards: [`memory_deep_chat_${charId}`],
-    });
+
+  if (!choices.length) {
+    choices = [{
+      id: 'menu_' + charId + '_done',
+      label: '全部聊完了',
+      lines: [{ speaker: 'player', text: '我们好像把所有话题都聊完了。' }, { speaker: charId, text: '对，下次再来——小镇不缺话题，只缺愿意聊的人。' }],
+      _isLeaf: true
+    }];
   }
   return choices;
 }
@@ -2724,6 +2746,20 @@ function chooseDialogue(choiceId) {
   if (!state.dialogue?.choices?.length) return;
   var choice = state.dialogue.choices.find(function(item) { return item.id === choiceId; });
   if (!choice) return;
+  // Handle "算了" back button
+  if (choice._isBack) {
+    // Rebuild main menu
+    var charId = state.dialogue.speaker;
+    var menuChoices = characterMenuChoices(charId);
+    state.dialogue = {
+      speaker: charId,
+      lines: [{ speaker: charId, text: '行，那聊点别的。你想聊什么方向？' }],
+      choices: menuChoices,
+      index: 0,
+    };
+    renderDialogue();
+    return;
+  }
   playTalkSound();
   grantRewards(choice.rewards || []);
   if (choice.event) progressEventQuests(choice.event);
@@ -2732,41 +2768,23 @@ function chooseDialogue(choiceId) {
     openQuestLog();
     return;
   }
-  // Mark this topic as completed for this character
-  if (!state._completedTopics) state._completedTopics = {};
+  // Mark leaf topics as completed
   var charId = state.dialogue.speaker;
-  if (!state._completedTopics[charId]) state._completedTopics[charId] = {};
-  state._completedTopics[charId][choiceId] = true;
-  // Build remaining choices: original menu minus the one just picked
-  var remaining = (state.dialogue._allChoices || state.dialogue.choices).filter(function(c) {
-    return c.id !== choiceId;
-  });
-  // If no more topics and no nextChoices, show conclusion
-  if (!remaining.length && (!choice.nextChoices || !choice.nextChoices.length)) {
-    var charId = state.dialogue.speaker;
-    var char = indexes.characters.get(charId);
-    var congratsText = char ? (char.displayName + '和你聊了很多。这段对话会被小镇记住——就像所有被标记为精华消息的瞬间。') : '你们把能聊的都聊完了。这段对话会被小镇记住。';
-    state.dialogue = {
-      speaker: state.dialogue.speaker,
-      lines: [
-        { speaker: 'narrator', text: '旁白：' + congratsText },
-        { speaker: state.dialogue.speaker, text: '说得够多了。下次再来——小镇不缺话题，只缺愿意聊的人。' },
-        { speaker: 'player', text: '好。下次再来找你。' },
-      ],
-      choices: [],
-      _isConclusion: true,
-      index: 0,
-      _unlockMemory: 'memory_talk_complete_' + charId,
-    };
-  } else {
-    state.dialogue = {
-      speaker: state.dialogue.speaker,
-      lines: choice.lines?.length ? normalizeLines(choice.lines, state.dialogue.speaker) : [{ speaker: 'narrator', text: '旁白：你们互相看了一眼，小镇空气里写满了：此处需要一段名场面。' }],
-      choices: choice.nextChoices && choice.nextChoices.length ? choice.nextChoices : remaining,
-      _allChoices: choice.nextChoices && choice.nextChoices.length ? choice.nextChoices : remaining,
-      index: 0,
-    };
+  if (choice._isLeaf) {
+    if (!state._completedTopics) state._completedTopics = {};
+    if (!state._completedTopics[charId]) state._completedTopics[charId] = {};
+    state._completedTopics[charId][choiceId] = true;
   }
+  // Show lines then go back to main menu if leaf, or show nextChoices if sub-menu
+  var backToMenu = choice._isLeaf;
+  state.dialogue = {
+    speaker: state.dialogue.speaker,
+    lines: choice.lines?.length ? normalizeLines(choice.lines, state.dialogue.speaker) : [{ speaker: 'narrator', text: '旁白：这个话题似乎还没准备好。' }],
+    choices: choice.nextChoices && choice.nextChoices.length ? choice.nextChoices : [],
+    index: 0,
+    _returnToMenu: backToMenu,
+    _returnCharId: charId,
+  };
   renderDialogue();
 }
 
@@ -2994,16 +3012,65 @@ function nextDialogue() {
   if (state.dialogue.index === state.dialogue.lines.length - 1 && state.dialogue.choices?.length) return;
   state.dialogue.index += 1;
   if (state.dialogue.index >= state.dialogue.lines.length) {
+    // Check if we should return to main menu after leaf topic
+    if (state.dialogue && state.dialogue._returnToMenu) {
+      var charId = state.dialogue._returnCharId;
+      // Check if all topics are done
+      if (!state._completedTopics) state._completedTopics = {};
+      var done = state._completedTopics[charId] || {};
+      var dailyOptions = DATA.dialogues.filter(function(d) { return d.speaker === charId || d.id === 'daily_' + charId; });
+      if (!dailyOptions.length) {
+        var bySpeaker = [];
+        for (var k = 0; k < DATA.dialogues.length; k++) {
+          if (DATA.dialogues[k].speaker === charId || DATA.dialogues[k].id === 'daily_' + charId) {
+            bySpeaker.push(DATA.dialogues[k]);
+          }
+        }
+        dailyOptions = bySpeaker;
+      }
+      // Find the daily scene
+      var daily = null;
+      for (var d = 0; d < DATA.dialogues.length; d++) {
+        if (DATA.dialogues[d].id === 'daily_' + charId) { daily = DATA.dialogues[d]; break; }
+      }
+      var allTopics = (daily?.choices || []).filter(function(c) { return c.id.indexOf('task') >= 0 || c.label.indexOf('闲谈') >= 0 || c.label.indexOf('长聊') >= 0; });
+      var allDone = allTopics.every(function(c) { return done[c.id]; });
+
+      if (allDone && allTopics.length > 0) {
+        // All topics done — show conclusion
+        var char = indexes.characters.get(charId);
+        var congratsText = char ? (char.displayName + '和你聊了很多。这段对话会被小镇记住。') : '你们把能聊的都聊完了。';
+        state.dialogue = {
+          speaker: charId,
+          lines: [
+            { speaker: 'narrator', text: '旁白：' + congratsText },
+            { speaker: charId, text: '说得够多了。下次再来——小镇不缺话题，只缺愿意聊的人。' },
+            { speaker: 'player', text: '好。下次再来找你。' },
+          ],
+          choices: [],
+          index: 0,
+        };
+        renderDialogue();
+        return;
+      }
+
+      // Back to main menu
+      var menuChoices = characterMenuChoices(charId);
+      if (menuChoices.length) {
+        state.dialogue = {
+          speaker: charId,
+          lines: [{ speaker: charId, text: '还想聊什么？' }],
+          choices: menuChoices,
+          index: 0,
+        };
+        renderDialogue();
+        return;
+      }
+    }
     $("#dialogueBox").hidden = true;
     $("#dialogueStandee").hidden = true;
     setDialogueLayoutActive(false);
     clearDialogueTypewriter();
-    // If this was a conclusion, grant memory and check CG
-    if (state.dialogue && state.dialogue._isConclusion && state.dialogue._unlockMemory) {
-      var mem = state.dialogue._unlockMemory;
-      state.memories.add(mem);
-      grantRewards([mem]);
-    }
     state.dialogue = null;
     flushPendingCgs();
     return;
