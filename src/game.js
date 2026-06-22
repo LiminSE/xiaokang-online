@@ -732,6 +732,7 @@ function saveGame(options = {}) {
     pickedInteractions: [...state.pickedInteractions],
     bonds: state.bonds,
     settings: state.settings,
+    completedTopics: state._completedTopics || {},
   };
   localStorage.setItem(SAVE_KEY, JSON.stringify(payload));
   if (!options.silent) toast("进度已保存");
@@ -766,6 +767,7 @@ function loadGame() {
     state.pickedInteractions = new Set(payload.pickedInteractions || []);
     state.bonds = payload.bonds || {};
     state.settings = { ...state.settings, ...(payload.settings || {}) };
+    state._completedTopics = payload.completedTopics || {};
     state.settings.volume = normalizedVolume();
     updateAreaFromPosition(false);
     showScreen("game");
@@ -1227,12 +1229,23 @@ function openNpcDialogueMenu(charId, firstMeet = false, quest = null) {
       { speaker: charId, text: quickGreeting(char, story) },
       { speaker: "player", text: "好。你是今天第一个跟我打招呼的人。" },
     ];
-  var menuChoices = characterMenuChoices(charId, quest);
+  // Filter out already-completed topics for this character
+  if (!state._completedTopics) state._completedTopics = {};
+  var completedForChar = state._completedTopics[charId] || {};
+  var menuChoices = characterMenuChoices(charId, quest).filter(function(c) {
+    return !completedForChar[c.id];
+  });
+  // If all topics done, reset for a new round
+  if (!menuChoices.length) {
+    state._completedTopics[charId] = {};
+    menuChoices = characterMenuChoices(charId, quest);
+  }
   state.dialogue = {
     speaker: charId,
     lines: normalizeLines(greeting, charId),
     choices: menuChoices,
     _allChoices: menuChoices,
+    _originalCount: menuChoices.length,
     index: 0,
   };
   renderDialogue();
@@ -2719,6 +2732,11 @@ function chooseDialogue(choiceId) {
     openQuestLog();
     return;
   }
+  // Mark this topic as completed for this character
+  if (!state._completedTopics) state._completedTopics = {};
+  var charId = state.dialogue.speaker;
+  if (!state._completedTopics[charId]) state._completedTopics[charId] = {};
+  state._completedTopics[charId][choiceId] = true;
   // Build remaining choices: original menu minus the one just picked
   var remaining = (state.dialogue._allChoices || state.dialogue.choices).filter(function(c) {
     return c.id !== choiceId;
@@ -2873,11 +2891,11 @@ function renderDialogue() {
   }
   var choices = isLastLine ? state.dialogue.choices || [] : [];
   var hasRemaining = choices.length > 0;
-  var isSubsequent = hasRemaining && state.dialogue._allChoices && state.dialogue._allChoices.length > choices.length;
+  // Show "就这样吧" if there were originally more topics (some already completed)
+  var isSubsequent = hasRemaining && state.dialogue._originalCount && state.dialogue._allChoices && state.dialogue._allChoices.length < state.dialogue._originalCount;
   var html = '';
   if (hasRemaining) {
     html = choices.map(function(choice) { return '<button data-choice="' + choice.id + '">' + choice.label + '</button>'; }).join('');
-    // Add "就这样吧" close button when there are remaining topics after first pick
     if (isSubsequent) {
       html += '<button data-action="closeDialogue" class="close-dialogue-btn">就这样吧</button>';
     }
