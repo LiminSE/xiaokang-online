@@ -634,7 +634,7 @@ function showItemPopup(itemId) {
   window.clearTimeout(showItemPopup._timer);
   showItemPopup._timer = window.setTimeout(function() {
     popup.hidden = true;
-  }, 4000);
+  }, 5000);
 }
 
 // 3-second exciting pickup BGM
