@@ -2584,13 +2584,11 @@ function renderActiveQuest() {
 
 function renderBackpackPreview() {
   const count = inventoryCount();
-  const countNode = $("#backpackCount");
-  const itemsNode = $("#backpackItems");
-  if (!countNode || !itemsNode) return;
-  countNode.textContent = `${count} 件物件`;
+  const itemsNode = $("#backpackInlineItems");
+  if (!itemsNode) return;
   const entries = inventoryEntries();
   if (!entries.length) {
-    itemsNode.innerHTML = `<span class="bag-chip is-empty"><span class="bag-icon">🎒</span><span class="bag-name">空空如也</span></span>`;
+    itemsNode.innerHTML = `<span class="bag-chip is-empty"><span class="bag-icon">🎒</span>空空如也</span>`;
     return;
   }
   const visible = entries.slice(0, 6);
@@ -2654,11 +2652,7 @@ function cgForQuest(quest) {
 
 function renderQuestCg(quest) {
   const cg = cgForQuest(quest);
-  const card = $("#questCgCard");
-  if (!cg || !card) return;
-  $("#questCgImage").src = cg.path;
-  $("#questCgImage").alt = `${cg.name} 插画`;
-  $("#questCgName").textContent = displayCgName(cg.name);
+  // CG card removed - quest name shown in quest-mini instead
 }
 
 function renderAssetStatus() {
