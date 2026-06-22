@@ -2723,13 +2723,22 @@ function chooseDialogue(choiceId) {
   var remaining = (state.dialogue._allChoices || state.dialogue.choices).filter(function(c) {
     return c.id !== choiceId;
   });
-  // If no more topics and no nextChoices, close gracefully
+  // If no more topics and no nextChoices, show conclusion
   if (!remaining.length && (!choice.nextChoices || !choice.nextChoices.length)) {
+    var charId = state.dialogue.speaker;
+    var char = indexes.characters.get(charId);
+    var congratsText = char ? (char.displayName + '和你聊了很多。这段对话会被小镇记住——就像所有被标记为精华消息的瞬间。') : '你们把能聊的都聊完了。这段对话会被小镇记住。';
     state.dialogue = {
       speaker: state.dialogue.speaker,
-      lines: choice.lines?.length ? normalizeLines(choice.lines, state.dialogue.speaker) : [{ speaker: 'narrator', text: '旁白：你们把能聊的都聊完了。' }],
+      lines: [
+        { speaker: 'narrator', text: '旁白：' + congratsText },
+        { speaker: state.dialogue.speaker, text: '说得够多了。下次再来——小镇不缺话题，只缺愿意聊的人。' },
+        { speaker: 'player', text: '好。下次再来找你。' },
+      ],
       choices: [],
+      _isConclusion: true,
       index: 0,
+      _unlockMemory: 'memory_talk_complete_' + charId,
     };
   } else {
     state.dialogue = {
@@ -2971,6 +2980,12 @@ function nextDialogue() {
     $("#dialogueStandee").hidden = true;
     setDialogueLayoutActive(false);
     clearDialogueTypewriter();
+    // If this was a conclusion, grant memory and check CG
+    if (state.dialogue && state.dialogue._isConclusion && state.dialogue._unlockMemory) {
+      var mem = state.dialogue._unlockMemory;
+      state.memories.add(mem);
+      grantRewards([mem]);
+    }
     state.dialogue = null;
     flushPendingCgs();
     return;
