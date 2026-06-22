@@ -641,21 +641,7 @@
         "item": "oo",
         "memory": "memory_center_barrage",
         "toast": "捡到哦哦 ×1：喷泉把三分钟前的吐槽又喷了回来",
-        "comment": "喷泉里不是水，是未读消息。它每喷一下，旁边路灯就替大家补一句“确实”。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近喷泉弹幕井，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "哦哦到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "喷泉里不是水，是未读消息。它每喷一下，旁边路灯就替大家补一句“确实”。"
-          }
-        ]
+        "comment": "喷泉里不是水，是未读消息。它每喷一下，旁边路灯就替大家补一句“确实”。"
       },
       {
         "id": "town_center_interact_2",
@@ -666,21 +652,7 @@
         "item": "highlight_msg",
         "memory": "memory_center_clock",
         "toast": "捡到精华消息 ×1：小康钟认真响了半声，然后开始装没事",
-        "comment": "钟声听起来很庄重，直到它把尾音拐成了群聊提示音。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近小康钟，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "精华消息到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "钟声听起来很庄重，直到它把尾音拐成了群聊提示音。"
-          }
-        ]
+        "comment": "钟声听起来很庄重，直到它把尾音拐成了群聊提示音。"
       },
       {
         "id": "town_center_interact_3",
@@ -691,21 +663,7 @@
         "item": "next_time",
         "memory": "memory_center_coupon",
         "toast": "捡到下次一定券 ×1：摊主本人是空气，但承诺非常饱满",
-        "comment": "摊位上写着“今天不做也没关系”，下一行又补了一句“但是你最好现在做”。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近下次一定摊，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "下次一定券到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "摊位上写着“今天不做也没关系”，下一行又补了一句“但是你最好现在做”。"
-          }
-        ]
+        "comment": "摊位上写着“今天不做也没关系”，下一行又补了一句“但是你最好现在做”。"
       },
       {
         "id": "town_center_interact_4",
@@ -716,21 +674,7 @@
         "item": "quote_msg",
         "memory": "memory_center_lamp",
         "toast": "捡到引用消息 ×1：路灯复读得太真诚，差点把自己说服",
-        "comment": "路灯的光一闪一闪，像有人在输入框里反复删改。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近路灯复读串，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "引用消息到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "路灯的光一闪一闪，像有人在输入框里反复删改。"
-          }
-        ]
+        "comment": "路灯的光一闪一闪，像有人在输入框里反复删改。"
       }
     ],
     "transitions": [
@@ -1556,21 +1500,7 @@
         "item": "yellow_roast",
         "memory": "memory_dinner_pot",
         "toast": "捡到黄哥烤五花 ×1：锅里传来“来吃饭”的幻听",
-        "comment": "锅盖一掀，蒸汽先喊了一句集合。很怪，但饭点就是有这种统治力。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近晚饭召集锅，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "黄哥烤五花到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "锅盖一掀，蒸汽先喊了一句集合。很怪，但饭点就是有这种统治力。"
-          }
-        ]
+        "comment": "锅盖一掀，蒸汽先喊了一句集合。很怪，但饭点就是有这种统治力。"
       },
       {
         "id": "restaurant_interact_2",
@@ -1581,21 +1511,7 @@
         "item": "happy_water",
         "memory": "memory_half_sugar",
         "toast": "捡到快乐水 ×1：杯子坚持今天必须有判定",
-        "comment": "杯壁上没有字，但所有人都看懂了它想说：少糖不等于没脾气。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近半糖裁判杯，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "快乐水到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "杯壁上没有字，但所有人都看懂了它想说：少糖不等于没脾气。"
-          }
-        ]
+        "comment": "杯壁上没有字，但所有人都看懂了它想说：少糖不等于没脾气。"
       },
       {
         "id": "restaurant_interact_3",
@@ -1606,21 +1522,7 @@
         "item": "food_pic",
         "memory": "memory_rice_button",
         "toast": "捡到美食图片 ×1：它被按出了饭点尊严",
-        "comment": "按钮弹起来的声音很像“再来一碗”，但你不确定是不是自己饿出幻觉。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近加饭按钮，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "美食图片到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "按钮弹起来的声音很像“再来一碗”，但你不确定是不是自己饿出幻觉。"
-          }
-        ]
+        "comment": "按钮弹起来的声音很像“再来一碗”，但你不确定是不是自己饿出幻觉。"
       },
       {
         "id": "restaurant_interact_4",
@@ -1631,21 +1533,7 @@
         "item": "its_you",
         "memory": "memory_steam_face",
         "toast": "捡到这是你 ×1：它摆了个很欠的表情",
-        "comment": "蒸汽在空中扭成一个表情，大家沉默两秒后默认这是餐厅吉祥物。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近蒸汽表情云，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "这是你到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "蒸汽在空中扭成一个表情，大家沉默两秒后默认这是餐厅吉祥物。"
-          }
-        ]
+        "comment": "蒸汽在空中扭成一个表情，大家沉默两秒后默认这是餐厅吉祥物。"
       }
     ],
     "transitions": [
@@ -2495,21 +2383,7 @@
         "item": "yugioh_card",
         "memory": "memory_card_gate",
         "toast": "捡到yo-gi-oh! ×1：门禁喊无效，但门自己先让开了",
-        "comment": "门禁努力讲规则，门框努力装听懂，牌桌努力假装这不是日常。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近无效门禁，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "yo-gi-oh!到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "门禁努力讲规则，门框努力装听懂，牌桌努力假装这不是日常。"
-          }
-        ]
+        "comment": "门禁努力讲规则，门框努力装听懂，牌桌努力假装这不是日常。"
       },
       {
         "id": "dragon_card_house_interact_2",
@@ -2520,21 +2394,7 @@
         "item": "rank_ticket",
         "memory": "memory_extra_deck",
         "toast": "捡到上分券 ×1：额外牌堆开始自证清白",
-        "comment": "牌堆满脸写着“还有操作”，但你怀疑它其实只是想多待一回合。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近额外牌堆，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "上分券到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "牌堆满脸写着“还有操作”，但你怀疑它其实只是想多待一回合。"
-          }
-        ]
+        "comment": "牌堆满脸写着“还有操作”，但你怀疑它其实只是想多待一回合。"
       },
       {
         "id": "dragon_card_house_interact_3",
@@ -2545,21 +2405,7 @@
         "item": "mhy_verdict",
         "memory": "memory_verdict_bell",
         "toast": "捡到针对米哈游玩家在本群地位的历史决议 ×1：裁判席说这把不背锅",
-        "comment": "铃铛一响，空气里出现了三种解释，每一种都很像真相。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近龙角裁判席，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "针对米哈游玩家在本群地位的历史决议到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "铃铛一响，空气里出现了三种解释，每一种都很像真相。"
-          }
-        ]
+        "comment": "铃铛一响，空气里出现了三种解释，每一种都很像真相。"
       },
       {
         "id": "dragon_card_house_interact_4",
@@ -2570,21 +2416,7 @@
         "item": "yugioh_card",
         "memory": "memory_card_board",
         "toast": "捡到yo-gi-oh! ×1：记录板把“下次一定”刻成了历史",
-        "comment": "记录板上密密麻麻，全是从自信开始、从沉默结束的回合。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近翻车记录板，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "yo-gi-oh!到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "记录板上密密麻麻，全是从自信开始、从沉默结束的回合。"
-          }
-        ]
+        "comment": "记录板上密密麻麻，全是从自信开始、从沉默结束的回合。"
       }
     ],
     "transitions": [
@@ -3432,21 +3264,7 @@
         "item": "xox",
         "memory": "memory_stage_light",
         "toast": "捡到XOX ×1：灯光把气氛调成了过度营业",
-        "comment": "灯控台一滑，舞台立刻出现“明明没人点歌却已经高潮”的效果。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近深夜灯控台，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "XOX到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "灯控台一滑，舞台立刻出现“明明没人点歌却已经高潮”的效果。"
-          }
-        ]
+        "comment": "灯控台一滑，舞台立刻出现“明明没人点歌却已经高潮”的效果。"
       },
       {
         "id": "livehouse_interact_2",
@@ -3457,21 +3275,7 @@
         "item": "oo",
         "memory": "memory_stage_mic",
         "toast": "捡到哦哦 ×1：麦克风声明自己没有夹子音",
-        "comment": "麦克风摔了一下，全场安静一秒，然后一致认为这是节目效果。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近临时麦克风，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "哦哦到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "麦克风摔了一下，全场安静一秒，然后一致认为这是节目效果。"
-          }
-        ]
+        "comment": "麦克风摔了一下，全场安静一秒，然后一致认为这是节目效果。"
       },
       {
         "id": "livehouse_interact_3",
@@ -3482,21 +3286,7 @@
         "item": "spicy_pic",
         "memory": "memory_stage_poster",
         "toast": "捡到色图 ×1：海报墙偷偷给所有人加滤镜",
-        "comment": "海报里的剪影比本人还会营业，路过的人都想给它点个关注。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近海报滤镜墙，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "色图到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "海报里的剪影比本人还会营业，路过的人都想给它点个关注。"
-          }
-        ]
+        "comment": "海报里的剪影比本人还会营业，路过的人都想给它点个关注。"
       },
       {
         "id": "livehouse_interact_4",
@@ -3507,21 +3297,7 @@
         "item": "yellow_roast",
         "memory": "memory_stage_bar",
         "toast": "捡到黄哥烤五花 ×1：吧台小灯突然想点外卖",
-        "comment": "小灯一闪，像在提醒大家：演出归演出，夜宵不能断。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近吧台小灯，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "黄哥烤五花到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "小灯一闪，像在提醒大家：演出归演出，夜宵不能断。"
-          }
-        ]
+        "comment": "小灯一闪，像在提醒大家：演出归演出，夜宵不能断。"
       }
     ],
     "transitions": [
@@ -4373,21 +4149,7 @@
         "item": "chat_log",
         "memory": "memory_lake_poem",
         "toast": "捡到聊天记录 ×1：纸页湿了，但嘴很硬",
-        "comment": "诗页漂着漂着开始押韵，湖面选择已读不回。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近聊天记录，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "聊天记录到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "诗页漂着漂着开始押韵，湖面选择已读不回。"
-          }
-        ]
+        "comment": "诗页漂着漂着开始押韵，湖面选择已读不回。"
       },
       {
         "id": "echo_lake_interact_2",
@@ -4398,21 +4160,7 @@
         "item": "emo_switch",
         "memory": "memory_moon_toggle",
         "toast": "捡到emo开关 ×1：月亮被调成未读模式",
-        "comment": "开关拨一下，月亮换了个表情，像在说“别催”。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近emo开关，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "emo开关到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "开关拨一下，月亮换了个表情，像在说“别催”。"
-          }
-        ]
+        "comment": "开关拨一下，月亮换了个表情，像在说“别催”。"
       },
       {
         "id": "echo_lake_interact_3",
@@ -4423,21 +4171,7 @@
         "item": "oo",
         "memory": "memory_lake_bottle",
         "toast": "捡到哦哦 ×1：瓶子里全是深夜发言",
-        "comment": "留言瓶晃了晃，吐出一句前言不搭后语但很有画面感的话。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近栈道留言瓶，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "哦哦到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "留言瓶晃了晃，吐出一句前言不搭后语但很有画面感的话。"
-          }
-        ]
+        "comment": "留言瓶晃了晃，吐出一句前言不搭后语但很有画面感的话。"
       },
       {
         "id": "echo_lake_interact_4",
@@ -4448,21 +4182,7 @@
         "item": "highlight_msg",
         "memory": "memory_lake_reflection",
         "toast": "捡到精华消息 ×1：倒影比本人还会吐槽",
-        "comment": "你看向湖面，倒影先看向你，双方都觉得对方今天有点离谱。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近湖面倒影，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "精华消息到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "你看向湖面，倒影先看向你，双方都觉得对方今天有点离谱。"
-          }
-        ]
+        "comment": "你看向湖面，倒影先看向你，双方都觉得对方今天有点离谱。"
       }
     ],
     "transitions": [
@@ -5310,21 +5030,7 @@
         "item": "oo",
         "memory": "memory_clock_0047",
         "toast": "捡到哦哦 ×1：钟楼卡在零点四十七分装深沉",
-        "comment": "零点四十七分不是时间，是精神状态的存档点。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近零点钟楼，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "哦哦到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "零点四十七分不是时间，是精神状态的存档点。"
-          }
-        ]
+        "comment": "零点四十七分不是时间，是精神状态的存档点。"
       },
       {
         "id": "care_home_interact_2",
@@ -5335,21 +5041,7 @@
         "item": "ts_gather",
         "memory": "memory_tea_roster",
         "toast": "捡到TS集合 ×1：摸鱼被写成轮休",
-        "comment": "值班表排得很满，执行起来主打一个看缘分。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近TS集合，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "TS集合到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "值班表排得很满，执行起来主打一个看缘分。"
-          }
-        ]
+        "comment": "值班表排得很满，执行起来主打一个看缘分。"
       },
       {
         "id": "care_home_interact_3",
@@ -5360,21 +5052,7 @@
         "item": "morning_meow",
         "memory": "memory_nap_chair",
         "toast": "捡到早上了喵 ×1：躺椅劝你别精神内耗",
-        "comment": "躺椅看起来很普通，但它散发着“再想就不礼貌了”的气场。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近安眠躺椅，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "早上了喵到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "躺椅看起来很普通，但它散发着“再想就不礼貌了”的气场。"
-          }
-        ]
+        "comment": "躺椅看起来很普通，但它散发着“再想就不礼貌了”的气场。"
       },
       {
         "id": "care_home_interact_4",
@@ -5385,21 +5063,7 @@
         "item": "admin_perm",
         "memory": "memory_ending_mat",
         "toast": "捡到管理员权限 ×1：它把仪式感踩在脚下",
-        "comment": "门垫温柔地提示：先别急着结局，大家还没吐槽完。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近管理员权限，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "管理员权限到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "门垫温柔地提示：先别急着结局，大家还没吐槽完。"
-          }
-        ]
+        "comment": "门垫温柔地提示：先别急着结局，大家还没吐槽完。"
       }
     ],
     "transitions": [
@@ -6251,21 +5915,7 @@
         "item": "spicy_pic",
         "memory": "memory_palette_sync",
         "toast": "捡到色图 ×1：色板决定给今天加一点主角色",
-        "comment": "色板转了一圈，最后选了一个“看不懂但很对味”的颜色。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近同步色板，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "色图到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "色板转了一圈，最后选了一个“看不懂但很对味”的颜色。"
-          }
-        ]
+        "comment": "色板转了一圈，最后选了一个“看不懂但很对味”的颜色。"
       },
       {
         "id": "atelier_interact_2",
@@ -6276,21 +5926,7 @@
         "item": "nijigen",
         "memory": "memory_portrait_patch",
         "toast": "捡到二向箔 ×1：修补台把边缘擦得很认真",
-        "comment": "修补台一边工作一边碎碎念：别把红框带进来，真的会尴尬。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近立绘修补台，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "二向箔到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "修补台一边工作一边碎碎念：别把红框带进来，真的会尴尬。"
-          }
-        ]
+        "comment": "修补台一边工作一边碎碎念：别把红框带进来，真的会尴尬。"
       },
       {
         "id": "atelier_interact_3",
@@ -6301,21 +5937,7 @@
         "item": "oo",
         "memory": "memory_pixel_screen",
         "toast": "捡到哦哦 ×1：屏幕把聊天记录压成像素糖",
-        "comment": "屏幕闪了一下，把一句吐槽压缩成了很可爱的方块。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近像素屏幕，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "哦哦到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "屏幕闪了一下，把一句吐槽压缩成了很可爱的方块。"
-          }
-        ]
+        "comment": "屏幕闪了一下，把一句吐槽压缩成了很可爱的方块。"
       },
       {
         "id": "atelier_interact_4",
@@ -6326,21 +5948,7 @@
         "item": "oldguard",
         "memory": "memory_codex_drawer",
         "toast": "捡到老资历 ×1：抽屉发出“终于轮到我”的声音",
-        "comment": "抽屉里每张标签都很正经，直到你发现背面写着小镇黑历史。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近图鉴抽屉，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "老资历到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "抽屉里每张标签都很正经，直到你发现背面写着小镇黑历史。"
-          }
-        ]
+        "comment": "抽屉里每张标签都很正经，直到你发现背面写着小镇黑历史。"
       }
     ],
     "transitions": [
@@ -7188,21 +6796,7 @@
         "item": "csn",
         "memory": "memory_signal_tower",
         "toast": "捡到csn片 ×1：信号塔把沉默转成了满格",
-        "comment": "塔顶亮了一下，像有人终于把消息发出去了。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近野外信号塔，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "csn片到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "塔顶亮了一下，像有人终于把消息发出去了。"
-          }
-        ]
+        "comment": "塔顶亮了一下，像有人终于把消息发出去了。"
       },
       {
         "id": "northern_wilds_interact_2",
@@ -7213,21 +6807,7 @@
         "item": "monkey",
         "memory": "memory_mushroom_hint",
         "toast": "捡到猴 ×1：它看起来很懂路，但不保证负责",
-        "comment": "蘑菇指向三条路，每条都写着“相信我”。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近猴，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "猴到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "蘑菇指向三条路，每条都写着“相信我”。"
-          }
-        ]
+        "comment": "蘑菇指向三条路，每条都写着“相信我”。"
       },
       {
         "id": "northern_wilds_interact_3",
@@ -7238,21 +6818,7 @@
         "item": "oo",
         "memory": "memory_creek_cache",
         "toast": "捡到哦哦 ×1：小溪把旧消息冲得闪闪发光",
-        "comment": "溪水里有一串回声，像被洗干净的旧吐槽。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近溪边缓存，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "哦哦到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "溪水里有一串回声，像被洗干净的旧吐槽。"
-          }
-        ]
+        "comment": "溪水里有一串回声，像被洗干净的旧吐槽。"
       },
       {
         "id": "northern_wilds_interact_4",
@@ -7263,21 +6829,7 @@
         "item": "group_fire",
         "memory": "memory_campfire_reply",
         "toast": "捡到群聊之火 ×1：火苗正在小声接梗",
-        "comment": "篝火噼啪两声，像是在替远处的人发“在看”。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近露营留言火，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "群聊之火到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "篝火噼啪两声，像是在替远处的人发“在看”。"
-          }
-        ]
+        "comment": "篝火噼啪两声，像是在替远处的人发“在看”。"
       }
     ],
     "transitions": [
@@ -8125,21 +7677,7 @@
         "item": "cache_clean",
         "memory": "memory_cache_clear",
         "toast": "捡到缓存 ×1：清理台宣布旧梗也要排队",
-        "comment": "清理台亮起蓝光，把重复三遍的吐槽礼貌地折叠了。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近缓存清理台，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "缓存到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "清理台亮起蓝光，把重复三遍的吐槽礼貌地折叠了。"
-          }
-        ]
+        "comment": "清理台亮起蓝光，把重复三遍的吐槽礼貌地折叠了。"
       },
       {
         "id": "server_room_interact_2",
@@ -8150,21 +7688,7 @@
         "item": "core_key",
         "memory": "memory_core_restart",
         "toast": "捡到核心密钥 ×1：重启杆正在等一个很有仪式感的按下",
-        "comment": "重启杆不说话，但它的沉默很像“你最好准备好台词”。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近核心重启杆，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "核心密钥到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "重启杆不说话，但它的沉默很像“你最好准备好台词”。"
-          }
-        ]
+        "comment": "重启杆不说话，但它的沉默很像“你最好准备好台词”。"
       },
       {
         "id": "server_room_interact_3",
@@ -8175,21 +7699,7 @@
         "item": "oo",
         "memory": "memory_status_wall",
         "toast": "捡到哦哦 ×1：状态灯把装死演得很专业",
-        "comment": "状态灯一半说正常，一半说随缘，整体看起来非常本群。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近状态灯墙，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "哦哦到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "状态灯一半说正常，一半说随缘，整体看起来非常本群。"
-          }
-        ]
+        "comment": "状态灯一半说正常，一半说随缘，整体看起来非常本群。"
       },
       {
         "id": "server_room_interact_4",
@@ -8200,21 +7710,7 @@
         "item": "quote_msg",
         "memory": "memory_wire_bridge",
         "toast": "捡到引用消息 ×1：线路桥把断句重新接上",
-        "comment": "线路像小镇神经，弯弯绕绕但总能把一句话送到该到的人那里。",
-        "lines": [
-          {
-            "speaker": "narrator",
-            "text": "旁白：你靠近线路桥，它立刻亮了一下，像终于等到有人点它。"
-          },
-          {
-            "speaker": "player",
-            "text": "引用消息到手。这个物件明显比说明书会说话。"
-          },
-          {
-            "speaker": "guide",
-            "text": "线路像小镇神经，弯弯绕绕但总能把一句话送到该到的人那里。"
-          }
-        ]
+        "comment": "线路像小镇神经，弯弯绕绕但总能把一句话送到该到的人那里。"
       }
     ],
     "transitions": [
