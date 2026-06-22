@@ -595,17 +595,52 @@ h3 {
 }
 .backpack-inline {
   border-top: 2px dashed #b9a18b;
-  padding-top: 8px;
+  padding-top: 6px;
   font-size: 11px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  align-items: center;
 }
 .backpack-inline .backpack-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+  gap: 4px;
+}
+.bag-empty {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  opacity: 0.4;
+  padding: 4px;
+}
+.bag-thumb {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border: 2px solid rgba(76, 56, 57, 0.2);
+  border-radius: 6px;
+  background: #fffdf6;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.12s, border-color 0.12s;
+}
+.bag-thumb:hover {
+  transform: scale(1.1);
+  border-color: var(--line);
+}
+.bag-thumb-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+.bag-thumb-count {
+  position: absolute;
+  bottom: 1px;
+  right: 3px;
+  font-size: 9px;
+  font-weight: 900;
+  color: #e35d5b;
+  background: #fff;
+  border-radius: 4px;
+  padding: 0 2px;
+  line-height: 1.2;
 }
 
 .quest-mini,

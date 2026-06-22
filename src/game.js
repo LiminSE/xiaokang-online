@@ -3884,24 +3884,22 @@ function renderBackpackPreview() {
   if (!itemsNode) return;
   const entries = inventoryEntries();
   if (!entries.length) {
-    itemsNode.innerHTML = `<span class="bag-chip is-empty"><span class="bag-icon">🎒</span>空空如也</span>`;
+    itemsNode.innerHTML = '<span class="bag-empty">🎒</span>';
     return;
   }
-  const visible = entries.slice(0, 6);
-  const rest = entries.length - visible.length;
-  itemsNode.innerHTML = `${visible
-    .map((item) => `<span class="bag-chip" data-item-id="${escapeHtml(item.id)}" title="点击查看详情" style="cursor:pointer">
-      <span class="bag-icon">${escapeHtml(item.icon || "🎒")}</span>
-      <span class="bag-name">${escapeHtml(item.name)}</span>
-      <span>×${item.count}</span>
-    </span>`)
-    .join("")}${rest > 0 ? `<span class="bag-chip">+${rest}</span>` : ""}`;
+  itemsNode.innerHTML = entries
+    .map(function(item) {
+      return '<span class="bag-thumb" data-item-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(item.name) + '：' + escapeHtml(item.flavor || item.description || '') + '">' +
+        '<span class="bag-thumb-icon">' + escapeHtml(item.icon || '🎒') + '</span>' +
+        (item.count > 1 ? '<span class="bag-thumb-count">' + item.count + '</span>' : '') +
+      '</span>';
+    })
+    .join('');
   // Attach click handlers
-  itemsNode.querySelectorAll(".bag-chip[data-item-id]").forEach((chip) => {
-    chip.addEventListener("click", (e) => {
+  itemsNode.querySelectorAll(".bag-thumb[data-item-id]").forEach(function(thumb) {
+    thumb.addEventListener("click", function(e) {
       e.stopPropagation();
-      const itemId = chip.dataset.itemId;
-      showItemDetail(itemId);
+      showItemDetail(thumb.dataset.itemId);
     });
   });
 }
