@@ -2388,6 +2388,21 @@ function drawImageWithWhiteOutline(img, sx, sy, sw, sh, dx, dy, dw, dh) {
   ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);
 }
 
+function walkBobOffset(isPlayer) {
+  // Walking bob: vertical oscillation when moving, subtle idle breathing when still
+  const t = nowMs() / 1000; // seconds
+  const isMoving = isPlayer ? state.path.length > 0 : false;
+  if (isMoving) {
+    // Pronounced walk bob: sine wave at ~3Hz, amplitude 3px
+    const bobY = Math.sin(t * 18) * 3;
+    const swayX = Math.cos(t * 9) * 1.2;
+    return { x: swayX, y: bobY };
+  }
+  // Idle breathing: very subtle, ~0.8Hz, amplitude 0.6px
+  const idleY = Math.sin(t * 5 + (isPlayer ? 0 : 1.7)) * 0.6;
+  return { x: 0, y: idleY };
+}
+
 function drawCharacter(x, y, char, isPlayer) {
   if (!char) return;
   const ground = characterGroundPoint(x, y);
@@ -2397,6 +2412,7 @@ function drawCharacter(x, y, char, isPlayer) {
   const colors = char.avatarVisualDNA.primaryColors;
   const sprite = getImage(char.sprite);
   const meta = DATA.sprite_meta?.[char.id];
+  const bob = walkBobOffset(isPlayer);
   if (sprite.complete && sprite.naturalWidth > 0 && meta?.columns === 4 && meta?.rows === 4) {
     const columns = 4;
     const rows = 4;
@@ -2404,7 +2420,9 @@ function drawCharacter(x, y, char, isPlayer) {
     const sh = sprite.naturalHeight / rows;
     const rowByFacing = { down: 0, up: 1, left: 2, right: 3 };
     const sourceRow = Math.min(rows - 1, rowByFacing[isPlayer ? state.facing : "down"] ?? 0);
-    const sourceColumn = Math.floor(nowMs() / 360 + x + y) % columns;
+    // Faster column cycle when moving (200ms) vs idle (500ms)
+    const frameInterval = (isPlayer && state.path.length > 0) ? 200 : 500;
+    const sourceColumn = Math.floor(nowMs() / frameInterval) % columns;
     const rawSx = sourceColumn * sw;
     const rawSy = sourceRow * sh;
     const trim = spriteTrim(sprite, char.id, rawSx, rawSy, sw, sh);
@@ -2414,47 +2432,49 @@ function drawCharacter(x, y, char, isPlayer) {
     const dh = trim.sh * scale;
     const footOffsetX = (trim.footX - trim.cropX) * scale;
     const footOffsetY = (trim.footY - trim.cropY) * scale;
-    const drawX = px - footOffsetX;
-    const drawY = groundY - footOffsetY;
+    const drawX = px - footOffsetX + bob.x;
+    const drawY = groundY - footOffsetY + bob.y;
     const opaqueTopY = drawY + (trim.minY - trim.cropY) * scale;
     ctx.save();
-    drawCharacterShadow(px, groundY, isPlayer, clamp(scale / 1.25, 0.82, 1.22));
+    // Shadow also bobs but with reduced amplitude
+    drawCharacterShadow(px + bob.x * 0.5, groundY + bob.y * 0.3, isPlayer, clamp(scale / 1.25, 0.82, 1.22));
     drawImageWithWhiteOutline(sprite, trim.sx, trim.sy, trim.sw, trim.sh, drawX, drawY, dw, dh);
     ctx.restore();
     if (isPlayer) {
-      drawPlayerPointer(px, opaqueTopY - 18);
+      drawPlayerPointer(px, opaqueTopY - 18 + bob.y);
     }
     return;
   }
-  drawCharacterShadow(px, groundY, isPlayer);
+  drawCharacterShadow(px + bob.x * 0.5, groundY + bob.y * 0.3, isPlayer);
   const img = getImage(char.avatar);
+  const avatarY = groundY - 30 + bob.y;
   if (img.complete && img.naturalWidth > 0) {
     ctx.save();
     ctx.beginPath();
-    ctx.arc(px, groundY - 30, isPlayer ? 18 : 15, 0, Math.PI * 2);
+    ctx.arc(px + bob.x, avatarY, isPlayer ? 18 : 15, 0, Math.PI * 2);
     ctx.clip();
-    ctx.drawImage(img, px - (isPlayer ? 19 : 16), groundY - (isPlayer ? 49 : 46), isPlayer ? 38 : 32, isPlayer ? 38 : 32);
+    ctx.drawImage(img, px + bob.x - (isPlayer ? 19 : 16), avatarY - (isPlayer ? 19 : 16), isPlayer ? 38 : 32, isPlayer ? 38 : 32);
     ctx.restore();
     ctx.strokeStyle = "#ffffff";
     ctx.lineWidth = isPlayer ? 5 : 4;
     ctx.beginPath();
-    ctx.arc(px, groundY - 30, isPlayer ? 19 : 16, 0, Math.PI * 2);
+    ctx.arc(px + bob.x, avatarY, isPlayer ? 19 : 16, 0, Math.PI * 2);
     ctx.stroke();
-    if (isPlayer) drawPlayerPointer(px, groundY - 82);
+    if (isPlayer) drawPlayerPointer(px, groundY - 82 + bob.y);
     return;
   }
   ctx.fillStyle = colors[0];
-  ctx.fillRect(px - 11, groundY - 46, 22, 24);
+  ctx.fillRect(px - 11 + bob.x, groundY - 46 + bob.y, 22, 24);
   ctx.fillStyle = "#ffd9bd";
-  ctx.fillRect(px - 12, groundY - 53, 24, 18);
+  ctx.fillRect(px - 12 + bob.x, groundY - 53 + bob.y, 24, 18);
   ctx.fillStyle = colors[1] || "#4f3d3a";
-  ctx.fillRect(px - 15, groundY - 58, 30, 9);
+  ctx.fillRect(px - 15 + bob.x, groundY - 58 + bob.y, 30, 9);
   ctx.fillStyle = "#2b2530";
-  ctx.fillRect(px - 7, groundY - 46, 4, 4);
-  ctx.fillRect(px + 4, groundY - 46, 4, 4);
+  ctx.fillRect(px - 7 + bob.x, groundY - 46 + bob.y, 4, 4);
+  ctx.fillRect(px + 4 + bob.x, groundY - 46 + bob.y, 4, 4);
   ctx.fillStyle = isPlayer ? "#fff2a1" : "#ffffff";
-  ctx.fillRect(px - 8, groundY - 21, 16, 5);
-  if (isPlayer) drawPlayerPointer(px, groundY - 88);
+  ctx.fillRect(px - 8 + bob.x, groundY - 21 + bob.y, 16, 5);
+  if (isPlayer) drawPlayerPointer(px, groundY - 88 + bob.y);
 }
 
 function drawPlayerPointer(px, py) {
