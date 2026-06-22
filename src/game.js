@@ -2862,12 +2862,20 @@ function renderDialogue() {
     standee.innerHTML = `<img src="${standeeSrc}" alt="${char.displayName} 立绘" onerror="this.remove();" />`;
     standee.hidden = false;
   }
-  const choices = isLastLine ? state.dialogue.choices || [] : [];
-  $("#dialogueChoices").innerHTML = choices.length
-    ? choices.map((choice) => `<button data-choice="${choice.id}">${choice.label}</button>`).join("")
-    : isLastLine
-      ? `<button data-action="closeDialogue">继续探索</button><button data-action="openQuestLog">查看任务</button>`
-      : "";
+  var choices = isLastLine ? state.dialogue.choices || [] : [];
+  var hasRemaining = choices.length > 0;
+  var isSubsequent = hasRemaining && state.dialogue._allChoices && state.dialogue._allChoices.length > choices.length;
+  var html = '';
+  if (hasRemaining) {
+    html = choices.map(function(choice) { return '<button data-choice="' + choice.id + '">' + choice.label + '</button>'; }).join('');
+    // Add "就这样吧" close button when there are remaining topics after first pick
+    if (isSubsequent) {
+      html += '<button data-action="closeDialogue" class="close-dialogue-btn">就这样吧</button>';
+    }
+  } else if (isLastLine) {
+    html = '<button data-action="closeDialogue">继续探索</button><button data-action="openQuestLog">查看任务</button>';
+  }
+  $("#dialogueChoices").innerHTML = html;
   const nextButton = $("#dialogueBox [data-action='nextDialogue']");
   if (nextButton) nextButton.hidden = isLastLine && choices.length > 0;
   box.hidden = false;
