@@ -634,7 +634,7 @@ function showItemPopup(itemId) {
   window.clearTimeout(showItemPopup._timer);
   showItemPopup._timer = window.setTimeout(function() {
     popup.hidden = true;
-  }, 3500);
+  }, 3000);
 }
 
 // 3-second exciting pickup BGM
@@ -642,102 +642,37 @@ function playPickupFanfare() {
   var audioCtx = musicState.ctx;
   if (!audioCtx || state.settings.volume <= 0) return;
   ensureMusic();
-  // Cycle through 3 variants in order
-  if (!playPickupFanfare._idx) playPickupFanfare._idx = 0;
-  var variants = [fanfareCmaj, fanfareFmaj, fanfareAm];
-  variants[playPickupFanfare._idx % 3](audioCtx, state.settings.volume / 100);
-  playPickupFanfare._idx++;
-}
-
-// ── Shared synth helpers ──
-function _brass(audioCtx, freq, time, dur, vel, vol) {
-  var g = audioCtx.createGain();
-  var o1 = audioCtx.createOscillator();
-  var o2 = audioCtx.createOscillator();
-  var o3 = audioCtx.createOscillator();
-  var f = audioCtx.createBiquadFilter();
-  o1.type = 'sawtooth'; o2.type = 'triangle'; o3.type = 'square';
-  o1.frequency.setValueAtTime(freq, time);
-  o2.frequency.setValueAtTime(freq * 1.003, time);
-  o3.frequency.setValueAtTime(freq * 0.5, time);
-  f.type = 'lowpass';
-  f.frequency.setValueAtTime(300, time);
-  f.frequency.exponentialRampToValueAtTime(1500 + vel * 4000, time + 0.1);
-  f.frequency.exponentialRampToValueAtTime(180, time + dur);
-  g.gain.setValueAtTime(0.0001, time);
-  g.gain.exponentialRampToValueAtTime(vel * vol * 0.3, time + 0.07);
-  g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
-  o1.connect(f); o2.connect(f); o3.connect(f); f.connect(g);
-  g.connect(musicState.dry);
-  o1.start(time); o2.start(time); o3.start(time);
-  o1.stop(time + dur + 0.05); o2.stop(time + dur + 0.05); o3.stop(time + dur + 0.05);
-}
-function _sparkle(audioCtx, freq, time, dur, vel, vol) {
-  var g = audioCtx.createGain();
-  var o = audioCtx.createOscillator();
-  o.type = 'sine';
-  o.frequency.setValueAtTime(freq, time);
-  g.gain.setValueAtTime(0.0001, time);
-  g.gain.exponentialRampToValueAtTime(vel * vol * 0.12, time + 0.03);
-  g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
-  o.connect(g); g.connect(musicState.dry);
-  o.start(time); o.stop(time + dur);
-}
-function _timpani(audioCtx, freq, time, vel, vol) {
-  var g = audioCtx.createGain();
-  var o = audioCtx.createOscillator();
-  o.type = 'sine';
-  o.frequency.setValueAtTime(freq * 1.5, time);
-  o.frequency.exponentialRampToValueAtTime(freq, time + 0.12);
-  g.gain.setValueAtTime(vel * vol * 0.35, time);
-  g.gain.exponentialRampToValueAtTime(0.0001, time + 0.6);
-  o.connect(g); g.connect(musicState.dry);
-  o.start(time); o.stop(time + 0.7);
-}
-
-// ── Variant 1: Cmaj triumphant (~1.8s) ──
-function fanfareCmaj(audioCtx, vol) {
   var t = audioCtx.currentTime;
-  _timpani(audioCtx, 65.41, t, 0.85, vol);
-  [130.81,196.00,261.63,329.63,392.00,523.25,659.25,783.99,1046.5].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.15 + i*0.14, 0.9, 0.7 + i*0.03, vol);
+  var vol = state.settings.volume / 100;
+  // Zelda-style: clean ascending 5-note jingle + sparkle
+  var notes = [
+    { freq: 523.25, time: 0, dur: 0.2, vel: 0.15 },
+    { freq: 659.25, time: 0.12, dur: 0.22, vel: 0.18 },
+    { freq: 783.99, time: 0.24, dur: 0.25, vel: 0.2 },
+    { freq: 1046.5, time: 0.38, dur: 0.3, vel: 0.2 },
+    { freq: 1318.5, time: 0.52, dur: 0.4, vel: 0.18 },
+  ];
+  notes.forEach(function(n) {
+    var g = audioCtx.createGain();
+    var o = audioCtx.createOscillator();
+    o.type = 'triangle';
+    o.frequency.setValueAtTime(n.freq, t + n.time);
+    g.gain.setValueAtTime(0.0001, t + n.time);
+    g.gain.exponentialRampToValueAtTime(n.vel * vol, t + n.time + 0.03);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + n.time + n.dur);
+    o.connect(g); g.connect(musicState.dry);
+    o.start(t + n.time); o.stop(t + n.time + n.dur + 0.03);
   });
-  [523.25,783.99,1046.5,1568.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.3 + i*0.25, 0.5, 0.55 + i*0.06, vol);
-  });
-  [261.63,392.00,523.25,783.99,1046.5].forEach(function(f){
-    _brass(audioCtx, f, t + 1.3, 0.6, 0.85, vol);
-  });
-}
-
-// ── Variant 2: Fmaj warm heroic (~1.8s) ──
-function fanfareFmaj(audioCtx, vol) {
-  var t = audioCtx.currentTime;
-  _timpani(audioCtx, 87.31, t, 0.85, vol);
-  [174.61,261.63,349.23,440.00,523.25,698.46,880.00,1046.5,1396.9].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.15 + i*0.14, 0.9, 0.7 + i*0.03, vol);
-  });
-  [698.46,1046.5,1396.9,1760.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.3 + i*0.25, 0.5, 0.55 + i*0.06, vol);
-  });
-  [349.23,523.25,880.00,1046.5,1396.9].forEach(function(f){
-    _brass(audioCtx, f, t + 1.3, 0.6, 0.85, vol);
-  });
-}
-
-// ── Variant 3: Am mysterious epic (~1.8s) ──
-function fanfareAm(audioCtx, vol) {
-  var t = audioCtx.currentTime;
-  _timpani(audioCtx, 55.00, t, 0.85, vol);
-  [220.00,329.63,440.00,523.25,659.25,880.00,1046.5,1318.5,1760.0].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.15 + i*0.14, 0.9, 0.7 + i*0.03, vol);
-  });
-  [659.25,1046.5,1318.5,1760.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.3 + i*0.25, 0.5, 0.55 + i*0.06, vol);
-  });
-  [440.00,659.25,1046.5,1318.5,1760.0].forEach(function(f){
-    _brass(audioCtx, f, t + 1.3, 0.6, 0.85, vol);
-  });
+  // High sparkle
+  var sg = audioCtx.createGain();
+  var so = audioCtx.createOscillator();
+  so.type = 'sine';
+  so.frequency.setValueAtTime(2093.0, t + 0.7);
+  sg.gain.setValueAtTime(0.0001, t + 0.7);
+  sg.gain.exponentialRampToValueAtTime(vol * 0.12, t + 0.73);
+  sg.gain.exponentialRampToValueAtTime(0.0001, t + 1.1);
+  so.connect(sg); sg.connect(musicState.dry);
+  so.start(t + 0.7); so.stop(t + 1.15);
 }
 
 function toast(text, duration = 2300) {
