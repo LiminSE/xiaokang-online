@@ -1091,16 +1091,15 @@ function itemName(id) {
 }
 
 function itemShortDescription(id) {
-  const item = itemDetails(id);
-  // Toast shows short tagline (flavor), falls back to first sentence of description
-  var text = item?.flavor || item?.description || '它闪了一下，像在等你发弹幕';
-  // If text is very long (>30 chars), trim to first sentence or natural break
-  if (text.length > 30) {
-    var brk = text.search(/[。；，！？]/);
-    if (brk > 0 && brk < 30) text = text.slice(0, brk);
-    else if (text.length > 30) text = text.slice(0, 28) + '…';
+  var item = itemDetails(id);
+  var flav = item?.flavor || '';
+  var desc = item?.description || '';
+  // Toast: show flavor tagline first, then brief description snippet
+  if (flav && desc) {
+    var shortDesc = desc.length > 40 ? desc.slice(0, 38) + '…' : desc;
+    return flav + '——' + shortDesc;
   }
-  return text;
+  return flav || desc || '它闪了一下，像在等你发弹幕';
 }
 
 function inventoryEntries() {
@@ -2638,15 +2637,15 @@ function renderBackpackPreview() {
 }
 
 function showItemDetail(itemId) {
-  const item = itemDetails(itemId);
+  var item = itemDetails(itemId);
   if (!item) return;
   var desc = item.description || '';
   var flav = item.flavor || '';
   var html = '<div style="text-align:center;padding:16px 0">' +
     '<div style="font-size:48px;margin-bottom:12px">' + escapeHtml(item.icon || '🎒') + '</div>' +
-    '<h2 style="margin:0 0 4px">' + escapeHtml(item.name) + '</h2>' +
-    (flav ? '<p style="color:#9c7c6b;font-size:13px;margin:0 0 12px">' + escapeHtml(flav) + '</p>' : '') +
-    (desc ? '<p style="color:#6b5a4b;line-height:1.6;margin:0 0 8px">' + escapeHtml(desc) + '</p>' : '') +
+    '<h2 style="margin:0 0 10px">' + escapeHtml(item.name) + '</h2>' +
+    (desc ? '<p style="color:#5a4535;line-height:1.7;margin:0 0 14px;font-size:14px">' + escapeHtml(desc) + '</p>' : '') +
+    (flav ? '<p style="color:#9c7c6b;font-style:italic;font-size:13px;margin:0 0 6px">' + escapeHtml(flav) + '</p>' : '') +
     '<p style="color:#aaa;font-size:11px;margin-top:8px">数量：' + (state.inventory[itemId] || 0) + '</p>' +
   '</div>';
   openModal(item.name, html);
