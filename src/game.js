@@ -94,6 +94,7 @@ const state = {
   },
   selectedCandidateId: null,
   dialogue: null,
+  _pendingCgs: [],
   dialogueTyping: {
     timer: null,
     fullText: "",
@@ -2686,7 +2687,17 @@ function grantRewards(rewards = []) {
 function announceCgUnlockForReward(reward) {
   const cg = ALL_CGS.find((item) => item.unlock === reward || reversePairMemory(item.unlock) === reward);
   if (!cg) return;
-  // Show CG in a popup modal
+  // If dialogue is active, defer CG popup until dialogue closes
+  if (state.dialogue) {
+    if (!state._pendingCgs) state._pendingCgs = [];
+    if (state._pendingCgs.indexOf(cg) < 0) state._pendingCgs.push(cg);
+    toast('解锁隐藏插画：' + displayCgName(cg.name) + '（对话结束后查看）');
+    return;
+  }
+  showCgPopup(cg);
+}
+
+function showCgPopup(cg) {
   var html = '<div style="text-align:center">' +
     '<h3 style="margin:0 0 4px;color:#e35d5b">🎉 隐藏插画解锁！</h3>' +
     '<h2 style="margin:0 0 12px">' + displayCgName(cg.name) + '</h2>' +
@@ -2694,8 +2705,16 @@ function announceCgUnlockForReward(reward) {
     (cg.caption ? '<p style="color:#6b5a4b;margin-top:10px;font-style:italic">' + escapeHtml(cg.caption) + '</p>' : '') +
     '<p style="color:#aaa;font-size:11px;margin-top:8px">可在图鉴 → 隐藏插画中随时查看</p>' +
   '</div>';
-  window.setTimeout(function() { openModal('隐藏插画', html); }, 600);
+  window.setTimeout(function() { openModal('隐藏插画', html); }, 400);
   toast('解锁隐藏插画：' + displayCgName(cg.name));
+}
+
+function flushPendingCgs() {
+  if (!state._pendingCgs || !state._pendingCgs.length) return;
+  var cgs = state._pendingCgs;
+  state._pendingCgs = [];
+  // Show the first pending CG
+  if (cgs.length > 0) showCgPopup(cgs[0]);
 }
 
 function reversePairMemory(value = "") {
@@ -2869,6 +2888,7 @@ function nextDialogue() {
     setDialogueLayoutActive(false);
     clearDialogueTypewriter();
     state.dialogue = null;
+    flushPendingCgs();
     return;
   }
   playDialogueTick();
@@ -2881,6 +2901,7 @@ function closeDialogue() {
   $("#dialogueStandee").hidden = true;
   setDialogueLayoutActive(false);
   state.dialogue = null;
+  flushPendingCgs();
 }
 
 function nextQuestForNpc(charId) {
