@@ -698,15 +698,15 @@ function _timpani(audioCtx, freq, time, vel, vol) {
 function fanfareCmaj(audioCtx, vol) {
   var t = audioCtx.currentTime;
   _timpani(audioCtx, 65.41, t, 0.85, vol);
-  _timpani(audioCtx, 55.00, t + 0.3, 0.6, vol);
+  _timpani(audioCtx, 55.00, t + 0.5, 0.6, vol);
   [130.81,164.81,196.00,261.63,329.63,392.00,523.25,659.25,783.99,1046.5,1318.5].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.3 + i*0.18, 1.1, 0.65 + i*0.03, vol);
+    _brass(audioCtx, f, t + 0.5 + i*0.28, 1.8, 0.65 + i*0.03, vol);
   });
   [523.25,659.25,783.99,1046.5,1318.5,1568.0,2093.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.5 + i*0.26, 0.7, 0.5 + i*0.05, vol);
+    _sparkle(audioCtx, f, t + 0.8 + i*0.4, 1.1, 0.5 + i*0.05, vol);
   });
   [261.63,329.63,392.00,523.25,659.25,783.99,1046.5].forEach(function(f){
-    _brass(audioCtx, f, t + 2.2, 1.4, 0.9, vol);
+    _brass(audioCtx, f, t + 3.3, 2.0, 0.9, vol);
   });
 }
 
@@ -714,15 +714,15 @@ function fanfareCmaj(audioCtx, vol) {
 function fanfareFmaj(audioCtx, vol) {
   var t = audioCtx.currentTime;
   _timpani(audioCtx, 87.31, t, 0.85, vol);
-  _timpani(audioCtx, 73.42, t + 0.3, 0.6, vol);
+  _timpani(audioCtx, 73.42, t + 0.5, 0.6, vol);
   [174.61,220.00,261.63,349.23,440.00,523.25,698.46,880.00,1046.5,1318.5,1396.9].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.3 + i*0.18, 1.1, 0.65 + i*0.03, vol);
+    _brass(audioCtx, f, t + 0.5 + i*0.28, 1.8, 0.65 + i*0.03, vol);
   });
   [698.46,880.00,1046.5,1318.5,1396.9,1760.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.5 + i*0.26, 0.7, 0.5 + i*0.05, vol);
+    _sparkle(audioCtx, f, t + 0.8 + i*0.4, 1.1, 0.5 + i*0.05, vol);
   });
   [349.23,440.00,523.25,698.46,880.00,1046.5,1396.9].forEach(function(f){
-    _brass(audioCtx, f, t + 2.2, 1.4, 0.9, vol);
+    _brass(audioCtx, f, t + 3.3, 2.0, 0.9, vol);
   });
 }
 
@@ -730,15 +730,15 @@ function fanfareFmaj(audioCtx, vol) {
 function fanfareAm(audioCtx, vol) {
   var t = audioCtx.currentTime;
   _timpani(audioCtx, 55.00, t, 0.85, vol);
-  _timpani(audioCtx, 73.42, t + 0.3, 0.6, vol);
+  _timpani(audioCtx, 73.42, t + 0.5, 0.6, vol);
   [220.00,261.63,329.63,440.00,523.25,659.25,880.00,1046.5,1318.5,1568.0,1760.0].forEach(function(f,i){
-    _brass(audioCtx, f, t + 0.3 + i*0.18, 1.1, 0.65 + i*0.03, vol);
+    _brass(audioCtx, f, t + 0.5 + i*0.28, 1.8, 0.65 + i*0.03, vol);
   });
   [659.25,880.00,1046.5,1318.5,1568.0,1760.0,2093.0].forEach(function(f,i){
-    _sparkle(audioCtx, f, t + 0.5 + i*0.26, 0.7, 0.5 + i*0.05, vol);
+    _sparkle(audioCtx, f, t + 0.8 + i*0.4, 1.1, 0.5 + i*0.05, vol);
   });
   [440.00,523.25,659.25,880.00,1046.5,1318.5,1760.0].forEach(function(f){
-    _brass(audioCtx, f, t + 2.2, 1.4, 0.9, vol);
+    _brass(audioCtx, f, t + 3.3, 2.0, 0.9, vol);
   });
 }
 
