@@ -293,6 +293,18 @@ h3 {
   font-weight: 800;
   line-height: 1.45;
 }
+.boot-sound-hint {
+  width: fit-content;
+  margin: 0 0 16px;
+  color: rgba(255, 249, 232, 0.76);
+  font-size: 13px;
+  font-weight: 700;
+  animation: hint-pulse 3s infinite;
+}
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
 
 .boot-screen .server-name,
 .boot-screen .boot-line {
