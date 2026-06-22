@@ -2442,6 +2442,8 @@ function drawCharacter(x, y, char, isPlayer) {
     ctx.restore();
     if (isPlayer) {
       drawPlayerPointer(px, opaqueTopY - 18 + bob.y);
+    } else {
+      drawNpcNameLabel(px, opaqueTopY + bob.y - 6, char.displayName);
     }
     return;
   }
@@ -2461,6 +2463,7 @@ function drawCharacter(x, y, char, isPlayer) {
     ctx.arc(px + bob.x, avatarY, isPlayer ? 19 : 16, 0, Math.PI * 2);
     ctx.stroke();
     if (isPlayer) drawPlayerPointer(px, groundY - 82 + bob.y);
+    else drawNpcNameLabel(px, avatarY - 22 + bob.y, char.displayName);
     return;
   }
   ctx.fillStyle = colors[0];
@@ -2475,6 +2478,24 @@ function drawCharacter(x, y, char, isPlayer) {
   ctx.fillStyle = isPlayer ? "#fff2a1" : "#ffffff";
   ctx.fillRect(px - 8 + bob.x, groundY - 21 + bob.y, 16, 5);
   if (isPlayer) drawPlayerPointer(px, groundY - 88 + bob.y);
+  else drawNpcNameLabel(px, groundY - 62 + bob.y, char.displayName);
+}
+
+function drawNpcNameLabel(px, py, name) {
+  if (!name) return;
+  ctx.save();
+  ctx.font = "600 11px system-ui, -apple-system, sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "bottom";
+  // Shadow for readability
+  ctx.shadowColor = "rgba(0, 0, 0, 0.55)";
+  ctx.shadowBlur = 3;
+  ctx.fillStyle = "#ffffff";
+  ctx.fillText(name, px, py);
+  ctx.shadowBlur = 0;
+  ctx.fillStyle = "#3a2c2b";
+  ctx.fillText(name, px, py);
+  ctx.restore();
 }
 
 function drawPlayerPointer(px, py) {
