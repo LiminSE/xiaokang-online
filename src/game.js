@@ -12,10 +12,11 @@ const WORLD_WIDTH = DISTRICT_WIDTH;
 const WORLD_HEIGHT = DISTRICT_HEIGHT;
 const DEFAULT_CANVAS_WIDTH = 896;
 const DEFAULT_CANVAS_HEIGHT = 640;
+const TOUCH_LANDSCAPE_CANVAS_HEIGHT = 520;
 const WORLD_BACKGROUND = "assets/imagegen/environment/full_maps/xiaokang_town_overworld_imagegen.png";
 const LEGACY_CONDITION_FEEDBACK_KEYWORD = "没有重连";
-const DEFAULT_VOLUME = 82;
-const MUSIC_GAIN_SCALE = 520;
+const DEFAULT_VOLUME = 100;
+const MUSIC_GAIN_SCALE = 300;
 const INDOOR_AREAS = new Set(["restaurant", "dragon_card_house", "livehouse", "care_home", "atelier", "server_room"]);
 const SCENE_AREAS = new Set(["restaurant", "dragon_card_house", "livehouse", "echo_lake", "care_home", "atelier", "northern_wilds", "server_room"]);
 const DISTRICT_LAYOUT = new Map();
@@ -276,7 +277,7 @@ function ensureMusic() {
     master.connect(audioCtx.destination);
 
     const dry = audioCtx.createGain();
-    dry.gain.value = 0.9;
+    dry.gain.value = 1.08;
     const warmth = audioCtx.createBiquadFilter();
     warmth.type = "lowpass";
     warmth.frequency.value = 2600;
@@ -289,7 +290,7 @@ function ensureMusic() {
     const feedback = audioCtx.createGain();
     feedback.gain.value = 0.18;
     const echo = audioCtx.createGain();
-    echo.gain.value = 0.12;
+    echo.gain.value = 0.16;
     dry.connect(delay);
     delay.connect(feedback);
     feedback.connect(delay);
@@ -566,8 +567,12 @@ function resizeCanvasToDisplay() {
   let nextHeight = DEFAULT_CANVAS_HEIGHT;
 
   if (isTouchLandscape && displayAspect > defaultAspect) {
-    nextWidth = Math.min(WORLD_WIDTH * TILE, Math.max(DEFAULT_CANVAS_WIDTH, Math.round(DEFAULT_CANVAS_HEIGHT * displayAspect)));
-    nextHeight = Math.max(420, Math.round(nextWidth / displayAspect));
+    nextHeight = TOUCH_LANDSCAPE_CANVAS_HEIGHT;
+    nextWidth = Math.round(nextHeight * displayAspect);
+    if (nextWidth > WORLD_WIDTH * TILE) {
+      nextWidth = WORLD_WIDTH * TILE;
+      nextHeight = Math.max(420, Math.round(nextWidth / displayAspect));
+    }
   }
 
   const layoutKey = `${nextWidth}x${nextHeight}`;
@@ -1092,6 +1097,8 @@ function escapeHtml(value = "") {
 }
 
 function talkToNpc(charId) {
+  playTalkSound();
+  ensureMusic();
   const firstMeet = !state.codex.has(charId);
   state.codex.add(charId);
   const quest = nextQuestForNpc(charId);
@@ -1312,6 +1319,7 @@ function triggerInteraction(point) {
     updateNearby();
     return;
   }
+  playInteractSound();
   const item = point.item || itemForEvent(point.event);
   state.inventory[item] = (state.inventory[item] || 0) + 1;
   state.pickedInteractions.add(point.id);
@@ -1319,6 +1327,7 @@ function triggerInteraction(point) {
   progressInteractQuests(point.id);
   progressEventQuests(point.event);
   progressCollectQuests(item);
+  playItemGetSound();
   toast(`捡到 ${itemName(item)} ×1：${itemShortDescription(item)}`);
   renderBackpackPreview();
   if (point.event === "event_center_bell" && state.completedQuests.has("main_quest_04")) {
@@ -1340,6 +1349,7 @@ function itemForEvent(eventId = "") {
 }
 
 function openAreaDialogue(point) {
+  playInteractSound();
   const area = indexes.areas.get(point.areaId || state.areaId) || currentArea();
   const char = npcsForArea(point.areaId || state.areaId)[0]?.char || indexes.characters.get(state.playerId);
   const lines = point.lines || [
@@ -1358,6 +1368,8 @@ function openAreaDialogue(point) {
 function openDialogue(dialogueId) {
   const dialogue = DATA.dialogues.find((item) => item.id === dialogueId);
   if (!dialogue) return;
+  playTalkSound();
+  ensureMusic();
   grantRewards(dialogue.rewards || []);
   state.dialogue = {
     speaker: dialogue.speaker,
@@ -1372,6 +1384,7 @@ function chooseDialogue(choiceId) {
   if (!state.dialogue?.choices?.length) return;
   const choice = state.dialogue.choices.find((item) => item.id === choiceId);
   if (!choice) return;
+  playTalkSound();
   grantRewards(choice.rewards || []);
   if (choice.event) progressEventQuests(choice.event);
   if (choice.action === "openQuestLog") {
@@ -1583,6 +1596,7 @@ function nextDialogue() {
     state.dialogue = null;
     return;
   }
+  playDialogueTick();
   renderDialogue();
 }
 
@@ -1693,6 +1707,48 @@ function questCompleteSound() {
   playPianoNote("G4", t + 0.2, 0.3, 0.1);
   playPianoNote("C5", t + 0.3, 0.5, 0.08);
   playPianoNote("E5", t + 0.4, 0.6, 0.06);
+}
+
+// ── 人交互音效：与 NPC 对话时触发 ──
+function playTalkSound() {
+  const audioCtx = musicState.ctx;
+  if (window.__XIAOKANG_SCREENSHOT_MODE || state.settings.volume <= 0 || !audioCtx || !musicState.dry) return;
+  const t = audioCtx.currentTime;
+  // Warm bell-like chime — two ascending notes
+  playPianoNote("G5", t, 0.22, 0.10);
+  playPianoNote("C6", t + 0.09, 0.28, 0.07);
+}
+
+// ── 物交互音效：拾取道具 / 调查物件时触发 ──
+function playInteractSound() {
+  const audioCtx = musicState.ctx;
+  if (window.__XIAOKANG_SCREENSHOT_MODE || state.settings.volume <= 0 || !audioCtx || !musicState.dry) return;
+  const t = audioCtx.currentTime;
+  // Sparkly crystalline chime — short bright shimmer
+  playPianoNote("E6", t, 0.12, 0.09);
+  playPianoNote("A6", t + 0.05, 0.15, 0.06);
+  playPianoNote("C7", t + 0.10, 0.18, 0.04);
+}
+
+// ── 道具获得音效：拾取重要道具时触发 ──
+function playItemGetSound() {
+  const audioCtx = musicState.ctx;
+  if (window.__XIAOKANG_SCREENSHOT_MODE || state.settings.volume <= 0 || !audioCtx || !musicState.dry) return;
+  const t = audioCtx.currentTime;
+  // Pleasant ascending arpeggio
+  playPianoNote("E5", t, 0.15, 0.08);
+  playPianoNote("G5", t + 0.07, 0.17, 0.08);
+  playPianoNote("C6", t + 0.14, 0.22, 0.07);
+  playPianoNote("E6", t + 0.21, 0.25, 0.05);
+}
+
+// ── 对话推进音效：每次翻到下一条台词时触发 ──
+function playDialogueTick() {
+  const audioCtx = musicState.ctx;
+  if (window.__XIAOKANG_SCREENSHOT_MODE || state.settings.volume <= 0 || !audioCtx || !musicState.dry) return;
+  const t = audioCtx.currentTime;
+  // Very subtle soft tick
+  playPianoNote("C7", t, 0.06, 0.04);
 }
 
 function progressQuests(predicate) {
@@ -2036,28 +2092,69 @@ function drawTransition(transition) {
   const y = center.y;
   const unlocked = canEnterTransition(transition);
   const label = areaName(transition.to);
-  const text = transition.to === "town_center" ? "回到小镇" : unlocked ? `入口：${label}` : "剧情后进入";
+  const text = transition.to === "town_center" ? "回到小镇" : unlocked ? label : "剧情后开放";
   ctx.save();
   if (x < -80 || y < -80 || x > canvas.width + 80 || y > canvas.height + 80) {
     ctx.restore();
     return;
   }
-  ctx.fillStyle = "rgba(34, 29, 38, .68)";
+
+  const accent = unlocked ? "#d94b4b" : "#9f6a6b";
+  const light = unlocked ? "#fff2a1" : "#d8c5bd";
+  const shadow = unlocked ? "rgba(185, 79, 75, .28)" : "rgba(43, 37, 48, .2)";
+
+  ctx.globalAlpha = unlocked ? 1 : 0.62;
+  ctx.fillStyle = shadow;
   ctx.beginPath();
-  ctx.ellipse(x, y + 15, 38, 13, 0, 0, Math.PI * 2);
+  ctx.ellipse(x, y + 18, 34, 11, 0, 0, Math.PI * 2);
   ctx.fill();
-  drawTransitionShape(transition.shape || "door", x, y, unlocked, transition.to);
-  ctx.fillStyle = unlocked ? "#4c3839" : "#fff7dc";
-  ctx.font = "bold 13px sans-serif";
+
+  drawTransitionDiamond(x, y - 6, 18, accent, light);
+  drawTransitionDiamond(x - 28, y + 2, 8, accent, "#fff7dc");
+  drawTransitionDiamond(x + 28, y + 2, 8, accent, "#fff7dc");
+  if (unlocked) {
+    drawTransitionDiamond(x, y + 22, 6, "#ffdc7a", "#fffdf8");
+  }
+
+  ctx.globalAlpha = 1;
+  ctx.font = "900 13px sans-serif";
+  ctx.textBaseline = "alphabetic";
   const textWidth = typeof ctx.measureText === "function" ? ctx.measureText(text).width : text.length * 13;
-  const boxW = textWidth + 12;
-  const boxH = 24;
-  const boxX = Math.min(canvas.width - boxW - 4, Math.max(4, x - boxW / 2));
-  const boxY = y - 54;
-  ctx.fillStyle = "rgba(43, 37, 48, .84)";
-  ctx.fillRect(boxX, boxY, boxW, boxH);
-  ctx.fillStyle = "#fff7dc";
-  ctx.fillText(text, boxX + 6, boxY + 17);
+  const textX = Math.min(canvas.width - textWidth - 6, Math.max(6, x - textWidth / 2));
+  const textY = y - 35;
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = "rgba(255, 253, 248, .92)";
+  ctx.strokeText(text, textX, textY);
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = "rgba(76, 56, 57, .58)";
+  ctx.strokeText(text, textX, textY);
+  ctx.fillStyle = unlocked ? "#b9363f" : "#6f5556";
+  ctx.fillText(text, textX, textY);
+  ctx.restore();
+}
+
+function drawTransitionDiamond(x, y, size, fill, highlight) {
+  ctx.save();
+  ctx.fillStyle = fill;
+  ctx.strokeStyle = "#fff7dc";
+  ctx.lineWidth = Math.max(2, Math.round(size / 6));
+  ctx.beginPath();
+  ctx.moveTo(x, y - size);
+  ctx.lineTo(x + size, y);
+  ctx.lineTo(x, y + size);
+  ctx.lineTo(x - size, y);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+  ctx.fillStyle = highlight;
+  ctx.globalAlpha *= 0.85;
+  ctx.beginPath();
+  ctx.moveTo(x, y - size * 0.48);
+  ctx.lineTo(x + size * 0.42, y);
+  ctx.lineTo(x, y + size * 0.42);
+  ctx.lineTo(x - size * 0.42, y);
+  ctx.closePath();
+  ctx.fill();
   ctx.restore();
 }
 
@@ -2750,7 +2847,7 @@ function openCgGallery() {
           : `<div class="cg-lock" aria-hidden="true">?</div>`}
         <p class="server-name">${cgTypeLabel(cg.type)} / ${unlocked ? "已解锁" : "未解锁"}</p>
         <h3>${name}</h3>
-        <p class="muted">${unlocked ? cgUnlockedNote(cg) : cg.hint || "继续聊天和推进任务后会出现线索。"}</p>
+        <p class="muted cg-caption">${unlocked ? cg.caption || cgUnlockedNote(cg) : cg.hint || "继续聊天和推进任务后会出现线索。"}</p>
       </article>`;
     })
     .join("")}</div>`;
@@ -2766,7 +2863,7 @@ function cgTypeLabel(type) {
 }
 
 function cgUnlockedNote(cg) {
-  if (cg.type === "pair") return "长对话已经归档。回看时记得带上弹幕，不然画面会害羞。";
+  if (cg.type === "pair") return "长对话已经归档。回看时记得带上弹幕，不然梗会自动跳过。";
   if (cg.type === "final") return "角色最终章已完成，这张图正式从小镇缓存里捞出来了。";
   if (cg.type === "main") return "主线收束后解锁的大画面，全员在线，服务器不许躺平。";
   return "任务节点已完成，插画进入回放。";
