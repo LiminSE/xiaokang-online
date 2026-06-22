@@ -65,8 +65,7 @@ body {
 
   body[data-screen="game"] .play-layout {
     flex: 1 1 0;
-    height: 0;
-    max-height: none;
+    min-height: 0;
     overflow: hidden;
   }
 
@@ -74,6 +73,12 @@ body {
   body[data-screen="game"] .side-panel {
     height: 100%;
     max-height: 100%;
+    min-height: 0;
+  }
+  body[data-screen="game"] .side-panel {
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    flex-shrink: 1;
   }
 }
 

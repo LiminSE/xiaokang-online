@@ -57,12 +57,12 @@ const state = {
   codex: new Set(),
   memories: new Set(),
   inventory: {
-    star_sand: 0,
-    online_echo: 0,
-    poem_page: 0,
-    card_shard: 0,
-    meal_ticket: 0,
-    palette_chip: 0,
+    highlight_msg: 0,
+    oo: 0,
+    chat_log: 0,
+    yugioh_card: 0,
+    yellow_roast: 0,
+    spicy_pic: 0,
   },
   pickedInteractions: new Set(),
   bonds: {},
@@ -1129,7 +1129,7 @@ const ACTIVE_TRAIT_COPY = {
 const PASSIVE_TRAIT_COPY = {
   bridge_chorus: "接话时容易把其他人拉进同一段对话。",
   late_night_spawn: "夜间出现率更高，台词也更放得开。",
-  reply_tailwind: "擅长补最后一拍，让对话完整收束。",
+  quote_msg: "擅长补最后一拍，让对话完整收束。",
   area_regular: "对常驻区域了如指掌，能发现隐藏细节。",
 };
 
@@ -1340,12 +1340,12 @@ function triggerInteraction(point) {
 }
 
 function itemForEvent(eventId = "") {
-  if (eventId.includes("poem") || eventId.includes("moon")) return "poem_page";
-  if (eventId.includes("card") || eventId.includes("deck")) return "card_shard";
-  if (eventId.includes("dinner") || eventId.includes("sugar")) return "meal_ticket";
-  if (eventId.includes("palette") || eventId.includes("portrait")) return "palette_chip";
-  if (eventId.includes("cache") || eventId.includes("constant")) return "online_echo";
-  return "star_sand";
+  if (eventId.includes("poem") || eventId.includes("moon")) return "chat_log";
+  if (eventId.includes("card") || eventId.includes("deck")) return "yugioh_card";
+  if (eventId.includes("dinner") || eventId.includes("sugar")) return "yellow_roast";
+  if (eventId.includes("palette") || eventId.includes("portrait")) return "spicy_pic";
+  if (eventId.includes("cache") || eventId.includes("constant")) return "oo";
+  return "highlight_msg";
 }
 
 function openAreaDialogue(point) {
