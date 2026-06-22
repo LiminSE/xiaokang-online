@@ -1348,7 +1348,7 @@ function triggerInteraction(point) {
   progressEventQuests(point.event);
   progressCollectQuests(item);
   playItemGetSound();
-  toast(`捡到 ${itemName(item)} ×1：${itemShortDescription(item)}`);
+  toast(`捡到 ${itemName(item)} ×1：${itemShortDescription(item)}`, 6000);
   renderBackpackPreview();
   if (point.event === "event_center_bell" && state.completedQuests.has("main_quest_04")) {
     showEnding();
