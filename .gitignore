@@ -15,3 +15,18 @@ assets/imagegen/candidates/
 .reference_cache/
 src/data/language_style_research.json
 src/data/dialogue_agent_sessions.json
+
+# Temp/dev process files
+*.bak
+*.pre_id_remap
+*.v1bak
+*.v2pre_fix
+*_rewritten.json
+src/data/bond_cg_*.json
+docs/BOND_CG_*.md
+docs/HANDOFF_*.md
+docs/AGENT_*.md
+docs/IMAGE*.md
+docs/IMAGEGEN_*.md
+docs/UI_BUG_*.md
+docs/XiaokangOnline_*.md
