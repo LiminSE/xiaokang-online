@@ -2777,35 +2777,36 @@ function openBackpack() {
 
 function openQuestLog() {
   const visibleQuests = visibleQuestObjects();
-  const html = `<div class="track-switch-callout">
-    <strong>切换跟踪任务</strong>
-    <span>点任务卡里的“跟踪此任务”，右侧任务指引和下一步提示会立刻换过去。</span>
-  </div>
-  <div class="quest-grid">${visibleQuests
-    .map((quest) => {
-      const status = state.completedQuests.has(quest.id)
-        ? "completed"
-        : state.activeQuests.has(quest.id)
-          ? "active"
-          : state.unlockedAreas.has(quest.startArea)
-            ? "available"
-            : "hidden";
-      const progress = getQuestProgress(quest.id);
-      const cg = cgForQuest(quest);
-      return `<article class="info-card">
-        ${cg ? `<img class="quest-card-cg" src="${cg.path}" alt="${displayCgName(cg.name)} 插画" />` : ""}
-        <p class="server-name">${questTypeLabel(quest.type)} / ${questStatusLabel(status)}${state.trackedQuestId === quest.id ? " / 正在跟踪" : ""}</p>
-        <h3>${quest.name}</h3>
-        <p class="muted">起点：${areaName(quest.startArea)} / 进度 ${progress}/${quest.steps.length}</p>
-        <button class="track-quest-button ${state.trackedQuestId === quest.id ? "is-tracked" : ""}" data-track-quest="${quest.id}">
-          ${state.trackedQuestId === quest.id ? "正在跟踪" : "跟踪此任务"}
-        </button>
-        <ol>${quest.steps.map((step, index) => `<li>${index < progress ? "✓ " : ""}${formatQuestStep(step)}</li>`).join("")}</ol>
-      </article>`;
-    })
-    .join("")}</div>`;
-  openModal("任务日志", html);
+  const html = visibleQuests.map(function(quest) {
+    var done = state.completedQuests.has(quest.id);
+    var active = state.activeQuests.has(quest.id);
+    var progress = getQuestProgress(quest.id);
+    var tracked = state.trackedQuestId === quest.id;
+    var label = done ? '✓ 已完成' : (tracked ? '● 追踪中' : '○ 待追踪');
+    var story = (quest.story || '').slice(0, 60);
+    var stepsHtml = quest.steps.map(function(step, i) {
+      var sDone = i < progress;
+      var sCur = i === progress;
+      var cls = sDone ? 'done' : (sCur ? 'current' : 'pending');
+      var dot = sDone ? '✓' : (sCur ? '●' : '○');
+      return '<li class="' + cls + '"><span class="flow-dot">' + dot + '</span><span class="flow-text">' + formatQuestStep(step) + '</span></li>';
+    }).join('');
+    return '<article class="quest-flow-card"><div class="quest-flow-header"><div><span class="server-name">' + questTypeLabel(quest.type) + ' · ' + label + '</span><h3>' + quest.name + '</h3><p class="muted">' + escapeHtml(story) + '…</p></div><button class="track-quest-button' + (tracked ? ' is-tracked' : '') + '" data-track-quest="' + quest.id + '">' + (tracked ? '追踪中' : '追踪任务') + '</button></div><div class="quest-flow-steps" data-quest-steps="' + quest.id + '"' + (tracked ? '' : ' hidden') + '><div class="flow-line"></div><ol>' + stepsHtml + '</ol></div></article>';
+  }).join('');
+  openModal('任务日志', html);
+  requestAnimationFrame(function() {
+    var headers = document.querySelectorAll('.quest-flow-header');
+    for (var i = 0; i < headers.length; i++) {
+      headers[i].addEventListener('click', function(e) {
+        if (e.target.closest('button')) return;
+        var card = this.closest('.quest-flow-card');
+        var steps = card && card.querySelector('[data-quest-steps]');
+        if (steps) steps.hidden = !steps.hidden;
+      });
+    }
+  });
 }
+
 
 function openGuide() {
   const mainQuests = DATA.quests.filter((quest) => quest.type === "main");
