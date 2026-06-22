@@ -3880,29 +3880,16 @@ function renderActiveQuest() {
 }
 
 function renderBackpackPreview() {
-  const count = inventoryCount();
-  const itemsNode = $("#backpackInlineItems");
+  var count = inventoryCount();
+  var itemsNode = $("#backpackInlineItems");
   if (!itemsNode) return;
-  const entries = inventoryEntries();
-  if (!entries.length) {
-    itemsNode.innerHTML = '<span class="bag-empty">🎒</span>';
+  if (!count) {
+    itemsNode.innerHTML = '<span class="bag-icon-btn" data-action="openBackpack" title="背包空空">🎒</span>';
     return;
   }
-  itemsNode.innerHTML = entries
-    .map(function(item) {
-      return '<span class="bag-thumb" data-item-id="' + escapeHtml(item.id) + '" title="' + escapeHtml(item.name) + '：' + escapeHtml(item.flavor || item.description || '') + '">' +
-        '<span class="bag-thumb-icon">' + escapeHtml(item.icon || '🎒') + '</span>' +
-        (item.count > 1 ? '<span class="bag-thumb-count">' + item.count + '</span>' : '') +
-      '</span>';
-    })
-    .join('');
-  // Attach click handlers
-  itemsNode.querySelectorAll(".bag-thumb[data-item-id]").forEach(function(thumb) {
-    thumb.addEventListener("click", function(e) {
-      e.stopPropagation();
-      showItemDetail(thumb.dataset.itemId);
-    });
-  });
+  var entries = inventoryEntries();
+  var firstIcon = entries[0] ? entries[0].icon || '🎒' : '🎒';
+  itemsNode.innerHTML = '<span class="bag-icon-btn" data-action="openBackpack" title="' + count + ' 件物件，点击查看">' + firstIcon + '<span class="bag-count-badge">' + count + '</span></span>';
 }
 
 function showItemDetail(itemId) {
