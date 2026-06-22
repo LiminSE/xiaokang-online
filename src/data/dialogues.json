@@ -582,6 +582,50 @@
         "rewards": [
           "memory_deep_role_002_1"
         ]
+      },
+      {
+        "id": "choice_role_002_deep_2",
+        "label": "长聊：聊聊减肥失败的一百种方式",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "你试过的减肥方法里哪个最离谱？"
+            }
+          },
+          {
+            "speaker": "role_002",
+            "text": {
+              "speaker": "role_002",
+              "text": "tmd——最离谱的是'排位减肥法'。打排位的时候不吃东西——因为紧张到忘了饿。一局排位30分钟打完只觉得渴。所以我现在的减肥计划是每天打十局排位。不是靠运动减——是靠紧张忘了吃🤩。"
+            }
+          },
+          {
+            "speaker": "role_002",
+            "text": {
+              "speaker": "role_002",
+              "text": "但副作用是——排位输了会更想吃。连败+连吃=体重不动。减肥和排位一样——你不能太在意结果不然只会更糟。"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以排位是你最有效的减肥工具也是最危险的。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：湖面泛起涟漪——不是回声，是有人往水里扔了一颗减肥失败的决心。明天继续。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_002_2"
+        ]
       }
     ],
     "rewards": [
@@ -851,6 +895,50 @@
         ],
         "rewards": [
           "memory_deep_role_003_1"
+        ]
+      },
+      {
+        "id": "choice_role_003_deep_2",
+        "label": "长聊：聊聊本子画师的代际演变",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "本子画风这十年有什么变化？"
+            }
+          },
+          {
+            "speaker": "role_003",
+            "text": {
+              "speaker": "role_003",
+              "text": "有没有懂的——十年前本子更肉感，现在更线条感。锁骨的画法从十年前到现在经历了粗线→细线→留白三次演变。小腹也是——从遮住到若隐若现到刚好露出一条线。"
+            }
+          },
+          {
+            "speaker": "role_003",
+            "text": {
+              "speaker": "role_003",
+              "text": "我在工坊保存了上千张参考图——不是为看，是为研究演变。每个画师在前人基础上加了一点自己的东西。本子的历史就是人体描写的技术进步史。"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以你收集本子是在做美术史研究。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：打印机嗡了一声——刚打印了十年前和今年的锁骨特写。放在一起看差距刚好是一根线条的粗细。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_003_2"
         ]
       }
     ],
@@ -1122,6 +1210,50 @@
         "rewards": [
           "memory_deep_role_004_1"
         ]
+      },
+      {
+        "id": "choice_role_004_deep_2",
+        "label": "长聊：聊聊一个人排位的尊严",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "你为什么坚持一个人打排位？"
+            }
+          },
+          {
+            "speaker": "role_004",
+            "text": {
+              "speaker": "role_004",
+              "text": "我醒了——一个人不是因为没有队友。是因为一个人最专注。队友会干扰你的判断。一个人就是车队不是口号——是我只听自己的脚步声。"
+            }
+          },
+          {
+            "speaker": "role_004",
+            "text": {
+              "speaker": "role_004",
+              "text": "凌晨三点所有人都睡了只有你和键盘。舞台灯照着键盘音响放着脚步。电竞是演出——你是舞台唯一的演员。观众席空的但也在看。我手指好痛——但我今天赢了。够了。"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以一个人的排位是你的独奏。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：舞台灯从紫调到暖黄——一个人车队的专属灯光。不是孤独——是专注。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_004_2"
+        ]
       }
     ],
     "rewards": [
@@ -1392,6 +1524,50 @@
         "rewards": [
           "memory_deep_role_005_1"
         ]
+      },
+      {
+        "id": "choice_role_005_deep_2",
+        "label": "长聊：聊聊灰泽满和减肥的共同点",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "灰泽满和减肥之间有什么共同语言？"
+            }
+          },
+          {
+            "speaker": "role_005",
+            "text": {
+              "speaker": "role_005",
+              "text": "唉我草——灰泽满最打动我的是不完美。她说错话会笑场忘词会承认。减肥也一样——你不能要求自己每天都完美。两个不完美碰到一起就是刚刚好😭。"
+            }
+          },
+          {
+            "speaker": "role_005",
+            "text": {
+              "speaker": "role_005",
+              "text": "灰泽满的杂谈里有一种日常感——不是惊艳是今天也这样过了。减肥也是——今天没瘦但今天也没放弃。不是坚持是习惯了这种节奏。"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以你把灰泽满和减肥都当成日常。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：小康钟响了一声——不是报时，是今天也这样过了。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_005_2"
+        ]
       }
     ],
     "rewards": [
@@ -1661,6 +1837,50 @@
         ],
         "rewards": [
           "memory_deep_role_006_1"
+        ]
+      },
+      {
+        "id": "choice_role_006_deep_2",
+        "label": "长聊：聊聊偶像大师和减肥的对抗",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "偶像大师和减肥有什么关系？"
+            }
+          },
+          {
+            "speaker": "role_006",
+            "text": {
+              "speaker": "role_006",
+              "text": "又幻想了——imas里的角色每天都在训练。她们的日常就是减肥的日常：重复枯燥但你知道最后会有live。我上班两年半每天早上称体重——那就是训练日志。"
+            }
+          },
+          {
+            "speaker": "role_006",
+            "text": {
+              "speaker": "role_006",
+              "text": "imas教给我最重要的：日常不是平庸。765pro的日常就是练习不是惊艳的演出。减肥也是——不是突然瘦十斤是每天少吃一口。社会人不需要奇迹——需要日积月累。[/敬礼]"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以你用imas的方式对待减肥——日常即训练。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：茶室的体重秤亮了——不是数字变了，是觉得自己被理解了。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_006_2"
         ]
       }
     ],
@@ -6716,6 +6936,50 @@
         "rewards": [
           "memory_deep_role_023_1"
         ]
+      },
+      {
+        "id": "choice_role_023_deep_2",
+        "label": "长聊：聊聊没写完的诗和没说完的话",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "你诗页墙上最多的句子是什么？"
+            }
+          },
+          {
+            "speaker": "role_023",
+            "text": {
+              "speaker": "role_023",
+              "text": "是'未完'。不是诗没写完——是人说完'未完'就走了。诗页墙上每张只写了半句——后半句在下一个人的心里。"
+            }
+          },
+          {
+            "speaker": "role_023",
+            "text": {
+              "speaker": "role_023",
+              "text": "湖边最慢的聊天方式：你写一句丢进湖里——湖帮你存着——另一个人捡到回了一句。不是即时通讯是慢速通讯。慢到每句话都被认真对待。"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以你在收集所有人没说完的话。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：湖面飘来一张新的诗页——只写了半句。后半句在水里还没浮上来。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_023_2"
+        ]
       }
     ],
     "rewards": [
@@ -7284,6 +7548,35 @@
         ],
         "rewards": [
           "memory_deep_role_026_1"
+        ]
+      },
+      {
+        "id": "choice_role_026_deep_2",
+        "label": "长聊：聊聊陪伴协议的执行情况",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "你的陪伴协议执行得怎么样？"
+          },
+          {
+            "speaker": "role_026",
+            "text": "指定丈夫不是真丈夫——是需要的时候一定在线。协议第一条：对方上线了你必须在。协议第二条：对方离线了你不能跟着离线——因为可能有别的人需要你。"
+          },
+          {
+            "speaker": "role_026",
+            "text": "这个协议不是束缚——是承诺。不是承诺一直在线，是承诺'需要的时候我在'。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_026_2"
         ]
       }
     ],
@@ -7854,6 +8147,35 @@
         "rewards": [
           "memory_deep_role_028_1"
         ]
+      },
+      {
+        "id": "choice_role_028_deep_2",
+        "label": "长聊：聊聊不成文规矩的来源",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "那些不成文的规矩是怎么形成的？"
+          },
+          {
+            "speaker": "role_028",
+            "text": "不是谁定的——是在聊天中自然形成的。有人做了某件事觉得不好——下次就不做了——后来所有人都知道这件事不能做了。规矩不是写在墙上的——是写在每个人的习惯里。"
+          },
+          {
+            "speaker": "role_028",
+            "text": "判官笔记记录的就是这些——不是要执行，是要记住。记住了才不会忘。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_028_2"
+        ]
       }
     ],
     "rewards": [
@@ -8423,6 +8745,35 @@
         "rewards": [
           "memory_deep_role_030_1"
         ]
+      },
+      {
+        "id": "choice_role_030_deep_2",
+        "label": "长聊：聊聊白给的意义",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "白给到底是什么意思？"
+          },
+          {
+            "speaker": "role_030",
+            "text": "白给不是无奈——是选择。你有的东西别人没有——你给了就给了。不是施舍——是'我刚好有而且你刚好需要'。为什么愿意帮忙——这个问题回答不了。"
+          },
+          {
+            "speaker": "role_030",
+            "text": "就像有人在路边问路——你不会问他为什么需要问路。你告诉他怎么走。白给就是'我知道怎么走所以我告诉你'。不需要理由——因为是举手之劳。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_030_2"
+        ]
       }
     ],
     "rewards": [
@@ -8692,6 +9043,35 @@
         ],
         "rewards": [
           "memory_deep_role_031_1"
+        ]
+      },
+      {
+        "id": "choice_role_031_deep_2",
+        "label": "长聊：聊聊星砂研磨的技艺",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "研磨星砂有什么讲究？"
+          },
+          {
+            "speaker": "role_031",
+            "text": "星砂不是磨得越细越好——是刚好。太粗没有光泽，太细会飞走。刚好——在粗和细之间——才能给照片上色。研磨的力度和时间都要刚好——就像聊天，话太多嫌烦太少嫌冷。"
+          },
+          {
+            "speaker": "role_031",
+            "text": "研磨教会我的：所有美好的东西都需要刚好。不是最多最好——是刚好适合现在。全糖太甜半糖太淡——三分刚好。不是妥协——是精准。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_031_2"
         ]
       }
     ],
@@ -8963,6 +9343,50 @@
         "rewards": [
           "memory_deep_role_032_1"
         ]
+      },
+      {
+        "id": "choice_role_032_deep_2",
+        "label": "长聊：聊聊南梁和可爱的最终形态",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "南梁和可爱最终会变成什么？"
+            }
+          },
+          {
+            "speaker": "role_032",
+            "text": {
+              "speaker": "role_032",
+              "text": "最终是'不需要说但都在了'。南梁是你保持了自己的节奏不需要解释。可爱是你做了可爱的事不需要被夸奖。猫耳能听到的东西——是那些不需要发出声音就已经存在的。"
+            }
+          },
+          {
+            "speaker": "role_032",
+            "text": {
+              "speaker": "role_032",
+              "text": "敏龟的感头发现了第129种蓝——不是她找到了新颜色，是颜色自己来找她了。南梁也好可爱也好——最终都不是你在找什么，是它来找你。"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以最终形态是被动接收而非主动追求。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：猫耳轻轻动了一下——不是听到了什么，是准备好了听。准备好了就够了。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_032_2"
+        ]
       }
     ],
     "rewards": [
@@ -9232,6 +9656,35 @@
         ],
         "rewards": [
           "memory_deep_role_033_1"
+        ]
+      },
+      {
+        "id": "choice_role_033_deep_2",
+        "label": "长聊：聊聊月亮和头像色的联系",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "月亮和头像色有什么联系？"
+          },
+          {
+            "speaker": "role_033",
+            "text": "每个月的第八个是生日月相——只在有角色生日的时候出现。不是天文现象——是小镇在给过生日的人升一个月亮。头像色也是——不是随便选的——是你想被看到的颜色。"
+          },
+          {
+            "speaker": "role_033",
+            "text": "月亮升起来的时候——所有人的头像色都在变暖。不是光线变化——是你在看月亮的时候心情变暖了。月亮和头像色都是同一种东西：你想被看见的那一面。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_033_2"
         ]
       }
     ],
@@ -9503,6 +9956,35 @@
         "rewards": [
           "memory_deep_role_034_1"
         ]
+      },
+      {
+        "id": "choice_role_034_deep_2",
+        "label": "长聊：聊聊标志性瞬间的捕捉",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "你怎么判断一个瞬间是否标志性？"
+          },
+          {
+            "speaker": "role_034",
+            "text": "标志性不是最精彩——是最有辨识度的。Paranoia赢了之后拍桌子的那个瞬间——别人赢了也拍桌子但角度不一样。没办法说压抑了之后沉默的那一秒——不是谁都能沉默得那么刚好。"
+          },
+          {
+            "speaker": "role_034",
+            "text": "标志性就是'这个人独有'。多点关心说每个角色都有自己标志性的瞬间——我负责发现它。发现了就不会忘——因为那是'只有ta会这样'的瞬间。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_034_2"
+        ]
       }
     ],
     "rewards": [
@@ -9772,6 +10254,35 @@
         ],
         "rewards": [
           "memory_deep_role_036_1"
+        ]
+      },
+      {
+        "id": "choice_role_036_deep_2",
+        "label": "长聊：聊聊数据的温度",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "数据有温度吗？"
+          },
+          {
+            "speaker": "role_036",
+            "text": "有。缓存里的三个月回声——每一条都有温度。晚安的频率偏暖在吗的频率偏冷。清理缓存的时候不是删除——是把重复的日常折叠成一条。不是删掉是压缩。压缩以后温度不变但体积变小了。"
+          },
+          {
+            "speaker": "role_036",
+            "text": "炼金就是把噪声变成金子。你手动清理缓存的时候——手指碰到数据的瞬间——数据就有了人的温度。不是程序在清理——是你在选择什么值得留下。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_036_2"
         ]
       }
     ],
@@ -10043,6 +10554,35 @@
         "rewards": [
           "memory_deep_role_038_1"
         ]
+      },
+      {
+        "id": "choice_role_038_deep_2",
+        "label": "长聊：聊聊安利的最高境界",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": "安利的最高境界是什么？"
+          },
+          {
+            "speaker": "role_038",
+            "text": "不是让人喜欢你喜欢的东西——是让对方觉得是自己主动发现的。你只是给了一个链接说'这个挺有意思'——然后闭嘴。对方自己点开自己看完自己入坑。不是你在安利——是内容在安利——你只是邮递员。"
+          },
+          {
+            "speaker": "role_038",
+            "text": "莎乐美的直播我从来不主动推——只发链接。点不点是对方的事。安利的最高境界不是说服——是'这个不错你试试'然后不再说话。让好的东西自己发光——你只需要把它放在光能照到的地方。"
+          },
+          {
+            "speaker": "player",
+            "text": "所以这就是你的答案。"
+          },
+          {
+            "speaker": "narrator",
+            "text": "旁白：这场对话被记录了下来。不是精华消息——但值得被记住。"
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_038_2"
+        ]
       }
     ],
     "rewards": [
@@ -10312,6 +10852,50 @@
         ],
         "rewards": [
           "memory_deep_role_039_1"
+        ]
+      },
+      {
+        "id": "choice_role_039_deep_2",
+        "label": "长聊：聊聊舞萌AP的极限",
+        "lines": [
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "你觉得AP有极限吗？"
+            }
+          },
+          {
+            "speaker": "role_039",
+            "text": {
+              "speaker": "role_039",
+              "text": "有。但不是手指的极限——是专注的极限。AP一首歌不难——连AP三首就难。不是体力问题是注意力。注意力只能撑三首歌。"
+            }
+          },
+          {
+            "speaker": "role_039",
+            "text": {
+              "speaker": "role_039",
+              "text": "打完三首去湖边站着。风降温——手凉了再回去。不是休息是重置注意力。重置之后又能AP三首。不是技术在进步——是学会了重置。"
+            }
+          },
+          {
+            "speaker": "player",
+            "text": {
+              "speaker": "player",
+              "text": "所以AP的极限就是专注的极限。"
+            }
+          },
+          {
+            "speaker": "narrator",
+            "text": {
+              "speaker": "narrator",
+              "text": "旁白：机台的排名榜上——三首AP连在一起，间隔刚好是十分钟。十分钟——湖边风吹干了手上的汗。"
+            }
+          }
+        ],
+        "rewards": [
+          "memory_deep_role_039_2"
         ]
       }
     ],
