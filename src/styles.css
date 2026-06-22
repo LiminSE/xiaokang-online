@@ -565,6 +565,15 @@ h3 {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
+.side-panel > * {
+  flex-shrink: 0;
+  min-height: 0;
+}
+.side-panel .quest-mini {
+  flex-shrink: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
 
 .player-card {
   display: grid;

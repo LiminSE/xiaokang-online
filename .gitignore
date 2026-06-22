@@ -12,5 +12,6 @@ assets/imagegen/backups/
 assets/imagegen/sheets/
 assets/imagegen/tmp/
 assets/imagegen/candidates/
+.reference_cache/
 src/data/language_style_research.json
 src/data/dialogue_agent_sessions.json

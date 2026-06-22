@@ -1,102 +1,102 @@
 {
-  "generatedAt": "2026-06-21T13:02:37.255Z",
-  "baseUrl": "http://127.0.0.1:55260/index.html",
+  "generatedAt": "2026-06-21T18:59:33.091Z",
+  "baseUrl": "http://127.0.0.1:59584/index.html",
   "screenshots": [
     {
       "name": "00_boot_logo",
       "note": "启动页与 logo 一体性",
       "path": "docs/screenshots/00_boot_logo.png",
-      "bytes": 1827369
+      "bytes": 1916955
     },
     {
       "name": "01_character_select",
       "note": "角色选择页与 36 名角色资源",
       "path": "docs/screenshots/01_character_select.png",
-      "bytes": 680611
+      "bytes": 624065
     },
     {
       "name": "02_game_intro_dialogue",
       "note": "进入游戏后的开场对话与立绘",
       "path": "docs/screenshots/02_game_intro_dialogue.png",
-      "bytes": 1586833
+      "bytes": 1618430
     },
     {
       "name": "area_town_center",
       "note": "场景地图验收：town_center",
       "path": "docs/screenshots/area_town_center.png",
-      "bytes": 1766369
+      "bytes": 1787573
     },
     {
       "name": "area_restaurant",
       "note": "场景地图验收：restaurant",
       "path": "docs/screenshots/area_restaurant.png",
-      "bytes": 1420102
+      "bytes": 1433301
     },
     {
       "name": "area_dragon_card_house",
       "note": "场景地图验收：dragon_card_house",
       "path": "docs/screenshots/area_dragon_card_house.png",
-      "bytes": 1454356
+      "bytes": 1490579
     },
     {
       "name": "area_livehouse",
       "note": "场景地图验收：livehouse",
       "path": "docs/screenshots/area_livehouse.png",
-      "bytes": 1398018
+      "bytes": 1404775
     },
     {
       "name": "area_echo_lake",
       "note": "场景地图验收：echo_lake",
       "path": "docs/screenshots/area_echo_lake.png",
-      "bytes": 1718660
+      "bytes": 1411860
     },
     {
       "name": "area_care_home",
       "note": "场景地图验收：care_home",
       "path": "docs/screenshots/area_care_home.png",
-      "bytes": 1536394
+      "bytes": 1547869
     },
     {
       "name": "area_atelier",
       "note": "场景地图验收：atelier",
       "path": "docs/screenshots/area_atelier.png",
-      "bytes": 1363830
+      "bytes": 1399496
     },
     {
       "name": "area_northern_wilds",
       "note": "场景地图验收：northern_wilds",
       "path": "docs/screenshots/area_northern_wilds.png",
-      "bytes": 1767437
+      "bytes": 1723117
     },
     {
       "name": "area_server_room",
       "note": "场景地图验收：server_room",
       "path": "docs/screenshots/area_server_room.png",
-      "bytes": 1416909
+      "bytes": 1435270
     },
     {
       "name": "90_quest_log_with_cg",
       "note": "任务日志与任务 CG 缩略图",
       "path": "docs/screenshots/90_quest_log_with_cg.png",
-      "bytes": 1018129
+      "bytes": 1019100
     },
     {
       "name": "91_task_cg_gallery",
       "note": "任务特殊 CG 图鉴",
       "path": "docs/screenshots/91_task_cg_gallery.png",
-      "bytes": 589307
+      "bytes": 597480
     },
     {
       "name": "92_codex_art_assets",
       "note": "角色图鉴与头像资源",
       "path": "docs/screenshots/92_codex_art_assets.png",
-      "bytes": 773561
+      "bytes": 762537
     },
     {
       "name": "93_settings_panel",
       "note": "设置面板视觉一致性",
       "path": "docs/screenshots/93_settings_panel.png",
-      "bytes": 942602
+      "bytes": 935939
     }
   ],
   "consoleErrors": [],

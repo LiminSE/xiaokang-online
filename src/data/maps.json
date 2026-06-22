@@ -640,7 +640,7 @@
         "event": "event_center_notice",
         "item": "online_echo",
         "memory": "memory_center_barrage",
-        "toast": "捡到在线回声 ×1：喷泉把三分钟前的吐槽又喷了回来",
+        "toast": "捡到哦哦 ×1：喷泉把三分钟前的吐槽又喷了回来",
         "comment": "喷泉里不是水，是未读消息。它每喷一下，旁边路灯就替大家补一句“确实”。",
         "lines": [
           {
@@ -649,7 +649,7 @@
           },
           {
             "speaker": "player",
-            "text": "在线回声到手。这个物件明显比说明书会说话。"
+            "text": "哦哦到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -1580,7 +1580,7 @@
         "event": "event_sugar_choice",
         "item": "half_sugar_verdict",
         "memory": "memory_half_sugar",
-        "toast": "捡到半糖裁决杯 ×1：杯子坚持今天必须有判定",
+        "toast": "捡到快乐水杯 ×1：杯子坚持今天必须有判定",
         "comment": "杯壁上没有字，但所有人都看懂了它想说：少糖不等于没脾气。",
         "lines": [
           {
@@ -1589,7 +1589,7 @@
           },
           {
             "speaker": "player",
-            "text": "半糖裁决杯到手。这个物件明显比说明书会说话。"
+            "text": "快乐水杯到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -3456,7 +3456,7 @@
         "event": "event_stage_accident",
         "item": "online_echo",
         "memory": "memory_stage_mic",
-        "toast": "捡到在线回声 ×1：麦克风声明自己没有夹子音",
+        "toast": "捡到哦哦 ×1：麦克风声明自己没有夹子音",
         "comment": "麦克风摔了一下，全场安静一秒，然后一致认为这是节目效果。",
         "lines": [
           {
@@ -3465,7 +3465,7 @@
           },
           {
             "speaker": "player",
-            "text": "在线回声到手。这个物件明显比说明书会说话。"
+            "text": "哦哦到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -4422,7 +4422,7 @@
         "event": "event_poem_pages",
         "item": "online_echo",
         "memory": "memory_lake_bottle",
-        "toast": "捡到在线回声 ×1：瓶子里全是深夜发言",
+        "toast": "捡到哦哦 ×1：瓶子里全是深夜发言",
         "comment": "留言瓶晃了晃，吐出一句前言不搭后语但很有画面感的话。",
         "lines": [
           {
@@ -4431,7 +4431,7 @@
           },
           {
             "speaker": "player",
-            "text": "在线回声到手。这个物件明显比说明书会说话。"
+            "text": "哦哦到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -5309,7 +5309,7 @@
         "event": "event_clock_0047",
         "item": "online_echo",
         "memory": "memory_clock_0047",
-        "toast": "捡到在线回声 ×1：钟楼卡在零点四十七分装深沉",
+        "toast": "捡到哦哦 ×1：钟楼卡在零点四十七分装深沉",
         "comment": "零点四十七分不是时间，是精神状态的存档点。",
         "lines": [
           {
@@ -5318,7 +5318,7 @@
           },
           {
             "speaker": "player",
-            "text": "在线回声到手。这个物件明显比说明书会说话。"
+            "text": "哦哦到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -6275,7 +6275,7 @@
         "event": "event_portrait_glitch",
         "item": "portrait_patch",
         "memory": "memory_portrait_patch",
-        "toast": "捡到立绘补丁 ×1：修补台把边缘擦得很认真",
+        "toast": "捡到二向箔 ×1：修补台把边缘擦得很认真",
         "comment": "修补台一边工作一边碎碎念：别把红框带进来，真的会尴尬。",
         "lines": [
           {
@@ -6284,7 +6284,7 @@
           },
           {
             "speaker": "player",
-            "text": "立绘补丁到手。这个物件明显比说明书会说话。"
+            "text": "二向箔到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -6300,7 +6300,7 @@
         "event": "event_palette_sync",
         "item": "online_echo",
         "memory": "memory_pixel_screen",
-        "toast": "捡到在线回声 ×1：屏幕把聊天记录压成像素糖",
+        "toast": "捡到哦哦 ×1：屏幕把聊天记录压成像素糖",
         "comment": "屏幕闪了一下，把一句吐槽压缩成了很可爱的方块。",
         "lines": [
           {
@@ -6309,7 +6309,7 @@
           },
           {
             "speaker": "player",
-            "text": "在线回声到手。这个物件明显比说明书会说话。"
+            "text": "哦哦到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -7187,7 +7187,7 @@
         "event": "event_signal_tower",
         "item": "signal_leaf",
         "memory": "memory_signal_tower",
-        "toast": "捡到信号叶片 ×1：信号塔把沉默转成了满格",
+        "toast": "捡到csn片 ×1：信号塔把沉默转成了满格",
         "comment": "塔顶亮了一下，像有人终于把消息发出去了。",
         "lines": [
           {
@@ -7196,7 +7196,7 @@
           },
           {
             "speaker": "player",
-            "text": "信号叶片到手。这个物件明显比说明书会说话。"
+            "text": "csn片到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -7237,7 +7237,7 @@
         "event": "event_signal_tower",
         "item": "online_echo",
         "memory": "memory_creek_cache",
-        "toast": "捡到在线回声 ×1：小溪把旧消息冲得闪闪发光",
+        "toast": "捡到哦哦 ×1：小溪把旧消息冲得闪闪发光",
         "comment": "溪水里有一串回声，像被洗干净的旧吐槽。",
         "lines": [
           {
@@ -7246,7 +7246,7 @@
           },
           {
             "speaker": "player",
-            "text": "在线回声到手。这个物件明显比说明书会说话。"
+            "text": "哦哦到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -8124,7 +8124,7 @@
         "event": "event_cache_clear",
         "item": "cache_broom",
         "memory": "memory_cache_clear",
-        "toast": "捡到缓存扫帚 ×1：清理台宣布旧梗也要排队",
+        "toast": "捡到缓存 ×1：清理台宣布旧梗也要排队",
         "comment": "清理台亮起蓝光，把重复三遍的吐槽礼貌地折叠了。",
         "lines": [
           {
@@ -8133,7 +8133,7 @@
           },
           {
             "speaker": "player",
-            "text": "缓存扫帚到手。这个物件明显比说明书会说话。"
+            "text": "缓存到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",
@@ -8174,7 +8174,7 @@
         "event": "event_cache_clear",
         "item": "online_echo",
         "memory": "memory_status_wall",
-        "toast": "捡到在线回声 ×1：状态灯把装死演得很专业",
+        "toast": "捡到哦哦 ×1：状态灯把装死演得很专业",
         "comment": "状态灯一半说正常，一半说随缘，整体看起来非常本群。",
         "lines": [
           {
@@ -8183,7 +8183,7 @@
           },
           {
             "speaker": "player",
-            "text": "在线回声到手。这个物件明显比说明书会说话。"
+            "text": "哦哦到手。这个物件明显比说明书会说话。"
           },
           {
             "speaker": "guide",

@@ -467,7 +467,18 @@ class AcceptanceRunner:
         if case_id == 77:
             return self.result(77, [(self.ok_command("smoke_entry"), "角色选择后进入游戏烟测通过")], "scripts/smoke_game_entry.js")
         if case_id == 78:
-            return self.result(78, [("tryMove" in self.game and "data-move" in self.index and "ArrowUp" in self.game, "键盘和按钮移动逻辑存在")], "src/game.js, index.html")
+            return self.result(
+                78,
+                [(
+                    "tryMove" in self.game
+                    and "ArrowUp" in self.game
+                    and "touchend" in self.game
+                    and "handleCanvasPoint" in self.game
+                    and "data-move" not in self.index,
+                    "键盘、点击和纯触摸移动逻辑存在，页面不再依赖移动按钮"
+                )],
+                "src/game.js, index.html",
+            )
         if case_id == 79:
             return self.result(79, [("drawMap" in self.game and "drawAreaBackground" in self.game and "drawSemanticTiles" in self.game, "地图渲染使用语义素材")], "src/game.js")
         if case_id == 80:

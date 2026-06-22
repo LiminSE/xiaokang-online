@@ -87,6 +87,7 @@ class FakeElement {
       translate() {},
       scale() {},
       fillText() {},
+      strokeText() {},
       measureText(text) {
         return { width: String(text).length * 12 };
       },

@@ -23,7 +23,7 @@
     },
     "strict_validate": {
       "passed": true,
-      "output": "{\n  \"errors\": [],\n  \"warnings\": [],\n  \"counts\": {\n    \"characters\": 36,\n    \"areas\": 9,\n    \"maps\": 9,\n    \"quests\": 77,\n    \"dialogues\": 276,\n    \"acceptanceCases\": 100,\n    \"sourceAvatars\": 36,\n    \"imagegenMissingFiles\": 0,\n    \"semanticAreaBackgrounds\": 9,\n    \"semanticBaseTiles\": 10,\n    \"semanticDecorGroups\": 8,\n    \"taskCgs\": 9,\n    \"taskCgMissingFiles\": 0,\n    \"logoFiles\": 2,\n    \"fullSceneScreenshots\": 16\n  }\n}"
+      "output": "{\n  \"errors\": [],\n  \"warnings\": [],\n  \"counts\": {\n    \"characters\": 36,\n    \"areas\": 9,\n    \"maps\": 9,\n    \"quests\": 79,\n    \"dialogues\": 262,\n    \"acceptanceCases\": 100,\n    \"sourceAvatars\": 36,\n    \"imagegenMissingFiles\": 0,\n    \"semanticAreaBackgrounds\": 9,\n    \"semanticBaseTiles\": 10,\n    \"semanticDecorGroups\": 8,\n    \"taskCgs\": 9,\n    \"taskCgMissingFiles\": 0,\n    \"logoFiles\": 2,\n    \"fullSceneScreenshots\": 16\n  }\n}"
     }
   },
   "cases": [
@@ -806,7 +806,7 @@
       "status": "passed",
       "evidence": "src/game.js, index.html",
       "details": [
-        "键盘和按钮移动逻辑存在"
+        "键盘、点击和纯触摸移动逻辑存在，页面不再依赖移动按钮"
       ]
     },
     {
