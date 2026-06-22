@@ -639,29 +639,62 @@ function showItemPopup(itemId) {
 
 // 3-second exciting pickup BGM
 function playPickupFanfare() {
-  const audioCtx = musicState.ctx;
+  var audioCtx = musicState.ctx;
   if (!audioCtx || state.settings.volume <= 0) return;
   ensureMusic();
-  const t = audioCtx.currentTime;
-  // Triumphant ascending arpeggio + sparkle
-  var notes = [
-    { note: 'C5', time: 0, dur: 0.18, vel: 0.12 },
-    { note: 'E5', time: 0.08, dur: 0.18, vel: 0.14 },
-    { note: 'G5', time: 0.16, dur: 0.22, vel: 0.16 },
-    { note: 'C6', time: 0.26, dur: 0.28, vel: 0.18 },
-    { note: 'E6', time: 0.38, dur: 0.35, vel: 0.15 },
-    { note: 'G6', time: 0.52, dur: 0.4, vel: 0.12 },
-    { note: 'C7', time: 0.68, dur: 0.5, vel: 0.08 },
-    // Sparkle harmonics
-    { note: 'E7', time: 0.9, dur: 0.25, vel: 0.04 },
-    { note: 'G7', time: 1.05, dur: 0.3, vel: 0.03 },
-    // Bass notes
-    { note: 'C3', time: 0, dur: 0.6, vel: 0.10 },
-    { note: 'G3', time: 0.3, dur: 0.5, vel: 0.08 },
-    { note: 'C3', time: 0.6, dur: 0.5, vel: 0.08 },
+  var start = audioCtx.currentTime;
+  var vol = state.settings.volume / 100;
+
+  function epicHit(freq, time, duration, velocity) {
+    var g = audioCtx.createGain();
+    var osc = audioCtx.createOscillator();
+    var osc2 = audioCtx.createOscillator();
+    var filter = audioCtx.createBiquadFilter();
+    osc.type = 'sawtooth';
+    osc2.type = 'triangle';
+    osc.frequency.setValueAtTime(freq, time);
+    osc2.frequency.setValueAtTime(freq * 1.005, time);
+    filter.type = 'lowpass';
+    filter.frequency.setValueAtTime(400, time);
+    filter.frequency.exponentialRampToValueAtTime(800 + velocity * 3000, time + 0.08);
+    filter.frequency.exponentialRampToValueAtTime(200, time + duration);
+    g.gain.setValueAtTime(0.0001, time);
+    g.gain.exponentialRampToValueAtTime(velocity * vol * 0.25, time + 0.06);
+    g.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+    osc.connect(filter);
+    osc2.connect(filter);
+    filter.connect(g);
+    g.connect(musicState.dry);
+    osc.start(time);
+    osc2.start(time);
+    osc.stop(time + duration + 0.05);
+    osc2.stop(time + duration + 0.05);
+  }
+
+  // Epic Cmaj fanfare: bass → ascending power → peak → resolution
+  var chords = [
+    { note: 65.41, time: 0, dur: 1.2, vel: 0.9 },
+    { note: 98.00, time: 0, dur: 1.0, vel: 0.7 },
+    { note: 130.81, time: 0.05, dur: 0.9, vel: 0.8 },
+    { note: 164.81, time: 0.15, dur: 0.7, vel: 0.75 },
+    { note: 196.00, time: 0.25, dur: 0.65, vel: 0.8 },
+    { note: 261.63, time: 0.35, dur: 0.6, vel: 0.85 },
+    { note: 329.63, time: 0.5, dur: 0.55, vel: 0.8 },
+    { note: 392.00, time: 0.6, dur: 0.5, vel: 0.85 },
+    { note: 523.25, time: 0.7, dur: 0.55, vel: 0.9 },
+    { note: 659.25, time: 0.85, dur: 0.6, vel: 0.85 },
+    { note: 783.99, time: 0.95, dur: 0.65, vel: 0.8 },
+    { note: 1046.5, time: 1.05, dur: 0.8, vel: 0.7 },
+    { note: 783.99, time: 1.3, dur: 0.4, vel: 0.5 },
+    { note: 523.25, time: 1.45, dur: 0.5, vel: 0.45 },
+    { note: 261.63, time: 1.6, dur: 0.7, vel: 0.35 },
+    { note: 65.41, time: 1.7, dur: 1.3, vel: 0.6 },
+    { note: 130.81, time: 1.75, dur: 1.2, vel: 0.5 },
+    { note: 261.63, time: 1.8, dur: 1.1, vel: 0.45 },
+    { note: 523.25, time: 1.85, dur: 1.0, vel: 0.4 },
   ];
-  notes.forEach(function(n) {
-    playPianoNote(n.note, t + n.time, n.dur, n.vel);
+  chords.forEach(function(c) {
+    epicHit(c.note, start + c.time, c.dur, c.vel);
   });
 }
 
@@ -1649,7 +1682,7 @@ var ITEM_REACTIONS = {
     next_time: '两个下次之间有三秒的沉默。我听到了。',
     happy_water: '喝完可乐的饱嗝有特定频率。D4。',
     food_pic: '食物的颜色频率最丰富。这张是C大调。',
-    its_you: 'zsn——三个字确认所有权。频率确认完毕。',
+    its_you: '三个字确认所有权——这是你的。',
     rank_ticket: '上分路上有声音——每赢一局升一个音调。',
     mhy_verdict: '历史决议也是一段频率。严肃的D大调。',
     xox: '小偶像的声音频率最高——粉丝的欢呼在推着。',
@@ -1665,7 +1698,7 @@ var ITEM_REACTIONS = {
     cache_clean: '清理缓存时能听到被删数据的短暂回响。',
     core_key: '所有频率最后汇聚成一个和弦。通关了。',
     quote_msg: '引用就是在旧频率上加新频率。V²。',
-    its_your_copy: 'zsn——三个字。频率确认。这是你的。',
+    its_your_copy: '三个字——这是你的。确认完毕。',
   },
   role_008: {
     highlight_msg: '笑死了。这条精华我转译过——原文是一段笑声。',
