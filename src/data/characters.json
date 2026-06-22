@@ -863,7 +863,7 @@
       "town_center_spawn_1"
     ],
     "activeTrait": "echo_mend",
-    "passiveTrait": "reply_tailwind",
+    "passiveTrait": "quote_msg",
     "imagegenSheet": "assets/imagegen/sheets/role_005_sheet.png",
     "portrait": "assets/imagegen/portraits/role_005.png",
     "avatar": "assets/imagegen/avatars/role_005.png",
@@ -2726,7 +2726,7 @@
       "town_center_spawn_1"
     ],
     "activeTrait": "rule_lens",
-    "passiveTrait": "reply_tailwind",
+    "passiveTrait": "quote_msg",
     "imagegenSheet": "assets/imagegen/sheets/role_014_sheet.png",
     "portrait": "assets/imagegen/portraits/role_014.png",
     "avatar": "assets/imagegen/avatars/role_014.png",
@@ -3552,7 +3552,7 @@
       "town_center_spawn_1"
     ],
     "activeTrait": "echo_mend",
-    "passiveTrait": "reply_tailwind",
+    "passiveTrait": "quote_msg",
     "imagegenSheet": "assets/imagegen/sheets/role_018_sheet.png",
     "portrait": "assets/imagegen/portraits/role_018.png",
     "avatar": "assets/imagegen/avatars/role_018.png",
@@ -4380,7 +4380,7 @@
       "town_center_spawn_1"
     ],
     "activeTrait": "palette_pick",
-    "passiveTrait": "reply_tailwind",
+    "passiveTrait": "quote_msg",
     "imagegenSheet": "assets/imagegen/sheets/role_022_sheet.png",
     "portrait": "assets/imagegen/portraits/role_022.png",
     "avatar": "assets/imagegen/avatars/role_022.png",
@@ -5619,7 +5619,7 @@
       "town_center_spawn_1"
     ],
     "activeTrait": "rule_lens",
-    "passiveTrait": "reply_tailwind",
+    "passiveTrait": "quote_msg",
     "imagegenSheet": "assets/imagegen/sheets/role_029_sheet.png",
     "portrait": "assets/imagegen/portraits/role_029.png",
     "avatar": "assets/imagegen/avatars/role_029.png",

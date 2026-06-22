@@ -25,7 +25,7 @@
       [
         "喷泉弹幕井",
         "event_center_notice",
-        "online_echo",
+        "oo",
         "memory_center_barrage",
         "捡到哦哦 ×1：喷泉把三分钟前的吐槽又喷了回来",
         "喷泉里不是水，是未读消息。它每喷一下，旁边路灯就替大家补一句“确实”。"
@@ -33,7 +33,7 @@
       [
         "小康钟",
         "event_center_bell",
-        "star_sand",
+        "highlight_msg",
         "memory_center_clock",
         "捡到星砂 ×1：小康钟认真响了半声，然后开始装没事",
         "钟声听起来很庄重，直到它把尾音拐成了群聊提示音。"
@@ -41,7 +41,7 @@
       [
         "下次一定摊",
         "event_center_notice",
-        "next_time_coupon",
+        "next_time",
         "memory_center_coupon",
         "捡到下次一定券 ×1：摊主本人是空气，但承诺非常饱满",
         "摊位上写着“今天不做也没关系”，下一行又补了一句“但是你最好现在做”。"
@@ -49,7 +49,7 @@
       [
         "路灯复读串",
         "event_center_bell",
-        "reply_tailwind",
+        "quote_msg",
         "memory_center_lamp",
         "捡到顺风回复 ×1：路灯复读得太真诚，差点把自己说服",
         "路灯的光一闪一闪，像有人在输入框里反复删改。"
@@ -82,7 +82,7 @@
       [
         "晚饭召集锅",
         "event_dinner_call",
-        "meal_ticket",
+        "yellow_roast",
         "memory_dinner_pot",
         "捡到晚饭票根 ×1：锅里传来“来吃饭”的幻听",
         "锅盖一掀，蒸汽先喊了一句集合。很怪，但饭点就是有这种统治力。"
@@ -90,7 +90,7 @@
       [
         "半糖裁判杯",
         "event_sugar_choice",
-        "half_sugar_verdict",
+        "happy_water",
         "memory_half_sugar",
         "捡到快乐水杯 ×1：杯子坚持今天必须有判定",
         "杯壁上没有字，但所有人都看懂了它想说：少糖不等于没脾气。"
@@ -98,7 +98,7 @@
       [
         "加饭按钮",
         "event_dinner_call",
-        "rice_button",
+        "food_pic",
         "memory_rice_button",
         "捡到加饭按钮 ×1：它被按出了饭点尊严",
         "按钮弹起来的声音很像“再来一碗”，但你不确定是不是自己饿出幻觉。"
@@ -106,7 +106,7 @@
       [
         "蒸汽表情云",
         "event_sugar_choice",
-        "meme_steam",
+        "its_you",
         "memory_steam_face",
         "捡到蒸汽表情云 ×1：它摆了个很欠的表情",
         "蒸汽在空中扭成一个表情，大家沉默两秒后默认这是餐厅吉祥物。"
@@ -139,7 +139,7 @@
       [
         "无效门禁",
         "event_card_gate",
-        "card_shard",
+        "yugioh_card",
         "memory_card_gate",
         "捡到牌面碎片 ×1：门禁喊无效，但门自己先让开了",
         "门禁努力讲规则，门框努力装听懂，牌桌努力假装这不是日常。"
@@ -147,7 +147,7 @@
       [
         "额外牌堆",
         "event_extra_deck",
-        "next_time_card",
+        "rank_ticket",
         "memory_extra_deck",
         "捡到下次一定牌 ×1：额外牌堆开始自证清白",
         "牌堆满脸写着“还有操作”，但你怀疑它其实只是想多待一回合。"
@@ -155,7 +155,7 @@
       [
         "龙角裁判席",
         "event_card_gate",
-        "verdict_bell",
+        "mhy_verdict",
         "memory_verdict_bell",
         "捡到判定铃 ×1：裁判席说这把不背锅",
         "铃铛一响，空气里出现了三种解释，每一种都很像真相。"
@@ -163,7 +163,7 @@
       [
         "翻车记录板",
         "event_extra_deck",
-        "card_shard",
+        "yugioh_card",
         "memory_card_board",
         "捡到牌面碎片 ×1：记录板把“下次一定”刻成了历史",
         "记录板上密密麻麻，全是从自信开始、从沉默结束的回合。"
@@ -196,7 +196,7 @@
       [
         "深夜灯控台",
         "event_lights_midnight",
-        "stage_light_note",
+        "xox",
         "memory_stage_light",
         "捡到灯控便签 ×1：灯光把气氛调成了过度营业",
         "灯控台一滑，舞台立刻出现“明明没人点歌却已经高潮”的效果。"
@@ -204,7 +204,7 @@
       [
         "临时麦克风",
         "event_stage_accident",
-        "online_echo",
+        "oo",
         "memory_stage_mic",
         "捡到哦哦 ×1：麦克风声明自己没有夹子音",
         "麦克风摔了一下，全场安静一秒，然后一致认为这是节目效果。"
@@ -212,7 +212,7 @@
       [
         "海报滤镜墙",
         "event_lights_midnight",
-        "palette_chip",
+        "spicy_pic",
         "memory_stage_poster",
         "捡到色板芯片 ×1：海报墙偷偷给所有人加滤镜",
         "海报里的剪影比本人还会营业，路过的人都想给它点个关注。"
@@ -220,7 +220,7 @@
       [
         "吧台小灯",
         "event_stage_accident",
-        "meal_ticket",
+        "yellow_roast",
         "memory_stage_bar",
         "捡到晚饭票根 ×1：吧台小灯突然想点外卖",
         "小灯一闪，像在提醒大家：演出归演出，夜宵不能断。"
@@ -253,7 +253,7 @@
       [
         "漂流诗页",
         "event_poem_pages",
-        "poem_page",
+        "chat_log",
         "memory_lake_poem",
         "捡到漂流诗页 ×1：纸页湿了，但嘴很硬",
         "诗页漂着漂着开始押韵，湖面选择已读不回。"
@@ -261,7 +261,7 @@
       [
         "月相开关",
         "event_moon_phase",
-        "moon_toggle",
+        "emo_switch",
         "memory_moon_toggle",
         "捡到月相开关 ×1：月亮被调成未读模式",
         "开关拨一下，月亮换了个表情，像在说“别催”。"
@@ -269,7 +269,7 @@
       [
         "栈道留言瓶",
         "event_poem_pages",
-        "online_echo",
+        "oo",
         "memory_lake_bottle",
         "捡到哦哦 ×1：瓶子里全是深夜发言",
         "留言瓶晃了晃，吐出一句前言不搭后语但很有画面感的话。"
@@ -277,7 +277,7 @@
       [
         "湖面倒影",
         "event_moon_phase",
-        "star_sand",
+        "highlight_msg",
         "memory_lake_reflection",
         "捡到星砂 ×1：倒影比本人还会吐槽",
         "你看向湖面，倒影先看向你，双方都觉得对方今天有点离谱。"
@@ -310,7 +310,7 @@
       [
         "零点钟楼",
         "event_clock_0047",
-        "online_echo",
+        "oo",
         "memory_clock_0047",
         "捡到哦哦 ×1：钟楼卡在零点四十七分装深沉",
         "零点四十七分不是时间，是精神状态的存档点。"
@@ -318,7 +318,7 @@
       [
         "茶室值班表",
         "event_tea_roster",
-        "tea_roster",
+        "ts_gather",
         "memory_tea_roster",
         "捡到茶室值班表 ×1：摸鱼被写成轮休",
         "值班表排得很满，执行起来主打一个看缘分。"
@@ -326,7 +326,7 @@
       [
         "安眠躺椅",
         "event_clock_0047",
-        "nap_ticket",
+        "morning_meow",
         "memory_nap_chair",
         "捡到躺平许可 ×1：躺椅劝你别精神内耗",
         "躺椅看起来很普通，但它散发着“再想就不礼貌了”的气场。"
@@ -334,7 +334,7 @@
       [
         "结局门垫",
         "event_tea_roster",
-        "ending_key",
+        "admin_perm",
         "memory_ending_mat",
         "捡到结局门垫 ×1：它把仪式感踩在脚下",
         "门垫温柔地提示：先别急着结局，大家还没吐槽完。"
@@ -367,7 +367,7 @@
       [
         "同步色板",
         "event_palette_sync",
-        "palette_chip",
+        "spicy_pic",
         "memory_palette_sync",
         "捡到色板芯片 ×1：色板决定给今天加一点主角色",
         "色板转了一圈，最后选了一个“看不懂但很对味”的颜色。"
@@ -375,7 +375,7 @@
       [
         "立绘修补台",
         "event_portrait_glitch",
-        "portrait_patch",
+        "nijigen",
         "memory_portrait_patch",
         "捡到二向箔 ×1：修补台把边缘擦得很认真",
         "修补台一边工作一边碎碎念：别把红框带进来，真的会尴尬。"
@@ -383,7 +383,7 @@
       [
         "像素屏幕",
         "event_palette_sync",
-        "online_echo",
+        "oo",
         "memory_pixel_screen",
         "捡到哦哦 ×1：屏幕把聊天记录压成像素糖",
         "屏幕闪了一下，把一句吐槽压缩成了很可爱的方块。"
@@ -391,7 +391,7 @@
       [
         "图鉴抽屉",
         "event_portrait_glitch",
-        "codex_tab",
+        "oldguard",
         "memory_codex_drawer",
         "捡到图鉴标签 ×1：抽屉发出“终于轮到我”的声音",
         "抽屉里每张标签都很正经，直到你发现背面写着小镇黑历史。"
@@ -424,7 +424,7 @@
       [
         "野外信号塔",
         "event_signal_tower",
-        "signal_leaf",
+        "csn",
         "memory_signal_tower",
         "捡到csn片 ×1：信号塔把沉默转成了满格",
         "塔顶亮了一下，像有人终于把消息发出去了。"
@@ -432,7 +432,7 @@
       [
         "蘑菇路标",
         "event_mushroom_path",
-        "mushroom_hint",
+        "monkey",
         "memory_mushroom_hint",
         "捡到蘑菇路标 ×1：它看起来很懂路，但不保证负责",
         "蘑菇指向三条路，每条都写着“相信我”。"
@@ -440,7 +440,7 @@
       [
         "溪边缓存",
         "event_signal_tower",
-        "online_echo",
+        "oo",
         "memory_creek_cache",
         "捡到哦哦 ×1：小溪把旧消息冲得闪闪发光",
         "溪水里有一串回声，像被洗干净的旧吐槽。"
@@ -448,7 +448,7 @@
       [
         "露营留言火",
         "event_mushroom_path",
-        "campfire_reply",
+        "group_fire",
         "memory_campfire_reply",
         "捡到篝火回复 ×1：火苗正在小声接梗",
         "篝火噼啪两声，像是在替远处的人发“在看”。"
@@ -481,7 +481,7 @@
       [
         "缓存清理台",
         "event_cache_clear",
-        "cache_broom",
+        "cache_clean",
         "memory_cache_clear",
         "捡到缓存 ×1：清理台宣布旧梗也要排队",
         "清理台亮起蓝光，把重复三遍的吐槽礼貌地折叠了。"
@@ -497,7 +497,7 @@
       [
         "状态灯墙",
         "event_cache_clear",
-        "online_echo",
+        "oo",
         "memory_status_wall",
         "捡到哦哦 ×1：状态灯把装死演得很专业",
         "状态灯一半说正常，一半说随缘，整体看起来非常本群。"
@@ -505,7 +505,7 @@
       [
         "线路桥",
         "event_core_restart",
-        "reply_tailwind",
+        "quote_msg",
         "memory_wire_bridge",
         "捡到顺风回复 ×1：线路桥把断句重新接上",
         "线路像小镇神经，弯弯绕绕但总能把一句话送到该到的人那里。"
