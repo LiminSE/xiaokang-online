@@ -1461,7 +1461,17 @@ function grantRewards(rewards = []) {
 
 function announceCgUnlockForReward(reward) {
   const cg = ALL_CGS.find((item) => item.unlock === reward || reversePairMemory(item.unlock) === reward);
-  if (cg) toast(`解锁隐藏插画：${displayCgName(cg.name)}`);
+  if (!cg) return;
+  // Show CG in a popup modal
+  var html = '<div style="text-align:center">' +
+    '<h3 style="margin:0 0 4px;color:#e35d5b">🎉 隐藏插画解锁！</h3>' +
+    '<h2 style="margin:0 0 12px">' + displayCgName(cg.name) + '</h2>' +
+    '<img src="' + cg.path + '" alt="' + displayCgName(cg.name) + '" style="max-width:100%;max-height:50vh;border-radius:8px;border:3px solid var(--line);box-shadow:0 4px 12px rgba(0,0,0,0.15)" onerror="this.style.display=\'none\'"/>' +
+    (cg.caption ? '<p style="color:#6b5a4b;margin-top:10px;font-style:italic">' + escapeHtml(cg.caption) + '</p>' : '') +
+    '<p style="color:#aaa;font-size:11px;margin-top:8px">可在图鉴 → 隐藏插画中随时查看</p>' +
+  '</div>';
+  window.setTimeout(function() { openModal('隐藏插画', html); }, 600);
+  toast('解锁隐藏插画：' + displayCgName(cg.name));
 }
 
 function reversePairMemory(value = "") {
