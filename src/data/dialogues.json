@@ -15024,5 +15024,310 @@
     "rewards": [
       "memory_pair_role_015_role_010"
     ]
+  },
+  {
+    "id": "dialogue_duo_role_001_role_002",
+    "speaker": "role_001",
+    "area": "dragon_card_house",
+    "time": "any",
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "旁白：Hxr难得出现在龙牌馆门口。弧形反叛超量🐉正在洗牌，抬头看了一眼。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "哟，湖边的人来牌馆了。迷路了还是来打牌？"
+      },
+      {
+        "speaker": "role_002",
+        "text": "没迷路。力竭了说你这边有新卡表，我来看看。虽然我不打牌但看看又不要钱。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "你看得懂吗。不是我质疑你的智商，是游戏王的卡面文字密度堪比轻小说。"
+      },
+      {
+        "speaker": "role_002",
+        "text": "tmd我看不懂规则还看不懂画吗。烙印那个阿不思的异画是真的好看。你上次发的那个ur抽了多少包出的。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "三十包。两张异画阿尔贝一张阿不思。运气算好的。我跟你说烙印这个卡组的魅力不在于强度，在于故事。阿不思和艾克莉西娅的感情线比你追的那些番还虐。"
+      },
+      {
+        "speaker": "role_002",
+        "text": "比我追的番还虐？avemujica第三集看了吗你就说这话。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "没看。但我看过烙印白之物语完整版。结局是两个人消失在时空裂缝里，只留下了一枚戒指。"
+      },
+      {
+        "speaker": "role_002",
+        "text": "尼玛剧透狗。虽然我也没打算看烙印剧情。行吧下次你打牌我来看，不是因为牌，是因为你说得好像真的有点东西。"
+      },
+      {
+        "speaker": "narrator",
+        "text": "旁白：龙角灯闪了一下。不是电压不稳——是牌馆在欢迎新观众。"
+      }
+    ],
+    "rewards": [
+      "memory_duo_role_001_role_002"
+    ]
+  },
+  {
+    "id": "dialogue_duo_role_001_role_005",
+    "speaker": "role_001",
+    "area": "town_center",
+    "time": "any",
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "旁白：青山照坐在广场长椅上翻轻小说。弧形反叛超量🐉从龙牌馆出来透气，正好路过。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "看什么书。gal改还是原创。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "唉我草，gal改。甜蜜女友。动态立绘猪鼻到我了但还是甜的。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "甜蜜女友不是异世界吧。我记得是学园日常。跟ef一个类型。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "你说ef。个人感觉ef是那个年代最好的gal改了。新房昭之的分镜加上御影的剧本，天门的配乐，没短板。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "但游戏王dm也是那个年代的。武藤游戏和海马濑人的羁绊比任何gal的恋爱线都深。不是爱情，是那种'你不在了我也会替你打完这一局'的东西。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "你这个比喻。把打牌比成gal。但我听懂了，游戏王也是另一种形式的羁绊故事。"
+      },
+      {
+        "speaker": "role_001",
+        "text": "对。每张卡都是角色，每局牌都是一集。你输给的不是对手，是那局牌的剧情。好了我去打牌了，你继续看你的猪鼻立绘。"
+      },
+      {
+        "speaker": "narrator",
+        "text": "旁白：青山照翻了一页书。广场上的喷泉弹幕井喷了三个字：有道理。"
+      }
+    ],
+    "rewards": [
+      "memory_duo_role_001_role_005"
+    ]
+  },
+  {
+    "id": "dialogue_duo_role_005_role_006",
+    "speaker": "role_005",
+    "area": "care_home",
+    "time": "any",
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "旁白：青山照来养老院存档，正好力竭了在茶室喝凉茶。两人在公告墙前面碰上了。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "你茶凉了吧唉我草。公告墙上又有新东西。"
+      },
+      {
+        "speaker": "role_006",
+        "text": "确实。我看了一下是明天开始早睡那张。贴了三个月了。和我上班两年半高二还没上完是一个性质。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "你也想回去读高二？"
+      },
+      {
+        "speaker": "role_006",
+        "text": "不是回去，是心态永远停在那里。但下了班打了三局牌赢了对面天杯之后，觉得现在也挺好的。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "个人感觉，存档就是承认现在值得被记住。重新减肥说的。我以前也不存，直到甜蜜女友的档丢了。"
+      },
+      {
+        "speaker": "role_006",
+        "text": "还真是。行，我去存一个。你也存。"
+      },
+      {
+        "speaker": "narrator",
+        "text": "旁白：零点钟楼的指针动了一下。养老院今天的存档数+2。"
+      }
+    ],
+    "rewards": [
+      "memory_duo_role_005_role_006"
+    ]
+  },
+  {
+    "id": "dialogue_duo_role_003_role_006",
+    "speaker": "role_003",
+    "area": "atelier",
+    "time": "any",
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "旁白：力竭了来工坊找色板参考，NNZ正在打印机旁边看刚吐出来的测试页。"
+      },
+      {
+        "speaker": "role_003",
+        "text": "力竭了你来得正好。帮我看看这张色板校准页——黄色的暖度偏了两度。有没有懂的。"
+      },
+      {
+        "speaker": "role_006",
+        "text": "这个偏暖和偶像大师闪耀色彩的logo色有点像。可能是打印机在自动调参考色。"
+      },
+      {
+        "speaker": "role_003",
+        "text": "你一说imas我就懂了。工坊色板确实偶尔会被附近区域的灯光影响。龙牌馆的龙角灯是暖橙色的，Livehouse的舞台灯是紫色的，养老院的光最稳定——接近自然光。"
+      },
+      {
+        "speaker": "role_006",
+        "text": "颜色是DNA。你以前说的。现在证实了——连区域的灯光都会影响色板。"
+      },
+      {
+        "speaker": "role_003",
+        "text": "所以以后打印立绘之前要检查区域光。不是技术问题，是环境问题。怎么说着说着像游戏王的环境分析了。"
+      },
+      {
+        "speaker": "narrator",
+        "text": "旁白：打印机嗡了一声。它也觉得这个发现很重要。"
+      }
+    ],
+    "rewards": [
+      "memory_duo_role_003_role_006"
+    ]
+  },
+  {
+    "id": "dialogue_duo_role_004_role_005",
+    "speaker": "role_004",
+    "area": "livehouse",
+    "time": "night",
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "旁白：青山照难得来Livehouse。赛博鳏夫正在调灯光，看到她进来，把舞台灯调到暖黄色。"
+      },
+      {
+        "speaker": "role_004",
+        "text": "我醒了。青山照来Livehouse。今天是来看演出还是来存galgame的档。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "来看灯光。个人感觉你这个地方比工坊更适合做gal的约会场景舞台。灯光能调出黄昏色吗。"
+      },
+      {
+        "speaker": "role_004",
+        "text": "能。灯控台有十八个预设色。黄昏色是第七个。你玩的游戏里有没有Livehouse场景。"
+      },
+      {
+        "speaker": "role_005",
+        "text": "有。ef第二季最后一集就是在Livehouse。但不是约会场景，是告别的场景。灯光打下来的时候男主角已经走了。"
+      },
+      {
+        "speaker": "role_004",
+        "text": "行。那我以后第七个预设色就叫'ef色'。你来的时候我就开那个。一个场景不一定要等人——灯光可以先等着。"
+      },
+      {
+        "speaker": "narrator",
+        "text": "旁白：灯控台存储了一个新预设。备注：ef色——等人来。"
+      }
+    ],
+    "rewards": [
+      "memory_duo_role_004_role_005"
+    ]
+  },
+  {
+    "id": "dialogue_duo_role_004_role_006",
+    "speaker": "role_004",
+    "area": "dragon_card_house",
+    "time": "night",
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "旁白：赛博鳏夫打完排位顺路来龙牌馆看看。力竭了还在研究新卡表。"
+      },
+      {
+        "speaker": "role_004",
+        "text": "还在研究。这张卡你都看了二十分钟了。"
+      },
+      {
+        "speaker": "role_006",
+        "text": "确实。这张卡的环境定位很特殊。天杯环境里这张卡的价值被低估了。"
+      },
+      {
+        "speaker": "role_004",
+        "text": "我打排位也是这样——有些点位看起来很弱但就是能赢。不是点位的问题，是用的人的问题。一个人就是车队。"
+      },
+      {
+        "speaker": "role_006",
+        "text": "这个比喻有意思。卡组的价值也看人。有些卡在高手手里是神卡，在我手里是废件。"
+      },
+      {
+        "speaker": "role_004",
+        "text": "所以你是哪种。高手还是废件。"
+      },
+      {
+        "speaker": "role_006",
+        "text": "下班以后是高手。上班的时候是废件。你要是不信，现在跟我打一局。"
+      },
+      {
+        "speaker": "narrator",
+        "text": "旁白：赛博鳏夫坐下了。他没说自己会不会打牌——但坐下的动作已经回答了。"
+      }
+    ],
+    "rewards": [
+      "memory_duo_role_004_role_006"
+    ]
+  },
+  {
+    "id": "dialogue_duo_role_002_role_003",
+    "speaker": "role_002",
+    "area": "echo_lake",
+    "time": "any",
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "旁白：NNZ带着一叠工坊打印的参考图来到湖边。Hxr正在栈道上测月相角度。"
+      },
+      {
+        "speaker": "role_002",
+        "text": "你今天不在工坊待着跑湖边来干嘛。"
+      },
+      {
+        "speaker": "role_003",
+        "text": "打印了一批新立绘参考图。但工坊的灯光偏暖，看不准颜色。湖边的自然光最稳定——所以来你这借个光。"
+      },
+      {
+        "speaker": "role_002",
+        "text": "借光是吧。湖面反射光下午四点最稳定，你现在来刚好。坐栈道第十二块木板上，那个角度没有反光。"
+      },
+      {
+        "speaker": "role_003",
+        "text": "三百七十二块木板，第十二块会响。你数的？"
+      },
+      {
+        "speaker": "role_002",
+        "text": "不是我数的。是之前有个不认识的人在栈道上走了七个来回数出来的。我后来去踩了第十二块，真的会响。"
+      },
+      {
+        "speaker": "role_003",
+        "text": "数木板的人不肯说名字就走了。工坊的打印机也经常自己吐东西出来不走流程。小镇里的物件和人都一样——来是因为好奇，走是因为已经有答案了。"
+      },
+      {
+        "speaker": "narrator",
+        "text": "旁白：第十二块木板轻轻响了一声。不是风——是确认。"
+      }
+    ],
+    "rewards": [
+      "memory_duo_role_002_role_003"
+    ]
   }
 ]
