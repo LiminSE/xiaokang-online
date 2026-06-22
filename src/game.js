@@ -645,56 +645,93 @@ function playPickupFanfare() {
   var start = audioCtx.currentTime;
   var vol = state.settings.volume / 100;
 
-  function epicHit(freq, time, duration, velocity) {
+  // Orchestral brass hit with low-pass sweep
+  function brass(freq, time, dur, vel) {
     var g = audioCtx.createGain();
-    var osc = audioCtx.createOscillator();
-    var osc2 = audioCtx.createOscillator();
-    var filter = audioCtx.createBiquadFilter();
-    osc.type = 'sawtooth';
-    osc2.type = 'triangle';
-    osc.frequency.setValueAtTime(freq, time);
-    osc2.frequency.setValueAtTime(freq * 1.005, time);
-    filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(400, time);
-    filter.frequency.exponentialRampToValueAtTime(800 + velocity * 3000, time + 0.08);
-    filter.frequency.exponentialRampToValueAtTime(200, time + duration);
+    var o1 = audioCtx.createOscillator();
+    var o2 = audioCtx.createOscillator();
+    var o3 = audioCtx.createOscillator();
+    var f = audioCtx.createBiquadFilter();
+    o1.type = 'sawtooth'; o2.type = 'triangle'; o3.type = 'square';
+    o1.frequency.setValueAtTime(freq, time);
+    o2.frequency.setValueAtTime(freq * 1.003, time);
+    o3.frequency.setValueAtTime(freq * 0.5, time); // sub-octave for weight
+    f.type = 'lowpass';
+    f.frequency.setValueAtTime(300, time);
+    f.frequency.exponentialRampToValueAtTime(1500 + vel * 4000, time + 0.1);
+    f.frequency.exponentialRampToValueAtTime(180, time + dur);
+    var peak = vel * vol * 0.3;
     g.gain.setValueAtTime(0.0001, time);
-    g.gain.exponentialRampToValueAtTime(velocity * vol * 0.25, time + 0.06);
-    g.gain.exponentialRampToValueAtTime(0.0001, time + duration);
-    osc.connect(filter);
-    osc2.connect(filter);
-    filter.connect(g);
+    g.gain.exponentialRampToValueAtTime(peak, time + 0.07);
+    g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+    o1.connect(f); o2.connect(f); o3.connect(f); f.connect(g);
     g.connect(musicState.dry);
-    osc.start(time);
-    osc2.start(time);
-    osc.stop(time + duration + 0.05);
-    osc2.stop(time + duration + 0.05);
+    o1.start(time); o2.start(time); o3.start(time);
+    o1.stop(time + dur + 0.05); o2.stop(time + dur + 0.05); o3.stop(time + dur + 0.05);
   }
 
-  // Epic Cmaj fanfare: bass → ascending power → peak → resolution
-  var chords = [
-    { note: 65.41, time: 0, dur: 1.2, vel: 0.9 },
-    { note: 98.00, time: 0, dur: 1.0, vel: 0.7 },
-    { note: 130.81, time: 0.05, dur: 0.9, vel: 0.8 },
-    { note: 164.81, time: 0.15, dur: 0.7, vel: 0.75 },
-    { note: 196.00, time: 0.25, dur: 0.65, vel: 0.8 },
-    { note: 261.63, time: 0.35, dur: 0.6, vel: 0.85 },
-    { note: 329.63, time: 0.5, dur: 0.55, vel: 0.8 },
-    { note: 392.00, time: 0.6, dur: 0.5, vel: 0.85 },
-    { note: 523.25, time: 0.7, dur: 0.55, vel: 0.9 },
-    { note: 659.25, time: 0.85, dur: 0.6, vel: 0.85 },
-    { note: 783.99, time: 0.95, dur: 0.65, vel: 0.8 },
-    { note: 1046.5, time: 1.05, dur: 0.8, vel: 0.7 },
-    { note: 783.99, time: 1.3, dur: 0.4, vel: 0.5 },
-    { note: 523.25, time: 1.45, dur: 0.5, vel: 0.45 },
-    { note: 261.63, time: 1.6, dur: 0.7, vel: 0.35 },
-    { note: 65.41, time: 1.7, dur: 1.3, vel: 0.6 },
-    { note: 130.81, time: 1.75, dur: 1.2, vel: 0.5 },
-    { note: 261.63, time: 1.8, dur: 1.1, vel: 0.45 },
-    { note: 523.25, time: 1.85, dur: 1.0, vel: 0.4 },
+  // Bell sparkle for magic feel
+  function sparkle(freq, time, dur, vel) {
+    var g = audioCtx.createGain();
+    var o = audioCtx.createOscillator();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(freq, time);
+    g.gain.setValueAtTime(0.0001, time);
+    g.gain.exponentialRampToValueAtTime(vel * vol * 0.12, time + 0.03);
+    g.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+    o.connect(g); g.connect(musicState.dry);
+    o.start(time); o.stop(time + dur);
+  }
+
+  // Timpani bass boom
+  function timpani(freq, time, vel) {
+    var g = audioCtx.createGain();
+    var o = audioCtx.createOscillator();
+    o.type = 'sine';
+    o.frequency.setValueAtTime(freq * 1.5, time);
+    o.frequency.exponentialRampToValueAtTime(freq, time + 0.12);
+    g.gain.setValueAtTime(vel * vol * 0.35, time);
+    g.gain.exponentialRampToValueAtTime(0.0001, time + 0.6);
+    o.connect(g); g.connect(musicState.dry);
+    o.start(time); o.stop(time + 0.7);
+  }
+
+  var t = start;
+  // ── Timpani intro (0.0-0.3s) ──
+  timpani(65.41, t, 0.85);
+  timpani(55.00, t + 0.15, 0.6);
+
+  // ── Brass fanfare: Cmaj ascending (0.1-1.1s) ──
+  var fanfare = [
+    130.81, 164.81, 196.00, 261.63, 329.63, 392.00,
+    523.25, 659.25, 783.99, 1046.5, 1318.5
   ];
-  chords.forEach(function(c) {
-    epicHit(c.note, start + c.time, c.dur, c.vel);
+  fanfare.forEach(function(f, i) {
+    brass(f, t + 0.15 + i * 0.09, 0.55, 0.65 + i * 0.03);
+  });
+
+  // ── Sparkle bells (0.2-1.3s) ──
+  [523.25, 659.25, 783.99, 1046.5, 1318.5, 1568.0, 2093.0].forEach(function(f, i) {
+    sparkle(f, t + 0.25 + i * 0.13, 0.35, 0.5 + i * 0.05);
+  });
+
+  // ── Peak climax chord (1.1-1.6s) ──
+  [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.5].forEach(function(f) {
+    brass(f, t + 1.1, 0.7, 0.9);
+  });
+
+  // ── Descending resolution with sparkle trail (1.6-2.2s) ──
+  [1318.5, 1046.5, 783.99, 523.25, 392.00, 261.63].forEach(function(f, i) {
+    brass(f, t + 1.6 + i * 0.1, 0.5 - i * 0.06, 0.5 - i * 0.07);
+  });
+  [1568.0, 1318.5, 1046.5, 783.99, 523.25].forEach(function(f, i) {
+    sparkle(f, t + 1.65 + i * 0.12, 0.3, 0.4 - i * 0.06);
+  });
+
+  // ── Final timpani + deep bass chord (2.1-2.8s) ──
+  timpani(65.41, t + 2.1, 0.7);
+  [65.41, 98.00, 130.81, 196.00, 261.63].forEach(function(f) {
+    brass(f, t + 2.15, 0.8, 0.5);
   });
 }
 
