@@ -1393,19 +1393,28 @@ function openAreaDialogue(point) {
   playInteractSound();
   const area = indexes.areas.get(point.areaId || state.areaId) || currentArea();
   const npcs = npcsForArea(point.areaId || state.areaId);
-  const char = npcs[0]?.char || indexes.characters.get(state.playerId);
   const itemId = point.item || itemForEvent(point.event);
   const itemNameText = itemName(itemId);
-  // Get character-specific reaction for this item
-  const reaction = getItemReaction(char.id, itemId, itemNameText);
-  const lines = point.lines || [
+  // Player reaction
+  const playerReaction = getPlayerItemReaction(state.playerId, itemId, itemNameText);
+  // Build lines: narrator → player → all NPCs in area react
+  var lines = [
     { speaker: "narrator", text: '你调查了' + area.name + '的' + point.label + '。它轻轻一响。' },
-    { speaker: "player", text: '好，' + itemNameText + '到手。' },
-    { speaker: char.id, text: reaction },
+    { speaker: "player", text: playerReaction },
   ];
+  // Add reaction from each NPC in the area (up to 4)
+  var addedSpeakers = {};
+  for (var i = 0; i < npcs.length && lines.length < 6; i++) {
+    var npcChar = npcs[i].char;
+    if (!npcChar || addedSpeakers[npcChar.id]) continue;
+    var reaction = getItemReaction(npcChar.id, itemId, itemNameText);
+    lines.push({ speaker: npcChar.id, text: reaction });
+    addedSpeakers[npcChar.id] = true;
+  }
+  const mainChar = npcs[0]?.char || indexes.characters.get(state.playerId);
   state.dialogue = {
-    speaker: char.id,
-    lines: normalizeLines(lines.map(function(line) { return Object.assign({}, line, { speaker: line.speaker === 'guide' ? char.id : line.speaker }); }), char.id),
+    speaker: mainChar.id,
+    lines: normalizeLines(lines.map(function(line) { return Object.assign({}, line, { speaker: line.speaker === 'guide' ? mainChar.id : line.speaker }); }), mainChar.id),
     index: 0,
   };
   renderDialogue();
@@ -2438,6 +2447,187 @@ function getItemReaction(charId, itemId, itemNameText) {
     '你捡到' + itemNameText + '了。运气不错。',
   ];
   return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+}
+
+// Player character reactions (based on who you're playing as)
+var PLAYER_ITEM_REACTIONS = {
+  role_001: {
+    highlight_msg: '精华消息。让我看看是谁发的——算了不管是谁，先收了。',
+    oo: '哦哦。冷场救星。打牌的时候冷场我最熟了。',
+    chat_log: '聊天记录？好，又多了一份参考资料。',
+    yugioh_card: 'yo-gi-oh!到手。主轴十二张废件三张——不是，这是道具不是真的卡。',
+    yellow_roast: '黄哥烤五花！比我上一顿吃的强太多了。收了。',
+    spicy_pic: '色图。好，收藏+1。晚上慢慢鉴赏。',
+    next_time: '下次一定券。跟我说的再来一局就收手是同一个意思。',
+    happy_water: '快乐水。拿了。打牌的时候喝。',
+    food_pic: '美食图片。别在饭点发这个。不过作为道具还不错。',
+    its_you: '这是你。zjsn——群聊物权法：发了就是我的。',
+    rank_ticket: '上分券。但是我不冲分，我只打娱乐。',
+    mhy_verdict: '针对米哈游玩家。这个决议我支持——可以玩但不能说。',
+    xox: 'XOX。小偶像的东西。藤田琴音的闹铃我设了起床铃。',
+    nijigen: '二向箔。再见我要去二次元了——不对，先打完这局牌再走。',
+    oldguard: '老资历。寒武纪就在了——但我游戏王比你早。',
+    emo_switch: 'emo开关。打开就是网易云时间。打牌输了必备。',
+    ts_gather: 'TS集合。我开麦但不说话，只听。',
+    morning_meow: '早上了喵。虽然现在是下午但我刚醒。',
+    admin_perm: '管理员权限。撤回消息。但我从不撤回——发了就是发了。',
+    csn: 'csn。草。纳西妲的E——我知道这个。',
+    monkey: '猴。好孩子不贴猴。但可以收藏。',
+    group_fire: '群聊之火🔥。我四万条消息贡献了不少燃料。',
+    cache_clean: '缓存清理。QQ空间-275G——我的表情包占了250。',
+    core_key: '核心密钥。通关了。但牌局永远没有最后一局。',
+    quote_msg: '引用消息。接话的艺术——适合力竭了那种人。',
+    its_your_copy: '这是你的文案。群聊物权法第一条。发了就是我的。',
+  },
+  role_002: {
+    highlight_msg: '精华消息！让我看看是不是之前那条有没有黄。',
+    oo: '哦哦。冷场工具。我车载音乐正好缺这个。',
+    chat_log: '聊天记录。等我翻翻——上次说的车队ip还在不在。',
+    yugioh_card: '游戏王的卡？看不懂规则但画是真的好看。',
+    yellow_roast: '有没有黄！有没有黄！！收到了。',
+    spicy_pic: 'gkd。但别在公共场合——算了收了再说。',
+    next_time: '下次一定券。沟槽的我上次说好联机自己先睡了。',
+    happy_water: '快乐水。我要OD了。但我先开车队。',
+    food_pic: '美食图片。xmn。现在看到这个我饿得不行。',
+    its_you: '这是你。图发了就是你的——这个规则我懂。',
+    rank_ticket: '上分券。今晚风暴点。发ts的ip。',
+    mhy_verdict: 'wc，o。你是来找可莉玩的吗。',
+    xox: 'XOX——藤田琴音！！！🥰🥰 收了。这是今天最好的道具。',
+    nijigen: '二次元入口。我先进去了avemujica在等我。',
+    oldguard: '老资历？我进群第一句是有没有黄。算不算。',
+    emo_switch: 'emo开关。打开就是听mygo。',
+    ts_gather: 'TS集合。发个ip我马上来。',
+    morning_meow: '早上了喵。虽然已经下午了但我刚醒。',
+    admin_perm: '管理员权限。撤回？tmd我上次车贴被撤了。',
+    csn: 'csn。草。纳西妲的E——虽然没玩但知道。',
+    monkey: '猴。好孩子不贴。但我不是好孩子。',
+    group_fire: '群聊之火🔥。我的车队每次都🔥。',
+    cache_clean: '缓存。TS录音占了200G。',
+    core_key: '核心密钥。通关了。但排位还在等我。',
+    quote_msg: '引用消息。接话续命——湖边回声也是这个原理。',
+    its_your_copy: '这是你的文案。图是你发的。证据确凿我截图了。',
+  },
+  role_003: {
+    highlight_msg: '精华消息。有没有懂的——这条被精选的质量很高。',
+    oo: '哦哦。冷场工具。我工坊打印机也会突然吐一张出来救场。',
+    chat_log: '聊天记录是人类学最好的田野调查材料。收了。',
+    yugioh_card: '游戏王。卡图故事比打牌好看——烙印白之物语三刷。',
+    yellow_roast: '黄哥烤五花！晚上发这个是犯罪。但我支持。',
+    spicy_pic: '色图。好的色图就是好的艺术——构图光影人体。gkd。',
+    next_time: '下次一定。打印机的出图时间也排到下一幕了。',
+    happy_water: '快乐水。甜度刚好。但三分糖派说得对。',
+    food_pic: '美食图片。工坊打印机也能打这个——但颜色偏暖。',
+    its_you: '这是你。以前发色图一手推上下载。现在直接转。',
+    rank_ticket: '上分券。我不打排位但可以画战报。',
+    mhy_verdict: 'wc，o。如何评价原神——它是不是游戏史上最帅的。',
+    xox: 'XOX。工坊可以打印小偶像周边立绘。有偿，但色图可以换。',
+    nijigen: '二向箔。二次元入口——工坊打印机是第一站。',
+    oldguard: '老资历。寒武纪我就在发图了。',
+    emo_switch: 'emo开关。听听网易云顺便翻图鉴老图。',
+    ts_gather: 'TS集合。我又连不上了。每次都这样。',
+    morning_meow: '早上了喵。到点了去工坊开机。',
+    admin_perm: '管理员权限。撤回是反艺术——好图应保留。',
+    csn: 'csn。草。纳西妲的E——没玩但知道。',
+    monkey: '猴。工坊可以打印猴的立绘。',
+    group_fire: '群聊之火🔥。我发的每张图都是燃料。',
+    cache_clean: '缓存。图鉴和参考图占了250G。',
+    core_key: '核心密钥。干得好喵。终于通关了。',
+    quote_msg: '引用消息。接话和好色图一样讲究时机。',
+    its_your_copy: '这是你的文案。好图我会帮你转发的。',
+  },
+  role_004: {
+    highlight_msg: '精华消息。我醒了——看看什么被标记了。',
+    oo: '哦哦。我通宵打排位经常冷场——然后一个人继续。',
+    chat_log: '聊天记录。TS的比群聊的还长。',
+    yugioh_card: '游戏王卡。没见过但我的卡面应该是风暴点击杀王。',
+    yellow_roast: '黄哥烤五花。只吃一顿饭导致的——饿了。',
+    spicy_pic: '一个健壮的大腿出现在屏幕里。好。收了。',
+    next_time: '下次一定。我还在外面——其实在Livehouse打排位。',
+    happy_water: '快乐水。我要OD了。但先打完这局。',
+    food_pic: '美食图片。刚打完排位还没吃饭。别发了。',
+    its_you: '这是你。凌晨三点发图是Livehouse传统。',
+    rank_ticket: '上分券。一个人就是车队。风暴点。',
+    mhy_verdict: '针对米哈游玩家。但钟离假死那段确实帅。',
+    xox: 'XOX。小偶像。Livehouse灯光可以调应援色。',
+    nijigen: '二向箔。去二次元前帮我关下舞台灯。',
+    oldguard: '老资历。寒武纪我就在Livehouse打排位了。',
+    emo_switch: 'emo开关。排位BGM是mygo专辑。',
+    ts_gather: 'TS集合。wo zai ts li。发ip。',
+    morning_meow: '早上了喵。我还没睡。早上了吗。',
+    admin_perm: '管理员权限。我说过的话从不撤回。一个人就是车队。',
+    csn: 'csn。草。知道草神没玩过。',
+    monkey: '猴。好孩子不贴。我贴大腿不贴猴。',
+    group_fire: '群聊之火🔥。排位连胜就是🔥。',
+    cache_clean: '缓存。游戏录像占满了。该清了。',
+    core_key: '核心密钥。通关。但排位没通关这回事。',
+    quote_msg: '引用消息。风暴点最后一圈最需要这个。',
+    its_your_copy: '这是你的文案。凌晨三点发的图早上八点还在。经典。',
+  },
+  role_005: {
+    highlight_msg: '精华消息。唉我草——是不是甜蜜女友那截图。',
+    oo: '哦哦。冷场——我推完一条gal线也会冷场。',
+    chat_log: '聊天记录。个人感觉群聊记录比轻小说好看。',
+    yugioh_card: '游戏王。没玩但看过武藤游戏颜艺合集。',
+    yellow_roast: '黄哥烤五花！外面吃都在排队。先看看照片。',
+    spicy_pic: '色图。r18是检验galgame的唯一标准——不是，是剧情。',
+    next_time: '下次一定。甜蜜女友的档还没存。',
+    happy_water: '快乐水。但甜蜜女友的甜度已经够了。',
+    food_pic: '美食图片。动态立绘猪鼻但食物是真的香。',
+    its_you: '这是你。青山照认证——图是你的。',
+    rank_ticket: '上分券。沟槽的排位。我手残只玩单机。',
+    mhy_verdict: 'wc，o。一教自习听到原神启动——差点报警。',
+    xox: 'XOX。你放心打学院偶像大师👍🏻。金毛妹妹帮你骂走了。',
+    nijigen: '二向箔。再见我去二次元了。ef第二季我来了。',
+    oldguard: '老资历。寒武纪我就在——玩ef第一季。',
+    emo_switch: 'emo开关。ef的OST听了十年。',
+    ts_gather: 'TS集合。我不联机但你们玩得开心。',
+    morning_meow: '早上了喵。存档了吗。快去存。',
+    admin_perm: '管理员权限。但我说的唉我草不能被撤回。',
+    csn: 'csn。草。一种植物。这个梗我可以。',
+    monkey: '猴。好孩子不贴。我是好孩子。',
+    group_fire: '群聊之火🔥。我的gal推荐也是🔥。',
+    cache_clean: '缓存。gal存档把空间占满了。',
+    core_key: '核心密钥。通关。像推完一条完整线路。',
+    quote_msg: '引用消息。接话艺术——适合力竭了那种人。',
+    its_your_copy: '这是你的文案。甜蜜女友的图我可以保存吗。',
+  },
+  role_006: {
+    highlight_msg: '精华消息。还真是。看看哪条被精选了。',
+    oo: '哦哦。冷场——我上班经常冷场。',
+    chat_log: '聊天记录。x上关注全是画师声优——比番剧好看。',
+    yugioh_card: '游戏王。这张环境定位特殊——天杯环境被低估。',
+    yellow_roast: '黄哥烤五花。下班看到这个最幸福。',
+    spicy_pic: '色图。gkd。画师关注列表+1。',
+    next_time: '下次一定。不是拖延是上班太累。下班一定。',
+    happy_water: '快乐水。OD了。但明天还上班。半糖吧。',
+    food_pic: '美食图片。上班两年半看到美食还是心动。',
+    its_you: '这是你。确实。图是你的。截图留证。',
+    rank_ticket: '上分券。下班只想打牌不想排位。',
+    mhy_verdict: '针对米哈游玩家。推荐崩铁没绷住。🤣',
+    xox: 'XOX。又幻想了——幻想培育平地摔的普通女孩……',
+    nijigen: '二向箔。x上关注的画师全是二次元。',
+    oldguard: '老资历。imas存档从寒武纪就在了。',
+    emo_switch: 'emo开关。上班emo下班打牌正常。',
+    ts_gather: 'TS集合。不联机但看你们战报。',
+    morning_meow: '早上了喵。早。虽然还没睡醒。',
+    admin_perm: '管理员权限。我说的确实不能被撤回。',
+    csn: 'csn。草。纳西妲E——没玩但知道。',
+    monkey: '猴。好孩子不贴。imas存档不是好孩子。',
+    group_fire: '群聊之火🔥。imas安利也是🔥。',
+    cache_clean: '缓存。游戏截图和imas存档满了。',
+    core_key: '核心密钥。通关只是开始——新番新卡还在等。',
+    quote_msg: '引用消息。接话——我在群里功能就这个。',
+    its_your_copy: '这是你的文案。图是你的。硬盘满了不保存了。',
+  },
+};
+
+function getPlayerItemReaction(playerId, itemId, itemNameText) {
+  var reactions = PLAYER_ITEM_REACTIONS[playerId];
+  if (reactions && reactions[itemId]) {
+    return reactions[itemId];
+  }
+  // Default player line
+  return '好，' + itemNameText + '到手。';
 }
 
 function openDialogue(dialogueId) {

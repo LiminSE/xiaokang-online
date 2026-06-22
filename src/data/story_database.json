@@ -13781,6 +13781,132 @@
       ],
       "area": "dragon_card_house",
       "imagegen": "prompt_v3_reference_board_no_romance"
+    },
+    {
+      "id": "pair_role_001_role_005",
+      "a": "role_001",
+      "b": "role_005",
+      "title": "弧形反叛超量🐉 × 青山照",
+      "unlockMemory": "memory_pair_role_001_role_005",
+      "unlockHint": "分别和弧形反叛超量🐉、青山照闲聊即可解锁。",
+      "area": "town_center",
+      "sourceNote": "游戏内关系剧情。弧形反叛超量🐉和青山照在群聊中有话题交集。",
+      "activePassive": [],
+      "beats": [
+        "旁白：弧形反叛超量🐉和青山照在广场上碰上了。",
+        "正好你在——有个事想跟你说。",
+        "你说。我听着。",
+        "也不是什么大事。就是觉得最近群里挺安静的。",
+        "安静有安静的好。太吵了反而累。"
+      ]
+    },
+    {
+      "id": "pair_role_002_role_003",
+      "a": "role_002",
+      "b": "role_003",
+      "title": "Hxr × NNZ",
+      "unlockMemory": "memory_pair_role_002_role_003",
+      "unlockHint": "分别和Hxr、NNZ闲聊即可解锁。",
+      "area": "town_center",
+      "sourceNote": "游戏内关系剧情。Hxr和NNZ在群聊中有话题交集。",
+      "activePassive": [],
+      "beats": [
+        "旁白：Hxr和NNZ在广场上碰上了。",
+        "正好你在——有个事想跟你说。",
+        "你说。我听着。",
+        "也不是什么大事。就是觉得最近群里挺安静的。",
+        "安静有安静的好。太吵了反而累。"
+      ]
+    },
+    {
+      "id": "pair_role_003_role_005",
+      "a": "role_003",
+      "b": "role_005",
+      "title": "NNZ × 青山照",
+      "unlockMemory": "memory_pair_role_003_role_005",
+      "unlockHint": "分别和NNZ、青山照闲聊即可解锁。",
+      "area": "town_center",
+      "sourceNote": "游戏内关系剧情。NNZ和青山照在群聊中有话题交集。",
+      "activePassive": [],
+      "beats": [
+        "旁白：NNZ和青山照在广场上碰上了。",
+        "正好你在——有个事想跟你说。",
+        "你说。我听着。",
+        "也不是什么大事。就是觉得最近群里挺安静的。",
+        "安静有安静的好。太吵了反而累。"
+      ]
+    },
+    {
+      "id": "pair_role_003_role_006",
+      "a": "role_003",
+      "b": "role_006",
+      "title": "NNZ × 力竭了",
+      "unlockMemory": "memory_pair_role_003_role_006",
+      "unlockHint": "分别和NNZ、力竭了闲聊即可解锁。",
+      "area": "town_center",
+      "sourceNote": "游戏内关系剧情。NNZ和力竭了在群聊中有话题交集。",
+      "activePassive": [],
+      "beats": [
+        "旁白：NNZ和力竭了在广场上碰上了。",
+        "正好你在——有个事想跟你说。",
+        "你说。我听着。",
+        "也不是什么大事。就是觉得最近群里挺安静的。",
+        "安静有安静的好。太吵了反而累。"
+      ]
+    },
+    {
+      "id": "pair_role_004_role_005",
+      "a": "role_004",
+      "b": "role_005",
+      "title": "赛博鳏夫 × 青山照",
+      "unlockMemory": "memory_pair_role_004_role_005",
+      "unlockHint": "分别和赛博鳏夫、青山照闲聊即可解锁。",
+      "area": "town_center",
+      "sourceNote": "游戏内关系剧情。赛博鳏夫和青山照在群聊中有话题交集。",
+      "activePassive": [],
+      "beats": [
+        "旁白：赛博鳏夫和青山照在广场上碰上了。",
+        "正好你在——有个事想跟你说。",
+        "你说。我听着。",
+        "也不是什么大事。就是觉得最近群里挺安静的。",
+        "安静有安静的好。太吵了反而累。"
+      ]
+    },
+    {
+      "id": "pair_role_004_role_006",
+      "a": "role_004",
+      "b": "role_006",
+      "title": "赛博鳏夫 × 力竭了",
+      "unlockMemory": "memory_pair_role_004_role_006",
+      "unlockHint": "分别和赛博鳏夫、力竭了闲聊即可解锁。",
+      "area": "town_center",
+      "sourceNote": "游戏内关系剧情。赛博鳏夫和力竭了在群聊中有话题交集。",
+      "activePassive": [],
+      "beats": [
+        "旁白：赛博鳏夫和力竭了在广场上碰上了。",
+        "正好你在——有个事想跟你说。",
+        "你说。我听着。",
+        "也不是什么大事。就是觉得最近群里挺安静的。",
+        "安静有安静的好。太吵了反而累。"
+      ]
+    },
+    {
+      "id": "pair_role_005_role_006",
+      "a": "role_005",
+      "b": "role_006",
+      "title": "青山照 × 力竭了",
+      "unlockMemory": "memory_pair_role_005_role_006",
+      "unlockHint": "分别和青山照、力竭了闲聊即可解锁。",
+      "area": "town_center",
+      "sourceNote": "游戏内关系剧情。青山照和力竭了在群聊中有话题交集。",
+      "activePassive": [],
+      "beats": [
+        "旁白：青山照和力竭了在广场上碰上了。",
+        "正好你在——有个事想跟你说。",
+        "你说。我听着。",
+        "也不是什么大事。就是觉得最近群里挺安静的。",
+        "安静有安静的好。太吵了反而累。"
+      ]
     }
   ],
   "source": {
