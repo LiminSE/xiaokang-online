@@ -2971,26 +2971,48 @@ function isCgUnlocked(cg) {
 
 function openCodex() {
   const unlockedCharacters = DATA.characters.filter((char) => state.codex.has(char.id) || char.id === state.playerId);
-  const html = unlockedCharacters.length
-    ? `<div class="codex-grid">${unlockedCharacters
-      .map((char) => {
-        const story = indexes.storyByCharacter.get(char.id);
-        return `<article class="info-card profile-card">
-        ${avatarMarkup(char)}
-        <div>
-          <p class="server-name">${char.title}</p>
-          <h3>${char.displayName}</h3>
-          <p class="muted">群昵称：${char.groupNickname}</p>
-          <p class="muted">魂印线索：${char.avatarVisualDNA.symbols.join("、")}</p>
-          <p class="muted">常驻区域：${areaName(char.defaultArea)}</p>
-          <p class="muted">${char.codexBlurb || char.storyChapters?.[0] || "档案还在加载，像群聊里突然失踪的上文。"}</p>
-          ${story?.archiveText ? `<details class="archive-text"><summary>完整档案</summary><p>${polishText(story.archiveText, char.id)}</p></details>` : ""}
-        </div>
-      </article>`;
-      })
-      .join("")}</div>`
-    : `<article class="info-card"><h3>图鉴未激活</h3><p class="muted">和居民对话后，对应角色才会记录到这里。</p></article>`;
+  if (!unlockedCharacters.length) {
+    openModal("角色图鉴", '<article class="info-card"><h3>图鉴未激活</h3><p class="muted">和居民对话后，对应角色才会记录到这里。</p></article>');
+    return;
+  }
+  const html = '<div class="codex-list">' + unlockedCharacters
+    .map(function(char) {
+      var story = indexes.storyByCharacter.get(char.id);
+      var hasArchive = story && story.archiveText;
+      return '<article class="codex-entry">' +
+        '<div class="codex-entry-main">' +
+          '<span class="server-name">' + (char.title || '') + '</span>' +
+          '<h3>' + char.displayName + '</h3>' +
+          '<p class="muted">' + escapeHtml(char.codexBlurb || char.storyChapters?.[0] || '档案还在加载中。') + '</p>' +
+        '</div>' +
+        (hasArchive
+          ? '<button class="codex-archive-link" data-codex-char="' + char.id + '">完整档案 →</button>'
+          : '<span class="muted" style="font-size:11px">档案待解锁</span>') +
+      '</article>';
+    }).join('') + '</div>';
   openModal("角色图鉴", html);
+  // Attach click handlers for archive links
+  requestAnimationFrame(function() {
+    var links = document.querySelectorAll('.codex-archive-link');
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function() {
+        var charId = this.dataset.codexChar;
+        var char = indexes.characters.get(charId);
+        var story = indexes.storyByCharacter.get(charId);
+        if (char && story && story.archiveText) {
+          var archiveHtml = '<div class="archive-full">' +
+            '<div style="text-align:center;margin-bottom:16px">' +
+              '<span class="server-name">' + (char.title || '') + '</span>' +
+              '<h2>' + char.displayName + '</h2>' +
+              '<p class="muted">群昵称：' + char.groupNickname + ' · QQ：' + char.qqNickname + '</p>' +
+            '</div>' +
+            '<div class="archive-body">' + polishText(story.archiveText, charId) + '</div>' +
+          '</div>';
+          openModal(char.displayName + ' · 完整档案', archiveHtml);
+        }
+      });
+    }
+  });
 }
 
 function openSettings() {

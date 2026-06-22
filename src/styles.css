@@ -1306,6 +1306,55 @@ h3 {
   padding-top: 2px;
 }
 
+.codex-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.codex-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #fffdf6;
+}
+.codex-entry-main {
+  flex: 1;
+  min-width: 0;
+}
+.codex-entry-main h3 {
+  margin: 2px 0 4px;
+  font-size: 15px;
+}
+.codex-archive-link {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #8b5e3c;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.codex-archive-link:hover {
+  background: #f0e8d5;
+}
+.archive-full {
+  line-height: 1.8;
+}
+.archive-body {
+  border-top: 2px dashed #b9a18b;
+  padding-top: 14px;
+  margin-top: 10px;
+  white-space: pre-line;
+}
+
 .quest-card-cg {
   margin: -2px -2px 8px;
   width: calc(100% + 4px);
