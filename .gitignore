@@ -30,3 +30,7 @@ docs/IMAGE*.md
 docs/IMAGEGEN_*.md
 docs/UI_BUG_*.md
 docs/XiaokangOnline_*.md
+src/game.js
+游戏全文案.md
+角色档案.md
+修改说明.md
