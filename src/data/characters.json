@@ -2695,7 +2695,7 @@
     "groupNickname": "健康哥哥",
     "qqNickname": "Just the Two of Us",
     "displayName": "健康哥哥",
-    "title": "体力补给官",
+    "title": "毛鸽的体力补给官",
     "originalAvatarRef": "assets/source_avatars/role_014.jpg",
     "avatarVisualDNA": {
       "primaryColors": [
@@ -2738,21 +2738,19 @@
       "serious": "assets/imagegen/expressions/role_014_serious.png"
     },
     "dialogueStyle": [
-      "理性分析型",
+      "投喂提醒型",
       "表情包使用者",
       "图片分享者",
       "回复积极型",
       "气氛组",
-      "信息源",
-      "积极乐观型",
-      "午间活跃型"
+      "全糖半糖辩论家"
     ],
     "commonPatterns": [
-      "先短反应接住节奏，再补一句弹幕",
+      "先问全糖还是半糖，再问布丁好了没",
       "把现实口癖转译为小镇术语",
-      "遇到任务卡点时给出不暴露隐私的提示"
+      "用毛鸽称呼自己或群友"
     ],
-    "socialFunction": "气氛组、信息源",
+    "socialFunction": "群聊管家、毛鸽、投喂型关爱、喜欢发黄哥烤五花",
     "bondQuest": "bond_role_014",
     "keyRelations": [
       "role_013",

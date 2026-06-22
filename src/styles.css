@@ -27,6 +27,7 @@
 
 html {
   min-height: 100%;
+  width: 100%;
 }
 
 [hidden] {
@@ -35,6 +36,7 @@ html {
 
 body {
   margin: 0;
+  width: 100%;
   min-height: 100vh;
   min-height: var(--app-height, 100vh);
   color: var(--ink);
@@ -86,6 +88,7 @@ button {
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+  touch-action: manipulation;
 }
 
 button:hover {
@@ -436,24 +439,27 @@ h3 {
 .avatar-frame {
   width: 64px;
   height: 64px;
-  border: 3px solid var(--line);
-  border-radius: 6px;
-  background:
-    linear-gradient(135deg, var(--asset-a, #d65f5b), var(--asset-b, #5da1a0));
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   image-rendering: pixelated;
   display: grid;
   place-items: center;
-  overflow: hidden;
+  overflow: visible;
   font-weight: 900;
-  color: #fff;
-  text-shadow: 1px 1px 0 #000;
+  color: var(--ink);
+  text-shadow: none;
 }
 
 .avatar-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   image-rendering: pixelated;
+  filter:
+    drop-shadow(0 0 1px rgba(255, 253, 248, 0.98))
+    drop-shadow(0 0 2px rgba(255, 253, 248, 0.92))
+    drop-shadow(0 3px 0 rgba(76, 56, 57, 0.18));
 }
 
 .muted {
@@ -544,10 +550,12 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow-y: auto;
+  overflow-y: auto !important;
   overflow-x: hidden;
   max-height: 100%;
   min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 .player-card {
@@ -779,7 +787,7 @@ h3 {
     inset 0 0 0 2px rgba(255, 255, 255, 0.42),
     0 7px 0 rgba(76, 56, 57, 0.18),
     0 18px 28px rgba(43, 30, 31, 0.16);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .dialogue-box[data-expression="happy"] {
@@ -798,49 +806,53 @@ h3 {
   position: relative;
   width: 112px;
   height: 112px;
-  border-radius: 50%;
-  border: 3px solid rgba(76, 56, 57, 0.32);
-  background:
-    radial-gradient(circle at 50% 34%, rgba(255, 255, 255, 0.84), transparent 30%),
-    radial-gradient(circle at 50% 70%, var(--asset-a, #d65f5b) 0%, var(--asset-b, #5da1a0) 100%);
+  border-radius: 0;
+  border: 0;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   flex-shrink: 0;
   align-self: center;
-  color: #fff;
+  color: var(--ink);
   font-weight: 900;
   text-align: center;
   font-size: 11px;
-  box-shadow:
-    inset 0 -10px 18px rgba(43, 30, 31, 0.16),
-    0 5px 0 rgba(76, 56, 57, 0.18);
+  box-shadow: none;
 }
 
 .dialogue-portrait::after {
-  content: "";
   position: absolute;
-  right: 9px;
-  bottom: 8px;
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(255, 253, 248, 0.92);
-  border-radius: 50%;
-  background: #fff1cf;
-  box-shadow: 0 2px 0 rgba(76, 56, 57, 0.16);
+  top: -4px;
+  right: 4px;
+  display: none;
+  color: #6b3e69;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow:
+    0 0 2px #fffdf8,
+    0 2px 0 rgba(76, 56, 57, 0.16);
+  transform: rotate(8deg);
 }
 
 .dialogue-portrait[data-expression="happy"]::after {
-  background: var(--gold);
+  content: "♪";
+  display: block;
+  color: #b26b16;
 }
 
 .dialogue-portrait[data-expression="tease"]::after {
-  background: #b56cc0;
+  content: "!?";
+  display: block;
+  color: #8d5d9c;
 }
 
 .dialogue-portrait[data-expression="serious"]::after {
-  background: var(--lake);
+  content: "!";
+  display: block;
+  color: #315f76;
 }
 
 .dialogue-portrait[data-expression="narrator"]::after {
@@ -848,14 +860,16 @@ h3 {
 }
 
 .dialogue-portrait img {
-  width: 112%;
-  height: 112%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center 54%;
   image-rendering: pixelated;
   filter:
-    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.72))
-    drop-shadow(0 3px 5px rgba(43, 30, 31, 0.22));
+    drop-shadow(0 0 1px rgba(255, 253, 248, 0.98))
+    drop-shadow(0 0 3px rgba(255, 253, 248, 0.94))
+    drop-shadow(0 4px 0 rgba(76, 56, 57, 0.18))
+    drop-shadow(0 6px 8px rgba(43, 30, 31, 0.18));
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
@@ -1189,6 +1203,12 @@ h3 {
 .cg-card p,
 .cg-card h3 {
   padding-inline: 10px;
+}
+
+.cg-card .cg-caption {
+  min-height: 3.2em;
+  color: #5c4a4b;
+  line-height: 1.45;
 }
 
 .cg-card h3 {
@@ -1676,44 +1696,55 @@ h3 {
   body[data-screen="game"] {
     height: 100vh;
     height: var(--app-height, 100vh);
+    width: 100vw;
     overflow: hidden;
     overscroll-behavior: none;
   }
 
   body[data-screen="game"] .game-screen.is-active {
+    position: relative;
+    display: block;
     height: 100vh;
     height: var(--app-height, 100vh);
+    width: 100vw;
     min-height: 0;
     overflow: hidden;
     padding:
-      calc(6px + var(--safe-top))
-      calc(6px + var(--safe-right))
-      calc(6px + var(--safe-bottom))
-      calc(6px + var(--safe-left));
+      calc(4px + var(--safe-top))
+      calc(4px + var(--safe-right))
+      calc(4px + var(--safe-bottom))
+      calc(4px + var(--safe-left));
   }
 
   body[data-screen="game"] .hud {
-    width: 100%;
+    position: absolute;
+    top: calc(4px + var(--safe-top));
+    left: calc(4px + var(--safe-left));
+    right: calc(4px + var(--safe-right));
+    z-index: 24;
+    width: auto;
     flex-direction: row;
     align-items: center;
     gap: 6px;
-    margin-bottom: 4px;
+    margin: 0;
     border-width: 2px;
-    padding: 4px 6px;
-    box-shadow: 0 2px 0 rgba(76, 56, 57, 0.08);
+    padding: 3px 5px;
+    background: rgba(255, 253, 248, 0.84);
+    box-shadow: 0 2px 0 rgba(76, 56, 57, 0.08), 0 8px 20px rgba(43, 30, 31, 0.08);
+    backdrop-filter: blur(5px);
   }
 
   body[data-screen="game"] .compact-brand {
-    min-width: 112px;
-    max-width: 170px;
-    flex: 0 1 170px;
-    gap: 6px;
+    min-width: 96px;
+    max-width: 142px;
+    flex: 0 1 142px;
+    gap: 5px;
   }
 
   body[data-screen="game"] .compact-brand h2 {
     max-width: 100%;
     overflow: hidden;
-    font-size: clamp(14px, 2.3vw, 18px);
+    font-size: clamp(13px, 2.1vw, 17px);
     line-height: 1.05;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1727,11 +1758,12 @@ h3 {
 
   body[data-screen="game"] .hud-actions {
     flex: 1 1 auto;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 4px;
-    overflow-x: auto;
-    padding-bottom: 2px;
+    align-content: center;
+    gap: 3px;
+    overflow: visible;
+    padding-bottom: 0;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
@@ -1742,25 +1774,33 @@ h3 {
 
   body[data-screen="game"] .hud-actions button {
     flex: 0 0 auto;
-    min-height: 30px;
-    padding: 0 7px;
-    font-size: 12px;
+    min-height: 26px;
+    padding: 0 6px;
+    font-size: 11px;
     line-height: 1;
     white-space: nowrap;
     box-shadow: 0 2px 0 var(--line);
   }
 
   body[data-screen="game"] .play-layout {
-    position: relative;
-    width: 100%;
-    flex: 1;
-    grid-template-columns: 1fr;
+    position: absolute;
+    inset:
+      calc(4px + var(--safe-top))
+      calc(4px + var(--safe-right))
+      calc(4px + var(--safe-bottom))
+      calc(4px + var(--safe-left));
+    display: block;
+    width: auto;
+    height: auto;
     gap: 0;
     max-height: none;
     min-height: 0;
+    margin: 0;
   }
 
   body[data-screen="game"] .map-shell {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     min-height: 0;
@@ -1777,19 +1817,19 @@ h3 {
 
   body[data-screen="game"] .side-panel {
     position: absolute;
-    top: 6px;
-    right: 6px;
+    top: calc(39px + var(--safe-top));
+    right: calc(6px + var(--safe-right));
     z-index: 16;
-    width: clamp(132px, 18vw, 168px);
+    width: clamp(118px, 16vw, 152px);
     height: auto;
-    max-height: calc(100% - 12px);
+    max-height: calc(100% - 48px - var(--safe-top) - var(--safe-bottom));
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 5px;
     overflow-y: auto;
     padding: 6px;
     border-width: 2px;
-    background: rgba(255, 253, 248, 0.88);
+    background: rgba(255, 253, 248, 0.82);
     box-shadow: 0 4px 0 rgba(76, 56, 57, 0.16), 0 12px 22px rgba(43, 30, 31, 0.16);
     font-size: 10px;
     transition: opacity 0.18s ease, transform 0.18s ease;
@@ -1904,9 +1944,9 @@ h3 {
   body[data-screen="game"] .nearby-hint {
     left: 8px;
     right: auto;
-    top: 8px;
+    top: calc(42px + var(--safe-top));
     bottom: auto;
-    max-width: calc(100% - 112px);
+    max-width: calc(100% - 150px - var(--safe-right));
     border-width: 1px;
     padding: 5px 7px;
     font-size: 12px;
@@ -1915,31 +1955,29 @@ h3 {
 
   body[data-screen="game"] .dialogue-box {
     left: 8px;
-    right: 126px;
+    right: clamp(122px, 22vw, 162px);
     bottom: 8px;
     width: auto;
     min-width: 0;
     min-height: 82px;
     max-width: none;
     max-height: calc(100% - 16px);
-    grid-template-columns: 68px minmax(0, 1fr);
+    grid-template-columns: clamp(68px, 10vw, 84px) minmax(0, 1fr);
     gap: 6px;
     padding: 6px;
     border-width: 2px;
   }
 
   body[data-screen="game"] .dialogue-portrait {
-    width: 68px;
-    height: 68px;
+    width: clamp(68px, 10vw, 84px);
+    height: clamp(68px, 10vw, 84px);
     border-width: 2px;
   }
 
   body[data-screen="game"] .dialogue-portrait::after {
-    right: 5px;
-    bottom: 5px;
-    width: 11px;
-    height: 11px;
-    border-width: 1px;
+    top: -3px;
+    right: 2px;
+    font-size: 17px;
   }
 
   body[data-screen="game"] #dialogueText {
@@ -1959,10 +1997,10 @@ h3 {
   }
 
   body[data-screen="game"] .dialogue-standee {
-    right: 8px;
-    bottom: 118px;
-    width: clamp(86px, 22%, 118px);
-    height: min(54%, 190px);
+    right: calc(7px + var(--safe-right));
+    bottom: calc(8px + var(--safe-bottom));
+    width: clamp(106px, 20vw, 152px);
+    height: min(78%, 270px);
   }
 }
 
@@ -1998,7 +2036,8 @@ h3 {
   body[data-screen="game"] .side-panel {
     gap: 4px;
     padding: 5px;
-    width: clamp(118px, 17vw, 146px);
+    top: calc(36px + var(--safe-top));
+    width: clamp(108px, 15vw, 136px);
     font-size: 10px;
   }
 
@@ -2007,7 +2046,7 @@ h3 {
   }
 
   body[data-screen="game"] .dialogue-box {
-    right: 112px;
+    right: clamp(112px, 20vw, 144px);
     grid-template-columns: 56px minmax(0, 1fr);
     min-height: 70px;
   }
@@ -2018,9 +2057,9 @@ h3 {
   }
 
   body[data-screen="game"] .dialogue-standee {
-    bottom: 94px;
-    width: clamp(78px, 20%, 106px);
-    height: min(46%, 142px);
+    bottom: calc(7px + var(--safe-bottom));
+    width: clamp(92px, 18vw, 128px);
+    height: min(76%, 220px);
   }
 }
 
