@@ -1277,12 +1277,9 @@ function characterMenuChoices(charId, quest = null) {
   var allDeep = (daily?.choices || []).filter(function(c) { return c.label.indexOf('长聊') >= 0; });
   var taskChoice = (daily?.choices || []).find(function(c) { return c.id.indexOf('task') >= 0; });
 
-  // Filter completed topics
+  // Mark completed topics instead of filtering them out
   if (!state._completedTopics) state._completedTopics = {};
   var done = state._completedTopics[charId] || {};
-  allCasual = allCasual.filter(function(c) { return !done[c.id]; });
-  allDeep = allDeep.filter(function(c) { return !done[c.id]; });
-  if (taskChoice && done[taskChoice.id]) taskChoice = null;
 
   // Pair story
   var allPairs = indexes.pairStoriesByCharacter.get(charId) || [];
@@ -1319,18 +1316,20 @@ function characterMenuChoices(charId, quest = null) {
   // Casual sub-menu
   if (allCasual.length > 0) {
     var casualSubs = allCasual.map(function(c) {
+      var isDone = done[c.id];
       return {
         id: c.id,
-        label: c.label.replace('闲谈：', ''),
+        label: (isDone ? '✓ ' : '') + c.label.replace('闲谈：', ''),
         lines: normalizeLines(c.lines, charId),
         rewards: c.rewards || [],
-        _isLeaf: true
+        _isLeaf: true,
+        _isDone: isDone
       };
     });
     casualSubs.push({ id: 'menu_' + charId + '_back', label: '算了', lines: [], _isBack: true });
     choices.push({
       id: 'menu_' + charId + '_casual',
-      label: '闲谈（' + allCasual.length + '个话题）',
+      label: '闲谈（' + allCasual.filter(function(c){return !done[c.id];}).length + '/' + allCasual.length + '）',
       lines: [{ speaker: 'player', text: '聊点轻松的——你最近有什么有意思的事？' }, { speaker: charId, text: '行啊，你想聊哪个方向？' }],
       nextChoices: casualSubs,
       rewards: ['memory_daily_talk_' + charId],
@@ -1340,18 +1339,20 @@ function characterMenuChoices(charId, quest = null) {
   // Deep sub-menu
   if (allDeep.length > 0) {
     var deepSubs = allDeep.map(function(c) {
+      var isDone = done[c.id];
       return {
         id: c.id,
-        label: c.label.replace('长聊：', ''),
+        label: (isDone ? '✓ ' : '') + c.label.replace('长聊：', ''),
         lines: normalizeLines(c.lines, charId),
         rewards: c.rewards || [],
-        _isLeaf: true
+        _isLeaf: true,
+        _isDone: isDone
       };
     });
     deepSubs.push({ id: 'menu_' + charId + '_back', label: '算了', lines: [], _isBack: true });
     choices.push({
       id: 'menu_' + charId + '_deep',
-      label: '长聊（' + allDeep.length + '个话题）',
+      label: '长聊（' + allDeep.filter(function(c){return !done[c.id];}).length + '/' + allDeep.length + '）',
       lines: [{ speaker: 'player', text: '聊点深的——我有个问题一直想问你。' }, { speaker: charId, text: '好，你想深入聊哪个？' }],
       nextChoices: deepSubs,
       rewards: ['memory_daily_talk_' + charId],
