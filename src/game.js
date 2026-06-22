@@ -697,41 +697,27 @@ function playPickupFanfare() {
   }
 
   var t = start;
-  // ── Timpani intro (0.0-0.3s) ──
+  // ── Timpani intro ──
   timpani(65.41, t, 0.85);
-  timpani(55.00, t + 0.15, 0.6);
+  timpani(55.00, t + 0.3, 0.6);
 
-  // ── Brass fanfare: Cmaj ascending (0.1-1.1s) ──
+  // ── Brass fanfare: Cmaj ascending (0.5x speed) ──
   var fanfare = [
     130.81, 164.81, 196.00, 261.63, 329.63, 392.00,
     523.25, 659.25, 783.99, 1046.5, 1318.5
   ];
   fanfare.forEach(function(f, i) {
-    brass(f, t + 0.15 + i * 0.09, 0.55, 0.65 + i * 0.03);
+    brass(f, t + 0.3 + i * 0.18, 1.1, 0.65 + i * 0.03);
   });
 
-  // ── Sparkle bells (0.2-1.3s) ──
+  // ── Sparkle bells ──
   [523.25, 659.25, 783.99, 1046.5, 1318.5, 1568.0, 2093.0].forEach(function(f, i) {
-    sparkle(f, t + 0.25 + i * 0.13, 0.35, 0.5 + i * 0.05);
+    sparkle(f, t + 0.5 + i * 0.26, 0.7, 0.5 + i * 0.05);
   });
 
-  // ── Peak climax chord (1.1-1.6s) ──
+  // ── Peak climax chord ──
   [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.5].forEach(function(f) {
-    brass(f, t + 1.1, 0.7, 0.9);
-  });
-
-  // ── Descending resolution with sparkle trail (1.6-2.2s) ──
-  [1318.5, 1046.5, 783.99, 523.25, 392.00, 261.63].forEach(function(f, i) {
-    brass(f, t + 1.6 + i * 0.1, 0.5 - i * 0.06, 0.5 - i * 0.07);
-  });
-  [1568.0, 1318.5, 1046.5, 783.99, 523.25].forEach(function(f, i) {
-    sparkle(f, t + 1.65 + i * 0.12, 0.3, 0.4 - i * 0.06);
-  });
-
-  // ── Final timpani + deep bass chord (2.1-2.8s) ──
-  timpani(65.41, t + 2.1, 0.7);
-  [65.41, 98.00, 130.81, 196.00, 261.63].forEach(function(f) {
-    brass(f, t + 2.15, 0.8, 0.5);
+    brass(f, t + 2.2, 1.4, 0.9);
   });
 }
 
