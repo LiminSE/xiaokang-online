@@ -2484,16 +2484,26 @@ function drawCharacter(x, y, char, isPlayer) {
 function drawNpcNameLabel(px, py, name) {
   if (!name) return;
   ctx.save();
-  ctx.font = "600 11px system-ui, -apple-system, sans-serif";
+  ctx.font = "bold 12px system-ui, -apple-system, 'PingFang SC', sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "bottom";
-  // Shadow for readability
-  ctx.shadowColor = "rgba(0, 0, 0, 0.55)";
-  ctx.shadowBlur = 3;
+  const metrics = ctx.measureText(name);
+  const tw = metrics.width;
+  const th = 15;
+  const bx = px - tw / 2 - 7;
+  const by = py - th + 2;
+  // Background pill using roundRect (falls back to fillRect)
+  ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+  if (ctx.roundRect) {
+    ctx.beginPath();
+    ctx.roundRect(bx, by, tw + 14, th, 7);
+    ctx.fill();
+  } else {
+    // Fallback: simple rectangle with slightly rounded corners via clip
+    ctx.fillRect(bx, by, tw + 14, th);
+  }
+  // White text
   ctx.fillStyle = "#ffffff";
-  ctx.fillText(name, px, py);
-  ctx.shadowBlur = 0;
-  ctx.fillStyle = "#3a2c2b";
   ctx.fillText(name, px, py);
   ctx.restore();
 }
