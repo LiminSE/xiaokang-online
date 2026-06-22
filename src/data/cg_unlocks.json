@@ -19,6 +19,21 @@
       "assetKind": "main_cg",
       "prompt": "Use case: illustration-story\nAsset type: 小康Online主线最终大插画\nPrimary request: 全员在小镇广场上线，小康钟重新亮起，群聊梗以温暖轻喜剧方式收束。\nScene/backdrop: 小镇中心夜晚后转亮，喷泉、钟楼、路灯、入口牌自然入镜。\nSubject: 多名二次元像素 RPG 居民围在广场，不要真实人物，不要聊天框。\nStyle/medium: 星露谷式温暖像素动漫画风，治愈，热闹，群像番剧片尾感。\nConstraints: 无可读文字，无 UI，无水印，不要程序化拼贴。",
       "caption": "主线收束，所有人的上线提示汇成同一束光；小康钟重新亮起，服务器终于不再装死。"
+    },
+    {
+      "id": "cg_main_05",
+      "name": "全员上线",
+      "path": "assets/imagegen/cg/ending_all_online.png",
+      "questIds": [
+        "main_quest_05"
+      ],
+      "areaIds": [
+        "town_center"
+      ],
+      "source": "imagegen",
+      "unlock": "memory_final_online",
+      "hint": "完成终章后解锁。",
+      "caption": "小康钟响了——不是半声，是完整的三声。广场上站满了人，每一个人都在说'我在'。"
     }
   ],
   "task": [
@@ -221,6 +236,69 @@
       "unlock": "main_quest_05",
       "hint": "完成终章后解锁。",
       "caption": "特别收录的小镇瞬间——每一帧都是聊天记录里的名场面。"
+    },
+    {
+      "id": "cg_main_01",
+      "name": "龙王喷泉！？",
+      "path": "assets/imagegen/cg/tasks/cg_task_online_abnormal.png",
+      "questIds": [
+        "main_quest_01"
+      ],
+      "areaIds": [
+        "town_center"
+      ],
+      "source": "imagegen",
+      "unlock": "memory_online_001",
+      "hint": "完成第一章主线后解锁。",
+      "caption": "喷泉在复读一条三天前的晚安——发消息的人至今还在线上。"
+    },
+    {
+      "id": "cg_main_02",
+      "name": "锅从餐厅飞到牌桌",
+      "path": "assets/imagegen/cg/tasks/cg_task_restaurant_dinner.png",
+      "questIds": [
+        "main_quest_02"
+      ],
+      "areaIds": [
+        "restaurant",
+        "dragon_card_house"
+      ],
+      "source": "imagegen",
+      "unlock": "memory_main_02",
+      "hint": "完成第二章主线后解锁。",
+      "caption": "召集锅叮了一声——菜单最后一行写着：不用回答，饭在桌上。"
+    },
+    {
+      "id": "cg_main_03",
+      "name": "灯光和月亮",
+      "path": "assets/imagegen/cg/tasks/cg_task_livehouse_stage.png",
+      "questIds": [
+        "main_quest_03"
+      ],
+      "areaIds": [
+        "livehouse",
+        "echo_lake"
+      ],
+      "source": "imagegen",
+      "unlock": "memory_nightbird_001",
+      "hint": "完成第三章主线后解锁。",
+      "caption": "诗页上只写了四个字：明天继续。湖面终于只剩一个月亮了。"
+    },
+    {
+      "id": "cg_main_04",
+      "name": "色板偏移和信号塔",
+      "path": "assets/imagegen/cg/tasks/cg_task_atelier_palette.png",
+      "questIds": [
+        "main_quest_04"
+      ],
+      "areaIds": [
+        "atelier",
+        "northern_wilds"
+      ],
+      "source": "imagegen",
+      "unlock": "memory_map_001",
+      "hint": "完成第四章主线后解锁。",
+      "caption": "信号塔重新亮起——远处传来很低沉的嗡鸣，像什么东西被唤醒了。"
     }
   ],
   "pair": [
